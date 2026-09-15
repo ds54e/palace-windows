@@ -1,0 +1,7 @@
+# Optional fragment. Verify the installed CLI schema before merging into .codex/config.toml.
+# Concurrency is not a total spend limit. AGENTS.md supplies the usage policy.
+[agents]
+enabled = true
+max_concurrent_threads_per_session = 1
+default_subagent_model = "gpt-5.6-luna"
+default_subagent_reasoning_effort = "medium"

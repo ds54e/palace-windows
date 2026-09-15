@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-09-16",
+  "palace": {
+    "repository": "https://github.com/awslabs/palace.git",
+    "tag": "v0.18.0",
+    "tag_object_sha": "1fda89af17b04538c1dfec787c18798f46ccad5d",
+    "commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778"
+  },
+  "dependency_lock_status": "NOT_RESOLVED",
+  "candidate_stack": {
+    "cpu_only": true,
+    "mpi_ranks": 1,
+    "validation_threads": 1,
+    "cxx": "MSVC, compatible installed version to verify",
+    "fortran": "compatible Intel Fortran if using the candidate stack",
+    "mpi": "app-local MS-MPI candidate, unverified",
+    "blas": "one proven implementation, LP64",
+    "direct_solver": "MUMPS candidate",
+    "eigensolver": "ARPACK-NG/PARPACK candidate"
+  },
+  "shipping_runtime_hashes": []
+}

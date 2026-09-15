@@ -1,0 +1,18 @@
+name: Preparation checks (not a Windows solver validation)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  preparation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Validate state and helper tests
+        run: |
+          python3 tools/check_readiness.py
+          python3 -m unittest discover -s tests/python -v
+          bash -n tools/windows.sh
+# Manual-only to avoid spending private-repository Actions minutes during preparation.
+# This workflow neither builds Palace nor proves Windows/app-local deployment.

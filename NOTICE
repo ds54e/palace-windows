@@ -1,0 +1,7 @@
+Palace Windows preparation and build infrastructure
+Copyright 2026 Palace Windows contributors
+
+Unofficial community-maintained project; not an official AWS Palace distribution.
+Third-party source, patches, binaries, and runtime files retain their respective
+copyrights and licenses. No third-party runtime binaries are bundled in this
+preparation commit. Consult docs/REDISTRIBUTION.md before packaging dependencies.

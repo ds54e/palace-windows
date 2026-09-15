@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "distribution_version": "1.0.0",
+  "project_status": "PREPARATION_ONLY",
+  "current_gate": "G0_runtime",
+  "model_usage": {
+    "sol_launches_total": 0,
+    "luna_launches_by_gate": {},
+    "active_children": 0
+  },
+  "gates": {
+    "G0_runtime": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G1_abi": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G2_build": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G3_numerics": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G4_package": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G5_clean_host": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G6_reproduce": {
+      "status": "not_run",
+      "evidence": []
+    },
+    "G7_review": {
+      "status": "not_run",
+      "evidence": []
+    }
+  },
+  "blockers": [
+    "Windows host, app-local MPI runtime, and clean-host deployment have not been tested."
+  ],
+  "next_action": "Run the read-only Windows doctor; inspect pinned source; execute Gate 0 with provenance-reviewed runtime artifacts."
+}
