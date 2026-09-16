@@ -34,6 +34,7 @@ GPU, multi-rank scaling and broader upstream features are not validated.
 
 Third-party rights
 ------------------
+Run palace.exe --licenses for attribution and the license/source locations.
 Palace and this overlay retain their Apache-2.0 terms. Other components have
 separate licenses in licenses/. The vendor runtime terms apply only to the
 respective proprietary components, not to unrelated open-source code.

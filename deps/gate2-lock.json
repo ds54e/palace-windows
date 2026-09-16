@@ -109,7 +109,8 @@
     "palace": [
       "patches/palace/windows-no-parmetis.patch",
       "patches/palace/windows-memory-reporting.patch",
-      "patches/palace/windows-cxx-port.patch"
+      "patches/palace/windows-cxx-port.patch",
+      "patches/palace/windows-license-notice.patch"
     ],
     "mfem": [
       "patches/mfem/no-parmetis-ordering.patch",

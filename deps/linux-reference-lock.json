@@ -179,7 +179,7 @@
   "reference_sources": {
     "palace": {
       "commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
-      "diff_sha256": "7ed880a31f4d5de518a4f7d07c0014b33bbabe51518aa9f75e242cbacb3f5045"
+      "diff_sha256": "4a9bf4fdf482ca56a970b5d3f95002ee9dbe9f9a03c5e9951852f28232085e89"
     },
     "arpack-ng": {
       "commit": "804fa3149a0f773064198a8e883bd021832157ca",

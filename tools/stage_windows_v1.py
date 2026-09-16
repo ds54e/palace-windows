@@ -22,10 +22,21 @@ def copy(source,target):
 def main():
     comparison=json.loads((ROOT/'.work/gate3/comparison.json').read_text())
     if not comparison['passed']: raise RuntimeError('Gate 3 numerical comparison has not passed')
+    candidate=json.loads((ROOT/'.work/gate4/candidate-validation.json').read_text())
+    if candidate['status']!='pass' or candidate['comparison_sha256']!=sha(ROOT/'.work/gate3/comparison.json'):
+        raise RuntimeError('Packaging candidate comparison binding missing')
+    if candidate['windows_executable_sha256']!=sha(ROOT/'.work/build/palace-native/palace.exe'):
+        raise RuntimeError('Executable changed after candidate validation')
     if STAGE.exists(): raise RuntimeError('Staging directory already exists; preserve/review it before rebuilding')
     STAGE.mkdir(parents=True)
     evidence=json.loads((ROOT/'docs/evidence/G2-native-2026-09-17.json').read_text())
-    for item in evidence['runtime']['files']:
+    runtime=json.loads((ROOT/'.work/gate4/runtime-audit/closure.json').read_text(encoding='utf-8-sig'))
+    previous={item['name']:item for item in evidence['runtime']['files']}
+    if {item['name'] for item in runtime['files']} != previous.keys(): raise RuntimeError('Unexpected runtime family change')
+    for item in runtime['files']:
+        if item['name']!='palace.exe' and item['sha256']!=previous[item['name']]['sha256']:
+            raise RuntimeError('Validated runtime DLL changed: '+item['name'])
+        item['provenance']=previous[item['name']]['provenance']
         source=Path(subprocess.check_output(['wslpath','-u',item['source']],text=True).strip())
         if sha(source)!=item['sha256']: raise RuntimeError('Runtime identity changed: '+item['name'])
         copy(source,item['name'])
@@ -83,8 +94,8 @@ def main():
             for name in sorted(filter(None,names)): archive.add(ROOT/name,arcname=name,recursive=False)
     manifest=dict(status='INTERNAL_VALIDATION_CANDIDATE_NOT_APPROVED_FOR_REDISTRIBUTION',
         gate0='open: independent standard-user offline evidence and redistribution review pending',
-        windows_build=evidence,linux_identity=json.loads((ROOT/'.work/gate3/linux-identity.json').read_text()),
-        comparison=comparison,overlay_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
+        gate2_predecessor=evidence,windows_runtime=runtime,linux_identity=json.loads((ROOT/'.work/gate3/linux-identity.json').read_text()),
+        comparison=comparison,candidate_validation=candidate,overlay_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         files=[dict(path=str(p.relative_to(STAGE)),size=p.stat().st_size,sha256=sha(p)) for p in sorted(STAGE.rglob('*')) if p.is_file()])
     (STAGE/'build-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print(STAGE)

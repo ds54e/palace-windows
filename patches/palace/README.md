@@ -12,3 +12,5 @@ Apply through `tools/prepare_gate2.py`; exact patch hashes are locked in
 `deps/gate2-lock.json`. The native scripts are the Windows dependency recipes;
 the upstream superbuild configure is an additional graph check, not a claim that
 all upstream Unix build commands work on Windows.
+
+`windows-license-notice.patch` adds a Windows-only `--licenses` option and help entry for MUMPS CeCILL-C interface attribution and package license/source locations. It does not change solver behavior. The packaging candidate reruns the frozen Gate 3 cases after rebuilding.
