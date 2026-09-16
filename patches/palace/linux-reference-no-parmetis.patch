@@ -1,0 +1,46 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -11,9 +11,7 @@
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ option(PALACE_WINDOWS_NO_PARMETIS "Windows V1 without ParMETIS" OFF)
+-if(PALACE_WINDOWS_NO_PARMETIS AND NOT WIN32)
+-  message(FATAL_ERROR "PALACE_WINDOWS_NO_PARMETIS requires Windows")
+-endif()
++
+ 
+ # Prohibit in-source builds
+ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+--- a/palace/CMakeLists.txt
++++ b/palace/CMakeLists.txt
+@@ -11,9 +11,7 @@
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+ option(PALACE_WINDOWS_NO_PARMETIS "Windows V1 without ParMETIS" OFF)
+-if(PALACE_WINDOWS_NO_PARMETIS AND NOT WIN32)
+-  message(FATAL_ERROR "PALACE_WINDOWS_NO_PARMETIS requires Windows")
+-endif()
++
+ 
+ # Prohibit in-source builds
+ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+--- a/palace/cmake/PkgConfigHelpers.cmake
++++ b/palace/cmake/PkgConfigHelpers.cmake
+@@ -35,7 +35,7 @@
+   set(ENV{PKG_CONFIG_PATH} "${_SLEPC_DIR}/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+   set(ENV{PKG_CONFIG_PATH} "${_SLEPC_DIR}/lib64/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+ endif()
+-if(NOT PALACE_WINDOWS_NO_PARMETIS)
++if(NOT (WIN32 AND PALACE_WINDOWS_NO_PARMETIS))
+   find_package(PkgConfig REQUIRED)
+ endif()
+ 
+@@ -71,7 +71,7 @@
+ endfunction()
+ 
+ function(find_libceed_pkgconfig _libceed_deps _libceed_target)
+-  if(PALACE_WINDOWS_NO_PARMETIS)
++  if(WIN32 AND PALACE_WINDOWS_NO_PARMETIS)
+     find_package(ceed CONFIG REQUIRED HINTS "${LIBCEED_DIR}/lib/cmake/ceed")
+     check_libceed_build("ceed::ceed;${_libceed_deps}" LIBCEED_TEST_SUCCESS)
+     if(NOT LIBCEED_TEST_SUCCESS)

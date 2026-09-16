@@ -15,38 +15,50 @@
   "electrostatic": {
     "matrix": "complete terminal-C.csv in farads, matched by row/column labels",
     "absolute": 1e-18,
-    "relative": 1e-6,
-    "invariants": ["trace", "Frobenius norm", "quadratic energies for every coordinate vector and all-ones/alternating-sign vectors"],
+    "relative": 1e-06,
+    "invariants": [
+      "trace",
+      "Frobenius norm",
+      "quadratic energies for every coordinate vector and all-ones/alternating-sign vectors"
+    ],
     "invariant_absolute_scaling": "trace: n; Frobenius norm: n; quadratic energy: square of vector 1-norm",
     "physical_checks": "positive diagonal and quadratic energies; reciprocity within the same entrywise absolute/relative tolerance"
   },
   "magnetostatic": {
     "matrix": "complete terminal-M.csv inductance matrix in henries, matched by row/column labels",
     "absolute": 1e-12,
-    "relative": 1e-6,
-    "invariants": ["trace", "Frobenius norm", "quadratic energies for every coordinate vector and all-ones/alternating-sign vectors"],
+    "relative": 1e-06,
+    "invariants": [
+      "trace",
+      "Frobenius norm",
+      "quadratic energies for every coordinate vector and all-ones/alternating-sign vectors"
+    ],
     "invariant_absolute_scaling": "trace: n; Frobenius norm: n; quadratic energy: square of vector 1-norm",
     "physical_checks": "positive diagonal and quadratic energies; reciprocity within the same entrywise absolute/relative tolerance"
   },
   "driven": {
     "metric": "all complex S[i][j] at all tested frequencies, reconstructed from dB magnitude and phase in degrees",
-    "frequencies_GHz": [4.0, 5.0, 6.0],
-    "absolute": 1e-7,
-    "relative": 1e-6,
+    "frequencies_GHz": [
+      4.0,
+      5.0,
+      6.0
+    ],
+    "absolute": 1e-07,
+    "relative": 1e-06,
     "frequency_absolute_GHz": 1e-12,
     "require_complete_matrix": true
   },
   "eigenmode": {
     "matching": "ascending real eigenfrequency; no raw eigenvector equality, sign or phase criterion",
-    "frequency_absolute_GHz": 1e-7,
-    "frequency_relative": 1e-6,
-    "backward_residual_max": 1e-8,
+    "frequency_absolute_GHz": 1e-07,
+    "frequency_relative": 1e-06,
+    "backward_residual_max": 1e-08,
     "backward_residual_absolute": 1e-10,
-    "backward_residual_relative": 1e-5,
-    "absolute_residual_absolute": 1e-9,
-    "absolute_residual_relative": 1e-5,
+    "backward_residual_relative": 1e-05,
+    "absolute_residual_absolute": 1e-09,
+    "absolute_residual_relative": 1e-05,
     "required_modes": 2
   },
-  "outputs": "Both paths must have finite, structurally valid CSV/VTU data and valid VTK references; byte-identical files and field-vector equality are not required",
+  "outputs": "Both paths must have finite physical metrics/VTU data and valid VTK references; Q may be infinite only for exactly zero imaginary eigenfrequency. Byte-identical files and field-vector equality are not required.",
   "failure_policy": "Investigate discrepancies; never widen these limits after seeing results without an explicit documented acceptance change"
 }
