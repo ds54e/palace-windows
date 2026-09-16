@@ -64,6 +64,13 @@
       "upstream_tag": "v3.8.1",
       "commit": "2b60af89e23d28eefc081bc930831ee9d45ea58b",
       "scope": "optional upstream unit-test harness"
+    },
+    {
+      "name": "fast_float",
+      "url": "https://github.com/fastfloat/fast_float.git",
+      "commit": "00c8c7b0d5c722d2212568d915a39ea73b08b973",
+      "upstream_tag": "v6.1.6",
+      "scope": "Existing scn header dependency, identified from validated Windows build"
     }
   ],
   "mfem_upstream_patches": [

@@ -27,7 +27,7 @@ case "$component" in
  arpack)
   cmake -S "$base/sources/arpack-ng" -B "$build" "${common[@]}" "${math[@]}" -DMPI=ON -DICB=ON -DINTERFACE64=OFF -DTESTS=OFF ;;
  ceed)
-  make -C "$base/sources/libCEED" -j2 prefix="$prefix" CC=gcc CXX=g++ FC= 'OPT=-O2' STATIC=1 CUDA_DIR= ROCM_DIR= XSMM_DIR= MAGMA_DIR= install
+  make -C "$base/sources/libCEED" -j4 prefix="$prefix" CC=gcc CXX=g++ FC= 'OPT=-O2' STATIC=1 CUDA_DIR= ROCM_DIR= XSMM_DIR= MAGMA_DIR= install
   exit ;;
  core)
   for name in json json-schema-validator fmt scn eigen; do
@@ -36,11 +36,11 @@ case "$component" in
     json) options=(-DJSON_Install=ON -DJSON_BuildTests=OFF) ;;
     json-schema-validator) options=(-DJSON_VALIDATOR_INSTALL=ON -DJSON_VALIDATOR_BUILD_TESTS=OFF -DJSON_VALIDATOR_BUILD_EXAMPLES=OFF -DJSON_VALIDATOR_SHARED_LIBS=OFF) ;;
     fmt) options=(-DFMT_INSTALL=ON -DFMT_DOC=OFF -DFMT_TEST=OFF) ;;
-    scn) options=(-DSCN_INSTALL=ON -DSCN_REGEX_BACKEND=std -DSCN_DISABLE_TOP_PROJECT=ON) ;;
+    scn) options=("-DFETCHCONTENT_SOURCE_DIR_FAST_FLOAT=$root/.work/sources/fast_float" -DSCN_INSTALL=ON -DSCN_REGEX_BACKEND=std -DSCN_DISABLE_TOP_PROJECT=ON) ;;
     eigen) options=(-DEIGEN_BUILD_DOC=OFF -DBUILD_TESTING=OFF -DEIGEN_BUILD_TESTING=OFF -DEIGEN_BUILD_BLAS=OFF -DEIGEN_BUILD_LAPACK=OFF -DEIGEN_BUILD_DEMOS=OFF) ;;
    esac
    cmake -S "$root/.work/sources/$name" -B "$base/build/$name" "${common[@]}" "${options[@]}"
-   cmake --build "$base/build/$name" --parallel 2
+   cmake --build "$base/build/$name" --parallel 4
    cmake --install "$base/build/$name"
   done
   exit ;;
@@ -48,5 +48,5 @@ case "$component" in
   cmake -S "$base/sources/palace/palace" -B "$build" "${common[@]}" "${math[@]}" -DPALACE_WINDOWS_NO_PARMETIS=ON -DPALACE_WITH_MUMPS=ON -DPALACE_WITH_ARPACK=ON -DPALACE_WITH_SUPERLU=OFF -DPALACE_WITH_STRUMPACK=OFF -DPALACE_WITH_SLEPC=OFF -DPALACE_WITH_SUNDIALS=OFF -DPALACE_WITH_GSLIB=OFF -DPALACE_WITH_OPENMP=OFF -DPALACE_WITH_CUDA=OFF -DPALACE_WITH_HIP=OFF -DPALACE_TESTS_NUMPROC=1 "-DMFEM_DIR=$prefix/lib/cmake/mfem" "-DLIBCEED_DIR=$prefix" "-DMUMPS_DIR=$prefix" "-DMETIS_DIR=$prefix" "-DHYPRE_DIR=$prefix" "-DARPACK_DIR=$prefix" "-DCMAKE_MODULE_PATH=$root/cmake" "-DSCALAPACK_LIBRARIES=$prefix/lib/libscalapack.a" '-DCMAKE_EXE_LINKER_FLAGS=-Wl,-Map,palace.map' ;;
  *) exit 2 ;;
 esac
-cmake --build "$build" --parallel 2
+cmake --build "$build" --parallel 4
 cmake --install "$build"

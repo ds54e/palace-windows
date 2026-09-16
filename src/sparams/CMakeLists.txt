@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.24)
+project(palace_sparams LANGUAGES CXX)
+add_executable(palace-sparams main.cpp)
+target_compile_features(palace-sparams PRIVATE cxx_std_17)
+set_target_properties(palace-sparams PROPERTIES MSVC_RUNTIME_LIBRARY MultiThreadedDLL)
