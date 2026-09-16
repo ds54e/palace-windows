@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "scope": "Native developer-host MPI-enabled no-ParMETIS connection evidence. Not a full Palace build, clean-host test or numerical equivalence claim.",
+  "base_palace": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+  "abi": "Windows x64 LLP64; /MD; LP64 MKL/MUMPS/Hypre/METIS/MPI_Fint; C/C++ MSVC 19.44.35219.0, Fortran ifx 2025.3.0; libCEED C IntelLLVM 2025.3.0",
+  "tests": {
+    "mumps_pord": {
+      "status": "pass",
+      "actual_ordering": 4,
+      "residual_inf": 1.77636e-15
+    },
+    "mumps_metis": {
+      "status": "pass",
+      "actual_ordering": 5,
+      "residual_inf": 1.77636e-15
+    },
+    "parpack_regular_and_shift_invert": "pass with original Gate 1 tolerances",
+    "msvc_ifx_explicit_runtime_compile_and_run": "pass",
+    "mfem_singleton": {
+      "status": "pass",
+      "true_dofs": 16,
+      "metis_partition_edgecut": 4,
+      "mumps_pord_residual_l2": 3.19867e-17,
+      "mumps_metis_residual_l2": 2.30137e-17,
+      "hypre_pcg_residual_l2": 1.69967e-17,
+      "solution_error_limit": "1e-10 + 1e-10 * exact infinity norm, fixed before execution",
+      "parmetis_request": "explicit MFEM_VERIFY exception; checked diagnostic",
+      "paraview": "Save executed; files produced, independent viewer validation pending"
+    },
+    "arpack_serial": "10/10 pass; three two-rank upstream tests remain unexecuted",
+    "libceed_scoped": "17/17 pass after alignment and MSVC interface recipe refinements"
+  },
+  "audit": {
+    "prefix_static_libraries_audited": 10,
+    "parmetis_implementation_symbols": 0,
+    "exported_parmetis_dependencies": 0,
+    "mfem_executable_recursive_runtime_files": 8,
+    "limits": "Initial prefix audit predates ARPACK install. Final Palace link-map/runtime audit remains required."
+  },
+  "files": [
+    {
+      "path": "deps/gate2-lock.json",
+      "sha256": "76064181e43e80c1a6eaba8c7c2d1afbbe878541f9f81c6aa19d58693702c63f"
+    },
+    {
+      "path": "cmake/WindowsIfxRuntime.cmake",
+      "sha256": "d8ddfca3c9753d4cdc0e2de9e04caf5fd7dc5af41ed5599b1034efef1500d7b7"
+    },
+    {
+      "path": "tests/mfem/connection.cpp",
+      "sha256": "1ec0d14e86f3cd18258a27ff0fe012dc1615321d2a7c9e113cf5672d036fb709"
+    },
+    {
+      "path": "tests/mfem/CMakeLists.txt",
+      "sha256": "f93f63dad7aeb6d5ca5a208e30af855ea476cbd38b9de02d50a385e619fd1660"
+    },
+    {
+      "path": "tests/no-parmetis/CMakeLists.txt",
+      "sha256": "ccda8c60cdc123b3d79cbfe5609bff75d0256512f728efa03965e5022e4f69e2"
+    },
+    {
+      "path": "tests/abi/mumps_solve.cpp",
+      "sha256": "1af4cee4fbd8cca13abbbc591186e00acdf2bdd8d3467a12422d5411d61b396f"
+    },
+    {
+      "path": "scripts/build-mfem.ps1",
+      "sha256": "c8b491b5d3a1eb2a585d005c049d58ac43f33782564bfacbbee7509e30054993"
+    },
+    {
+      "path": "scripts/build-no-parmetis-deps.ps1",
+      "sha256": "47a33ceeb35255b1d55bf8588f506b08169730047291bde73e4e8a0ec2eed01c"
+    },
+    {
+      "path": "scripts/gate2-common.ps1",
+      "sha256": "a1862ad0b3991d697da6a7e8f3abe4282e7cf0105edfce4731349bc50e666c6f"
+    },
+    {
+      "path": ".work/build/mfem-connection/mfem-connection.exe",
+      "sha256": "1d9f443149f57f8c87d9c91a3606a573eb11eb9fb92c88f511d5acc8b86f2e05"
+    },
+    {
+      "path": ".work/build/no-parmetis-tests/mumps-ordering.exe",
+      "sha256": "f67e84bb23d897fd25c4998ac3f4daf216137d66d32a81235d31ee2d6b8566b7"
+    },
+    {
+      "path": ".work/build/no-parmetis-tests/parpack-eigen.exe",
+      "sha256": "45d218d24cf07744993c8b0a70b0c9dcc0026c8277e8aaeede11a1cb39a02910"
+    },
+    {
+      "path": ".work/build/mfem-connection/Testing/Temporary/LastTest.log",
+      "sha256": "c3b00a783f73a93482894e2fdd385d57d1f9c63750794400a35e4d34faebf0c9"
+    },
+    {
+      "path": ".work/build/no-parmetis-tests/Testing/Temporary/LastTest.log",
+      "sha256": "91e9f826d045dc2d6bed792acfc33ece519d0a291cfc87fc7bcfa379af902d90"
+    },
+    {
+      "path": ".work/gate2/no-parmetis-audit/report.json",
+      "sha256": "71b427243b830627d67bed311a6191aadfcf4b517c7d9f680fe9d120ecebc8aa"
+    },
+    {
+      "path": ".work/gate2/runtime-audit/closure.json",
+      "sha256": "aeea273bdea9335928bac106b104b4c3c84638a11b1d7a18659cb20ce979e3a1"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/arpack.lib",
+      "sha256": "4374e1d0f9c2dda9432b9077ba73e105481087f02e2469dd0635a415d6695c93"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/ceed.lib",
+      "sha256": "e3f9b56d0d4ef9ea185234d507d1220dfd812cce57c9107d56151fb630a8eeab"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/dmumps.lib",
+      "sha256": "bb80b6a65c4a5b88c9d0790d64fd2e2d35fd000a0a685606d28043bbc88aa050"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/fmt.lib",
+      "sha256": "486f64f1b185fd29fb981f3d74578768f16c3609f915aa0d0c895338eefa1a87"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/HYPRE.lib",
+      "sha256": "ca821ca7c9b8e6b84cf07146e7dfa3380272f5d4feabefaab3a44a1831e04d92"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/metis.lib",
+      "sha256": "975f12d68f7c5314fe96cebe57ffb5b1fc765d6ef6e3b2c35ea1de8c7205ee7f"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/mfem.lib",
+      "sha256": "c0ad4cea00f67d6c007dc389e351cb33748921522f13843fd531fe74e6198548"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/mumps_common.lib",
+      "sha256": "e65550fb3b677e4a57d3a2a8ab2c8dd440e02e7cef18a82aa280faeec42ef12d"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/nlohmann_json_schema_validator.lib",
+      "sha256": "445d9d451e28e6171e1bbf7bd27ed0ec17ac7b61eaa55a16d1536b0181b11869"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/parpack.lib",
+      "sha256": "fa8246e3107ed41618a39315a1f7b42cdac0954047415bf9ce5a100411320919"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/pord.lib",
+      "sha256": "eefd457014340ad4cbe1b45c06a92f27aa660271e3881fd41f8d7d6cdbbfd534"
+    },
+    {
+      "path": ".work/install/no-parmetis/lib/scn.lib",
+      "sha256": "e66e4875f36543708b243f71ee18c4fbc044c90731db9942ffa7451da68bb2aa"
+    }
+  ]
+}

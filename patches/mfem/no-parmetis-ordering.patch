@@ -1,0 +1,15 @@
+diff --git a/linalg/mumps.cpp b/linalg/mumps.cpp
+index d7dec23fc..1e77d02c8 100644
+--- a/linalg/mumps.cpp
++++ b/linalg/mumps.cpp
+@@ -454,6 +454,10 @@ void MUMPSSolver::SetMatrixSymType(MatType mtype)
+ 
+ void MUMPSSolver::SetReorderingStrategy(ReorderingStrategy method)
+ {
++#if defined(PW_MUMPS_NO_PARMETIS)
++   MFEM_VERIFY(method != PARMETIS,
++               "ParMETIS ordering is unsupported in the Windows V1 build; use METIS or PORD.");
++#endif
+    reorder_method = method;
+ }
+ 

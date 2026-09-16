@@ -1,0 +1,28 @@
+diff --git a/interface/ceed-register.c b/interface/ceed-register.c
+index 759a6463..1b3e54c4 100644
+--- a/interface/ceed-register.c
++++ b/interface/ceed-register.c
+@@ -12,7 +12,11 @@
+ static bool register_all_called;
+ 
+ #define CEED_BACKEND(name, ...) CEED_INTERN int name(void);
++#ifdef PW_CEED_WINDOWS_CPU
++#include "../backends/ceed-backend-list-ref.h"
++#else
+ #include "../backends/ceed-backend-list.h"
++#endif
+ #undef CEED_BACKEND
+ 
+ /**
+@@ -35,7 +39,11 @@ int CeedRegisterAll(void) {
+       CeedDebugEnv256(CEED_DEBUG_COLOR_SUCCESS, "\n---------- Registering Backends ----------\n");
+ #define CEED_BACKEND(name, ...) \
+   if (!ierr) ierr = name();
++#ifdef PW_CEED_WINDOWS_CPU
++#include "../backends/ceed-backend-list-ref.h"
++#else
+ #include "../backends/ceed-backend-list.h"
++#endif
+ #undef CEED_BACKEND
+       register_all_called = true;
+     }

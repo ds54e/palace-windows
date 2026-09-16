@@ -37,3 +37,7 @@ Use static MSVC CRT for the Gate 0 probe so its success does not rely on central
 ## D009 — Continue build engineering while deployment review stays open
 
 Owner explicitly accepts G0 native singleton evidence as a functional prerequisite for G1/G2, without marking G0 fully passed. Clean standard-user/offline testing and redistribution review remain mandatory release gates. Use the developer-host validated MSVC/ifx/MS-MPI/oneMKL LP64 path; do not replace it for dependency minimization. G1's first MUMPS solve uses parallel MUMPS with PORD; integrate Palace's METIS/ParMETIS recipe during G2. ABI and source/package identities are recorded in `docs/ABI_CONTRACT.md` and `deps/gate1-lock.json`.
+
+## D010 — MPI-enabled Windows V1 without ParMETIS (2026-09-17)
+
+Owner explicitly selected a no-ParMETIS variant; obtaining ParMETIS redistribution approval is outside the V1 critical path. Preserve the pinned license evidence. Use MPI + Hypre + METIS + MUMPS PORD/METIS + ARPACK/PARPACK. Retain Palace's enum/API spelling and reject explicit unsupported ordering rather than substitute silently. Keep changes in a Windows build overlay and a narrowly guarded MFEM wrapper check; do not replace MPI or rewrite Palace solvers. Multi-rank scaling and ParMETIS ordering are not V1 requirements. See `NO_PARMETIS.md` for the dependency trace and validation status.

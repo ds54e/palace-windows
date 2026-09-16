@@ -1,0 +1,221 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 188c1ee3..fcb8f040 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -10,6 +10,10 @@
+ cmake_minimum_required(VERSION 3.24)
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
++option(PALACE_WINDOWS_NO_PARMETIS "Windows V1 without ParMETIS" OFF)
++if(PALACE_WINDOWS_NO_PARMETIS AND NOT WIN32)
++  message(FATAL_ERROR "PALACE_WINDOWS_NO_PARMETIS requires Windows")
++endif()
+ 
+ # Prohibit in-source builds
+ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+diff --git a/cmake/ExternalMETIS.cmake b/cmake/ExternalMETIS.cmake
+index ec91acb6..4423cff7 100644
+--- a/cmake/ExternalMETIS.cmake
++++ b/cmake/ExternalMETIS.cmake
+@@ -78,7 +78,7 @@ set(METIS_LIBRARIES ${CMAKE_INSTALL_PREFIX}/lib/libmetis${_METIS_LIB_SUFFIX} CAC
+ )
+ 
+ # Build ParMETIS (as needed)
+-if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
++if(NOT PALACE_WINDOWS_NO_PARMETIS AND (PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS))
+   set(PARMETIS_OPTIONS ${PALACE_SUPERBUILD_DEFAULT_ARGS})
+   list(APPEND PARMETIS_OPTIONS
+     "-DCMAKE_C_COMPILER=${CMAKE_C_COMPILER}"
+diff --git a/cmake/ExternalMFEM.cmake b/cmake/ExternalMFEM.cmake
+index 6f0c3ccc..c3022677 100644
+--- a/cmake/ExternalMFEM.cmake
++++ b/cmake/ExternalMFEM.cmake
+@@ -32,6 +32,12 @@ endif()
+ 
+ # Silence #pragma omp warnings when not building with OpenMP
+ set(MFEM_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
++if(PALACE_WINDOWS_NO_PARMETIS)
++  if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK)
++    message(FATAL_ERROR "Windows no-ParMETIS variant supports MUMPS, not SuperLU/STRUMPACK")
++  endif()
++  string(APPEND MFEM_CXX_FLAGS " /EHsc /utf-8 /DPW_MUMPS_NO_PARMETIS")
++endif()
+ if(PALACE_WITH_STRUMPACK AND NOT PALACE_WITH_OPENMP)
+   include(CheckCXXCompilerFlag)
+   check_cxx_compiler_flag(-Wno-unknown-pragmas SUPPORTS_NOPRAGMA_WARNING)
+@@ -176,7 +182,7 @@ if(PALACE_BUILD_EXTERNAL_DEPS)
+     "-DMETIS_INCLUDE_DIRS=${CMAKE_INSTALL_PREFIX}/include"
+     "-DHYPRE_DIR=${CMAKE_INSTALL_PREFIX}"
+   )
+-  if(PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
++  if(NOT PALACE_WINDOWS_NO_PARMETIS AND (PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS))
+     list(APPEND MFEM_OPTIONS
+       "-DParMETIS_LIBRARIES=${PARMETIS_LIBRARIES}$<SEMICOLON>${METIS_LIBRARIES}"
+       "-DParMETIS_INCLUDE_DIRS=${CMAKE_INSTALL_PREFIX}/include"
+@@ -212,11 +218,16 @@ if(PALACE_BUILD_EXTERNAL_DEPS)
+         )
+       endif()
+     elseif(CMAKE_Fortran_COMPILER_ID MATCHES "Intel|IntelLLVM")
++      if(WIN32 AND MSVC AND PALACE_WINDOWS_NO_PARMETIS)
++        include("${PW_WINDOWS_OVERLAY_DIR}/cmake/WindowsIfxRuntime.cmake")
++        string(REPLACE ";" "$<SEMICOLON>" STRUMPACK_MUMPS_GFORTRAN_LIBRARY "${PW_IFX_RUNTIME_LIBRARIES}")
++      else()
+       if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Intel|IntelLLVM")
+         message(FATAL_ERROR "Intel Fortran compiler detected but not compatible without \
+ Intel C++ compiler for MUMPS and STRUMPACK dependencies")
+       endif()
+       set(STRUMPACK_MUMPS_GFORTRAN_LIBRARY ifport$<SEMICOLON>ifcore)
++      endif()
+     endif()
+   endif()
+ 
+@@ -305,7 +316,10 @@ Intel C++ compiler for MUMPS and STRUMPACK dependencies")
+ 
+   # Configure MUMPS
+   if(PALACE_WITH_MUMPS)
+-    set(MUMPS_REQUIRED_PACKAGES "ParMETIS" "METIS" "LAPACK" "BLAS" "MPI" "MPI_Fortran" "Threads")
++    set(MUMPS_REQUIRED_PACKAGES "METIS" "LAPACK" "BLAS" "MPI" "MPI_Fortran" "Threads")
++    if(NOT PALACE_WINDOWS_NO_PARMETIS)
++      list(PREPEND MUMPS_REQUIRED_PACKAGES "ParMETIS")
++    endif()
+     if(PALACE_WITH_OPENMP)
+       list(APPEND MUMPS_REQUIRED_PACKAGES "OpenMP")
+     endif()
+@@ -458,6 +472,11 @@ download_mfem_patch(
+   482655b6b740b880713d67bcca843571244b7d383c95e0cef3d3102b3327ff2f
+ )
+ 
++if(PALACE_WINDOWS_NO_PARMETIS)
++  list(APPEND MFEM_OPTIONS "-DMFEM_WINDOWS_ASSERTIONS=ON")
++  list(APPEND MFEM_PATCH_FILES "${PW_WINDOWS_OVERLAY_DIR}/patches/mfem/no-parmetis-ordering.patch"
++    "${PW_WINDOWS_OVERLAY_DIR}/patches/mfem/windows-build.patch")
++endif()
+ include(ExternalProject)
+ ExternalProject_Add(mfem
+   DEPENDS           ${MFEM_DEPENDENCIES}
+diff --git a/cmake/ExternalMUMPS.cmake b/cmake/ExternalMUMPS.cmake
+index 832e1c80..6ce97593 100644
+--- a/cmake/ExternalMUMPS.cmake
++++ b/cmake/ExternalMUMPS.cmake
+@@ -6,7 +6,13 @@
+ #
+ 
+ # Force build order
+-set(MUMPS_DEPENDENCIES scalapack parmetis metis)
++set(MUMPS_DEPENDENCIES scalapack metis)
++set(_mumps_parmetis ON)
++if(PALACE_WINDOWS_NO_PARMETIS)
++  set(_mumps_parmetis OFF)
++else()
++  list(APPEND MUMPS_DEPENDENCIES parmetis)
++endif()
+ 
+ set(MUMPS_OPTIONS ${PALACE_SUPERBUILD_DEFAULT_ARGS})
+ list(APPEND MUMPS_OPTIONS
+@@ -23,7 +29,7 @@ list(APPEND MUMPS_OPTIONS
+   "-DBUILD_COMPLEX16=OFF"
+   "-DMUMPS_BUILD_TESTING=OFF"
+   "-Dmetis=ON"
+-  "-Dparmetis=ON"
++  "-Dparmetis=${_mumps_parmetis}"
+   "-Dscotch=OFF"
+   "-DMUMPS_scalapack=ON"
+   "-DPARMETIS_LIBRARY=${PARMETIS_LIBRARIES}"
+diff --git a/cmake/ExternalPalace.cmake b/cmake/ExternalPalace.cmake
+index 30cd7e47..cd96ad9c 100644
+--- a/cmake/ExternalPalace.cmake
++++ b/cmake/ExternalPalace.cmake
+@@ -17,6 +17,7 @@ if(PALACE_BUILD_EXTERNAL_DEPS)
+ endif()
+ 
+ set(PALACE_OPTIONS ${PALACE_SUPERBUILD_DEFAULT_ARGS})
++list(APPEND PALACE_OPTIONS "-DPALACE_WINDOWS_NO_PARMETIS=${PALACE_WINDOWS_NO_PARMETIS}")
+ list(APPEND PALACE_OPTIONS
+   "-DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}"
+   "-DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}"
+diff --git a/palace/CMakeLists.txt b/palace/CMakeLists.txt
+index 2a634b35..dae2b4ba 100644
+--- a/palace/CMakeLists.txt
++++ b/palace/CMakeLists.txt
+@@ -10,6 +10,10 @@
+ cmake_minimum_required(VERSION 3.24)
+ 
+ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
++option(PALACE_WINDOWS_NO_PARMETIS "Windows V1 without ParMETIS" OFF)
++if(PALACE_WINDOWS_NO_PARMETIS AND NOT WIN32)
++  message(FATAL_ERROR "PALACE_WINDOWS_NO_PARMETIS requires Windows")
++endif()
+ 
+ # Prohibit in-source builds
+ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+@@ -476,6 +480,10 @@ if(NOT "${SCALAPACK_DIR}" STREQUAL "")
+   set(SCALAPACK_ROOT ${SCALAPACK_DIR})
+ endif()
+ 
++if(PALACE_WINDOWS_NO_PARMETIS AND (PALACE_WITH_SUPERLU OR PALACE_WITH_STRUMPACK))
++  message(FATAL_ERROR "Windows no-ParMETIS variant supports MUMPS, not SuperLU/STRUMPACK")
++endif()
++
+ # Find METIS and ParMETIS early (needed for MUMPS/STRUMPACK/SuperLU CMake configs)
+ # but link them later for correct static library ordering
+ find_package(METIS QUIET)
+@@ -491,6 +499,7 @@ else()
+   message(STATUS "Found METIS: ${METIS_VERSION}")
+ endif()
+ 
++if(NOT PALACE_WINDOWS_NO_PARMETIS)
+ find_package(ParMETIS QUIET)
+ if(NOT TARGET ParMETIS::ParMETIS)
+   find_library(PARMETIS_LIBRARY NAMES parmetis HINTS ${ParMETIS_ROOT}/lib REQUIRED)
+@@ -505,6 +514,8 @@ else()
+   message(STATUS "Found ParMETIS: ${ParMETIS_VERSION}")
+ endif()
+ 
++endif() # NOT PALACE_WINDOWS_NO_PARMETIS
++
+ # Find ScaLAPACK early (needed for MUMPS/STRUMPACK CMake configs)
+ if(PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
+   if(NOT SCALAPACK_ROOT)
+@@ -628,7 +639,10 @@ if(PALACE_WITH_CUDSS)
+ endif()
+ 
+ # Link METIS and ParMETIS (must come after SuperLU_DIST, STRUMPACK, MUMPS for static linking)
+-target_link_libraries(${LIB_TARGET_NAME} PUBLIC ParMETIS::ParMETIS METIS::METIS)
++if(NOT PALACE_WINDOWS_NO_PARMETIS)
++  target_link_libraries(${LIB_TARGET_NAME} PUBLIC ParMETIS::ParMETIS)
++endif()
++target_link_libraries(${LIB_TARGET_NAME} PUBLIC METIS::METIS)
+ 
+ # Link SUNDIALS
+ if(PALACE_WITH_SUNDIALS)
+diff --git a/palace/cmake/PkgConfigHelpers.cmake b/palace/cmake/PkgConfigHelpers.cmake
+index 143d8bbc..0aa9f4d1 100644
+--- a/palace/cmake/PkgConfigHelpers.cmake
++++ b/palace/cmake/PkgConfigHelpers.cmake
+@@ -35,7 +35,9 @@ if(NOT "${_SLEPC_DIR}" STREQUAL "" AND NOT _SLEPC_DIR STREQUAL _PETSC_DIR)
+   set(ENV{PKG_CONFIG_PATH} "${_SLEPC_DIR}/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+   set(ENV{PKG_CONFIG_PATH} "${_SLEPC_DIR}/lib64/pkgconfig:$ENV{PKG_CONFIG_PATH}")
+ endif()
+-find_package(PkgConfig REQUIRED)
++if(NOT PALACE_WINDOWS_NO_PARMETIS)
++  find_package(PkgConfig REQUIRED)
++endif()
+ 
+ function(check_libceed_build _libceed_target _libceed_test_success)
+   set(LIBCEED_LIB_TEST_DIR ${CMAKE_BINARY_DIR}/CMakeFiles/try_run)
+@@ -69,6 +71,15 @@ int main()
+ endfunction()
+ 
+ function(find_libceed_pkgconfig _libceed_deps _libceed_target)
++  if(PALACE_WINDOWS_NO_PARMETIS)
++    find_package(ceed CONFIG REQUIRED HINTS "${LIBCEED_DIR}/lib/cmake/ceed")
++    check_libceed_build("ceed::ceed;${_libceed_deps}" LIBCEED_TEST_SUCCESS)
++    if(NOT LIBCEED_TEST_SUCCESS)
++      message(FATAL_ERROR "Native Windows libCEED connection link failed")
++    endif()
++    set(${_libceed_target} ceed::ceed PARENT_SCOPE)
++    return()
++  endif()
+   pkg_check_modules(libCEED IMPORTED_TARGET GLOBAL ceed)
+   if(NOT libCEED_FOUND)
+     set(${_libceed_target} "" PARENT_SCOPE)

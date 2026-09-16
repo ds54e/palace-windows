@@ -45,3 +45,7 @@ The exact Palace-selected PETSc ParMETIS revision `53c9341b6c1ba876c97567cb52ddf
 No applicable approval evidence is available in this repository. Treat this dependency as blocked for a distributable payload. Palace v0.18.0 unconditionally finds/links ParMETIS; a no-ParMETIS variant would require explicit source/build changes and validation, not merely omitting a DLL or renaming a library. No ParMETIS artifact has been built or placed in a release payload.
 
 METIS revision `08c3082720ff9114b8e3cbaa4484a26739cd7d2d` is separate: its Apache-2.0 license file hash is `64ab947d7b289ad76e935adff51b31e4ac160df7dfad24480dbaa452e39bbe79`. The native METIS test passed, but that does not resolve ParMETIS permission. Source/license/artifact hashes are in [Gate 2 partial evidence](evidence/G2-partial-2026-09-17.json).
+
+### Owner-selected resolution for Windows V1
+
+D010 removes ParMETIS from the Windows distribution's dependency graph rather than pursuing redistribution approval. The license evidence above remains valid provenance for excluding the upstream-selected dependency. MPI remains enabled; METIS, Hypre, MUMPS PORD/METIS and ARPACK/PARPACK remain selected. This closes the *design decision*, not the final binary audit: build inputs, exported target dependencies, static symbols, link maps and runtime imports must substantiate exclusion in the actual final artifact. No-ParMETIS configuration strings/diagnostics may remain in code without containing the third-party library. See [the overlay trace](NO_PARMETIS.md).

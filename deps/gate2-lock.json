@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "variant": "Windows x64 MPI LP64 no-ParMETIS",
+  "inherits": "deps/gate1-lock.json",
+  "sources": [
+    {
+      "name": "json",
+      "url": "https://github.com/nlohmann/json.git",
+      "upstream_tag": "v3.12.0",
+      "commit": "55f93686c01528224f448c19128836e7df245f72"
+    },
+    {
+      "name": "json-schema-validator",
+      "url": "https://github.com/pboettch/json-schema-validator.git",
+      "upstream_tag": "2.4.0",
+      "commit": "c780404a84dd9ba978ba26bc58d17cb43fa7bc80"
+    },
+    {
+      "name": "fmt",
+      "url": "https://github.com/fmtlib/fmt.git",
+      "upstream_tag": "12.1.0",
+      "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f"
+    },
+    {
+      "name": "scn",
+      "url": "https://github.com/eliaskosunen/scnlib.git",
+      "upstream_tag": "v4.0.1",
+      "commit": "e937be1a52588621b406d58ce8614f96bb5de747"
+    },
+    {
+      "name": "eigen",
+      "url": "https://gitlab.com/libeigen/eigen.git",
+      "upstream_tag": "5.0.0",
+      "commit": "549bf8c75b6aae071cde2f28aa48f16ee3ae60b0"
+    },
+    {
+      "name": "palace",
+      "url": "https://github.com/awslabs/palace.git",
+      "commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778"
+    },
+    {
+      "name": "mfem",
+      "url": "https://github.com/mfem/mfem.git",
+      "commit": "d9d6526cc1749980a2ba1da16e2c1ca1e07d82ec"
+    },
+    {
+      "name": "metis",
+      "url": "https://bitbucket.org/petsc/pkg-metis.git",
+      "commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d"
+    },
+    {
+      "name": "hypre",
+      "url": "https://github.com/hypre-space/hypre.git",
+      "commit": "fca98afcd78a26b784dc24b0c3edb0e6140598af"
+    },
+    {
+      "name": "libCEED",
+      "url": "https://github.com/CEED/libCEED.git",
+      "commit": "39f259f89332e936122f7e02d6088a1dae3fb628"
+    }
+  ],
+  "mfem_upstream_patches": [
+    {
+      "filename": "mfem_pr3847.diff",
+      "url": "https://github.com/mfem/mfem/compare/2d574015756711029556c14d096ca52c15d5b663...50ead1a9a785e3273b2a72ff59ac8ed8a496b498.diff",
+      "sha256": "e9be1a0d4b2642ed1b72f31c36065cf0aacbe342b6594d5d943782c73a6177f4"
+    },
+    {
+      "filename": "mfem_gmsh_parser_performance.diff",
+      "url": "https://github.com/mfem/mfem/commit/e4a2b9568c40f20e24612066d155cc6a9973b247.diff",
+      "sha256": "6ced66f487780af66fb8184d329b9aad4b694e711b65830391e8c6d0c898713e"
+    },
+    {
+      "filename": "mfem_pr5246.diff",
+      "url": "https://raw.githubusercontent.com/awslabs/palace/b22f654ab36fe01f1f3176349c60626efed1a6a2/extern/patch/mfem/mfem_pr5246.diff",
+      "sha256": "d5227c18768369b8fa3a20f4457dd378a360346850329ab1970d18ed5a73b0d6"
+    },
+    {
+      "filename": "mfem_pr5353.diff",
+      "url": "https://raw.githubusercontent.com/awslabs/palace/b22f654ab36fe01f1f3176349c60626efed1a6a2/extern/patch/mfem/mfem_pr5353.diff",
+      "sha256": "c35f584090f97c84c12fc80e6d5c068512911d192132e18f5aa4254f507c5e4f"
+    },
+    {
+      "filename": "mfem_pr4983.diff",
+      "url": "https://raw.githubusercontent.com/awslabs/palace/b22f654ab36fe01f1f3176349c60626efed1a6a2/extern/patch/mfem/mfem_pr4983.diff",
+      "sha256": "530532da3ae8815d004bb6ce19f6f08a1248c3d585503551c90d0eeae7fb3f87"
+    },
+    {
+      "filename": "mfem_pr5415.diff",
+      "url": "https://github.com/mfem/mfem/commit/9d1438d8a2502cc927c63e093cf8c855ff17918e.diff",
+      "sha256": "482655b6b740b880713d67bcca843571244b7d383c95e0cef3d3102b3327ff2f"
+    }
+  ],
+  "local_patches": {
+    "palace": [
+      "patches/palace/windows-no-parmetis.patch",
+      "patches/palace/windows-memory-reporting.patch",
+      "patches/palace/windows-cxx-port.patch"
+    ],
+    "mfem": [
+      "patches/mfem/no-parmetis-ordering.patch",
+      "patches/mfem/windows-build.patch"
+    ],
+    "libCEED": [
+      "patches/libceed/windows-allocation.patch",
+      "patches/libceed/windows-cpu-registration.patch"
+    ]
+  },
+  "local_patch_sha256": {
+    "patches/palace/windows-no-parmetis.patch": "fcdc2c6e91ad14da2d639bd5dc6dfc5dcc7afa75219c7fe6d8b44d61af27374c",
+    "patches/palace/windows-memory-reporting.patch": "f816004dcb57a901b4c4a013445b6a6217203f79038b29115904e1e1c5014b2d",
+    "patches/palace/windows-cxx-port.patch": "4140542fc4e35d0e8c47e9fd4fb9127c8611ba1861a52ac231686cf5c16c5932",
+    "patches/mfem/no-parmetis-ordering.patch": "c7d74c4e0294972342a7232ed26050e5c0c950e9c9fef50201a3c9c3233c0269",
+    "patches/mfem/windows-build.patch": "2691afe3eefbb41ac6b09588fc751b195715554980472c67a484338e754c07c0",
+    "patches/libceed/windows-allocation.patch": "3725b465bffe01eb2bcb9afdf96038a08b03304e4a73a487e61d54263aaaeca9",
+    "patches/libceed/windows-cpu-registration.patch": "8e69d0ca5209409d2135744ff810d07eaab040c50154cdea9320ba7f9fe7a38e"
+  },
+  "compiler_supplement": {
+    "filename": "dpcpp_impl_win-64-2025.3.0-intel_640.conda",
+    "url": "https://software.repos.intel.com/python/conda/win-64/dpcpp_impl_win-64-2025.3.0-intel_640.conda",
+    "sha256": "1d3d8dda7a4ad9e61b6ef2bac5b0bde50fe96d9845a44a0842b30dfd1db1b34c",
+    "scope": "Build-only C99 frontend supplement to Gate 1 compiler_shared; not an installed conda environment or runtime payload"
+  }
+}

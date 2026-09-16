@@ -9,7 +9,9 @@ $env:MKLROOT = $mkl
 $blas = "$mkl/win-x64/mkl_intel_lp64.lib;$mkl/win-x64/mkl_sequential.lib;$mkl/win-x64/mkl_core.lib"
 $options = @('-G','Ninja','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_COMPILER=cl',
     '-DCMAKE_CXX_COMPILER=cl','-DCMAKE_Fortran_COMPILER=ifx',
-    "-DCMAKE_INSTALL_PREFIX=$root/.work/install/palace",'-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL',
+    '-DPALACE_WINDOWS_NO_PARMETIS=ON',
+    "-DPW_WINDOWS_OVERLAY_DIR=$root",'-DCMAKE_C_FLAGS_RELEASE=/O2','-DCMAKE_CXX_FLAGS_RELEASE=/O2',
+    "-DCMAKE_INSTALL_PREFIX=$root/.work/install/no-parmetis",'-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL',
     '-DCMAKE_Fortran_FLAGS=/fpscomp:logicals','-DBUILD_SHARED_LIBS=OFF',
     '-DPALACE_WITH_SUPERLU=OFF','-DPALACE_WITH_STRUMPACK=OFF','-DPALACE_WITH_MUMPS=ON',
     '-DPALACE_WITH_SLEPC=OFF','-DPALACE_WITH_ARPACK=ON','-DPALACE_WITH_OPENMP=OFF',
@@ -25,6 +27,6 @@ $options = @('-G','Ninja','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_COMPILER=cl',
     "-DMPI_Fortran_F77_HEADER_DIR=$sdk","-DMPI_Fortran_ADDITIONAL_INCLUDE_DIRS=$sdk",
     '-DEXTERN_METIS_GIT_TAG=08c3082720ff9114b8e3cbaa4484a26739cd7d2d',
     '-DEXTERN_PARMETIS_GIT_TAG=53c9341b6c1ba876c97567cb52ddfc87c159dc36')
-& cmake.exe -S "$root/.work/sources/palace" -B "$root/.work/build/palace" @options
+& cmake.exe -S "$root/.work/sources/palace" -B "$root/.work/build/palace-no-parmetis" @options
 if ($LASTEXITCODE -ne 0) { throw "Palace superbuild configure failed: $LASTEXITCODE" }
 Write-Output 'Configure only; this is not a Palace build or a validated distribution.'

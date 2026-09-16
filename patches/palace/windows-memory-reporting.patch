@@ -1,0 +1,191 @@
+diff --git a/palace/utils/memoryreporting.cpp b/palace/utils/memoryreporting.cpp
+index 2d754b91..5349be7c 100644
+--- a/palace/utils/memoryreporting.cpp
++++ b/palace/utils/memoryreporting.cpp
+@@ -3,7 +3,15 @@
+ 
+ #include "memoryreporting.hpp"
+ 
++#if defined(_WIN32)
++#ifndef NOMINMAX
++#define NOMINMAX
++#endif
++#include <windows.h>
++#include <psapi.h>
++#else
+ #include <sys/resource.h>
++#endif
+ 
+ #if defined(__APPLE__)
+ #include <mach/mach.h>
+@@ -34,15 +42,22 @@ namespace palace::memory_reporting
+ // https://developer.apple.com/forums/thread/105088
+ //
+ // See: man footprint
+-long GetCurrentMemory()
++std::int64_t GetCurrentMemory()
+ {
+-#if defined(__APPLE__)
++#if defined(_WIN32)
++  PROCESS_MEMORY_COUNTERS usage{};
++  if (GetProcessMemoryInfo(GetCurrentProcess(), &usage, sizeof(usage)))
++  {
++    return static_cast<std::int64_t>(usage.WorkingSetSize);
++  }
++  return 0;
++#elif defined(__APPLE__)
+   task_vm_info_data_t vm_info;
+   mach_msg_type_number_t count = TASK_VM_INFO_COUNT;
+   if (task_info(mach_task_self(), TASK_VM_INFO, (task_info_t)&vm_info, &count) ==
+       KERN_SUCCESS)
+   {
+-    return static_cast<long>(vm_info.phys_footprint);
++    return static_cast<std::int64_t>(vm_info.phys_footprint);
+   }
+   return 0;
+ #elif defined(__linux__)
+@@ -67,8 +82,16 @@ long GetCurrentMemory()
+ // (https://man7.org/linux/man-pages/man2/getrusage.2.html for Linux)
+ //
+ // Note that Linux reports the result in kilobytes, MacOS in bytes.
+-long GetPeakMemory()
++std::int64_t GetPeakMemory()
+ {
++#if defined(_WIN32)
++  PROCESS_MEMORY_COUNTERS usage{};
++  if (GetProcessMemoryInfo(GetCurrentProcess(), &usage, sizeof(usage)))
++  {
++    return static_cast<std::int64_t>(usage.PeakWorkingSetSize);
++  }
++  return 0;
++#else
+   struct rusage usage;
+   if (getrusage(RUSAGE_SELF, &usage) == 0)
+   {
+@@ -81,6 +104,7 @@ long GetPeakMemory()
+ #endif
+   }
+   return 0;
++#endif
+ }
+ 
+ std::string FormatBytes(double bytes)
+@@ -107,9 +131,9 @@ std::string FormatBytes(double bytes)
+ namespace
+ {
+ 
+-MemoryStats ComputeStats(std::string label, long local_value, MPI_Comm comm)
++MemoryStats ComputeStats(std::string label, std::int64_t local_value, MPI_Comm comm)
+ {
+-  long val_min = local_value, val_max = local_value, val_sum = local_value;
++  std::int64_t val_min = local_value, val_max = local_value, val_sum = local_value;
+   Mpi::GlobalMin(1, &val_min, comm);
+   Mpi::GlobalMax(1, &val_max, comm);
+   Mpi::GlobalSum(1, &val_sum, comm);
+@@ -118,7 +142,7 @@ MemoryStats ComputeStats(std::string label, long local_value, MPI_Comm comm)
+ 
+ }  // namespace
+ 
+-MemoryStats ComputeNodeMemoryStats(std::string label, long local_value, MPI_Comm comm)
++MemoryStats ComputeNodeMemoryStats(std::string label, std::int64_t local_value, MPI_Comm comm)
+ {
+   // Split communicator into shared memory groups (processes on same node).
+   MPI_Comm node_comm;
+@@ -129,7 +153,7 @@ MemoryStats ComputeNodeMemoryStats(std::string label, long local_value, MPI_Comm
+ 
+   // Sum memory usage across all processes on this node.
+   // Assumes shared memory is negligible.
+-  long node_total_memory = local_value;
++  std::int64_t node_total_memory = local_value;
+   MPI_Reduce(&local_value, &node_total_memory, 1, MPI_LONG, MPI_SUM, 0, node_comm);
+ 
+   // Create a communicator of node leaders (rank 0 on each node).
+diff --git a/palace/utils/memoryreporting.hpp b/palace/utils/memoryreporting.hpp
+index c6be236b..edcc4bb3 100644
+--- a/palace/utils/memoryreporting.hpp
++++ b/palace/utils/memoryreporting.hpp
+@@ -4,6 +4,7 @@
+ #ifndef PALACE_UTILS_MEMORY_REPORTING_HPP
+ #define PALACE_UTILS_MEMORY_REPORTING_HPP
+ 
++#include <cstdint>
+ #include <string>
+ #include <mfem.hpp>
+ 
+@@ -11,16 +12,16 @@ namespace palace::memory_reporting
+ {
+ 
+ // Per-process memory usage in bytes.
+-long GetCurrentMemory();
+-long GetPeakMemory();
++std::int64_t GetCurrentMemory();
++std::int64_t GetPeakMemory();
+ 
+ // Aggregated memory statistics, in bytes.
+ struct MemoryStats
+ {
+   std::string label;
+-  long min;
+-  long max;
+-  long sum;
++  std::int64_t min;
++  std::int64_t max;
++  std::int64_t sum;
+   double avg;
+ };
+ 
+@@ -36,7 +37,7 @@ MemoryStats GetPeakNodeMemoryStats(MPI_Comm comm);
+ 
+ // Compute per-node statistics for an arbitrary per-rank value (bytes). Sums across
+ // processes sharing a node and reports min/max/avg across nodes.
+-MemoryStats ComputeNodeMemoryStats(std::string label, long local_value, MPI_Comm comm);
++MemoryStats ComputeNodeMemoryStats(std::string label, std::int64_t local_value, MPI_Comm comm);
+ 
+ // Format a byte count as a human-readable string (e.g., "1.5G", "228.0M").
+ std::string FormatBytes(double bytes);
+diff --git a/palace/utils/timer.hpp b/palace/utils/timer.hpp
+index c8d93c72..401cebed 100644
+--- a/palace/utils/timer.hpp
++++ b/palace/utils/timer.hpp
+@@ -88,9 +88,9 @@ private:
+   TimePoint last_lap_time;
+   std::vector<Duration> data;
+   std::vector<int> counts;
+-  long start_memory;
+-  long last_memory;
+-  std::vector<long> mem_data;
++  std::int64_t start_memory;
++  std::int64_t last_memory;
++  std::vector<std::int64_t> mem_data;
+ 
+ public:
+   Timer()
+@@ -142,22 +142,22 @@ public:
+   auto Counts(Index idx) const { return counts[idx]; }
+ 
+   // Snapshot peak RSS and return delta from last snapshot.
+-  long MemoryLap()
++  std::int64_t MemoryLap()
+   {
+-    long current = memory_reporting::GetPeakMemory();
+-    long delta = current - last_memory;
++    std::int64_t current = memory_reporting::GetPeakMemory();
++    std::int64_t delta = current - last_memory;
+     last_memory = current;
+     return delta;
+   }
+ 
+   // Return peak RSS growth since timer creation.
+-  long MemoryFromStart() const { return memory_reporting::GetPeakMemory() - start_memory; }
++  std::int64_t MemoryFromStart() const { return memory_reporting::GetPeakMemory() - start_memory; }
+ 
+   // Lap and record a memory delta for the given phase.
+-  long MarkMemory(Index idx) { return MarkMemory(idx, MemoryLap()); }
++  std::int64_t MarkMemory(Index idx) { return MarkMemory(idx, MemoryLap()); }
+ 
+   // Record a given memory delta for the given phase (without lapping).
+-  long MarkMemory(Index idx, long delta)
++  std::int64_t MarkMemory(Index idx, std::int64_t delta)
+   {
+     if (idx == Timer::TOTAL)
+     {

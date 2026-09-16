@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.24)
+project(windows_ifx_runtime LANGUAGES CXX Fortran)
+add_executable(ifx-runtime main.cpp runtime.f90)
+set_target_properties(ifx-runtime PROPERTIES LINKER_LANGUAGE CXX MSVC_RUNTIME_LIBRARY MultiThreadedDLL)
+target_link_libraries(ifx-runtime PRIVATE ${PW_IFX_RUNTIME_LIBRARIES})
+enable_testing()
+add_test(NAME ifx-runtime COMMAND ifx-runtime)

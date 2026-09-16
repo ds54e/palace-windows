@@ -1,0 +1,111 @@
+diff --git a/palace/drivers/basesolver.cpp b/palace/drivers/basesolver.cpp
+index 0a20d9ce..60a95f54 100644
+--- a/palace/drivers/basesolver.cpp
++++ b/palace/drivers/basesolver.cpp
+@@ -115,7 +115,7 @@ namespace
+ 
+ json LoadMetadata(const fs::path &post_dir)
+ {
+-  std::string path = post_dir / "palace.json";
++  fs::path path = post_dir / "palace.json";
+   std::ifstream fi(path);
+   if (!fi.is_open())
+   {
+@@ -128,8 +128,8 @@ void WriteMetadata(const fs::path &post_dir, const json &meta)
+ {
+   // Write to a temporary file and atomically rename it into place so a concurrent reader
+   // (e.g. an external monitor polling palace.json mid-run) never observes a partial file.
+-  std::string path = post_dir / "palace.json";
+-  std::string tmp_path = post_dir / "palace.json.tmp";
++  fs::path path = post_dir / "palace.json";
++  fs::path tmp_path = post_dir / "palace.json.tmp";
+   {
+     std::ofstream fo(tmp_path);
+     if (!fo.is_open())
+diff --git a/palace/drivers/drivensolver.cpp b/palace/drivers/drivensolver.cpp
+index 6b89630b..efa59e6f 100644
+--- a/palace/drivers/drivensolver.cpp
++++ b/palace/drivers/drivensolver.cpp
+@@ -391,7 +391,7 @@ ErrorIndicator DrivenSolver::SweepAdaptive(SpaceOperator &space_op) const
+     auto memory = std::distance(max_errors.rbegin(),
+                                 std::find_if(max_errors.rbegin(), max_errors.rend(),
+                                              [=](auto x) { return x > offline_tol; }));
+-    memory = std::max(0L, memory);  // Ensure memory >= 0 as it should be.
++    memory = std::max<decltype(memory)>(0, memory);  // Ensure memory >= 0 as it should be.
+ 
+     // Greedy procedure for basis construction (offline phase). Basis is initialized with
+     // solutions at frequency sweep endpoints and explicit sample frequencies.
+diff --git a/palace/utils/tablecsv.cpp b/palace/utils/tablecsv.cpp
+index cdbfdb20..b86c2f29 100644
+--- a/palace/utils/tablecsv.cpp
++++ b/palace/utils/tablecsv.cpp
+@@ -275,19 +275,20 @@ Table::Table(std::string_view table_str,
+ template void Table::append_header(fmt::memory_buffer &) const;
+ template void Table::append_row(fmt::memory_buffer &, std::size_t) const;
+ 
+-TableWithCSVFile::TableWithCSVFile(std::string csv_file_fullpath, bool load_existing_file)
+-  : csv_file_fullpath_{std::move(csv_file_fullpath)}
++TableWithCSVFile::TableWithCSVFile(fs::path csv_file_fullpath, bool load_existing_file)
++  : csv_file_native_path_{std::move(csv_file_fullpath)},
++    csv_file_fullpath_{csv_file_native_path_.u8string()}
+ {
+   if (!load_existing_file)
+   {
+     return;
+   }
+-  if (!fs::exists(csv_file_fullpath_))
++  if (!fs::exists(csv_file_native_path_))
+   {
+     return;
+   }
+ 
+-  std::ifstream file_buffer(csv_file_fullpath_, std::ios_base::in);
++  std::ifstream file_buffer(csv_file_native_path_, std::ios_base::in);
+   if (!file_buffer.good())
+   {
+     return;
+@@ -301,10 +302,12 @@ TableWithCSVFile::TableWithCSVFile(std::string csv_file_fullpath, bool load_exis
+ void TableWithCSVFile::WriteFullTableTrunc()
+ {
+   // Remove previous file/symlink before writing.
+-  fs::remove(csv_file_fullpath_);
+-  auto file_buffer = fmt::output_file(
+-      csv_file_fullpath_, fmt::file::WRONLY | fmt::file::CREATE | fmt::file::TRUNC);
+-  file_buffer.print("{}", table.format_table());
++  fs::remove(csv_file_native_path_);
++  std::ofstream file_buffer(csv_file_native_path_, std::ios::binary | std::ios::trunc);
++  MFEM_VERIFY(file_buffer.is_open(), "Unable to open CSV file " << csv_file_fullpath_);
++  file_buffer << table.format_table();
++  file_buffer.close();
++  MFEM_VERIFY(file_buffer.good(), "Unable to write CSV file " << csv_file_fullpath_);
+ }
+ 
+ }  // namespace palace
+diff --git a/palace/utils/tablecsv.hpp b/palace/utils/tablecsv.hpp
+index e6364a64..0cfe32ee 100644
+--- a/palace/utils/tablecsv.hpp
++++ b/palace/utils/tablecsv.hpp
+@@ -4,6 +4,7 @@
+ #ifndef PALACE_UTILS_TABLECSV_HPP
+ #define PALACE_UTILS_TABLECSV_HPP
+ 
++#include "utils/filesystem.hpp"
+ #include <cstddef>
+ #include <optional>
+ #include <string>
+@@ -150,13 +151,14 @@ public:
+ 
+ class TableWithCSVFile
+ {
++  fs::path csv_file_native_path_;
+   std::string csv_file_fullpath_;
+ 
+ public:
+   Table table = {};
+ 
+   TableWithCSVFile() = default;
+-  explicit TableWithCSVFile(std::string csv_file_fullpath, bool load_existing_file = false);
++  explicit TableWithCSVFile(fs::path csv_file_fullpath, bool load_existing_file = false);
+ 
+   std::string_view get_csv_filepath() const { return {csv_file_fullpath_}; }
+ 

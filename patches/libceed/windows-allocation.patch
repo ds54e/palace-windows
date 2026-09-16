@@ -1,0 +1,52 @@
+diff --git a/interface/ceed.c b/interface/ceed.c
+index 959661ce..e4f04cde 100644
+--- a/interface/ceed.c
++++ b/interface/ceed.c
+@@ -8,6 +8,9 @@
+ #define _POSIX_C_SOURCE 200112
+ #include <ceed-impl.h>
+ #include <ceed.h>
++#ifdef _WIN32
++#include "pw_windows_alloc.h"
++#endif
+ #include <ceed/backend.h>
+ #include <assert.h>
+ #include <limits.h>
+@@ -281,7 +284,11 @@ void CeedDebugImpl256(const unsigned char color, const char *format, ...) {
+   @sa CeedFree()
+ **/
+ int CeedMallocArray(size_t n, size_t unit, void *p) {
++#ifdef _WIN32
++  int ierr = PwCeedAlignedAlloc((void **)p, CEED_ALIGN, n * unit);
++#else
+   int ierr = posix_memalign((void **)p, CEED_ALIGN, n * unit);
++#endif
+   CeedCheck(ierr == 0, NULL, CEED_ERROR_MAJOR, "posix_memalign failed to allocate %zd members of size %zd\n", n, unit);
+   return CEED_ERROR_SUCCESS;
+ }
+@@ -323,7 +330,13 @@ int CeedCallocArray(size_t n, size_t unit, void *p) {
+   @sa CeedFree()
+ **/
+ int CeedReallocArray(size_t n, size_t unit, void *p) {
++#ifdef _WIN32
++  void *replacement = PwCeedRealloc(*(void **)p, n * unit);
++  CeedCheck(!n || !unit || replacement, NULL, CEED_ERROR_MAJOR, "Windows realloc failed");
++  *(void **)p = replacement;
++#else
+   *(void **)p = realloc(*(void **)p, n * unit);
++#endif
+   CeedCheck(!n || !unit || *(void **)p, NULL, CEED_ERROR_MAJOR, "realloc failed to allocate %zd members of size %zd\n", n, unit);
+   return CEED_ERROR_SUCCESS;
+ }
+@@ -360,7 +373,11 @@ int CeedStringAllocCopy(const char *source, char **copy) {
+   @ref Backend
+ **/
+ int CeedFree(void *p) {
++#ifdef _WIN32
++  PwCeedFree(*(void **)p);
++#else
+   free(*(void **)p);
++#endif
+   *(void **)p = NULL;
+   return CEED_ERROR_SUCCESS;
+ }

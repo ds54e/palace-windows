@@ -1,0 +1,23 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c0eaf258c..c6b53265a 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -233,7 +233,8 @@ endif()
+ message(STATUS "Floating-point precision: MFEM_PRECISION = ${MFEM_PRECISION}")
+ 
+ # MFEM_DEBUG
+-if (CMAKE_BUILD_TYPE MATCHES "Debug|debug|DEBUG")
++option(MFEM_WINDOWS_ASSERTIONS "Keep assertions in optimized Windows builds" OFF)
++if (CMAKE_BUILD_TYPE MATCHES "Debug|debug|DEBUG" OR (WIN32 AND MFEM_WINDOWS_ASSERTIONS))
+   set(MFEM_DEBUG ON)
+ else()
+   set(MFEM_DEBUG OFF)
+@@ -732,7 +733,7 @@ if (MINGW)
+   target_link_libraries(mfem PRIVATE ws2_32)
+ endif()
+ if (MSVC)
+-  target_compile_options(mfem PUBLIC "/wd4819")
++  target_compile_options(mfem PUBLIC "/utf-8" "/EHsc")
+ endif()
+ message(STATUS "TPL_INCLUDE_DIRS = ${TPL_INCLUDE_DIRS}")
+ target_include_directories(mfem
