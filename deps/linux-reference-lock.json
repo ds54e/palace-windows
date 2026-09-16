@@ -24,137 +24,174 @@
       "sha256": "26c456cca8008c5e1fa930f096ddaf176df42f08f364b103ab6b1c4e89cf2114",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/gcc-gfortran-11.5.0-14.el9.alma.1.x86_64.rpm"
     },
     {
       "filename": "libgfortran-11.5.0-14.el9.alma.1.x86_64.rpm",
       "sha256": "ee3be249cd1c675ccfd8fb451bc927ea01e3b0b3069b0379be91b27ec2b0c79f",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/libgfortran-11.5.0-14.el9.alma.1.x86_64.rpm"
     },
     {
       "filename": "libquadmath-11.5.0-14.el9.alma.1.x86_64.rpm",
       "sha256": "fb17e9e3fc8abfd48157eb763c658b69799d5360186169e146e2bf2b02420caf",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/libquadmath-11.5.0-14.el9.alma.1.x86_64.rpm"
     },
     {
       "filename": "libquadmath-devel-11.5.0-14.el9.alma.1.x86_64.rpm",
       "sha256": "03d1f6fec5d5ab3643f0e5a2d4aff4f652f63e5a5e3c9f9d9253966fe4684a35",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/libquadmath-devel-11.5.0-14.el9.alma.1.x86_64.rpm"
     },
     {
       "filename": "openmpi-4.1.1-7.el9.x86_64.rpm",
       "sha256": "4814e505128f887dbd1e3a5536e9a5f83aec4cfaecc2751cb399665f00fc2f32",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/openmpi-4.1.1-7.el9.x86_64.rpm"
     },
     {
       "filename": "openmpi-devel-4.1.1-7.el9.x86_64.rpm",
       "sha256": "2c42a6cab8f3f6c0fdbde073d2d8403c3d1fdf79e0334517c6fde64ca0584562",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/openmpi-devel-4.1.1-7.el9.x86_64.rpm"
     },
     {
       "filename": "hwloc-libs-2.4.1-6.el9_7.x86_64.rpm",
       "sha256": "26920452ad03d6441357691360f659a0bdf4bc0ab9a5ac5e8f8fa9a3df4e6d36",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/hwloc-libs-2.4.1-6.el9_7.x86_64.rpm"
     },
     {
       "filename": "libevent-2.1.12-8.el9_4.x86_64.rpm",
       "sha256": "324793f6e90d339652a5eea31734ca873e57a719abaa53140c6bbd4262979e29",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/libevent-2.1.12-8.el9_4.x86_64.rpm"
     },
     {
       "filename": "libfabric-2.3.1-3.el9.x86_64.rpm",
       "sha256": "d2ce9d87fc09543b79801b9c6d683ff9e18c3781a11235e4d3fdb285a11af092",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/libfabric-2.3.1-3.el9.x86_64.rpm"
     },
     {
       "filename": "numactl-libs-2.0.19-3.el9.x86_64.rpm",
       "sha256": "0cfb556dfeca179f62f0ac0d018a8e33f88b15f9e16091d983171d7492140394",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/numactl-libs-2.0.19-3.el9.x86_64.rpm"
     },
     {
       "filename": "pmix-3.2.3-5.el9.x86_64.rpm",
       "sha256": "6012b6ddc1137fbb8d5d4add256108268f6c94a18b9add000b6706641cc03294",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/pmix-3.2.3-5.el9.x86_64.rpm"
     },
     {
       "filename": "ucx-1.19.1-2.el9.x86_64.rpm",
       "sha256": "64061aef77ebcbe3fa50a63ab48e0c39b1de9df350a0b6b9fd9411cc0a61bdb6",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/ucx-1.19.1-2.el9.x86_64.rpm"
     },
     {
       "filename": "libibverbs-61.0-2.el9.x86_64.rpm",
       "sha256": "9102fe12f3e82ea3c69301fb3f9eb1c6b7179ac44bdadb583f6e6478f3cc0a39",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/libibverbs-61.0-2.el9.x86_64.rpm"
     },
     {
       "filename": "librdmacm-61.0-2.el9.x86_64.rpm",
       "sha256": "aa67f0a3f296f80829e9e9f9f2bc79659463d71329ce7411e0adae721220ce3f",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/librdmacm-61.0-2.el9.x86_64.rpm"
     },
     {
       "filename": "libnl3-3.11.0-1.el9.x86_64.rpm",
       "sha256": "ba8ed44812339d64242920179dc2b84576a5812e87496875938f7e48ad6ceb8c",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/libnl3-3.11.0-1.el9.x86_64.rpm"
     },
     {
       "filename": "libpsm2-12.0.1-1.el9.x86_64.rpm",
       "sha256": "0aa649cb0161d0fb4407380c97c6b30679a75e9f6c53ad63693fc8462e92386e",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/libpsm2-12.0.1-1.el9.x86_64.rpm"
     },
     {
       "filename": "munge-libs-0.5.13-14.el9_7.x86_64.rpm",
       "sha256": "9c83b853295cba9b3972bbdc74e253347287422593ce39cfe391d1222f6a9bb8",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 configured official AppStream/BaseOS repositories",
-      "scope": "Extracted only; no RPM installation or package scripts"
+      "scope": "Extracted only; no RPM installation or package scripts",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/munge-libs-0.5.13-14.el9_7.x86_64.rpm"
     },
     {
       "filename": "openblas-serial-0.3.29-1.el9.x86_64.rpm",
       "sha256": "e255000393742ce746a6eeea01e10d99272c3f22b8856cdce0a496ad23ba2080",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 AppStream/BaseOS/CRB",
-      "scope": "extracted only"
+      "scope": "extracted only",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/AppStream/x86_64/os/Packages/openblas-serial-0.3.29-1.el9.x86_64.rpm"
     },
     {
       "filename": "opensm-libs-3.3.24-2.el9.x86_64.rpm",
       "sha256": "4e4597bb89dfecc6f07542da4b265e23b18b2155ce8ef0efa3c1f0d7ecc4a8a9",
       "rpm_signature": "digests signatures OK",
       "origin": "AlmaLinux 9 AppStream/BaseOS/CRB",
-      "scope": "extracted only"
+      "scope": "extracted only",
+      "url": "http://ftp.yz.yamagata-u.ac.jp/pub/linux/almalinux/9.8/BaseOS/x86_64/os/Packages/opensm-libs-3.3.24-2.el9.x86_64.rpm"
     }
   ],
   "system_compiler": "gcc/g++ 11.5.0-14.el9.alma.1; GNU Fortran same release, extracted locally",
   "mpi": "Open MPI 4.1.1, singleton, MPI_Fint 32-bit",
   "blas": "OpenBLAS 0.3.29 serial LP64; Windows uses oneMKL 2025.3 LP64 sequential",
-  "solver_semantics": "Same MPI/Hypre/METIS/MUMPS PORD+METIS/ARPACK+PARPACK, no ParMETIS; no scalar-type changes"
+  "solver_semantics": "Same MPI/Hypre/METIS/MUMPS PORD+METIS/ARPACK+PARPACK, no ParMETIS; no scalar-type changes",
+  "reference_sources": {
+    "palace": {
+      "commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+      "diff_sha256": "7ed880a31f4d5de518a4f7d07c0014b33bbabe51518aa9f75e242cbacb3f5045"
+    },
+    "arpack-ng": {
+      "commit": "804fa3149a0f773064198a8e883bd021832157ca",
+      "diff_sha256": "bf1db76715f537a900994317448de07c8f28da0782207e1365bfb98ed902cc4e"
+    },
+    "libCEED": {
+      "commit": "39f259f89332e936122f7e02d6088a1dae3fb628",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "scalapack": {
+      "commit": "6423f17933eb9a2522814b78ab3c0d6da25ee85a",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
 }

@@ -1,0 +1,116 @@
+{
+  "scope": "Input identities, before Linux results",
+  "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+  "cases": [
+    {
+      "case": "electrostatic",
+      "configuration_sha256": "8cee5f86f6c3851bd283002ad27e7ae33be2ac9873b41a83544cc860671e45bf",
+      "mesh": "mesh/spheres.msh",
+      "mesh_sha256": "0c1612c70c4644db8085c72a2f6dbaf739a59971cba10bc5423f984e7b6a9988",
+      "solver": {
+        "Order": 1,
+        "Device": "CPU",
+        "Electrostatic": {
+          "Save": 2
+        },
+        "Linear": {
+          "Type": "MUMPS",
+          "KSPType": "CG",
+          "Tol": 1e-08,
+          "MaxIts": 100,
+          "ColumnOrdering": "METIS",
+          "MGMaxLevels": 1
+        },
+        "Backend": "/cpu/self/opt/blocked"
+      }
+    },
+    {
+      "case": "magnetostatic",
+      "configuration_sha256": "0663b93f377c137e1fa9a7aaf5e2ff2aeafc21b026057d07b0596f8385ce2c73",
+      "mesh": "mesh/rings.msh",
+      "mesh_sha256": "2291c903231832cf5c69c9aff03ac78c931c94f2058da36931307c72b71888a5",
+      "solver": {
+        "Order": 1,
+        "Device": "CPU",
+        "Magnetostatic": {
+          "Save": 2,
+          "InactivePorts": "Open"
+        },
+        "Linear": {
+          "Type": "AMS",
+          "KSPType": "CG",
+          "Tol": 1e-08,
+          "MaxIts": 100
+        },
+        "Backend": "/cpu/self/opt/blocked"
+      }
+    },
+    {
+      "case": "driven",
+      "configuration_sha256": "b778fb1ec651dd13c46837ae5034bbdb0751b1aabc87fc0e6c9e380f563a823d",
+      "mesh": "mesh/coaxial.msh",
+      "mesh_sha256": "0a3a2ffcc69f64b9e0d5bce3a0d6e6f83a3d670b8bdedd8f6fadf05af278bdfe",
+      "solver": {
+        "Order": 1,
+        "Device": "CPU",
+        "Linear": {
+          "Type": "MUMPS",
+          "KSPType": "GMRES",
+          "Tol": 1e-08,
+          "MaxIts": 100,
+          "ColumnOrdering": "METIS",
+          "MGMaxLevels": 1
+        },
+        "Driven": {
+          "Samples": [
+            {
+              "Type": "Linear",
+              "MinFreq": 4.0,
+              "MaxFreq": 6.0,
+              "FreqStep": 1.0
+            }
+          ],
+          "Save": [
+            4.0,
+            5.0,
+            6.0
+          ]
+        },
+        "Backend": "/cpu/self/opt/blocked"
+      }
+    },
+    {
+      "case": "eigenmode",
+      "configuration_sha256": "9e3dbf29fee46a2d00e9c4445e64f628f3bf4f3fa26b524b0fe31e9232db9d15",
+      "mesh": "mesh/cylinder_hex.msh",
+      "mesh_sha256": "de1ccf8e9332493900e0a445a37025f9b5fd35c2d1dde33d807a0f5c2995f3ab",
+      "solver": {
+        "Order": 1,
+        "Device": "CPU",
+        "Eigenmode": {
+          "N": 2,
+          "Tol": 1e-08,
+          "Target": 2.0,
+          "Save": 2,
+          "Type": "ARPACK",
+          "MaxIts": 1000
+        },
+        "Linear": {
+          "Type": "MUMPS",
+          "KSPType": "GMRES",
+          "Tol": 1e-08,
+          "MaxIts": 100,
+          "ColumnOrdering": "METIS",
+          "MGMaxLevels": 1
+        },
+        "Backend": "/cpu/self/opt/blocked"
+      }
+    }
+  ],
+  "status": "inputs_frozen_windows_cases_executed_linux_comparison_not_run",
+  "windows_executable_sha256": "d4402bdaaad1dae3e1104b54e45ac37d1f4f8780fd50194ffb853bbae2fbe715",
+  "windows_run_log": {
+    "path": ".work/gate3/windows-run.log",
+    "sha256": "2097f2496bf18083bd5b721113371d0d835f99223cbcdb7196d6d2032d301d50"
+  }
+}
