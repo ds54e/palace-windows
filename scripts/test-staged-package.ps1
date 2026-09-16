@@ -28,6 +28,7 @@ foreach ($case in @('electrostatic','magnetostatic','driven','eigenmode')) {
     $stdout=$process.StandardOutput.ReadToEndAsync(); $stderr=$process.StandardError.ReadToEndAsync()
     $loaded=@{}; $timer=[Diagnostics.Stopwatch]::StartNew()
     while (!$process.HasExited) {
+        $process.Refresh() # Process.Modules caches its collection; resample each poll.
         try { foreach ($module in $process.Modules) {
             $name=$module.ModuleName.ToLowerInvariant()
             if ($vendor -contains $name) { $loaded[$name]=$module.FileName }

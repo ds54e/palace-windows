@@ -8,6 +8,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import tarfile
+from finalize_stage_notices import add_notices
 
 ROOT=Path(__file__).resolve().parents[1]
 STAGE=ROOT/'.work/package/palace-windows-1.0.0'
@@ -88,7 +89,8 @@ def main():
     copy(ROOT/'docs/GATE3_ACCEPTANCE.json','validation/GATE3_ACCEPTANCE.json')
     copy(ROOT/'docs/TOUCHSTONE.md','TOUCHSTONE.md')
     copy(ROOT/'LICENSE','licenses/windows-overlay/LICENSE')
-    for folder in ['deps','patches','cmake','scripts','src','tests']:
+    add_notices(STAGE)
+    for folder in ['deps','patches','cmake','scripts','src','tests','tools']:
         with tarfile.open(STAGE/'sources'/f'windows-overlay-{folder}.tar.gz','w:gz') as archive:
             names=subprocess.check_output(['git','ls-files','-z',folder],cwd=ROOT).decode().split('\0')
             for name in sorted(filter(None,names)): archive.add(ROOT/name,arcname=name,recursive=False)

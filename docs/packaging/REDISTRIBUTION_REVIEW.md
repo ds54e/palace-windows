@@ -23,7 +23,7 @@ Intel source: [compiler application deployment guidance](https://www.intel.com/c
 | Palace and Windows overlay | Apache-2.0, upstream LICENSE and repository LICENSE | License, applicable upstream notices, modification description, exact source/patch identities |
 | MFEM | BSD-3-Clause LICENSE and NOTICE | Both verbatim; Windows changes identified |
 | Hypre | LICENSE-APACHE / LICENSE-MIT and NOTICE | Include all accompanying terms/notices; retain upstream source identity |
-| METIS / GKlib | Apache-2.0 LICENSE.txt and source copyright notices | License and source provenance; no ParMETIS files |
+| METIS / GKlib | Apache-2.0 top-level license plus LGPL-2.1-or-later `GKlib/gk_mksort.h` and per-file notices | Full corresponding source and LGPL text/notices included; static-link/relinking and downstream-term review remains open; no ParMETIS files |
 | MUMPS 5.7.3 | CeCILL-C; LICENSE, doc/CeCILL-C_V1-en.txt and -fr.txt; BSD exceptions named in LICENSE | Include full corresponding MUMPS source archive, license and warranty/liability notice; accessible interface attribution required by §6.4; build-wrapper changes identified separately |
 | PORD | MUMPS PORD/README records SPACE public-domain provenance | Preserve README and bundled source notices in MUMPS source archive |
 | ARPACK/PARPACK | BSD COPYING, including named copyright holders | COPYing verbatim, source/patch identities |
@@ -40,3 +40,11 @@ CeCILL-C §§5.3.1–5.3.3 require effective covered-source access throughout di
 ParMETIS remains excluded, with its restrictive upstream license evidence preserved in `docs/REDISTRIBUTION.md`. Its preserved enum/unsupported diagnostic is not third-party ParMETIS implementation code.
 
 The embedded libircmt support implementation is not named in the accompanying fredist list, although libircmd.dll/libircmd.lib/libircdisp.lib are named. General Intel static-deployment guidance is evidence of intended use, but is not treated here as an exact-file redistribution grant overriding the EULA definition. This scope remains unresolved; no compiler/runtime change has been made to hide the issue. A vendor/license clarification or separately validated licensed linkage route is required before closing the package review.
+
+## GKlib license finding in the actual binary
+
+The pinned `GKlib/gk_mksort.h` contains LGPL-2.1-or-later sorting macros, substantially longer than the small-header exception. `libmetis/gklib.c` instantiates them; the final Palace map contains `libmetis__ikvsorti`, `libmetis__ikvsortd` and `libmetis__rkvsortd` from `metis:gklib.c.obj`. Thus this is linked implementation evidence, not merely an unused source-file notice. The unused getopt/regex source also carries LGPL notices, but no corresponding implementation was found in the Palace map.
+
+The complete METIS/GKlib source and GNU LGPL-2.1 text are included. Before distribution, close LGPL §6's complete relinking-material and modification/debugging terms requirements for the static combination, including interaction with proprietary numerical/compiler support. Source inclusion alone is not being declared sufficient here. The package currently lacks an independently exercised complete relinking kit; no LGPL exception or top-level Apache-only interpretation is assumed. A suitable replaceable shared-library route is another possible engineering response, but has not been built or validated and is not represented as the current candidate.
+
+Primary license: https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt (download identity retained in `.work/licensing/lgpl-source.json`). This finding blocks redistribution approval, not the already completed numerical result. Preserve the validated dependency stack until a defensible compliance route is selected; do not quietly change numerical inputs, ordering or acceptance limits.

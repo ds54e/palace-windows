@@ -36,7 +36,9 @@ Third-party rights
 ------------------
 Run palace.exe --licenses for attribution and the license/source locations.
 Palace and this overlay retain their Apache-2.0 terms. Other components have
-separate licenses in licenses/. The vendor runtime terms apply only to the
+separate licenses in licenses/. METIS includes GKlib sorting code governed
+by LGPL-2.1-or-later; see licenses/metis/ and its corresponding source.
+The static-combination relinking/terms review remains open. The vendor runtime terms apply only to the
 respective proprietary components, not to unrelated open-source code.
 
 This software uses MUMPS 5.7.3:

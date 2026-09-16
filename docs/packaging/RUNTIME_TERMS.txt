@@ -2,7 +2,7 @@ Component-specific runtime terms — review draft
 
 This text does not replace the original component agreements. Copies of the
 applicable agreements and third-party notices are in licenses/. Open-source
-rights for Palace, MUMPS, Eigen and other open-source components are not
+rights for Palace, MUMPS, Eigen, LGPL-covered GKlib and other open-source components are not
 restricted by the proprietary runtime conditions below.
 
 Microsoft MPI: supplied unmodified solely with this Windows application.
@@ -30,3 +30,5 @@ approved for redistribution until this and the complete review are closed.
 Publisher obligations such as indemnity, license eligibility and compliance
 with distribution conditions cannot be fulfilled merely by copying this
 notice. They remain explicitly recorded in REDISTRIBUTION_REVIEW.md.
+
+This draft has not resolved the LGPL static-combination modification, debugging and relinking obligations. It is not a representation that the current proprietary/open-source terms have been reconciled for redistribution.
