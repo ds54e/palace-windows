@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "purpose": "Gate 0 developer-host probe, not Palace or a shipping payload",
+  "mpi_version": "10.1.12498.18",
+  "sources": {
+    "runtime": "https://download.microsoft.com/download/a/5/2/a5207ca5-1203-491a-8fb8-906fd68ae623/msmpisetup.exe",
+    "sdk": "https://download.microsoft.com/download/a/5/2/a5207ca5-1203-491a-8fb8-906fd68ae623/msmpisdk.msi"
+  },
+  "files": [
+    {
+      "path": ".work/downloads/msmpisetup.exe",
+      "sha256": "c305ce3f05d142d519f8dd800d83a4b894fc31bcad30512cefb557feaccbe8b4",
+      "bytes": 7887688
+    },
+    {
+      "path": ".work/downloads/msmpisdk.msi",
+      "sha256": "f9174c54feda794586ebd83eea065be4ad38b36f32af6e7dd9158d8fd1c08433",
+      "bytes": 2306048
+    },
+    {
+      "path": ".work/extracted/sdk/mpi.h",
+      "sha256": "cc23825faee71ffacf666300c375f4c73d605e72cd04310ce5efae778244fd7b",
+      "bytes": 175354
+    },
+    {
+      "path": ".work/extracted/sdk/msmpi64.lib",
+      "sha256": "b68e974d63eaadcbc77bb07f388f06be4b7066e2fc5d1b8743afa56e6d16ad1b",
+      "bytes": 321236
+    },
+    {
+      "path": "tests/runtime/mpi_singleton.cpp",
+      "sha256": "f6fb305f6d4063ff5ae0edc2de08710e9c9341b90fc3cff59f994a8f2b908163",
+      "bytes": 4474
+    },
+    {
+      "path": "tests/runtime/CMakeLists.txt",
+      "sha256": "6575d83f6d0caaeb25852b01da8ac369f55a6cf35a9e96fea0f6487bc94d9808",
+      "bytes": 1383
+    },
+    {
+      "path": "scripts/build-gate0.ps1",
+      "sha256": "4c602f40f7d107c36aa04575c2878e4dddc346f1ad526779978954befebbccc4",
+      "bytes": 1320
+    },
+    {
+      "path": "scripts/run-gate0.ps1",
+      "sha256": "acdc1a66478f955aae7b05e21b0d847f8fab6fd881b73a69786e088cdfe71db1",
+      "bytes": 4962
+    },
+    {
+      "path": ".work/staging/mpi-probe/MicrosoftMPI_Redistributable_EULA.rtf",
+      "sha256": "125d29a463c724ddb5eed6a14370f5ce74dfd063cfca3eddad2d50082eb62106",
+      "bytes": 224476
+    },
+    {
+      "path": ".work/staging/mpi-probe/mpi-singleton.exe",
+      "sha256": "be119030348ea7f36d66552ced8d37d1a898e602cb636b043d9abc434f3d04ad",
+      "bytes": 268288
+    },
+    {
+      "path": ".work/staging/mpi-probe/MPI_Redistributables_TPN.txt",
+      "sha256": "e202e6c77b4ecb7be69e39d647be54bb5d076d90522e533d11dbaaacd618d7f8",
+      "bytes": 13491
+    },
+    {
+      "path": ".work/staging/mpi-probe/msmpi.dll",
+      "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+      "bytes": 1631000
+    }
+  ],
+  "redistribution_status": "terms located; release compliance review remains open"
+}

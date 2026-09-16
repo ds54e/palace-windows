@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "recorded_utc": "2026-09-16T18:09:09.3995138Z",
+  "status": "functional_only",
+  "probe_sha256": "be119030348ea7f36d66552ced8d37d1a898e602cb636b043d9abc434f3d04ad",
+  "functional": true,
+  "app_local_msmpi": true,
+  "elevated": false,
+  "system_mpi_indicators": [],
+  "mpi_services": [],
+  "clean_host_attested": false,
+  "clean_host_automatically_proven": false,
+  "redistribution_reviewed": false,
+  "timed_out": false,
+  "exit_code": 0,
+  "launch_error": null,
+  "parse_error": null,
+  "probe": {
+    "status": "pass",
+    "rank": 0,
+    "size": 1,
+    "native_windows": true,
+    "pointer_bits": 64,
+    "thread_support": 0,
+    "mpi_library": "Microsoft MPI 10.1.12498.18",
+    "msmpi_module": "<repository>\\.work\\staging\\mpi-probe\\msmpi.dll"
+  },
+  "limitation": "Candidate result only. Validate clean/offline host independently and review redistribution before passing G0.",
+  "sanitization": "Repository absolute prefix replaced in loaded module path; all result fields preserved."
+}

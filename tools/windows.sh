@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Invoke allowlisted native PowerShell scripts from WSL without changing policy.
+# Invoke allowlisted scripts with the owner's process-only policy authorization.
 set -euo pipefail
 root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 case "${1:-}" in
@@ -13,4 +13,4 @@ command -v wslpath >/dev/null || { echo 'wslpath is required; run this bridge in
 command -v powershell.exe >/dev/null || { echo 'Windows PowerShell/WSL interop is unavailable.' >&2; exit 2; }
 win_script=$(wslpath -w "$root/scripts/$script")
 # Additional file paths are intentionally not rewritten. Supply Windows paths.
-exec powershell.exe -NoLogo -NoProfile -NonInteractive -File "$win_script" "$@"
+exec powershell.exe -NoLogo -NoProfile -NonInteractive -ExecutionPolicy Bypass -File "$win_script" "$@"

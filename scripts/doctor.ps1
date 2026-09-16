@@ -26,7 +26,8 @@ $vs = @()
 if (Test-Path -LiteralPath $vswhere) {
     $raw = & $vswhere -products '*' -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -format json
     if ($LASTEXITCODE -eq 0 -and $raw) {
-        $vs = @(($raw -join "`n") | ConvertFrom-Json | Select-Object installationPath,installationVersion)
+        $parsed = ($raw -join "`n") | ConvertFrom-Json
+        $vs = @($parsed | ForEach-Object { $_ } | Select-Object installationPath,installationVersion)
     }
 }
 $indicators = @()

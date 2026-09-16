@@ -10,6 +10,9 @@ target_compile_features(mpi-singleton PRIVATE cxx_std_17)
 target_include_directories(mpi-singleton PRIVATE "${PW_MPI_INCLUDE_DIR}")
 target_link_libraries(mpi-singleton PRIVATE "${PW_MPI_LIBRARY}")
 if(MSVC)
+  # Keep the deployment probe independent of a centrally installed VC runtime.
+  # This is not a selection of the eventual Palace/dependency CRT configuration.
+  set_property(TARGET mpi-singleton PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
   target_compile_options(mpi-singleton PRIVATE /W4 /permissive- /utf-8)
   target_compile_definitions(mpi-singleton PRIVATE NOMINMAX WIN32_LEAN_AND_MEAN)
   target_link_options(mpi-singleton PRIVATE "/MANIFESTUAC:level='asInvoker' uiAccess='false'")

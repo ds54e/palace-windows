@@ -31,6 +31,22 @@
         {
           "path": "docs/evidence/G0-2026-09-17.md",
           "sha256": "43100dbe3baba1dfe04c95c89ec53ce5526cc47a7860c5160b8ddaaa202dcd3b"
+        },
+        {
+          "path": "docs/evidence/G0-functional-2026-09-17.md",
+          "sha256": "11928f3731110e737d1d65e06f956a9e35a6fca588647550309ab459a872edf1"
+        },
+        {
+          "path": "docs/evidence/G0-payload-2026-09-17.json",
+          "sha256": "937ce222ff983060349d5da0160ef20816b8cedd2364b0f66fefa44904a9424a"
+        },
+        {
+          "path": "docs/evidence/G0-static-report-2026-09-17.json",
+          "sha256": "43df714b895cc51253c59ae8e10da2ba5794e3756025b0db7c2fb9ec11697d6f"
+        },
+        {
+          "path": "docs/evidence/G0-unicode-report-2026-09-17.json",
+          "sha256": "ff5adfcdf42756b9a7c324967ada780b1b1b466393ed4c3ab1cea70c864ab98b"
         }
       ]
     },
@@ -64,9 +80,8 @@
     }
   },
   "blockers": [
-    "PowerShell Restricted policy blocks supplied doctor and Gate 0 scripts; no policy change or bypass authorized.",
-    "Exact app-local MPI runtime payload and redistribution route remain unresolved; probe compiled only, not linked or executed.",
-    "Clean standard-user offline Windows host has not been provided or tested."
+    "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
+    "Exact Microsoft binary license terms located; release redistribution compliance including downstream terms and static VC runtime remains unreviewed."
   ],
-  "next_action": "Resolve permitted script execution and version-specific MPI payload provenance, then link and execute the native Gate 0 probe. See docs/evidence/G0-2026-09-17.md."
+  "next_action": "On an independently prepared clean standard-user offline Windows host, execute the hashed static-CRT probe with the repository runner; complete redistribution review. See docs/evidence/G0-functional-2026-09-17.md. Do not mark Gate 0 passed from developer-host results."
 }

@@ -27,3 +27,9 @@ Preparation, developer-host success, clean-host success, numerical validation, a
 ## D007 — Preserve host policy and separate compilation evidence
 
 The first real host rejected PowerShell scripts under Restricted policy. Do not add an execution-policy bypass to the bridge. Native read-only commands and a compile-only MSVC probe established useful facts independently. A compiled object and a singleton source branch do not pass Gate 0. Vendor installer redistribution statements do not establish extracted-DLL redistribution rights.
+
+## D008 — Owner-authorized process policy and probe CRT
+
+The owner superseded D007's prohibition on a process-only bypass: repository build/test PowerShell processes may use `-ExecutionPolicy Bypass`, after recording scopes, without persistent policy changes or circumvention of organizational policy. MachinePolicy/UserPolicy were Undefined and the authorized route succeeded. Organizational policy still takes precedence.
+
+Use static MSVC CRT for the Gate 0 probe so its success does not rely on centrally installed VC runtime DLLs. This choice does not freeze the Palace dependency ABI. Native singleton/app-local success is established on the developer host only; clean standard-user/offline acceptance remains external.
