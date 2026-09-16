@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "gate": "G1_abi",
+  "status": "pass",
+  "scope": "Native Windows developer-host ABI and tiny connection problems; not clean-host deployment or full Palace",
+  "compiler": {
+    "c_cxx": "MSVC 19.44.35219.0",
+    "fortran": "IntelLLVM ifx 2025.3.0 build 20251010",
+    "cmake": "3.31.6-msvc6",
+    "windows_sdk": "10.0.22621.0"
+  },
+  "results": [
+    {
+      "status": "pass",
+      "c_cpp_result": 0,
+      "fortran_result": 0,
+      "pointer_bits": 64,
+      "c_int_bits": 32,
+      "c_long_bits": 32,
+      "mpi_fint_bits": 32,
+      "blas_int_bits": 32,
+      "fortran_integer_bits": 32,
+      "fortran_logical_bits": 32,
+      "fortran_complex_bytes": 16
+    },
+    {
+      "status": "pass",
+      "mumps_info": 0,
+      "residual_inf": 1.77636e-15
+    },
+    {
+      "test": "parpack",
+      "mode": 1,
+      "status": "pass",
+      "max_residual": 6.93966e-14
+    },
+    {
+      "test": "parpack",
+      "mode": 3,
+      "status": "pass",
+      "max_residual": 7.12592e-13
+    }
+  ],
+  "upstream_arpack": {
+    "serial_passed": 10,
+    "two_rank_not_run": 3,
+    "reason": "No mpiexec installation; multi-process tests are outside singleton V1 acceptance"
+  },
+  "limitations": [
+    "MUMPS PORD ordering tested; Palace METIS/ParMETIS integration pending in G2.",
+    "App-local MPI present; VC/Intel runtime resolution uses developer environment.",
+    "No clean standard-user/offline attestation, Palace numerics, or release readiness."
+  ],
+  "files": [
+    {
+      "path": "deps/gate1-lock.json",
+      "sha256": "daee454cd3416c737f286e273cca6b09945e95c6afad96ee7144544c691d919c"
+    },
+    {
+      "path": "docs/ABI_CONTRACT.md",
+      "sha256": "95463177c4a7b3bd0ab29067ec98702101cee266f082047a5c98bd81db44803a"
+    },
+    {
+      "path": "cmake/FindSCALAPACK.cmake",
+      "sha256": "09edb3e43a36a20e6d1e644bab13af1e406ab213ce9ed64ad461482200824907"
+    },
+    {
+      "path": "scripts/build-gate1.ps1",
+      "sha256": "1d5efc763b4e985fce9f8fd84150b33c92191621d2a9765187c289d02b0c4d70"
+    },
+    {
+      "path": "scripts/build-gate1-solvers.ps1",
+      "sha256": "28cbe32d1ae1bd1ba0f7e4996bf1cd09d3b53847c93bbe706c147e0cd0e8ca7f"
+    },
+    {
+      "path": "tools/native-dev.cmd",
+      "sha256": "36d6e8d83c4b830d528f3c1d0a1a4fcd7ff5c93cb4a49d9d6a4f534c6c802b3e"
+    },
+    {
+      "path": "tests/abi/CMakeLists.txt",
+      "sha256": "e32a02b537765d75b970cf808fab5182f78be378d4cef95dbc5ccb022ce35a24"
+    },
+    {
+      "path": "tests/abi/connection.cpp",
+      "sha256": "aeb8f4841504233463bf35abdd093355bfb8a139adec36edc94fd678477ba4fe"
+    },
+    {
+      "path": "tests/abi/c_bridge.c",
+      "sha256": "ea02e83d015371511135d9fb30afe2f40bf830c2c1ed4f7f1db415e96d75ab66"
+    },
+    {
+      "path": "tests/abi/fortran_bridge.f90",
+      "sha256": "2752b2479b630d0c701f1a49fc88fbe38373a5944fc05c8b0bddf7ffb10c187f"
+    },
+    {
+      "path": "tests/abi/mumps_solve.cpp",
+      "sha256": "899aedac3b733cec9064b91ddba6f76815bb6b3fab58ed22b17056cdf0eee79b"
+    },
+    {
+      "path": "tests/abi/parpack_eigen.cpp",
+      "sha256": "f379a90d13f5cc491f9e2790ea414d939ec2d91635bcc2281d82b866afd95172"
+    },
+    {
+      "path": ".work/build/gate1/abi-connection.exe",
+      "sha256": "4bb50db9fb93e166fd734fe2654e2a7668349885d13bfbc0e79d37fbebc62946"
+    },
+    {
+      "path": ".work/build/gate1/mumps-solve.exe",
+      "sha256": "5c613ecc958a29b215f714ee5f9bcb306356703f80500f52ed0c2553b01ea143"
+    },
+    {
+      "path": ".work/build/gate1/parpack-eigen.exe",
+      "sha256": "beabc325fe96715b5a103c0ddf9d9cdf5b8dc8aedaf297a548a2d5e3d6ad80ee"
+    },
+    {
+      "path": ".work/build/arpack-ng/arpack.lib",
+      "sha256": "4374e1d0f9c2dda9432b9077ba73e105481087f02e2469dd0635a415d6695c93"
+    },
+    {
+      "path": ".work/build/arpack-ng/parpack.lib",
+      "sha256": "fa8246e3107ed41618a39315a1f7b42cdac0954047415bf9ce5a100411320919"
+    },
+    {
+      "path": ".work/build/mumps/dmumps.lib",
+      "sha256": "b6051fdf10e04fe7ac41e301dbe1a7bc10e37141fcf4ff3b209f45343818da64"
+    },
+    {
+      "path": ".work/build/mumps/mumps_common.lib",
+      "sha256": "f2928cb8bf011aa0eebe95e699e925be61365beb667ad1d2e81febd5d6ea4ce8"
+    },
+    {
+      "path": ".work/build/mumps/pord.lib",
+      "sha256": "91075ee4150cc6271f34dc173274fb13a94dac903665b62ad114b9eb47859f8c"
+    }
+  ]
+}

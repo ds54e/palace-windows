@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "status": "GATE1_CANDIDATE_NOT_COMPLETE_PALACE_LOCK",
+  "palace_commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+  "packages": [
+    {
+      "filename": "ifx_win-64-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/ifx_win-64-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [
+        "ifx_impl_win-64 2025.3.0 intel_640",
+        "vs_win-64"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "ifx_win-64",
+      "sha256": "32eb8f123450978abcec9224c0546938d37f23e2326fcecf6e62e4326a1897c4",
+      "size": 19344,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "ifx_impl_win-64-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/ifx_impl_win-64-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [
+        "compiler_shared 2025.3.0 intel_640",
+        "intel-cmplr-lib-rt 2025.3.0 intel_640",
+        "intel-cmplr-lic-rt 2025.3.0 intel_640",
+        "intel-fortran-rt 2025.3.0 intel_640",
+        "intel-opencl-rt 2025.3.0 intel_640"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "ifx_impl_win-64",
+      "sha256": "4bae922864fc5b61ec94ca6257dab3cbaabc3b9309d71023d26e4434f9a0f5b2",
+      "size": 25240178,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "compiler_shared-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/compiler_shared-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "compiler_shared",
+      "sha256": "9f209f81a76224e0888d54709fa96d70524cf4300523a45871f1553b12edcf87",
+      "size": 165906123,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-cmplr-lib-rt",
+      "sha256": "a9bb85c9133794650f803896de99ec025f118e0a67b8ba91494dacefa7dbf776",
+      "size": 11758434,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-cmplr-lic-rt-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-cmplr-lic-rt-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-cmplr-lic-rt",
+      "sha256": "f9ca42c62b2f3c370f0c090072af0c17af9a9e34616e3a6b20bb8cc26bc3b672",
+      "size": 44221,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-fortran-rt-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-fortran-rt-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "constrains": [
+        "fortran_rt >=2021.3.0"
+      ],
+      "depends": [
+        "intel-cmplr-lib-rt 2025.3.0 intel_640",
+        "intel-cmplr-lic-rt 2025.3.0 intel_640",
+        "intel-openmp 2025.3.0 intel_640"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-fortran-rt",
+      "sha256": "083513c78e6228fded25e77ce26adf12ed555839e34bbb10f9a6cf05dff97edd",
+      "size": 955886,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-opencl-rt-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-opencl-rt-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "constrains": [
+        "opencl_rt >=2021.3.0"
+      ],
+      "depends": [
+        "intel-cmplr-lic-rt 2025.3.0 intel_640",
+        "tbb 2022.*"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-opencl-rt",
+      "sha256": "0df005bc53ab25fad3000a055b92ffd2575c9c32c88fc3b85bb41370414d569a",
+      "size": 79234766,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-openmp-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-openmp-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [
+        "intel-cmplr-lib-ur 2025.3.0 intel_640"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-openmp",
+      "sha256": "b74e10df279652e407baaea05179f32cd9de244bd5de63bcb97a6c1875e549ab",
+      "size": 22028583,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "intel-cmplr-lib-ur-2025.3.0-intel_640.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/intel-cmplr-lib-ur-2025.3.0-intel_640.conda",
+      "build": "intel_640",
+      "depends": [
+        "umf 1.0.*"
+      ],
+      "license": "Intel End User License Agreement for Developer Tools",
+      "name": "intel-cmplr-lib-ur",
+      "sha256": "ab6a95f2f20cfb2830e09b94662a4f769240c31edc2814e7b6df9bf06a3a3e70",
+      "size": 853265,
+      "version": "2025.3.0"
+    },
+    {
+      "filename": "tbb-2022.3.0-vc14_intel_380.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/tbb-2022.3.0-vc14_intel_380.conda",
+      "build": "vc14_intel_380",
+      "depends": [
+        "tcm 1.*",
+        "vc 14.*"
+      ],
+      "license": "Intel Simplified Software License",
+      "name": "tbb",
+      "sha256": "75e5d754626e29d2460489eb0e52a1b86fd2cc864511d05f44f4dc1e1d957d81",
+      "size": 303291,
+      "version": "2022.3.0"
+    },
+    {
+      "filename": "tcm-1.4.1-intel_444.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/tcm-1.4.1-intel_444.conda",
+      "build": "intel_444",
+      "depends": [],
+      "license": "Intel Simplified Software License",
+      "name": "tcm",
+      "sha256": "57253e107eafb3c2aee37d22956f0681f3ac69e705620b12ed8fd64c7841263a",
+      "size": 301724,
+      "version": "1.4.1"
+    },
+    {
+      "filename": "umf-1.0.3-intel_18.conda",
+      "url": "https://software.repos.intel.com/python/conda/win-64/umf-1.0.3-intel_18.conda",
+      "build": "intel_18",
+      "depends": [
+        "tcm >=1.4"
+      ],
+      "license": "Apache-2.0 with LLVM exceptions",
+      "name": "umf",
+      "sha256": "daf602adc7967b7cf67490391a4871549b0d9db055cbf82f1b0030573fffd184",
+      "size": 181893,
+      "version": "1.0.3"
+    },
+    {
+      "name": "intelmkl.static.win-x64",
+      "version": "2025.3.0.453",
+      "filename": "intelmkl.static.win-x64.2025.3.0.453.nupkg",
+      "url": "https://api.nuget.org/v3-flatcontainer/intelmkl.static.win-x64/2025.3.0.453/intelmkl.static.win-x64.2025.3.0.453.nupkg",
+      "sha256": "ff6593606da54c46ccf9e9599e0789a72ded333e34467a30a6d0def6e9c9200f",
+      "size": 201048966,
+      "license": "Intel Simplified Software License October 2022"
+    },
+    {
+      "name": "intelmkl.static.cluster.win-x64",
+      "version": "2025.3.0.453",
+      "filename": "intelmkl.static.cluster.win-x64.2025.3.0.453.nupkg",
+      "url": "https://api.nuget.org/v3-flatcontainer/intelmkl.static.cluster.win-x64/2025.3.0.453/intelmkl.static.cluster.win-x64.2025.3.0.453.nupkg",
+      "sha256": "6fe911ef2277f28608b692607fa1cf4666ba01a7ae997fc16216f0abc0e45935",
+      "size": 8054481,
+      "license": "Intel Simplified Software License October 2022"
+    }
+  ],
+  "external_prerequisites": [
+    "MSVC 19.44.35219.0 / installed directory 14.44.35207",
+    "Windows SDK 10.0.22621.0",
+    "MS-MPI SDK and runtime hashes in docs/evidence/G0-payload-2026-09-17.json"
+  ],
+  "package_notes": [
+    "Intel packages are extracted locally, not installed as a conda environment. vs_win-64/vc activation dependencies are supplied by the recorded installed MSVC toolchain.",
+    "MKL sequential linkage does not use the NuGet OpenMP/TBB targets. Matching runtime packages are available in the local Intel compiler payload; shipping closure still requires audit."
+  ],
+  "sources": [
+    {
+      "name": "arpack-ng",
+      "repository": "https://github.com/opencollab/arpack-ng.git",
+      "commit": "804fa3149a0f773064198a8e883bd021832157ca",
+      "palace_patches": [
+        "extern/patch/arpack-ng/patch_build.diff",
+        "extern/patch/arpack-ng/patch_zdotc.diff",
+        "extern/patch/arpack-ng/patch_pzneupd.diff"
+      ],
+      "local_patches": [
+        "patches/arpack-ng/msvc-test-constant-bounds.patch"
+      ],
+      "patch_hashes": {
+        "extern/patch/arpack-ng/patch_build.diff": "bf938c9cdb1c7dd1d3d29ba6e2d3711907b2a4b7e45418c24a1aae3e75b8159e",
+        "extern/patch/arpack-ng/patch_zdotc.diff": "4de8d40ab7d18174796f2f064eefe0efed80971bdbf614206c705385f607e5e2",
+        "extern/patch/arpack-ng/patch_pzneupd.diff": "c300bf78057cde7e4b7d85d695f798278480e036a96f285f7df25f746dc31c1f",
+        "patches/arpack-ng/msvc-test-constant-bounds.patch": "05bee6a20f2b995f188ffb5f612c59e04a2d050a7921468c8efdfde1a26c5a1a"
+      }
+    },
+    {
+      "name": "mumps",
+      "repository": "https://github.com/scivision/mumps.git",
+      "commit": "1cfd19699702f9a64ff5d45827d6025ff5c3873a",
+      "palace_patches": [
+        "extern/patch/mumps/patch_build.diff"
+      ],
+      "patch_hashes": {
+        "extern/patch/mumps/patch_build.diff": "de725231e70268ffe00313b68dd47976975a01637e1019b4f200c77a0d051763",
+        "patches/mumps/pinned-source-archive.patch": "495ca146b0a5f5f68849afe39cc5f8b49d8e3cf27fae59570d86c4630e10ba0b"
+      },
+      "local_patches": [
+        "patches/mumps/pinned-source-archive.patch"
+      ]
+    }
+  ],
+  "mumps_source": {
+    "url": "https://mumps-solver.org/MUMPS_5.7.3.tar.gz",
+    "filename": "MUMPS_5.7.3.tar.gz",
+    "sha256": "84a47f7c4231b9efdf4d4f631a2cae2bdd9adeaabc088261d15af040143ed112"
+  }
+}

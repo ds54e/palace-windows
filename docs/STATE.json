@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "BLOCKED_G0",
-  "current_gate": "G0_runtime",
+  "project_status": "G2_IN_PROGRESS",
+  "current_gate": "G2_build",
   "model_policy": {
     "parent_default": {
       "model": "gpt-6-astra",
@@ -51,11 +51,16 @@
       ]
     },
     "G1_abi": {
-      "status": "not_run",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "docs/evidence/G1-developer-2026-09-17.json",
+          "sha256": "72c11d263d230dfb6d3fb404d3f511c1c2e1ba7fb2bf0cdb083d989acdf25751"
+        }
+      ]
     },
     "G2_build": {
-      "status": "not_run",
+      "status": "in_progress",
       "evidence": []
     },
     "G3_numerics": {
@@ -83,5 +88,5 @@
     "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
     "Exact Microsoft binary license terms located; release redistribution compliance including downstream terms and static VC runtime remains unreviewed."
   ],
-  "next_action": "On an independently prepared clean standard-user offline Windows host, execute the hashed static-CRT probe with the repository runner; complete redistribution review. See docs/evidence/G0-functional-2026-09-17.md. Do not mark Gate 0 passed from developer-host results."
+  "next_action": "Build the pinned Palace Windows dependency stack using the validated G1 ABI; integrate METIS/ParMETIS and port libCEED/GSLIB/native build recipes. G0 clean-host and redistribution remain open."
 }

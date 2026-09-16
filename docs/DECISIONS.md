@@ -33,3 +33,7 @@ The first real host rejected PowerShell scripts under Restricted policy. Do not 
 The owner superseded D007's prohibition on a process-only bypass: repository build/test PowerShell processes may use `-ExecutionPolicy Bypass`, after recording scopes, without persistent policy changes or circumvention of organizational policy. MachinePolicy/UserPolicy were Undefined and the authorized route succeeded. Organizational policy still takes precedence.
 
 Use static MSVC CRT for the Gate 0 probe so its success does not rely on centrally installed VC runtime DLLs. This choice does not freeze the Palace dependency ABI. Native singleton/app-local success is established on the developer host only; clean standard-user/offline acceptance remains external.
+
+## D009 — Continue build engineering while deployment review stays open
+
+Owner explicitly accepts G0 native singleton evidence as a functional prerequisite for G1/G2, without marking G0 fully passed. Clean standard-user/offline testing and redistribution review remain mandatory release gates. Use the developer-host validated MSVC/ifx/MS-MPI/oneMKL LP64 path; do not replace it for dependency minimization. G1's first MUMPS solve uses parallel MUMPS with PORD; integrate Palace's METIS/ParMETIS recipe during G2. ABI and source/package identities are recorded in `docs/ABI_CONTRACT.md` and `deps/gate1-lock.json`.

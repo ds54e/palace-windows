@@ -1,0 +1,16 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -108,7 +108,12 @@
+ 
+ set(FETCHCONTENT_QUIET no)
+ 
+-FetchContent_Populate(${PROJECT_NAME} URL ${url})
++set(PW_MUMPS_ARCHIVE "" CACHE FILEPATH "Optional locally verified MUMPS 5.7.3 archive")
++if(PW_MUMPS_ARCHIVE)
++  set(url "${PW_MUMPS_ARCHIVE}")
++endif()
++FetchContent_Populate(${PROJECT_NAME} URL ${url}
++  URL_HASH SHA256=84a47f7c4231b9efdf4d4f631a2cae2bdd9adeaabc088261d15af040143ed112)
+ 
+ # --- MUMPS build
+ 

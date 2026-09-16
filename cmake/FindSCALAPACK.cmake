@@ -1,0 +1,18 @@
+# Adapt Palace's explicit library recipe to the oneMKL MS-MPI cluster archive.
+# Check a real Fortran symbol before creating the imported dependency target.
+include(CheckFortranFunctionExists)
+include(FindPackageHandleStandardArgs)
+set(_pw_saved_required_libraries "${CMAKE_REQUIRED_LIBRARIES}")
+set(CMAKE_REQUIRED_LIBRARIES ${SCALAPACK_LIBRARIES} ${LAPACK_LIBRARIES} ${MPI_Fortran_LIBRARIES})
+string(SHA256 _pw_signature "${CMAKE_REQUIRED_LIBRARIES};${CMAKE_Fortran_COMPILER};${CMAKE_Fortran_FLAGS}")
+if(NOT _pw_signature STREQUAL PW_SCALAPACK_CHECK_SIGNATURE)
+  unset(PW_SCALAPACK_HAS_PDGEMM CACHE)
+  set(PW_SCALAPACK_CHECK_SIGNATURE "${_pw_signature}" CACHE INTERNAL "ScaLAPACK link-check inputs" FORCE)
+endif()
+check_fortran_function_exists(pdgemm PW_SCALAPACK_HAS_PDGEMM)
+set(CMAKE_REQUIRED_LIBRARIES "${_pw_saved_required_libraries}")
+find_package_handle_standard_args(SCALAPACK REQUIRED_VARS SCALAPACK_LIBRARIES PW_SCALAPACK_HAS_PDGEMM)
+if(SCALAPACK_FOUND AND NOT TARGET SCALAPACK::SCALAPACK)
+  add_library(SCALAPACK::SCALAPACK INTERFACE IMPORTED)
+  set_property(TARGET SCALAPACK::SCALAPACK PROPERTY INTERFACE_LINK_LIBRARIES "${SCALAPACK_LIBRARIES}")
+endif()
