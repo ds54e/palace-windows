@@ -37,3 +37,11 @@ The developer-host path tests passed with spaces and Japanese characters. Clean 
 `deps/gate1-lock.json` records exact repository-local compiler/math packages and hashes. Intel compiler packages include an August 2024 Developer Tools EULA, third-party notices and `share/doc/compiler/fredist.txt`; only files covered by applicable redistribution terms may enter the eventual runtime payload. The compiler/toolkit itself stays in the build cache. oneMKL static NuGet packages carry the Intel Simplified Software License (October 2022) and additional notices. These are separate from the MPI license and repository license.
 
 The Gate 1 release-DLL CRT choice requires an independently audited app-local VC/Intel runtime closure. Package-manager dependency lists describe development packages and are not themselves a list of files to ship. Neither the successful Gate 0 probe nor a developer-host ABI test closes that review.
+
+## Gate 2: ParMETIS approval missing
+
+The exact Palace-selected PETSc ParMETIS revision `53c9341b6c1ba876c97567cb52ddfc87c159dc36` contains `LICENSE.txt` with SHA256 `b6dd770c066ee11bc4558e6ccd8913182e79956fca843c94ba7cc6074b7ccc28`. Source origin: https://bitbucket.org/petsc/pkg-parmetis.git . The relevant text is: “The software may not be sold or redistributed without prior approval.” The file also limits unrestricted educational/research use to non-profit institutions and US government agencies, with other organizations limited to evaluation without further approval.
+
+No applicable approval evidence is available in this repository. Treat this dependency as blocked for a distributable payload. Palace v0.18.0 unconditionally finds/links ParMETIS; a no-ParMETIS variant would require explicit source/build changes and validation, not merely omitting a DLL or renaming a library. No ParMETIS artifact has been built or placed in a release payload.
+
+METIS revision `08c3082720ff9114b8e3cbaa4484a26739cd7d2d` is separate: its Apache-2.0 license file hash is `64ab947d7b289ad76e935adff51b31e4ac160df7dfad24480dbaa452e39bbe79`. The native METIS test passed, but that does not resolve ParMETIS permission. Source/license/artifact hashes are in [Gate 2 partial evidence](evidence/G2-partial-2026-09-17.json).

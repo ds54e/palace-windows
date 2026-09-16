@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "scope": "Native Windows x64 developer-host Gate 2 partial evidence; not a Palace build or deployment pass",
+  "sources": {
+    "palace": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+    "metis": {
+      "url": "https://bitbucket.org/petsc/pkg-metis.git",
+      "commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d"
+    },
+    "parmetis": {
+      "url": "https://bitbucket.org/petsc/pkg-parmetis.git",
+      "commit": "53c9341b6c1ba876c97567cb52ddfc87c159dc36"
+    }
+  },
+  "toolchain": "Same MSVC 19.44.35219.0 / ifx 2025.3.0 / SDK 10.0.22621.0 as Gate 1; native Windows CMake 3.31.6-msvc6 and Ninja",
+  "results": {
+    "metis_build": "pass; static /MD, idx_t and real_t 32 bits, ASSERT and ASSERT2 ON, release C flags /O2 without NDEBUG",
+    "metis_connection": {
+      "status": "pass",
+      "tests": 1,
+      "edge_cut": 2,
+      "checks": [
+        "partition range",
+        "both partitions nonempty",
+        "independently recomputed edge cut",
+        "nested-dissection permutation/inverse"
+      ]
+    },
+    "palace_configure": "fail at cmake/ExternalMFEM.cmake:216: Intel Fortran guard requires Intel C++; no full build attempted",
+    "parmetis": "source inspected only; no redistribution permission evidence; not built or packaged"
+  },
+  "files": [
+    {
+      "path": "scripts/build-metis.ps1",
+      "sha256": "ef920843605fb037b341103f7d31c4249f0c3a54d37d53cadfd8608951336347"
+    },
+    {
+      "path": "scripts/configure-gate2.ps1",
+      "sha256": "8704f5dfb1e79c459126f729a3317e914fea87f54f1d4807354dda82d8b46203"
+    },
+    {
+      "path": "tests/metis/CMakeLists.txt",
+      "sha256": "f5bfeb65e4e3e8877bc8122f1bab86bcf87d555f279a4d2705be92c8dcf6bc2e"
+    },
+    {
+      "path": "tests/metis/connection.cpp",
+      "sha256": "939f491476d1248402d2f38590887d9c3cd5e7227ccd4930e53e5ddeaea1439c"
+    },
+    {
+      "path": ".work/sources/metis/LICENSE.txt",
+      "sha256": "64ab947d7b289ad76e935adff51b31e4ac160df7dfad24480dbaa452e39bbe79"
+    },
+    {
+      "path": ".work/sources/parmetis/LICENSE.txt",
+      "sha256": "b6dd770c066ee11bc4558e6ccd8913182e79956fca843c94ba7cc6074b7ccc28"
+    },
+    {
+      "path": ".work/install/palace/lib/metis.lib",
+      "sha256": "c4f56357635b73f3b945db316b581bb72c288ca62a90c351561c10708e870a13"
+    },
+    {
+      "path": ".work/build/metis-probe/metis-connection.exe",
+      "sha256": "232df3a9fa7729f9688176399e8b0ce2f40de6a15aa043c96204841120e95301"
+    },
+    {
+      "path": ".work/gate2/metis-build.log",
+      "sha256": "62b27fe43b2e790a667cf2b4673148ebcee8aa1adcafffbeaa9d43663e0dfe3c"
+    },
+    {
+      "path": ".work/gate2/metis-connection.log",
+      "sha256": "134468d1a6fc5dba2e35688dfd1abaa17540ab5a0fcac2612606ceb370e44726"
+    },
+    {
+      "path": ".work/gate2/palace-configure.log",
+      "sha256": "271a1be47198c5c8abe0ecfd36faa4573e35a6db08bdfad48b6979efaefa87e1"
+    }
+  ],
+  "limitations": [
+    "No Palace executable or numerical result",
+    "No clean-host/offline test",
+    "ParMETIS selected upstream revision requires prior approval for redistribution",
+    "Full dependency recipe and source lock remain incomplete"
+  ]
+}
