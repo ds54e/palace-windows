@@ -13,6 +13,21 @@ index 188c1ee3..fcb8f040 100644
  
  # Prohibit in-source builds
  if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
+diff --git a/cmake/EmbedSchema.cmake b/cmake/EmbedSchema.cmake
+index c6a7987b..05cd5feb 100644
+--- a/cmake/EmbedSchema.cmake
++++ b/cmake/EmbedSchema.cmake
+@@ -23,8 +23,9 @@ add_custom_command(
+   COMMAND ${CMAKE_COMMAND}
+     -DSCHEMA_DIR=${SCHEMA_DIR}
+     -DSCHEMA_HEADER=${SCHEMA_HEADER}
++    -DPW_WINDOWS_SCHEMA=${PALACE_WINDOWS_NO_PARMETIS}
+     -P ${CMAKE_CURRENT_LIST_DIR}/embed_schema.cmake
+-  DEPENDS ${SCHEMA_FILES}
++  DEPENDS ${SCHEMA_FILES} ${CMAKE_CURRENT_LIST_DIR}/embed_schema.cmake
+   COMMENT "Regenerating embedded JSON schemas"
+ )
+ add_custom_target(embedded_schemas DEPENDS ${SCHEMA_HEADER})
 diff --git a/cmake/ExternalMETIS.cmake b/cmake/ExternalMETIS.cmake
 index ec91acb6..4423cff7 100644
 --- a/cmake/ExternalMETIS.cmake
@@ -133,8 +148,38 @@ index 30cd7e47..cd96ad9c 100644
  list(APPEND PALACE_OPTIONS
    "-DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}"
    "-DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}"
+diff --git a/cmake/embed_schema.cmake b/cmake/embed_schema.cmake
+index 8c527286..10fc1af0 100644
+--- a/cmake/embed_schema.cmake
++++ b/cmake/embed_schema.cmake
+@@ -48,6 +48,17 @@ foreach(SCHEMA_FILE ${SCHEMA_FILES})
+   string(REPLACE "." "_" VAR_NAME "${VAR_NAME}")
+   string(REPLACE "-" "_" VAR_NAME "${VAR_NAME}")
+ 
++  if(PW_WINDOWS_SCHEMA)
++    # MSVC limits individual/concatenated string literals. Embed the exact UTF-8
++    # bytes as an array; do not shorten, escape, or otherwise alter the schema.
++    file(READ "${SCHEMA_FILE}" SCHEMA_HEX HEX)
++    string(REGEX REPLACE "(..)" "0x\\1," SCHEMA_BYTES "${SCHEMA_HEX}")
++    string(REPEAT "0x[0-9a-f][0-9a-f]," 16 SCHEMA_LINE_PATTERN)
++    string(REGEX REPLACE "(${SCHEMA_LINE_PATTERN})" "\\1\n" SCHEMA_BYTES "${SCHEMA_BYTES}")
++    string(APPEND SCHEMA_HEADER_CONTENT
++      "inline const unsigned char ${VAR_NAME}_bytes[] = {${SCHEMA_BYTES}0};\n"
++      "inline const char* ${VAR_NAME} = reinterpret_cast<const char*>(${VAR_NAME}_bytes);\n\n")
++  else()
+   # Read file content
+   file(READ "${SCHEMA_FILE}" FILE_CONTENT)
+ 
+@@ -59,6 +70,7 @@ foreach(SCHEMA_FILE ${SCHEMA_FILES})
+ ${FILE_CONTENT})json\";
+ 
+ ")
++  endif()
+ endforeach()
+ 
+ # Add a map for looking up schemas by path
 diff --git a/palace/CMakeLists.txt b/palace/CMakeLists.txt
-index 2a634b35..dae2b4ba 100644
+index 2a634b35..d3ca2dcf 100644
 --- a/palace/CMakeLists.txt
 +++ b/palace/CMakeLists.txt
 @@ -10,6 +10,10 @@
@@ -148,7 +193,18 @@ index 2a634b35..dae2b4ba 100644
  
  # Prohibit in-source builds
  if(CMAKE_SOURCE_DIR STREQUAL CMAKE_BINARY_DIR)
-@@ -476,6 +480,10 @@ if(NOT "${SCALAPACK_DIR}" STREQUAL "")
+@@ -331,6 +335,10 @@ set_target_properties(${TARGET_NAME}
+   OUTPUT_NAME "${TARGET_NAME}-${TARGET_EXTENSION}"
+   SUFFIX ".bin"
+ )
++if(WIN32 AND PALACE_WINDOWS_NO_PARMETIS)
++  set_target_properties(${TARGET_NAME} PROPERTIES OUTPUT_NAME "palace" SUFFIX ".exe")
++  target_sources(${TARGET_NAME} PRIVATE "${PW_WINDOWS_OVERLAY_DIR}/windows/palace.manifest")
++endif()
+ set_target_properties(${LIB_TARGET_NAME}
+   PROPERTIES OUTPUT_NAME "${TARGET_NAME}"
+ )
+@@ -476,6 +484,10 @@ if(NOT "${SCALAPACK_DIR}" STREQUAL "")
    set(SCALAPACK_ROOT ${SCALAPACK_DIR})
  endif()
  
@@ -159,7 +215,7 @@ index 2a634b35..dae2b4ba 100644
  # Find METIS and ParMETIS early (needed for MUMPS/STRUMPACK/SuperLU CMake configs)
  # but link them later for correct static library ordering
  find_package(METIS QUIET)
-@@ -491,6 +499,7 @@ else()
+@@ -491,6 +503,7 @@ else()
    message(STATUS "Found METIS: ${METIS_VERSION}")
  endif()
  
@@ -167,7 +223,7 @@ index 2a634b35..dae2b4ba 100644
  find_package(ParMETIS QUIET)
  if(NOT TARGET ParMETIS::ParMETIS)
    find_library(PARMETIS_LIBRARY NAMES parmetis HINTS ${ParMETIS_ROOT}/lib REQUIRED)
-@@ -505,6 +514,8 @@ else()
+@@ -505,6 +518,8 @@ else()
    message(STATUS "Found ParMETIS: ${ParMETIS_VERSION}")
  endif()
  
@@ -176,7 +232,7 @@ index 2a634b35..dae2b4ba 100644
  # Find ScaLAPACK early (needed for MUMPS/STRUMPACK CMake configs)
  if(PALACE_WITH_STRUMPACK OR PALACE_WITH_MUMPS)
    if(NOT SCALAPACK_ROOT)
-@@ -628,7 +639,10 @@ if(PALACE_WITH_CUDSS)
+@@ -628,7 +643,10 @@ if(PALACE_WITH_CUDSS)
  endif()
  
  # Link METIS and ParMETIS (must come after SuperLU_DIST, STRUMPACK, MUMPS for static linking)
@@ -188,6 +244,18 @@ index 2a634b35..dae2b4ba 100644
  
  # Link SUNDIALS
  if(PALACE_WITH_SUNDIALS)
+@@ -703,6 +721,11 @@ install(
+ # Add tests (disabled by default)
+ add_subdirectory(../test/unit ${CMAKE_BINARY_DIR}/test/unit EXCLUDE_FROM_ALL)
+ 
++if(PALACE_WINDOWS_NO_PARMETIS AND PW_WINDOWS_PORT_TESTS)
++  add_subdirectory("${PW_WINDOWS_OVERLAY_DIR}/tests/palace-native"
++                   "${CMAKE_BINARY_DIR}/windows-port-tests")
++endif()
++
+ # Status messages for build settings
+ message(STATUS "CMake build type: ${CMAKE_BUILD_TYPE}")
+ message(STATUS "Building for architecture: ${CMAKE_SYSTEM_PROCESSOR}")
 diff --git a/palace/cmake/PkgConfigHelpers.cmake b/palace/cmake/PkgConfigHelpers.cmake
 index 143d8bbc..0aa9f4d1 100644
 --- a/palace/cmake/PkgConfigHelpers.cmake

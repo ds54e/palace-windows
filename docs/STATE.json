@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "G2_IN_PROGRESS",
-  "current_gate": "G2_build",
+  "project_status": "G3_IN_PROGRESS",
+  "current_gate": "G3_numerics",
   "model_policy": {
     "parent_default": {
       "model": "gpt-6-astra",
@@ -60,7 +60,7 @@
       ]
     },
     "G2_build": {
-      "status": "in_progress",
+      "status": "pass",
       "evidence": [
         {
           "path": "docs/evidence/G2-partial-2026-09-17.json",
@@ -69,11 +69,15 @@
         {
           "path": "docs/evidence/G2-no-parmetis-connections-2026-09-17.json",
           "sha256": "9638a3cd4051db8d1009fd97febfbfa8b75257f735e7facae93f0847a7755fbb"
+        },
+        {
+          "path": "docs/evidence/G2-native-2026-09-17.json",
+          "sha256": "e32c8e81ebe96fb0d7e7411286b072ffeaaeb63397a857d7374b96f63e7dbed5"
         }
       ]
     },
     "G3_numerics": {
-      "status": "not_run",
+      "status": "in_progress",
       "evidence": []
     },
     "G4_package": {
@@ -97,5 +101,5 @@
     "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
     "Exact Microsoft binary license terms located; release redistribution compliance including downstream terms and static VC runtime remains unreviewed."
   ],
-  "next_action": "Finish native Palace compilation with small Windows path/LLP64 ports; then audit final static/link/runtime closure and run one-rank Palace smoke cases. No-ParMETIS MUMPS/MFEM/PARPACK and explicit mixed runtime connection tests passed. G0 remains open."
+  "next_action": "Prepare and validate repository-local Linux reference toolchain, then compare identical C/L/S/eigen inputs at the pinned Palace commit. Windows no-ParMETIS build, connections, all four solver smokes, artifact checks and staged Unicode/restricted-PATH run passed. G0 and redistribution review remain open."
 }

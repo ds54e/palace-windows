@@ -35,6 +35,192 @@ index 6b89630b..efa59e6f 100644
  
      // Greedy procedure for basis construction (offline phase). Basis is initialized with
      // solutions at frequency sweep endpoints and explicit sample frequencies.
+diff --git a/palace/fem/coefficient.hpp b/palace/fem/coefficient.hpp
+index 45ef81f7..e1fc144d 100644
+--- a/palace/fem/coefficient.hpp
++++ b/palace/fem/coefficient.hpp
+@@ -833,8 +833,8 @@ public:
+   }
+ };
+ 
+-template <typename Coefficient>
+-class RestrictedCoefficient : public Coefficient
++template <typename BaseCoefficient>
++class RestrictedCoefficient : public BaseCoefficient
+ {
+ private:
+   mfem::Array<int> attr_marker;
+@@ -842,7 +842,7 @@ private:
+ public:
+   template <typename... T>
+   RestrictedCoefficient(const mfem::Array<int> &attr_list, T &&...args)
+-    : Coefficient(std::forward<T>(args)...),
++    : BaseCoefficient(std::forward<T>(args)...),
+       attr_marker(mesh::AttrToMarker(attr_list.Size() ? attr_list.Max() : 0, attr_list))
+   {
+   }
+@@ -851,12 +851,12 @@ public:
+   {
+     return (T.Attribute > attr_marker.Size() || !attr_marker[T.Attribute - 1])
+                ? 0.0
+-               : Coefficient::Eval(T, ip);
++               : BaseCoefficient::Eval(T, ip);
+   }
+ };
+ 
+-template <typename Coefficient>
+-class RestrictedVectorCoefficient : public Coefficient
++template <typename BaseCoefficient>
++class RestrictedVectorCoefficient : public BaseCoefficient
+ {
+ private:
+   mfem::Array<int> attr_marker;
+@@ -864,7 +864,7 @@ private:
+ public:
+   template <typename... T>
+   RestrictedVectorCoefficient(const mfem::Array<int> &attr_list, T &&...args)
+-    : Coefficient(std::forward<T>(args)...),
++    : BaseCoefficient(std::forward<T>(args)...),
+       attr_marker(mesh::AttrToMarker(attr_list.Size() ? attr_list.Max() : 0, attr_list))
+   {
+   }
+@@ -879,13 +879,13 @@ public:
+     }
+     else
+     {
+-      Coefficient::Eval(V, T, ip);
++      BaseCoefficient::Eval(V, T, ip);
+     }
+   }
+ };
+ 
+-template <typename Coefficient>
+-class RestrictedMatrixCoefficient : public Coefficient
++template <typename BaseCoefficient>
++class RestrictedMatrixCoefficient : public BaseCoefficient
+ {
+ private:
+   mfem::Array<int> attr_marker;
+@@ -893,7 +893,7 @@ private:
+ public:
+   template <typename... T>
+   RestrictedMatrixCoefficient(const mfem::Array<int> &attr_list, T &&...args)
+-    : Coefficient(std::forward<T>(args)...),
++    : BaseCoefficient(std::forward<T>(args)...),
+       attr_marker(mesh::AttrToMarker(attr_list.Size() ? attr_list.Max() : 0, attr_list))
+   {
+   }
+@@ -908,7 +908,7 @@ public:
+     }
+     else
+     {
+-      Coefficient::Eval(K, T, ip);
++      BaseCoefficient::Eval(K, T, ip);
+     }
+   }
+ };
+diff --git a/palace/fem/lumpedelement.cpp b/palace/fem/lumpedelement.cpp
+index c4a65603..a3b9d3be 100644
+--- a/palace/fem/lumpedelement.cpp
++++ b/palace/fem/lumpedelement.cpp
+@@ -37,7 +37,7 @@ UniformElementData::UniformElementData(const std::array<double, 3> &input_dir,
+   auto lengths = bounding_box.Lengths();
+   auto deviations_deg = bounding_box.Deviations(dir_vec);
+   if (std::none_of(deviations_deg.begin(), deviations_deg.end(),
+-                   [](double x) { return x < angle_warning_deg; }))
++                   [angle_warning_deg](double x) { return x < angle_warning_deg; }))
+   {
+     auto normals = bounding_box.Normals();
+     if (dim == 3)
+@@ -66,7 +66,7 @@ UniformElementData::UniformElementData(const std::array<double, 3> &input_dir,
+     }
+   }
+   if (std::none_of(deviations_deg.begin(), deviations_deg.end(),
+-                   [](double x) { return x < angle_error_deg; }))
++                   [angle_error_deg](double x) { return x < angle_error_deg; }))
+   {
+     Mpi::Barrier(mesh.GetComm());
+     std::string dev_str;
+diff --git a/palace/main.cpp b/palace/main.cpp
+index dc0878a1..e04676f3 100644
+--- a/palace/main.cpp
++++ b/palace/main.cpp
+@@ -149,7 +149,11 @@ static void PrintPalaceInfo(MPI_Comm comm, int np, int nt, int ngpu, mfem::Devic
+   Mpi::Barrier(comm);
+ }
+ 
++#if defined(_WIN32)
++static int PalaceMain(int argc, char *argv[])
++#else
+ int main(int argc, char *argv[])
++#endif
+ {
+   // Initialize MPI.
+ #if defined(MFEM_USE_STRUMPACK) && \
+@@ -280,3 +284,18 @@ int main(int argc, char *argv[])
+ 
+   return 0;
+ }
++
++#if defined(_WIN32)
++int main(int argc, char *argv[])
++{
++  try
++  {
++    return PalaceMain(argc, argv);
++  }
++  catch (const std::exception &error)
++  {
++    std::cerr << "Palace error: " << error.what() << std::endl;
++    return 1;
++  }
++}
++#endif
+diff --git a/palace/models/postoperator.cpp b/palace/models/postoperator.cpp
+index 28ae6642..e58f8a06 100644
+--- a/palace/models/postoperator.cpp
++++ b/palace/models/postoperator.cpp
+@@ -719,8 +719,8 @@ void PostOperator<solver_t>::InitializeParaviewDataCollection(
+     paraview_dir_b /= sub_folder_name;
+   }
+   // Set up postprocessing for output to disk.
+-  paraview = {paraview_dir_v, &fem_op->GetNDSpace().GetParMesh()};
+-  paraview_bdr = {paraview_dir_b, &fem_op->GetNDSpace().GetParMesh()};
++  paraview.emplace(paraview_dir_v.generic_u8string(), &fem_op->GetNDSpace().GetParMesh());
++  paraview_bdr.emplace(paraview_dir_b.generic_u8string(), &fem_op->GetNDSpace().GetParMesh());
+ 
+   const mfem::VTKFormat format = mfem::VTKFormat::BINARY32;
+   const bool use_ho = true;
+@@ -1512,7 +1512,7 @@ void PostOperator<solver_t>::WriteMFEMGridFunctionsFinal(const ErrorIndicator *i
+ 
+   // Save ParMesh files; necessary to visualize grid functions.
+   fs::path mesh_filename = fs::path(gridfunction_output_dir) / "mesh";
+-  mesh.Save(mesh_filename);
++  mesh.Save(mesh_filename.u8string());
+ 
+   mesh::NondimensionalizeMesh(mesh, mesh_Lc0);
+   Mpi::Barrier(fem_op->GetComm());
+@@ -2648,6 +2648,6 @@ PostOperator<ProblemType::DRIVEN>::MeasureDomainFieldEnergyOnly<ProblemType::DRI
+     const ComplexVector &e, const ComplexVector &b) -> double;
+ 
+ template auto
+-PostOperator<ProblemType::DRIVEN>::InitializeParaviewDataCollection(int ex_idx) -> void;
++PostOperator<ProblemType::DRIVEN>::InitializeParaviewDataCollection<ProblemType::DRIVEN>(int ex_idx) -> void;
+ 
+ }  // namespace palace
+diff --git a/palace/utils/geodata.cpp b/palace/utils/geodata.cpp
+index 64e3261d..192dce52 100644
+--- a/palace/utils/geodata.cpp
++++ b/palace/utils/geodata.cpp
+@@ -2171,7 +2171,7 @@ std::unique_ptr<mfem::Mesh> LoadMesh(const std::string &mesh_file, bool remove_c
+   else
+   {
+     // Otherwise, just rely on MFEM load the mesh.
+-    std::ifstream fi(mesh_file);
++    std::ifstream fi(mesh_file, std::ios::binary);
+     if (!fi.good())
+     {
+       MFEM_ABORT("Unable to open mesh file \"" << mesh_file << "\"!");
 diff --git a/palace/utils/tablecsv.cpp b/palace/utils/tablecsv.cpp
 index cdbfdb20..b86c2f29 100644
 --- a/palace/utils/tablecsv.cpp

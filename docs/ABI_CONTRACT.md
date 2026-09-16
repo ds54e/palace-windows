@@ -46,3 +46,11 @@ cmd.exe /d /c '<native repo path>\tools\native-dev.cmd powershell.exe -NoProfile
 ```
 
 Run commands through the batch wrapper so environment changes expire with that process. All build/download outputs are local and ignored. Tests here are developer-host evidence; they do not establish clean-host independence, numerical equivalence of Palace, or release readiness.
+
+## Gate 2 Windows variant extension
+
+D010 retains the Gate 1 MSVC/ifx/LP64 ABI while using METIS + PORD and no ParMETIS. MPI-enabled Hypre/MFEM singleton and both explicit MUMPS ordering tests passed. The native libCEED C translation units use the repository-local IntelLLVM 2025.3.0 C99 frontend because their existing VLAs are unsupported by MSVC C; Palace C++ remains MSVC. All use the DLL CRT. The libCEED exported target maps GNU `__restrict__` to MSVC's equivalent `__restrict` for C++ consumers.
+
+Windows filesystem::path is UTF-16 and long is 32 bits. The overlay retains native paths for file streams, uses UTF-8 strings at string-only APIs, and uses 64-bit byte counters for memory reporting. Palace's process manifest selects UTF-8 for narrow Windows APIs without changing the system locale ([Microsoft documentation](https://learn.microsoft.com/en-us/windows/apps/design/globalizing/use-utf8-code-page)). Application path validation remains required. `/Zc:lambda` selects MSVC's updated lambda processor for the pinned C++17 source ([compiler option](https://learn.microsoft.com/en-us/cpp/build/reference/zc-lambda?view=msvc-170)); it does not replace solver code or change numerical tolerances.
+
+Object directive inspection is required in addition to requested CMake settings. Older dependency minimum versions need `CMAKE_POLICY_DEFAULT_CMP0091=NEW` for `CMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL` to take effect. Full linking exposed and corrected static CRT defaults in METIS/schema-validator and static Intel runtime defaults in ARPACK/PARPACK. The corrected no-ParMETIS archive audit rejects LIBCMT, libifcoremt, libifport, libmmt and svml_dispmt directives. Intel libircmt compiler support remains a normal static support archive. Catch2's separate test build explicitly uses C++17, matching Palace and avoiding a missing std::string_view printer specialization.

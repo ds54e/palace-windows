@@ -1,0 +1,1082 @@
+{
+  "schema_version": 1,
+  "scope": "Gate 2 complete native developer-host Windows x64 build and functionality; not Linux equivalence, clean-host/offline or release approval",
+  "palace_commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+  "source_lock_sha256": "7210b043ef8f6b3ee10f89eeb210c52e886d791f194deb3388408fd50e28dc07",
+  "abi": "Windows x64 LLP64, 32-bit LP64 numerical interfaces, MSVC/ifx dynamic CRT; IntelLLVM C99 libCEED",
+  "status": "pass",
+  "backend": "MPI singleton; CPU /cpu/self/opt/blocked; one validation thread",
+  "runtime": {
+    "scope": "Recursive PE import closure on developer host; delay/dynamic-load and clean-host validation still required",
+    "executable": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+    "files": [
+      {
+        "name": "palace.exe",
+        "source": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+        "sha256": "d4402bdaaad1dae3e1104b54e45ac37d1f4f8780fd50194ffb853bbae2fbe715",
+        "size": 36323840,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-filesystem-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll",
+          "libifcoremd.dll",
+          "libmmd.dll",
+          "msmpi.dll",
+          "msvcp140.dll",
+          "svml_dispmd.dll",
+          "vcruntime140.dll",
+          "vcruntime140_1.dll"
+        ],
+        "provenance": {
+          "source_lock": "deps/gate2-lock.json",
+          "license": "Apache-2.0 plus linked dependency notices"
+        }
+      },
+      {
+        "name": "libifcoremd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libifcoremd.dll",
+        "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+        "size": 1298288,
+        "imports": [
+          "imagehlp.dll",
+          "kernel32.dll",
+          "libmmd.dll"
+        ],
+        "provenance": {
+          "package": "intel-fortran-rt-2025.3.0-intel_640.conda",
+          "url": "https://software.repos.intel.com/python/conda/win-64/intel-fortran-rt-2025.3.0-intel_640.conda",
+          "package_sha256": "083513c78e6228fded25e77ce26adf12ed555839e34bbb10f9a6cf05dff97edd",
+          "member": "Library/bin/libifcoremd.dll",
+          "member_hash_verified": true,
+          "redistributable_list": "share/doc/compiler/fredist.txt",
+          "license": "Intel Developer Tools EULA; applicability/obligations review pending"
+        }
+      },
+      {
+        "name": "libmmd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libmmd.dll",
+        "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+        "size": 4185968,
+        "imports": [
+          "kernel32.dll"
+        ],
+        "provenance": {
+          "package": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+          "url": "https://software.repos.intel.com/python/conda/win-64/intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+          "package_sha256": "a9bb85c9133794650f803896de99ec025f118e0a67b8ba91494dacefa7dbf776",
+          "member": "Library/bin/libmmd.dll",
+          "member_hash_verified": true,
+          "redistributable_list": "share/doc/compiler/fredist.txt",
+          "license": "Intel Developer Tools EULA; applicability/obligations review pending"
+        }
+      },
+      {
+        "name": "msmpi.dll",
+        "source": "E:/projects/palace-windows/.work/build/palace-native/msmpi.dll",
+        "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+        "size": 1631000,
+        "imports": [
+          "advapi32.dll",
+          "authz.dll",
+          "kernel32.dll",
+          "mswsock.dll",
+          "ntdll.dll",
+          "ntdsapi.dll",
+          "rpcrt4.dll",
+          "ws2_32.dll"
+        ],
+        "provenance": {
+          "manifest": "docs/evidence/G0-payload-2026-09-17.json",
+          "member": "msmpi64.dll",
+          "license": "Microsoft MPI Redistributable EULA; compliance review pending"
+        }
+      },
+      {
+        "name": "msvcp140.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140.dll",
+        "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+        "size": 557728,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-filesystem-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll",
+          "vcruntime140.dll",
+          "vcruntime140_1.dll"
+        ],
+        "provenance": {
+          "origin": "Installed VS Build Tools 17.14 release x64 Microsoft.VC143.CRT redist directory",
+          "redist_list": "https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution",
+          "license_terms": "https://visualstudio.microsoft.com/license-terms/vs2022-ga-diagnosticbuildtools/",
+          "license": "Microsoft terms; licensed-use and redistribution review pending"
+        }
+      },
+      {
+        "name": "svml_dispmd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/svml_dispmd.dll",
+        "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+        "size": 18828656,
+        "imports": [
+          "kernel32.dll"
+        ],
+        "provenance": {
+          "package": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+          "url": "https://software.repos.intel.com/python/conda/win-64/intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+          "package_sha256": "a9bb85c9133794650f803896de99ec025f118e0a67b8ba91494dacefa7dbf776",
+          "member": "Library/bin/svml_dispmd.dll",
+          "member_hash_verified": true,
+          "redistributable_list": "share/doc/compiler/fredist.txt",
+          "license": "Intel Developer Tools EULA; applicability/obligations review pending"
+        }
+      },
+      {
+        "name": "vcruntime140.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140.dll",
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+        "size": 124544,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "kernel32.dll"
+        ],
+        "provenance": {
+          "origin": "Installed VS Build Tools 17.14 release x64 Microsoft.VC143.CRT redist directory",
+          "redist_list": "https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution",
+          "license_terms": "https://visualstudio.microsoft.com/license-terms/vs2022-ga-diagnosticbuildtools/",
+          "license": "Microsoft terms; licensed-use and redistribution review pending"
+        }
+      },
+      {
+        "name": "vcruntime140_1.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140_1.dll",
+        "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+        "size": 49792,
+        "imports": [
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "kernel32.dll",
+          "vcruntime140.dll"
+        ],
+        "provenance": {
+          "origin": "Installed VS Build Tools 17.14 release x64 Microsoft.VC143.CRT redist directory",
+          "redist_list": "https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution",
+          "license_terms": "https://visualstudio.microsoft.com/license-terms/vs2022-ga-diagnosticbuildtools/",
+          "license": "Microsoft terms; licensed-use and redistribution review pending"
+        }
+      }
+    ],
+    "operating_system_imports": {
+      "api-ms-win-crt-locale-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-convert-l1-1-0.dll": "Windows API set",
+      "rpcrt4.dll": "Windows system DLL",
+      "api-ms-win-crt-stdio-l1-1-0.dll": "Windows API set",
+      "ws2_32.dll": "Windows system DLL",
+      "api-ms-win-crt-heap-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-utility-l1-1-0.dll": "Windows API set",
+      "advapi32.dll": "Windows system DLL",
+      "imagehlp.dll": "Windows system DLL",
+      "api-ms-win-crt-runtime-l1-1-0.dll": "Windows API set",
+      "kernel32.dll": "Windows system DLL",
+      "authz.dll": "Windows system DLL",
+      "api-ms-win-crt-string-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-math-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-filesystem-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-time-l1-1-0.dll": "Windows API set",
+      "ntdsapi.dll": "Windows system DLL",
+      "mswsock.dll": "Windows system DLL",
+      "api-ms-win-crt-environment-l1-1-0.dll": "Windows API set",
+      "ntdll.dll": "Windows system DLL"
+    },
+    "redistribution_review": "pending",
+    "license_evidence": [
+      {
+        "path": ".work/deps/intel/share/doc/compiler/fredist.txt",
+        "sha256": "93f11995a945f987d9e23aabb61122bfb6ddf3fe413c7f157a78362db29dff4c"
+      },
+      {
+        "path": ".work/deps/intel/licensing/compiler/Intel Developer Tools EULA.rtf",
+        "sha256": "4e96f3006c9d51b38561f9802da896480dc48e7703a76c206292bf6d6d11a781"
+      },
+      {
+        "path": ".work/staging/mpi-probe/MicrosoftMPI_Redistributable_EULA.rtf",
+        "sha256": "125d29a463c724ddb5eed6a14370f5ce74dfd063cfca3eddad2d50082eb62106"
+      },
+      {
+        "path": ".work/staging/mpi-probe/MPI_Redistributables_TPN.txt",
+        "sha256": "e202e6c77b4ecb7be69e39d647be54bb5d076d90522e533d11dbaaacd618d7f8"
+      }
+    ]
+  },
+  "no_parmetis_audit": {
+    "link_map": "E:/projects/palace-windows/.work/build/palace-native/palace.map",
+    "link_map_sha256": "91d3daeb8b9b214fb8c6dedf227faa1cb7e32a291e0857a1dd4eabe71ae0a105",
+    "scope": "Built prefix static-symbol/export audit; full dependency provenance and final runtime closure remain separate",
+    "libraries": [
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/arpack.lib",
+        "sha256": "21b122075eea9fe68f7863013df0f014f7d3d231bbf2846e77e07c3ab2aa9a43",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/Catch2.lib",
+        "sha256": "000130b68b9f208eb6fbe42233af504cccfb9736fac974381a6e7220a1119a8f",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/Catch2Main.lib",
+        "sha256": "865135022e526e571698cf624358c1bc12a78bc3a9765f8d65c0e9f63cc0558a",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:libircmt.lib",
+          "/DEFAULTLIB:libmmd.lib",
+          "/DEFAULTLIB:msvcrt.lib",
+          "/DEFAULTLIB:oldnames.lib",
+          "/DEFAULTLIB:svml_dispmd.lib",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/ceed.lib",
+        "sha256": "e3f9b56d0d4ef9ea185234d507d1220dfd812cce57c9107d56151fb630a8eeab",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/dmumps.lib",
+        "sha256": "bb80b6a65c4a5b88c9d0790d64fd2e2d35fd000a0a685606d28043bbc88aa050",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/fmt.lib",
+        "sha256": "486f64f1b185fd29fb981f3d74578768f16c3609f915aa0d0c895338eefa1a87",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/HYPRE.lib",
+        "sha256": "ca821ca7c9b8e6b84cf07146e7dfa3380272f5d4feabefaab3a44a1831e04d92",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/metis.lib",
+        "sha256": "cf914e2468f0d59cfc65f1d3a82e166f753a320a60c9c2ecaaba842989d9280a",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib",
+          "/DEFAULTLIB:ws2_32.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/mfem.lib",
+        "sha256": "c0ad4cea00f67d6c007dc389e351cb33748921522f13843fd531fe74e6198548",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/mumps_common.lib",
+        "sha256": "e65550fb3b677e4a57d3a2a8ab2c8dd440e02e7cef18a82aa280faeec42ef12d",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/nlohmann_json_schema_validator.lib",
+        "sha256": "32535adecaaf230cf285186af1d1b8dfaf74121c9642925b9c24077a301094d8",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/palace.lib",
+        "sha256": "4e28e6336ca9edee6e9588befb5ab811a86805d3b7f46b562affa0ebd70577ac",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/parpack.lib",
+        "sha256": "970b07cae4e35185ec04864797b4f58bef336268e7302c6fbb22e5b9b4c42d71",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/pord.lib",
+        "sha256": "eefd457014340ad4cbe1b45c06a92f27aa660271e3881fd41f8d7d6cdbbfd534",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/scn.lib",
+        "sha256": "e66e4875f36543708b243f71ee18c4fbc044c90731db9942ffa7451da68bb2aa",
+        "parmetis_symbols": 0
+      }
+    ],
+    "exported_parmetis_dependencies": 0,
+    "executable": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+    "imports": [
+      "",
+      "Dump of file E:\\projects\\palace-windows\\.work\\build\\palace-native\\palace.exe",
+      "",
+      "File Type: EXECUTABLE IMAGE",
+      "",
+      "  Image has the following dependencies:",
+      "",
+      "    msmpi.dll",
+      "    KERNEL32.dll",
+      "    MSVCP140.dll",
+      "    libifcoremd.dll",
+      "    libmmd.dll",
+      "    svml_dispmd.dll",
+      "    VCRUNTIME140.dll",
+      "    VCRUNTIME140_1.dll",
+      "    api-ms-win-crt-runtime-l1-1-0.dll",
+      "    api-ms-win-crt-math-l1-1-0.dll",
+      "    api-ms-win-crt-heap-l1-1-0.dll",
+      "    api-ms-win-crt-stdio-l1-1-0.dll",
+      "    api-ms-win-crt-filesystem-l1-1-0.dll",
+      "    api-ms-win-crt-locale-l1-1-0.dll",
+      "    api-ms-win-crt-string-l1-1-0.dll",
+      "    api-ms-win-crt-convert-l1-1-0.dll",
+      "    api-ms-win-crt-utility-l1-1-0.dll",
+      "    api-ms-win-crt-time-l1-1-0.dll",
+      "    api-ms-win-crt-environment-l1-1-0.dll",
+      "",
+      "  Summary",
+      "",
+      "      270000 .data",
+      "       50000 .pdata",
+      "      3BB000 .rdata",
+      "        8000 .reloc",
+      "        1000 .rsrc",
+      "     1E5A000 .text",
+      "        2000 _RDATA"
+    ]
+  },
+  "applocal_execution": {
+    "scope": "Developer-host restricted-PATH app-local run, not clean-host proof",
+    "stage": "E:/projects/palace-windows/.work/staging/Palace V1 \u65e5\u672c\u8a9e",
+    "case": "E:/projects/palace-windows/.work/gate2/Windows paths \u65e5\u672c\u8a9e",
+    "exit_code": 0,
+    "loaded_modules": {
+      "rasadhlp.dll": "C:\\Windows\\System32\\rasadhlp.dll",
+      "ws2_32.dll": "C:\\WINDOWS\\System32\\WS2_32.dll",
+      "ucrtbase.dll": "C:\\WINDOWS\\System32\\ucrtbase.dll",
+      "msvcp_win.dll": "C:\\WINDOWS\\System32\\msvcp_win.dll",
+      "dnsapi.dll": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+      "palace.exe": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\palace.exe",
+      "kernelbase.dll": "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+      "cryptbase.dll": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+      "wshbth.dll": "C:\\WINDOWS\\system32\\wshbth.dll",
+      "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\VCRUNTIME140_1.dll",
+      "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\MSVCP140.dll",
+      "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\VCRUNTIME140.dll",
+      "winrnr.dll": "C:\\WINDOWS\\System32\\winrnr.dll",
+      "imagehlp.dll": "C:\\WINDOWS\\System32\\imagehlp.dll",
+      "iphlpapi.dll": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+      "ntdsapi.dll": "C:\\WINDOWS\\SYSTEM32\\NTDSAPI.dll",
+      "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\libifcoremd.dll",
+      "sechost.dll": "C:\\WINDOWS\\System32\\sechost.dll",
+      "mswsock.dll": "C:\\WINDOWS\\SYSTEM32\\MSWSOCK.dll",
+      "authz.dll": "C:\\WINDOWS\\SYSTEM32\\AUTHZ.dll",
+      "libmmd.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\libmmd.dll",
+      "kernel32.dll": "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+      "msmpi.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\msmpi.dll",
+      "napinsp.dll": "C:\\WINDOWS\\system32\\napinsp.dll",
+      "nlansp_c.dll": "C:\\WINDOWS\\system32\\nlansp_c.dll",
+      "rpcrt4.dll": "C:\\WINDOWS\\System32\\RPCRT4.dll",
+      "dsparse.dll": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.DLL",
+      "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\staging\\Palace V1 \u65e5\u672c\u8a9e\\svml_dispmd.dll",
+      "ntdll.dll": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+      "fwpuclnt.dll": "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+      "nsi.dll": "C:\\WINDOWS\\System32\\NSI.dll",
+      "bcryptprimitives.dll": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+      "advapi32.dll": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+      "msvcrt.dll": "C:\\WINDOWS\\System32\\msvcrt.dll"
+    },
+    "parmetis_exit_code": 1,
+    "parmetis_diagnostic": "\r\n\r\nVerification failed: (method != PARMETIS) is false:\r\n --> ParMETIS ordering is unsupported in the Windows V1 build; use METIS or PORD.\r\n ... in function: void __cdecl mfem::MUMPSSolver::SetReorderingStrategy(enum mfem::MUMPSSolver::ReorderingStrategy)\r\n ... in file: E:\\projects\\palace-windows\\.work\\sources\\mfem\\linalg\\mumps.cpp:459\r\n\r\nPalace error: Verification failed: (method != PARMETIS) is false:\r\n --> ParMETIS ordering is unsupported in the Windows V1 build; use METIS or PORD.\r\n ... in function: void __cdecl mfem::MUMPSSolver::SetReorderingStrategy(enum mfem::MUMPSSolver::ReorderingStrategy)\r\n ... in file: E:\\projects\\palace-windows\\.work\\sources\\mfem\\linalg\\mumps.cpp:459\r\n\r\n"
+  },
+  "outputs": {
+    "scope": "Finite CSV/VTU values, VTK references and complete 2x2 S data; not independent viewer or Linux equivalence",
+    "eigen_backward_tolerance": 1e-08,
+    "cases": [
+      {
+        "case": "electrostatic",
+        "csv_count": 7,
+        "vtu_count": 5,
+        "fields": [
+          "E",
+          "Indicator",
+          "Q_s",
+          "Rank",
+          "U_e",
+          "V",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ],
+        "artifacts": [
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/domain-E.csv",
+            "sha256": "0b611365d6c3d5d48c276103d9254b38f3c072e6c87a9358d0452141825bdcf1"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/error-indicators.csv",
+            "sha256": "2c2f42de8d64135562c0b02a001ec795fcccaf24de2deaa006a8ccff86a5400c"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/surface-F.csv",
+            "sha256": "bff71d67c60254b965eaee39652f7258c76010e6e26569e59e4e082f6e1cf93c"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/terminal-C.csv",
+            "sha256": "ea469f9fc7309b98ddef8f73dc0d9b0bb6ec0100d60f0a96cb3be1af8368bd36"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/terminal-Cinv.csv",
+            "sha256": "e192dcf80a06733dda03e1fedcf4e4f741133edc75531063450ed909a09fd169"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/terminal-Cm.csv",
+            "sha256": "149e145efed1670b8da6a792c371f44d9d1c018876ebb0c7e3d0f575e6554cc8"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/terminal-V.csv",
+            "sha256": "bb3180817b04fe8490682554cfd095070ce5f19386eedadddbddbdbf4f3a0061"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/paraview/electrostatic/Cycle000001/proc000000.vtu",
+            "sha256": "10bc86370cbfe231a6dcb9c25dee5ccf5a228e99aad58a2c3b9b313258e78b87"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/paraview/electrostatic/Cycle000002/proc000000.vtu",
+            "sha256": "b4cb507ccc467c12c2fb652ed63e9d08f295e22afa463fc515abd8cd06c1f329"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/paraview/electrostatic/Cycle000003/proc000000.vtu",
+            "sha256": "26c17daa676ac6ef1c722da5b4161fdcf70fcb604ed4a8484762e173df9ad5ed"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/paraview/electrostatic_boundary/Cycle000001/proc000000.vtu",
+            "sha256": "9f4d263071ab52ee2a4fc743ac7dbf79787f1568f779a6e692d02fecdf0ff643"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/electrostatic/output/paraview/electrostatic_boundary/Cycle000002/proc000000.vtu",
+            "sha256": "c62ea3a363b99b47c07c5768b1e3e51a0a03a1824965934fbd6b6a2998da22b7"
+          }
+        ]
+      },
+      {
+        "case": "magnetostatic",
+        "csv_count": 7,
+        "vtu_count": 5,
+        "fields": [
+          "A",
+          "B",
+          "Indicator",
+          "J_s",
+          "Rank",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ],
+        "artifacts": [
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/domain-E.csv",
+            "sha256": "fdcf1812f1ac026637b1c715fb54da2c1d85d24518d03f3c3b6fbf0dca388b39"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/error-indicators.csv",
+            "sha256": "a22a1fb27a68c8db956b042a2e937340d341954587a7c5f99bc40ac8fd787479"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/surface-F.csv",
+            "sha256": "3860781af06e3ec84d8819d33951f35910e80ab4e8f776680bc5de1cf25c1f79"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/terminal-I.csv",
+            "sha256": "a5b8652b427d7f65c191f7c0ce5e6cdfebb468bf2b6c396f793a7f9ff64bd15a"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/terminal-M.csv",
+            "sha256": "99bda5d53b983566de2ff11aeba34b27917bf265c76ea0e3c2795bbaaed77450"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/terminal-Minv.csv",
+            "sha256": "21e5ce95484299a74c512ed02a565d6702f29c185d5db0669cd5239ba71a0c46"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/terminal-Mm.csv",
+            "sha256": "48770588efd7f6bd04a5d8f1318df070c279dd69741ec05b8adfd6ede8a55acb"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/paraview/magnetostatic/Cycle000001/proc000000.vtu",
+            "sha256": "24fbd5af2fb65efdbcf4291179b1edc0d9911c4971fdae3cd87ebb052eba6b5e"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/paraview/magnetostatic/Cycle000002/proc000000.vtu",
+            "sha256": "658afd80dac76d08edc854f6f577bb7422bb16c5f7decad03395ec87a7b61713"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/paraview/magnetostatic/Cycle000003/proc000000.vtu",
+            "sha256": "7c71e146d56813ceb316562a8955b9d5f2e29ef19a2b364c15d94161a90a4e93"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/paraview/magnetostatic_boundary/Cycle000001/proc000000.vtu",
+            "sha256": "ecb90fe338f4fc183653df745631ae4de416ec159285a4b80c81b71977221579"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/magnetostatic/output/paraview/magnetostatic_boundary/Cycle000002/proc000000.vtu",
+            "sha256": "6932bd59d010f30dfdd9e4eedb9e41f3ce7a3e6bd51cb181addf7fd8c9b6f235"
+          }
+        ]
+      },
+      {
+        "case": "driven",
+        "csv_count": 5,
+        "vtu_count": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ],
+        "artifacts": [
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/domain-E.csv",
+            "sha256": "8fbd141955d4609c04ac9ba906843ded16496e11d7440ede52734929a0a2cfc5"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/error-indicators.csv",
+            "sha256": "e9d54a1d2822f881448b1893a77809e1cd79c9cca94c862b4f946fa628055565"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/port-I.csv",
+            "sha256": "65e1f406fa0fbf50d38a6c450cce08dc70993d2dd769642ff41040cfe0ec11ca"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/port-S.csv",
+            "sha256": "0671004916adeaee4fb634cc7ece115fc77b082c088e39071ea2229bf4dcff83"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/port-V.csv",
+            "sha256": "26228a9aad5d9c51e3e6b5329eb217c87692d82bb569ea6dc66138245a36177b"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/paraview/driven/excitation_1/Cycle000001/proc000000.vtu",
+            "sha256": "418819e5328446325577efa3e943e4c4060717318af765f6c64ec99820286bff"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/paraview/driven/excitation_2/Cycle000001/proc000000.vtu",
+            "sha256": "92f20fd4fda138758d6695f7275587051c11826a811ffb0951b9b1fdc9ff8122"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/paraview/driven/excitation_2/Cycle000002/proc000000.vtu",
+            "sha256": "069f5f024ef9f4c6e9f838ebc7e1d422de9410817f96161df3e258509f16ebde"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/paraview/driven_boundary/excitation_1/Cycle000001/proc000000.vtu",
+            "sha256": "f20b46d188668d3833701d8012c25aeb7908b7944cd312cc26d48cda6af01480"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/driven/output/paraview/driven_boundary/excitation_2/Cycle000001/proc000000.vtu",
+            "sha256": "c020ff681646af362cf80287b69fe59313590163aac0a04d7ed3e15c4b587eb7"
+          }
+        ]
+      },
+      {
+        "case": "eigenmode",
+        "csv_count": 3,
+        "vtu_count": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ],
+        "artifacts": [
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/domain-E.csv",
+            "sha256": "0783a83c5967ae8ea8b64db0c03ce9da390169715d6f44cb2a2e346483e8df62"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/eig.csv",
+            "sha256": "51af51fd9deb818d61b35b181010d608b4aaba87738346d5a480c7d48a676af9"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/error-indicators.csv",
+            "sha256": "793141ad67f40ae74bb3a1a8ea55a3644be21cf8fffd865b17be3a1abe66c771"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/paraview/eigenmode/Cycle000001/proc000000.vtu",
+            "sha256": "66510274bda24e0cd5b5f2c1137063520e7c9605dec8f7edcbc84b3d44b1f7fd"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/paraview/eigenmode/Cycle000002/proc000000.vtu",
+            "sha256": "3ab44a21ff9bb770193fd5119739b173b887d1944d84f313e37f0fddd376679f"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/paraview/eigenmode/Cycle000003/proc000000.vtu",
+            "sha256": "12cf78ced83f9722c2551da16e4fbb4da0a580701aaece5d833410e568044bf4"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/paraview/eigenmode_boundary/Cycle000001/proc000000.vtu",
+            "sha256": "f58c3b75953430500df1e7a3db65394ea48f2421b1aa4ea8bc76df0599252417"
+          },
+          {
+            "path": ".work/gate2/palace-smoke/eigenmode/output/paraview/eigenmode_boundary/Cycle000002/proc000000.vtu",
+            "sha256": "862cbf1a8021f1818a82640869572810114ab55c9b8ea6221bdf852188a49151"
+          }
+        ]
+      }
+    ]
+  },
+  "upstream_port_tests": {
+    "cases": 11,
+    "assertions": 80,
+    "status": "pass",
+    "scope": "Serial tests from original test-memoryreporting.cpp and test-tablecsv.cpp; full upstream suite not run"
+  },
+  "connection_revalidation": "MUMPS PORD/METIS, PARPACK, explicit MSVC/ifx runtime and MFEM singleton passed after CRT correction",
+  "logs": [
+    {
+      "path": ".work/gate2/final-native-validation-streams.log",
+      "sha256": "62fe34da03eef01b2087991e9d9b909157695378114524728c7004f98ff9971c"
+    },
+    {
+      "path": ".work/gate2/palace-port-tests-cxx17.log",
+      "sha256": "f0e53222541423ebd44e4c83cbece8a4136e8819f09a1322dce8c34281fd3bb5"
+    },
+    {
+      "path": ".work/gate2/crt-consistent-rebuild.log",
+      "sha256": "66c9b30bfc2732ceec89b80a4f408b42c2911a467140c4e5d85f71cfe51f287e"
+    },
+    {
+      "path": ".work/gate2/prepare-final-overlay.log",
+      "sha256": "cf0e38e1c76b46daeef116f510f36f1553573b5915c2e64af0fec027f860550b"
+    },
+    {
+      "path": ".work/gate2/no-parmetis-policy.txt",
+      "sha256": "ac3c935aaf97c114a96979e4116afd0090d0410ee37dd100e63c75666ae81e96"
+    }
+  ],
+  "recipe_inputs": [
+    {
+      "path": "scripts/audit-no-parmetis.ps1",
+      "sha256": "d39c867365d48afef4c2c2a7f0ea44c66c359b6318532e2bb8872e0c5d9f005e"
+    },
+    {
+      "path": "scripts/audit-runtime.ps1",
+      "sha256": "ea7fbc1da61ca9957522f53aa1daf17d0e965cc29940499e9580a157a2eaa12f"
+    },
+    {
+      "path": "scripts/build-arpack-windows.ps1",
+      "sha256": "9c5fb8454cc7b71b39c6e3be06ebb8ab0ff6f0799562ab44293d35acdda1265f"
+    },
+    {
+      "path": "scripts/build-catch2.ps1",
+      "sha256": "0b3223e9feb129f2cc73af241b53884653ee18da824e80ec241ba9d7f533a31d"
+    },
+    {
+      "path": "scripts/build-core-libs.ps1",
+      "sha256": "7f3c09334b643f32fa09c8232b216f2ec29031627924e24c5f4e8d606d13aea1"
+    },
+    {
+      "path": "scripts/build-gate0.ps1",
+      "sha256": "4c602f40f7d107c36aa04575c2878e4dddc346f1ad526779978954befebbccc4"
+    },
+    {
+      "path": "scripts/build-gate1-solvers.ps1",
+      "sha256": "28cbe32d1ae1bd1ba0f7e4996bf1cd09d3b53847c93bbe706c147e0cd0e8ca7f"
+    },
+    {
+      "path": "scripts/build-gate1.ps1",
+      "sha256": "1d5efc763b4e985fce9f8fd84150b33c92191621d2a9765187c289d02b0c4d70"
+    },
+    {
+      "path": "scripts/build-libceed.ps1",
+      "sha256": "d6343506e707509989af0e1a660b56f213d2bba57dadb5d1ffe909468d09eca3"
+    },
+    {
+      "path": "scripts/build-metis.ps1",
+      "sha256": "ef920843605fb037b341103f7d31c4249f0c3a54d37d53cadfd8608951336347"
+    },
+    {
+      "path": "scripts/build-mfem.ps1",
+      "sha256": "c8b491b5d3a1eb2a585d005c049d58ac43f33782564bfacbbee7509e30054993"
+    },
+    {
+      "path": "scripts/build-no-parmetis-deps.ps1",
+      "sha256": "47a33ceeb35255b1d55bf8588f506b08169730047291bde73e4e8a0ec2eed01c"
+    },
+    {
+      "path": "scripts/build-palace-windows.ps1",
+      "sha256": "f5326d7bf09ec94e77dee50a27fd7b48caa2ca5d8267150d45f04b9c582a0340"
+    },
+    {
+      "path": "scripts/build-windows-v1.ps1",
+      "sha256": "584f339d5f8fa2c0add71def79faafa916f45e04d23948fdf8dafc6e2e59e24c"
+    },
+    {
+      "path": "scripts/configure-gate2.ps1",
+      "sha256": "3589150e6140b9811b11ed0eea0307b82bc209240621c34353065d4dd533a31e"
+    },
+    {
+      "path": "scripts/doctor.ps1",
+      "sha256": "2b12daf2a5251be4fe69a85b74930d6aa27e61d267f6d0a3ff300ac041b4526d"
+    },
+    {
+      "path": "scripts/gate2-common.ps1",
+      "sha256": "df0207b823ceb6f026e3cd774d880d12f19b3dbb49064d8a36d0338f8a0f2a66"
+    },
+    {
+      "path": "scripts/rebuild-crt-deps.ps1",
+      "sha256": "69aa3027d93e7d92824d88fb3c31b10cb0704bac933c1408edaaf3ef8701c141"
+    },
+    {
+      "path": "scripts/run-gate0.ps1",
+      "sha256": "acdc1a66478f955aae7b05e21b0d847f8fab6fd881b73a69786e088cdfe71db1"
+    },
+    {
+      "path": "scripts/run-palace-smoke.ps1",
+      "sha256": "be6ea80a2190f98c73708ea3cf43b2287c31b6a37c36e363b823372753f0b38a"
+    },
+    {
+      "path": "scripts/test-arpack.ps1",
+      "sha256": "54168de2e87c84c14c97a81028f89e2215ae8beccf4355e459dc38cb4d6f7b7f"
+    },
+    {
+      "path": "scripts/test-mfem.ps1",
+      "sha256": "b4e337a28436ec37cfaab83ffb5de6c281914889eecc8d099be084f891525d55"
+    },
+    {
+      "path": "scripts/test-no-parmetis.ps1",
+      "sha256": "1c8289117ff72ba86e477ad3699fb659e324af78ea232eb28cbb1ae9685a6df7"
+    },
+    {
+      "path": "scripts/test-palace-applocal.ps1",
+      "sha256": "2fecd77ab04f1c47c322d3c79f78a6d9ac4dd260feb0d8f47f3f93ca97296d07"
+    },
+    {
+      "path": "scripts/test-palace-ports.ps1",
+      "sha256": "e87f5f1f5a09aa0e5f102d90df89cbed556c8cbca653a8ea8d90b9c4d84ac5df"
+    },
+    {
+      "path": "scripts/test-palace-smokes.ps1",
+      "sha256": "3055d8d857d078c17cfd306ec4ee0f92810349291650a918f9e6a5251ba608c5"
+    },
+    {
+      "path": "tools/check_readiness.py",
+      "sha256": "9a368bfea71e4394b4fc1ab64939093efaa7d3a302f098115d77af41549a2e17"
+    },
+    {
+      "path": "tools/check_windows_smoke.py",
+      "sha256": "f8d14005280cef6f16de3809342fc27cf5469f454d82e259907e0ad2de3a44dd"
+    },
+    {
+      "path": "tools/native-dev.cmd",
+      "sha256": "36d6e8d83c4b830d528f3c1d0a1a4fcd7ff5c93cb4a49d9d6a4f534c6c802b3e"
+    },
+    {
+      "path": "tools/prepare_gate1.py",
+      "sha256": "469a5d8763adfab2323e23c493322a48ab73f1684d83402c5e72ef0ddc60183d"
+    },
+    {
+      "path": "tools/prepare_gate2.py",
+      "sha256": "7887104555894315111e5597e3855efa8d317fe8239b2df7af80a62dd4489c59"
+    },
+    {
+      "path": "tools/prepare_windows_smoke.py",
+      "sha256": "52608c7f82369f775db2f24eef946dcea52d6dcec4b61b95988b5c5585baa6aa"
+    },
+    {
+      "path": "cmake/FindSCALAPACK.cmake",
+      "sha256": "09edb3e43a36a20e6d1e644bab13af1e406ab213ce9ed64ad461482200824907"
+    },
+    {
+      "path": "cmake/WindowsIfxRuntime.cmake",
+      "sha256": "d8ddfca3c9753d4cdc0e2de9e04caf5fd7dc5af41ed5599b1034efef1500d7b7"
+    },
+    {
+      "path": "cmake/libceed/allocation_test.c",
+      "sha256": "30af433ac8e8a09ec44cb4fe384469d026bbeaa3875bd51596c8739dc9f3b4f6"
+    },
+    {
+      "path": "cmake/libceed/CMakeLists.txt",
+      "sha256": "ab16e4aa68ce1d7af853040b4a41605e0f6f5e20d0d985b89fa7b8bb4ae98870"
+    },
+    {
+      "path": "cmake/libceed/windows_alloc.c",
+      "sha256": "c32b00f9ffa6cd2c7a749b67801a2190f9b43467a23940fc5bd0e27103f2cd1c"
+    },
+    {
+      "path": "tests/abi/CMakeLists.txt",
+      "sha256": "e32a02b537765d75b970cf808fab5182f78be378d4cef95dbc5ccb022ce35a24"
+    },
+    {
+      "path": "tests/abi/connection.cpp",
+      "sha256": "aeb8f4841504233463bf35abdd093355bfb8a139adec36edc94fd678477ba4fe"
+    },
+    {
+      "path": "tests/abi/c_bridge.c",
+      "sha256": "ea02e83d015371511135d9fb30afe2f40bf830c2c1ed4f7f1db415e96d75ab66"
+    },
+    {
+      "path": "tests/abi/fortran_bridge.f90",
+      "sha256": "2752b2479b630d0c701f1a49fc88fbe38373a5944fc05c8b0bddf7ffb10c187f"
+    },
+    {
+      "path": "tests/abi/mumps_solve.cpp",
+      "sha256": "1af4cee4fbd8cca13abbbc591186e00acdf2bdd8d3467a12422d5411d61b396f"
+    },
+    {
+      "path": "tests/abi/parpack_eigen.cpp",
+      "sha256": "f379a90d13f5cc491f9e2790ea414d939ec2d91635bcc2281d82b866afd95172"
+    },
+    {
+      "path": "tests/ifx-runtime/CMakeLists.txt",
+      "sha256": "d8097569b47b4dda91ee934f7b7af2cab5f06c10446145153761d5d22ee9c3c0"
+    },
+    {
+      "path": "tests/ifx-runtime/main.cpp",
+      "sha256": "bb1803efbb18ceba4bc88493497f95c2226470217efbff360686077bc10aee80"
+    },
+    {
+      "path": "tests/ifx-runtime/runtime.f90",
+      "sha256": "ea10865b3ac4a9238f2c82036f162ba2c5deaf5ffb12bd536ee9b31057eb79fa"
+    },
+    {
+      "path": "tests/metis/CMakeLists.txt",
+      "sha256": "f5bfeb65e4e3e8877bc8122f1bab86bcf87d555f279a4d2705be92c8dcf6bc2e"
+    },
+    {
+      "path": "tests/metis/connection.cpp",
+      "sha256": "939f491476d1248402d2f38590887d9c3cd5e7227ccd4930e53e5ddeaea1439c"
+    },
+    {
+      "path": "tests/mfem/CMakeLists.txt",
+      "sha256": "f93f63dad7aeb6d5ca5a208e30af855ea476cbd38b9de02d50a385e619fd1660"
+    },
+    {
+      "path": "tests/mfem/connection.cpp",
+      "sha256": "1ec0d14e86f3cd18258a27ff0fe012dc1615321d2a7c9e113cf5672d036fb709"
+    },
+    {
+      "path": "tests/no-parmetis/CMakeLists.txt",
+      "sha256": "ccda8c60cdc123b3d79cbfe5609bff75d0256512f728efa03965e5022e4f69e2"
+    },
+    {
+      "path": "tests/palace-native/CMakeLists.txt",
+      "sha256": "f096912c159fb9546b09c65203fd2bedcf4220299198a2ea1d3d5d4d2dd4a465"
+    },
+    {
+      "path": "tests/palace-native/main.cpp",
+      "sha256": "0e8970822f4c0e452aac0f14e1bd954bd1da7667fde3b0a268eadf41afea83d3"
+    },
+    {
+      "path": "tests/python/test_readiness.py",
+      "sha256": "305005bbef26ed5c329c4236806f657ab418755f7df68309f5c725109471a9a7"
+    },
+    {
+      "path": "tests/runtime/CMakeLists.txt",
+      "sha256": "6575d83f6d0caaeb25852b01da8ac369f55a6cf35a9e96fea0f6487bc94d9808"
+    },
+    {
+      "path": "tests/runtime/mpi_singleton.cpp",
+      "sha256": "f6fb305f6d4063ff5ae0edc2de08710e9c9341b90fc3cff59f994a8f2b908163"
+    },
+    {
+      "path": "patches/arpack-ng/msvc-test-constant-bounds.patch",
+      "sha256": "05bee6a20f2b995f188ffb5f612c59e04a2d050a7921468c8efdfde1a26c5a1a"
+    },
+    {
+      "path": "patches/libceed/windows-allocation.patch",
+      "sha256": "3725b465bffe01eb2bcb9afdf96038a08b03304e4a73a487e61d54263aaaeca9"
+    },
+    {
+      "path": "patches/libceed/windows-cpu-registration.patch",
+      "sha256": "8e69d0ca5209409d2135744ff810d07eaab040c50154cdea9320ba7f9fe7a38e"
+    },
+    {
+      "path": "patches/mfem/no-parmetis-ordering.patch",
+      "sha256": "c7d74c4e0294972342a7232ed26050e5c0c950e9c9fef50201a3c9c3233c0269"
+    },
+    {
+      "path": "patches/mfem/windows-build.patch",
+      "sha256": "2691afe3eefbb41ac6b09588fc751b195715554980472c67a484338e754c07c0"
+    },
+    {
+      "path": "patches/mumps/pinned-source-archive.patch",
+      "sha256": "495ca146b0a5f5f68849afe39cc5f8b49d8e3cf27fae59570d86c4630e10ba0b"
+    },
+    {
+      "path": "patches/palace/windows-cxx-port.patch",
+      "sha256": "640082490672602340c962403d61ae6fb62bc705052cf693bb36c89fc9307560"
+    },
+    {
+      "path": "patches/palace/windows-memory-reporting.patch",
+      "sha256": "f816004dcb57a901b4c4a013445b6a6217203f79038b29115904e1e1c5014b2d"
+    },
+    {
+      "path": "patches/palace/windows-no-parmetis.patch",
+      "sha256": "4aa0fca99d52968fb3008894c61ebca3845abbd273512c17aa43c708d38918a3"
+    },
+    {
+      "path": "windows/palace.manifest",
+      "sha256": "bacd9bc04180d849d93adf003ccc4dafa7b63e5e09bf091b67143f3b8afee730"
+    },
+    {
+      "path": "deps/gate1-lock.json",
+      "sha256": "daee454cd3416c737f286e273cca6b09945e95c6afad96ee7144544c691d919c"
+    },
+    {
+      "path": "deps/gate2-lock.json",
+      "sha256": "7210b043ef8f6b3ee10f89eeb210c52e886d791f194deb3388408fd50e28dc07"
+    },
+    {
+      "path": "deps/upstream.json",
+      "sha256": "04f4f6c635353c14d3fdecaee757d943c937d075ef46924997162716957e1571"
+    }
+  ],
+  "open": [
+    "G0 clean standard-user/offline",
+    "redistribution applicability and obligations review",
+    "same-input Linux numerical comparison",
+    "independent ParaView viewer",
+    "full package/reproduction/release gates"
+  ]
+}

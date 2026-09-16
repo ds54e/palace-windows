@@ -14,7 +14,7 @@ $mpi = @('-DMPI_C_LIB_NAMES=msmpi','-DMPI_CXX_LIB_NAMES=msmpi','-DMPI_Fortran_LI
     "-DMPI_Fortran_F77_HEADER_DIR=$sdk","-DMPI_Fortran_ADDITIONAL_INCLUDE_DIRS=$sdk")
 $common = @('-G','Ninja','-DCMAKE_BUILD_TYPE=Release','-DCMAKE_C_COMPILER=cl','-DCMAKE_CXX_COMPILER=cl',
     '-DCMAKE_Fortran_COMPILER=ifx','-DCMAKE_CXX_FLAGS=/EHsc /utf-8','-DCMAKE_C_FLAGS_RELEASE=/O2','-DCMAKE_CXX_FLAGS_RELEASE=/O2',
-    '-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL','-DCMAKE_Fortran_FLAGS=/fpscomp:logicals',
+    '-DCMAKE_POLICY_DEFAULT_CMP0091=NEW','-DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL','-DCMAKE_Fortran_FLAGS=/fpscomp:logicals',
     '-DBUILD_SHARED_LIBS=OFF',"-DCMAKE_INSTALL_PREFIX=$prefix","-DCMAKE_PREFIX_PATH=$prefix") + $mpi
 function Complete-Build([string]$build) {
     if ($LASTEXITCODE -ne 0) { throw "Configure failed: $build ($LASTEXITCODE)" }

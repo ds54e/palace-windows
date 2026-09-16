@@ -57,6 +57,13 @@
       "name": "libCEED",
       "url": "https://github.com/CEED/libCEED.git",
       "commit": "39f259f89332e936122f7e02d6088a1dae3fb628"
+    },
+    {
+      "name": "catch2",
+      "url": "https://github.com/catchorg/Catch2.git",
+      "upstream_tag": "v3.8.1",
+      "commit": "2b60af89e23d28eefc081bc930831ee9d45ea58b",
+      "scope": "optional upstream unit-test harness"
     }
   ],
   "mfem_upstream_patches": [
@@ -107,9 +114,9 @@
     ]
   },
   "local_patch_sha256": {
-    "patches/palace/windows-no-parmetis.patch": "fcdc2c6e91ad14da2d639bd5dc6dfc5dcc7afa75219c7fe6d8b44d61af27374c",
+    "patches/palace/windows-no-parmetis.patch": "4aa0fca99d52968fb3008894c61ebca3845abbd273512c17aa43c708d38918a3",
     "patches/palace/windows-memory-reporting.patch": "f816004dcb57a901b4c4a013445b6a6217203f79038b29115904e1e1c5014b2d",
-    "patches/palace/windows-cxx-port.patch": "4140542fc4e35d0e8c47e9fd4fb9127c8611ba1861a52ac231686cf5c16c5932",
+    "patches/palace/windows-cxx-port.patch": "640082490672602340c962403d61ae6fb62bc705052cf693bb36c89fc9307560",
     "patches/mfem/no-parmetis-ordering.patch": "c7d74c4e0294972342a7232ed26050e5c0c950e9c9fef50201a3c9c3233c0269",
     "patches/mfem/windows-build.patch": "2691afe3eefbb41ac6b09588fc751b195715554980472c67a484338e754c07c0",
     "patches/libceed/windows-allocation.patch": "3725b465bffe01eb2bcb9afdf96038a08b03304e4a73a487e61d54263aaaeca9",
