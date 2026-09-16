@@ -1,6 +1,6 @@
 # Gate 3: Windows/Linux numerical equivalence
 
-Status: in progress. Acceptance was committed before inspecting Linux Palace comparison results (`docs/GATE3_ACCEPTANCE.json`, initial commit `2bd375b`; lossless-Q structural clarification before Linux results in `34dca93`). No numerical tolerance has been widened.
+Status: passed within the documented developer-host scope. All 60 frozen checks passed; the largest error/allowance ratio was 0.000480278. Full values and identities are in `docs/evidence/G3-numerics-2026-09-17.json`. Acceptance was committed before inspecting Linux Palace comparison results (`docs/GATE3_ACCEPTANCE.json`, initial commit `2bd375b`; lossless-Q structural clarification before Linux results in `34dca93`). No numerical tolerance has been widened.
 
 Both paths use Palace v0.18.0 commit `b92aef83ecfe6d360c4b3d83e2122986297f6778`, MPI enabled, Hypre, METIS, MUMPS PORD/METIS and ARPACK/PARPACK; ParMETIS implementation is absent. The Linux reference overlay only adapts the Windows variant's CMake guards to permit the same selected dependency semantics. Solver code and fixed input selections are shared. The configurations and meshes are copied byte-for-byte and hash checked. CPU backend `/cpu/self/opt/blocked`, one MPI rank, and one numerical thread are explicit.
 

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "G3_IN_PROGRESS",
-  "current_gate": "G3_numerics",
+  "project_status": "G4_IN_PROGRESS",
+  "current_gate": "G4_package",
   "model_policy": {
     "parent_default": {
       "model": "gpt-6-astra",
@@ -77,16 +77,20 @@
       ]
     },
     "G3_numerics": {
-      "status": "in_progress",
+      "status": "pass",
       "evidence": [
         {
           "path": "docs/evidence/G3-inputs-2026-09-17.json",
           "sha256": "4f2a4a0853e2d9546cd515e20eb51c9ffe6b0674b1e87d62513d56765e55415f"
+        },
+        {
+          "path": "docs/evidence/G3-numerics-2026-09-17.json",
+          "sha256": "dc344278821a63a508dad1b577a0ea1b545431846009d85ac28604cc00a901be"
         }
       ]
     },
     "G4_package": {
-      "status": "not_run",
+      "status": "in_progress",
       "evidence": []
     },
     "G5_clean_host": {
@@ -106,5 +110,5 @@
     "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
     "VC runtime redistribution requires owner Visual Studio entitlement confirmation; proprietary-runtime downstream obligations and exact package review remain open."
   ],
-  "next_action": "Linux Palace build is active after all reference dependencies installed (.work/gate3/linux-palace.log). MUMPS/MFEM/PARPACK Linux connections passed. Run matching four Linux cases, archive identity/no-ParMETIS audit and frozen comparison. If G3 passes, immediately execute prepared staging recipe, finish license-interface attribution and package audits/ZIP. Native Touchstone exporter tests passed. Owner VS entitlement and independent clean-host/offline evidence remain external requirements."
+  "next_action": "Add tested license-interface attribution, then stage and audit the exact dynamic-runtime payload and produce an internal ZIP/clean-host kit. G3 baseline passed all 60 frozen checks. Gate 0 and redistribution review remain open."
 }
