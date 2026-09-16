@@ -3,8 +3,24 @@
   "distribution_version": "1.0.0",
   "project_status": "PREPARATION_ONLY",
   "current_gate": "G0_runtime",
+  "model_policy": {
+    "parent_default": {
+      "model": "gpt-6-astra",
+      "reasoning_effort": "low"
+    },
+    "parent_fallback": {
+      "model": "gpt-5.6-sol",
+      "reasoning_effort": "medium",
+      "switch_control": "owner"
+    },
+    "bounded_child": {
+      "model": "gpt-5.6-luna",
+      "reasoning_effort": "medium"
+    },
+    "higher_astra_effort_requires_owner_authorization": true
+  },
   "model_usage": {
-    "sol_launches_total": 0,
+    "parent_fallback_switches": 0,
     "luna_launches_by_gate": {},
     "active_children": 0
   },
@@ -45,5 +61,5 @@
   "blockers": [
     "Windows host, app-local MPI runtime, and clean-host deployment have not been tested."
   ],
-  "next_action": "Run the read-only Windows doctor; inspect pinned source; execute Gate 0 with provenance-reviewed runtime artifacts."
+  "next_action": "Launch the parent with Astra/low, verify the effective model in the local Codex CLI, run the read-only Windows doctor, inspect pinned source, and execute Gate 0 with provenance-reviewed runtime artifacts."
 }

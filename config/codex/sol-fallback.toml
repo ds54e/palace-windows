@@ -1,0 +1,4 @@
+# Optional owner-applied fallback parent configuration.
+# Use only when switching away from Astra/low is an explicit user decision.
+model = "gpt-5.6-sol"
+model_reasoning_effort = "medium"

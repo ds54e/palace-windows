@@ -1,6 +1,6 @@
 # Codex kickoff
 
-Use this as the initial task after cloning the repository onto the Windows filesystem and launching Codex from WSL with Terra/medium.
+Use this as the initial task after cloning the repository onto the Windows filesystem and launching Codex from WSL with **Astra/low**.
 
 ---
 
@@ -12,7 +12,9 @@ Upstream Palace v0.18.0 is pinned by commit in deps/upstream.json. Verify the so
 
 Before building Palace, execute the Gate 0 MPI deployment investigation. The probe and runner are supplied, but Windows execution and clean-host evidence are not yet present. Do not claim a pass merely because the code exists. Check provenance of runtime files before proposing to ship them.
 
-When Gate 0 succeeds, continue through ABI tests, core dependencies, native Palace, C/L/S/eigen validation, package assembly, clean-host validation, and reproducible release-ready artifacts. Implement the missing build/packaging pieces as real scripts; no success-returning placeholders. Use one writer and one heavy build. The optional child model templates require local support/actual-model verification before activation.
+When Gate 0 succeeds, continue through ABI tests, core dependencies, native Palace, C/L/S/eigen validation, package assembly, clean-host validation, and reproducible release-ready artifacts. Implement the missing build/packaging pieces as real scripts; no success-returning placeholders. Use one writer and one heavy build. The optional Luna child template requires local support and actual-model verification before activation.
+
+Use Astra/low as the normal parent. Do not raise Astra effort autonomously. If Astra becomes quota-constrained or clearly poor value for a sustained phase, checkpoint the repository and recommend the owner-authorized Sol/medium fallback described in docs/CODEX_OPERATIONS.md; do not self-restart or silently switch models.
 
 Commit coherent checkpoints. Update STATE.json, DEVLOG.md, and DECISIONS.md with evidence. Continue ordinary in-scope engineering without repeated confirmation. For a genuine host privilege, licensing, quota, or unavailable-tool blocker, report the exact next owner action and continue independent work where possible.
 
