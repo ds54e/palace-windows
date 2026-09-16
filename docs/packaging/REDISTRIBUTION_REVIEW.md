@@ -32,8 +32,11 @@ Intel source: [compiler application deployment guidance](https://www.intel.com/c
 | nlohmann JSON | MIT LICENSE.MIT | Verbatim notice |
 | JSON schema validator | MIT LICENSE | Verbatim notice |
 | fmt | MIT LICENSE | Verbatim notice |
-| scn | Apache-2.0 LICENSE; bundled third-party notices must be checked | License and applicable bundled component notices |
+| scn | Apache-2.0 LICENSE | License and complete corresponding source snapshot |
+| fast_float v6.1.6, commit 00c8c7b0d5c722d2212568d915a39ea73b08b973 | MIT / Apache-2.0 / Boost-1.0 alternatives, accompanying LICENSE files | Preserve all accompanying license files and source; actual header dependency of scn |
 
 CeCILL-C §§5.3.1–5.3.3 require effective covered-source access throughout distribution; §6.4 requires attribution accessible from the derivative software interface. MPL-2.0 §3.2 likewise requires source availability for covered code. Shipping corresponding source alongside the executable avoids reliance solely on a live upstream URL. The derivative application and third-party components keep their respective licenses; proprietary runtime restrictions must not purport to remove open-source rights in unrelated components.
 
 ParMETIS remains excluded, with its restrictive upstream license evidence preserved in `docs/REDISTRIBUTION.md`. Its preserved enum/unsupported diagnostic is not third-party ParMETIS implementation code.
+
+The embedded libircmt support implementation is not named in the accompanying fredist list, although libircmd.dll/libircmd.lib/libircdisp.lib are named. General Intel static-deployment guidance is evidence of intended use, but is not treated here as an exact-file redistribution grant overriding the EULA definition. This scope remains unresolved; no compiler/runtime change has been made to hide the issue. A vendor/license clarification or separately validated licensed linkage route is required before closing the package review.

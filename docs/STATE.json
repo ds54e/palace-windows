@@ -106,5 +106,5 @@
     "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
     "VC runtime redistribution requires owner Visual Studio entitlement confirmation; proprietary-runtime downstream obligations and exact package review remain open."
   ],
-  "next_action": "Continue Linux reference component build (.work/gate3/linux-build-sequence.log; currently Hypre), run matching MFEM connection and four cases, then tools/compare_gate3.py using frozen criteria. If G3 passes, immediately stage dynamic-runtime Windows payload and complete exact-file redistribution review/clean-host kit. Owner VS entitlement question is pending; no comparison or package pass yet."
+  "next_action": "Linux Palace build is active after all reference dependencies installed (.work/gate3/linux-palace.log). MUMPS/MFEM/PARPACK Linux connections passed. Run matching four Linux cases, archive identity/no-ParMETIS audit and frozen comparison. If G3 passes, immediately execute prepared staging recipe, finish license-interface attribution and package audits/ZIP. Native Touchstone exporter tests passed. Owner VS entitlement and independent clean-host/offline evidence remain external requirements."
 }

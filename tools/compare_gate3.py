@@ -20,7 +20,9 @@ def check(name, left, right, absolute, relative):
     error = abs(left - right)
     limit = absolute + relative * max(abs(left), abs(right))
     passed = math.isfinite(error) and error <= limit
-    CHECKS.append(dict(name=name, absolute_error=error, allowed_error=limit, passed=passed))
+    encode = lambda value: dict(real=value.real, imag=value.imag) if isinstance(value, complex) else value
+    CHECKS.append(dict(name=name, left=encode(left), right=encode(right),
+                       absolute_error=error, allowed_error=limit, passed=passed))
 
 
 def table(path):
