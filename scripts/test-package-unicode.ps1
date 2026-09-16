@@ -15,6 +15,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Staged exporter failed' }
 $case="$output/electrostatic"
 $config=Get-Content -LiteralPath "$case/config.json" -Raw | ConvertFrom-Json
 $config.Solver.Linear.ColumnOrdering='ParMETIS'
+$config.Problem.Output='unsupported-output'
 $config | ConvertTo-Json -Depth 30 | Set-Content -Encoding UTF8 "$case/unsupported.json"
 Push-Location $case
 try {

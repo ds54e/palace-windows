@@ -41,3 +41,9 @@ Owner explicitly accepts G0 native singleton evidence as a functional prerequisi
 ## D010 — MPI-enabled Windows V1 without ParMETIS (2026-09-17)
 
 Owner explicitly selected a no-ParMETIS variant; obtaining ParMETIS redistribution approval is outside the V1 critical path. Preserve the pinned license evidence. Use MPI + Hypre + METIS + MUMPS PORD/METIS + ARPACK/PARPACK. Retain Palace's enum/API spelling and reject explicit unsupported ordering rather than substitute silently. Keep changes in a Windows build overlay and a narrowly guarded MFEM wrapper check; do not replace MPI or rewrite Palace solvers. Multi-rank scaling and ParMETIS ordering are not V1 requirements. See `NO_PARMETIS.md` for the dependency trace and validation status.
+
+## D011 — Frozen numerical reference and internal package boundary (2026-09-17)
+
+Gate 3 compares the pinned no-ParMETIS variant with identical meshes/configurations, one rank/thread, explicit solver/ordering and predeclared tolerances. All 60 scalar/matrix/complex-frequency/residual checks passed; raw field equality is not required. Retain the validated dynamic Windows runtime stack. The native Touchstone utility shares its VC runtime closure.
+
+Gate 4 produces an exact unsigned internal candidate, not a public release or redistribution approval. Corresponding MUMPS/Eigen and other open-source snapshots/notices accompany it. Actual linked GKlib LGPL sorting code means METIS's top-level Apache license is not the complete license picture. Do not conceal that finding, infer Intel static-support rights from generic deployment guidance, or infer VC distribution entitlement from an installed Build Tools directory. Close these concrete obligations and independent clean-host/offline evidence before release readiness. No ParMETIS approval returns to the critical path.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "G4_IN_PROGRESS",
+  "project_status": "BLOCKED_EXTERNAL_REVIEW",
   "current_gate": "G4_package",
   "model_policy": {
     "parent_default": {
@@ -90,11 +90,16 @@
       ]
     },
     "G4_package": {
-      "status": "in_progress",
-      "evidence": []
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "docs/evidence/G4-internal-candidate-2026-09-17.json",
+          "sha256": "fdc23952f416248d496e9945ac65f3f25cf4daac11a51750e51b91478e2a117d"
+        }
+      ]
     },
     "G5_clean_host": {
-      "status": "not_run",
+      "status": "blocked",
       "evidence": []
     },
     "G6_reproduce": {
@@ -107,8 +112,10 @@
     }
   },
   "blockers": [
-    "Gate 0 developer-host native functional/app-local tests passed, but independently prepared clean standard-user offline Windows evidence is unavailable.",
-    "VC runtime redistribution requires owner Visual Studio entitlement confirmation; proprietary-runtime downstream obligations and exact package review remain open."
+    "Independent clean standard-user offline Windows host evidence is unavailable; Gate 0 and Gate 5 remain open.",
+    "Owner Visual Studio license/eligibility confirmation has not been received; VC runtime redistribution entitlement remains unestablished.",
+    "Embedded Intel libircmt code is present in Palace but absent from the accompanying fredist list; exact redistribution scope needs authoritative clarification.",
+    "Pinned METIS contains linked LGPL-2.1-or-later GKlib sort macros. Complete relinking/material and downstream-term compliance for the static combination is not yet established alongside proprietary support code."
   ],
-  "next_action": "Add tested license-interface attribution, then stage and audit the exact dynamic-runtime payload and produce an internal ZIP/clean-host kit. G3 baseline passed all 60 frozen checks. Gate 0 and redistribution review remain open."
+  "next_action": "Resolve external VS entitlement and Intel embedded-support licensing facts, then close the LGPL-compatible relinking/terms route without changing validated solvers gratuitously. Independently execute docs/packaging/CLEAN_HOST_TEST.md against the exact internal ZIP. Candidate ZIP, hashes and developer-host evidence are ready; no redistribution or READY_FOR_RELEASE_REVIEW claim. Fresh-cache reproduction and final review remain unexecuted."
 }

@@ -1,0 +1,934 @@
+{
+  "schema_version": 1,
+  "status": "blocked",
+  "scope": "Exact internal package and developer-host staged validation complete; redistribution and independent clean-host acceptance open",
+  "artifact": {
+    "status": "INTERNAL_VALIDATION_ONLY_NOT_APPROVED_FOR_REDISTRIBUTION",
+    "archive": "palace-windows-1.0.0-internal-validation.zip",
+    "sha256": "9305a0883ffc29c35fbb7459b8b1409573cea59ee147b2cf34972397d7a6fb9c",
+    "bytes": 121760427,
+    "diagnostics": {
+      "path": "palace-windows-1.0.0-diagnostics.zip",
+      "sha256": "e0e547a4f04a7b7d55612ff9ec0af706f9ef8be2503b8c6469cd2213cde0a4b2",
+      "bytes": 2113286
+    },
+    "signature": "unsigned",
+    "clean_host": "not executed",
+    "redistribution": "pending exact-payload review and external entitlement facts"
+  },
+  "staging": {
+    "scope": "Exact payload inventory/hashes only; no redistribution or clean-host pass",
+    "files": 162,
+    "bytes": 169588994,
+    "binaries": [
+      "libifcoremd.dll",
+      "libmmd.dll",
+      "msmpi.dll",
+      "msvcp140.dll",
+      "palace-sparams.exe",
+      "palace.exe",
+      "svml_dispmd.dll",
+      "vcruntime140.dll",
+      "vcruntime140_1.dll"
+    ],
+    "status": "pass"
+  },
+  "stage_manifest_sha256": "ba2e34f6e978685e88c69baa5145971b9552f9b4b60f677b8d78bafd58789b2a",
+  "stage_manifest_path": ".work/package/palace-windows-1.0.0/build-manifest.json",
+  "binaries": [
+    {
+      "path": "libifcoremd.dll",
+      "size": 1298288,
+      "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3"
+    },
+    {
+      "path": "libmmd.dll",
+      "size": 4185968,
+      "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e"
+    },
+    {
+      "path": "msmpi.dll",
+      "size": 1631000,
+      "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d"
+    },
+    {
+      "path": "msvcp140.dll",
+      "size": 557728,
+      "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9"
+    },
+    {
+      "path": "palace-sparams.exe",
+      "size": 88576,
+      "sha256": "7ae3ba0edd25877d636f18d40b7a94392741747f17dcc16aeafcd1438fbc0317"
+    },
+    {
+      "path": "palace.exe",
+      "size": 36324864,
+      "sha256": "cccbdd185425c0491e15f19e13e0a5206229f73f447312b20c74c4d53234f2d9"
+    },
+    {
+      "path": "svml_dispmd.dll",
+      "size": 18828656,
+      "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c"
+    },
+    {
+      "path": "vcruntime140.dll",
+      "size": 124544,
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+    },
+    {
+      "path": "vcruntime140_1.dll",
+      "size": 49792,
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f"
+    }
+  ],
+  "candidate_validation": {
+    "schema_version": 1,
+    "status": "pass",
+    "scope": "Packaging license-interface change; developer-host revalidation only",
+    "change": "Windows --licenses/help notice only, with matching source overlay on reference; no solver/toolchain/runtime-family change",
+    "windows_executable_sha256": "cccbdd185425c0491e15f19e13e0a5206229f73f447312b20c74c4d53234f2d9",
+    "linux_executable_sha256": "7882b0d57d0a5913c2df6a59dd2ed05d5db3eb47e873c49b74b96335d79e3245",
+    "comparison_sha256": "2f10db5ea437e74dd499c8264dfa1b14b9cd22fa8348bcdfe2e4fee35eca6a4a",
+    "comparison": {
+      "passed": true,
+      "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+      "checks": [
+        {
+          "name": "electrostatic[1,1]",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[1,2]",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[2,1]",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[2,2]",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/trace",
+          "left": 4.062458343218e-12,
+          "right": 4.062458343218e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 6.062458343218e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/frobenius",
+          "left": 3.1210331267775957e-12,
+          "right": 3.1210331267775957e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 5.121033126777596e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-0",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-1",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-2",
+          "left": 2.959652569045e-12,
+          "right": 2.959652569045e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 6.959652569045e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-3",
+          "left": 5.165264117391e-12,
+          "right": 5.165264117391e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 9.165264117391e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-1-1",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-1-2",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-2-1",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-2-2",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-1-1",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-1-2",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-2-1",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-2-2",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[1,1]",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 1.9994506369055216e-23,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[1,2]",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 4.0300013261384763e-22,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[2,1]",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 4.0300013261384763e-22,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[2,2]",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 9.998545654234722e-23,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/trace",
+          "left": 6.7224638415889e-10,
+          "right": 6.722463841589701e-10,
+          "absolute_error": 8.002972426450543e-23,
+          "allowed_error": 2.0006722463841588e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/frobenius",
+          "left": 6.376702997352575e-10,
+          "right": 6.376702997353586e-10,
+          "absolute_error": 1.0112282988460763e-22,
+          "allowed_error": 2.0006376702997353e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-0",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 1.9994506369055216e-23,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-1",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 9.998545654234722e-23,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-2",
+          "left": 6.76095810077902e-10,
+          "right": 6.76095810078788e-10,
+          "absolute_error": 8.860138336208618e-22,
+          "allowed_error": 4.000676095810079e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-3",
+          "left": 6.68396958239878e-10,
+          "right": 6.683969582391521e-10,
+          "absolute_error": 7.259543850918509e-22,
+          "allowed_error": 4.00066839695824e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-1-1",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487729e-11,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-1-2",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959506e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000019247129595e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-2-1",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959506e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000019247129595e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-2-2",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592816e-10,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-1-1",
+          "left": 3.557502487727e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-1-2",
+          "left": 1.924712959909e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-2-1",
+          "left": 1.924712959909e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-2-2",
+          "left": 6.366713592817e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/4.0",
+          "left": 4.0,
+          "right": 4.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/4.0",
+          "left": 4.0,
+          "right": 4.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@4.0GHz",
+          "left": {
+            "real": -0.10072106697776187,
+            "imag": 0.0353679495023493
+          },
+          "right": {
+            "real": -0.10072106697764589,
+            "imag": 0.03536794950230857
+          },
+          "absolute_error": 1.22918927704764e-13,
+          "allowed_error": 2.0675029360680712e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@4.0GHz",
+          "left": {
+            "real": 0.07876577273343809,
+            "imag": 0.7007468403321762
+          },
+          "right": {
+            "real": 0.07876577273343809,
+            "imag": 0.7007468403321762
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.051596848869226e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@4.0GHz",
+          "left": {
+            "real": 0.0787657507402418,
+            "imag": 0.7007468666094316
+          },
+          "right": {
+            "real": 0.07876575074036424,
+            "imag": 0.7007468666094179
+          },
+          "absolute_error": 1.232152135397937e-13,
+          "allowed_error": 8.051597085431147e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@4.0GHz",
+          "left": {
+            "real": -0.10072108763893728,
+            "imag": 0.0353679746965889
+          },
+          "right": {
+            "real": -0.10072108763893728,
+            "imag": 0.0353679746965889
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.067503214482703e-07,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/5.0",
+          "left": 5.0,
+          "right": 5.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/5.0",
+          "left": 5.0,
+          "right": 5.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@5.0GHz",
+          "left": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "right": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 1.9902996362934077e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@5.0GHz",
+          "left": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "right": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.055486743321476e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@5.0GHz",
+          "left": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "right": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.055486743321476e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@5.0GHz",
+          "left": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "right": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 1.9902996362934077e-07,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/6.0",
+          "left": 6.0,
+          "right": 6.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/6.0",
+          "left": 6.0,
+          "right": 6.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@6.0GHz",
+          "left": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "right": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.1154345391726832e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@6.0GHz",
+          "left": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "right": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.069267279250798e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@6.0GHz",
+          "left": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "right": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.069267279250798e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@6.0GHz",
+          "left": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "right": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.1154345391726832e-07,
+          "passed": true
+        },
+        {
+          "name": "eigenfrequency-1",
+          "left": {
+            "real": 2.97563087455,
+            "imag": 2.979565338853e-16
+          },
+          "right": {
+            "real": 2.97563087455,
+            "imag": -1.646189518527e-15
+          },
+          "absolute_error": 1.9441460524123e-15,
+          "allowed_error": 3.07563087455e-06,
+          "passed": true
+        },
+        {
+          "name": "eigen-1/Error (Bkwd.)",
+          "left": 8.943416413162e-15,
+          "right": 1.696745386766e-15,
+          "absolute_error": 7.246671026396e-15,
+          "allowed_error": 1.0000000008943416e-10,
+          "passed": true
+        },
+        {
+          "name": "eigen-1/Error (Abs.)",
+          "left": 5.927656090115e-13,
+          "right": 1.1248757665e-13,
+          "absolute_error": 4.802780323614999e-13,
+          "allowed_error": 1.0000000059276562e-09,
+          "passed": true
+        },
+        {
+          "name": "eigenfrequency-2",
+          "left": {
+            "real": 3.033127909157,
+            "imag": -4.53096275311e-16
+          },
+          "right": {
+            "real": 3.033127909157,
+            "imag": 3.64366366241e-16
+          },
+          "absolute_error": 8.17462641552e-16,
+          "allowed_error": 3.1331279091569997e-06,
+          "passed": true
+        },
+        {
+          "name": "eigen-2/Error (Bkwd.)",
+          "left": 8.960926818191e-15,
+          "right": 1.199939819417e-14,
+          "absolute_error": 3.038471375978999e-15,
+          "allowed_error": 1.0000000011999399e-10,
+          "passed": true
+        },
+        {
+          "name": "eigen-2/Error (Abs.)",
+          "left": 5.98369868909e-13,
+          "right": 8.014637770079e-13,
+          "absolute_error": 2.0309390809890006e-13,
+          "allowed_error": 1.0000000080146378e-09,
+          "passed": true
+        }
+      ],
+      "outputs": [
+        {
+          "platform": "windows",
+          "case": "electrostatic",
+          "vtu_files": 5,
+          "fields": [
+            "E",
+            "Indicator",
+            "Q_s",
+            "Rank",
+            "U_e",
+            "V",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "electrostatic",
+          "vtu_files": 5,
+          "fields": [
+            "E",
+            "Indicator",
+            "Q_s",
+            "Rank",
+            "U_e",
+            "V",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "magnetostatic",
+          "vtu_files": 5,
+          "fields": [
+            "A",
+            "B",
+            "Indicator",
+            "J_s",
+            "Rank",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "magnetostatic",
+          "vtu_files": 5,
+          "fields": [
+            "A",
+            "B",
+            "Indicator",
+            "J_s",
+            "Rank",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "driven",
+          "vtu_files": 13,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "driven",
+          "vtu_files": 13,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "eigenmode",
+          "vtu_files": 5,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "eigenmode",
+          "vtu_files": 5,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        }
+      ],
+      "max_fraction_of_allowance": 0.0004802780295145769
+    },
+    "linux_identity_sha256": "fa9e62f307df0dbe03c60b4145c892862937bff512b2b86028f0c9cf41aa3b44",
+    "runtime_audit_sha256": "64b30ca4c04e61822477faf2b8ef3b915736e47485e55b6bebeae3aef2f28c2a",
+    "no_parmetis_audit_sha256": "53551e3a529eeff29803046f4493ec596efcc082ea187bfd137d2cc0aad42b39",
+    "license_notice_output_sha256": "b550086c8f5a81ec079c58a146affbb79169ea2d1521747686bc8840e5ff4e0b",
+    "source_locks": {
+      "deps/gate1-lock.json": "daee454cd3416c737f286e273cca6b09945e95c6afad96ee7144544c691d919c",
+      "deps/gate2-lock.json": "2244e79fd45fa0ffcbd57282ebf3447aa83a52e1624fc37189b3780dc8ec4c0d",
+      "deps/linux-reference-lock.json": "611f0872ebf4dca6c7329fadab728a847632d598006774f80314af1cc609691c"
+    },
+    "patch_sha256": "2f2737233df83136d7a66bee85dd5d2dc223d1190781a4f73835b4103b9717c9"
+  },
+  "developer_staged_runs": {
+    "status": "DEVELOPER_HOST_STAGED_RUN_ONLY_NOT_CLEAN_HOST",
+    "clean_host_attested": false,
+    "offline_attested": false,
+    "standard_user_checked": false,
+    "os_version": "10.0.26200.0",
+    "manifest_sha256": "ba2e34f6e978685e88c69baa5145971b9552f9b4b60f677b8d78bafd58789b2a",
+    "runs": [
+      {
+        "case": "electrostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 3.9848347,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\msmpi.dll"
+        }
+      },
+      {
+        "case": "magnetostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 16.8241823,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\msmpi.dll"
+        }
+      },
+      {
+        "case": "driven",
+        "exit_code": 0,
+        "elapsed_seconds": 0.5219557,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\msmpi.dll"
+        }
+      },
+      {
+        "case": "eigenmode",
+        "exit_code": 0,
+        "elapsed_seconds": 0.1942776,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\gate4\\Package \u65e5\u672c\u8a9e\\msmpi.dll"
+        }
+      }
+    ],
+    "remaining": "CSV/VTK verification, interruption, re-run, read-only install path, uninstall and independent review; redistribution review"
+  },
+  "staged_numerics": {
+    "passed": true,
+    "checks": 60,
+    "max_fraction_of_allowance": 0.0004802780295145769,
+    "report_sha256": "66ccc5d7bb2fd8e57b63274c243fa529d0eaa083de307b7e5d8bcc872e2e6455"
+  },
+  "unicode_export_and_parmetis_rejection": "passed; .work/gate4/unicode-staged-run.log",
+  "zip_checks": "CRC, unique entry paths and no traversal passed; 162 files",
+  "source_archive_check": "No compiled artifact filenames (.exe/.dll/.lib/.obj/.a/.so) in source archives",
+  "not_passed": [
+    "independent standard-user offline clean-Windows validation",
+    "VC publisher license entitlement confirmation",
+    "exact embedded Intel libircmt redistribution grant",
+    "LGPL GKlib static-combination relinking/materials and downstream terms review",
+    "fresh-cache full reproduction"
+  ],
+  "signature": "unsigned",
+  "debug_symbols": "No PDB produced by validated Release recipe; separate linker-map diagnostics ZIP supplied"
+}
