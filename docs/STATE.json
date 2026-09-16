@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "PREPARATION_ONLY",
+  "project_status": "BLOCKED_G0",
   "current_gate": "G0_runtime",
   "model_policy": {
     "parent_default": {
@@ -26,8 +26,13 @@
   },
   "gates": {
     "G0_runtime": {
-      "status": "not_run",
-      "evidence": []
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "docs/evidence/G0-2026-09-17.md",
+          "sha256": "43100dbe3baba1dfe04c95c89ec53ce5526cc47a7860c5160b8ddaaa202dcd3b"
+        }
+      ]
     },
     "G1_abi": {
       "status": "not_run",
@@ -59,7 +64,9 @@
     }
   },
   "blockers": [
-    "Windows host, app-local MPI runtime, and clean-host deployment have not been tested."
+    "PowerShell Restricted policy blocks supplied doctor and Gate 0 scripts; no policy change or bypass authorized.",
+    "Exact app-local MPI runtime payload and redistribution route remain unresolved; probe compiled only, not linked or executed.",
+    "Clean standard-user offline Windows host has not been provided or tested."
   ],
-  "next_action": "Launch the parent with Astra/low, verify the effective model in the local Codex CLI, run the read-only Windows doctor, inspect pinned source, and execute Gate 0 with provenance-reviewed runtime artifacts."
+  "next_action": "Resolve permitted script execution and version-specific MPI payload provenance, then link and execute the native Gate 0 probe. See docs/evidence/G0-2026-09-17.md."
 }

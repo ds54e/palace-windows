@@ -13,3 +13,9 @@ Changed the default Codex parent from Terra/medium to Astra/low by owner decisio
 This policy change does not alter any Palace build, runtime, numerical, or release-readiness status. Gate 0 remains not run.
 
 For subsequent entries use: gate/blocker; hypothesis; exact command; source/toolchain identity; result; evidence path/hash; next experiment. Keep full raw logs in `.work/` and commit only sanitized evidence.
+
+## 2026-09-17 — Real host inventory and Gate 0 investigation
+
+Ran the Windows bridge: script execution was rejected by host policy. Completed direct read-only native inventory, verified pinned Palace source, inspected Microsoft MPI singleton source and WelSim prior art, and compiled the supplied probe to a native x64 object with installed MSVC. No link/runtime test or Palace build occurred. No policy, service, system installation, or global Codex setting was changed.
+
+Commands, source/toolchain identities, bounded findings, raw log paths, and next experiments are recorded in `docs/evidence/G0-2026-09-17.md`. Gate 0 is blocked, not passed. Effective model/status metadata is unavailable; project defaults were not treated as observed runtime metadata. No delegation was used.

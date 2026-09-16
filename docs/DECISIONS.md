@@ -23,3 +23,7 @@ Astra/low is the default parent for V1 because the project is long-horizon, mult
 ## D006 — Evidence before labels
 
 Preparation, developer-host success, clean-host success, numerical validation, and release readiness are separate states. Python bootstrap checks do not validate Windows MPI or Palace. A readiness file cannot prove its own factual claims.
+
+## D007 — Preserve host policy and separate compilation evidence
+
+The first real host rejected PowerShell scripts under Restricted policy. Do not add an execution-policy bypass to the bridge. Native read-only commands and a compile-only MSVC probe established useful facts independently. A compiled object and a singleton source branch do not pass Gate 0. Vendor installer redistribution statements do not establish extracted-DLL redistribution rights.
