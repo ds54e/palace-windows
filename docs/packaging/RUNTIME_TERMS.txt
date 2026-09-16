@@ -1,0 +1,32 @@
+Component-specific runtime terms — review draft
+
+This text does not replace the original component agreements. Copies of the
+applicable agreements and third-party notices are in licenses/. Open-source
+rights for Palace, MUMPS, Eigen and other open-source components are not
+restricted by the proprietary runtime conditions below.
+
+Microsoft MPI: supplied unmodified solely with this Windows application.
+Use is subject to licenses/msmpi/MicrosoftMPI_Redistributable_EULA.rtf,
+including its use restrictions, warranty disclaimer and liability limits.
+No Microsoft support or warranty for this distribution is promised.
+
+Intel compiler runtime: the Intel proprietary runtime portions are provided
+in executable form solely as incorporated in this product. Reverse
+engineering, decompilation and disassembly are prohibited except where
+applicable law or applicable third-party terms permit them. Intel and its
+suppliers' limitations of liability in Section 7 of the accompanying Intel
+Developer Tools EULA apply to these portions. Preserve all Intel and
+third-party notices. Third-party software is governed by its own terms.
+
+Intel oneMKL: the accompanying Intel Simplified Software License and all
+applicable third-party notices govern these embedded library portions.
+Its disclaimer and liability limitations apply. No endorsement is implied.
+
+VC runtime: redistribution grant and applicable downstream terms remain
+pending publisher Visual Studio entitlement confirmation. The Runtime
+use-only agreement is not a redistribution grant. This candidate is not
+approved for redistribution until this and the complete review are closed.
+
+Publisher obligations such as indemnity, license eligibility and compliance
+with distribution conditions cannot be fulfilled merely by copying this
+notice. They remain explicitly recorded in REDISTRIBUTION_REVIEW.md.

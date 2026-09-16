@@ -7,7 +7,7 @@ foreach ($component in @('metis','mumps','hypre')) {
     & "$PSScriptRoot/build-no-parmetis-deps.ps1" -Component $component
 }
 foreach ($script in @('build-mfem','build-libceed','build-core-libs','build-arpack-windows',
-                      'test-no-parmetis','test-mfem','build-catch2','build-palace-windows','test-palace-ports')) {
+                      'test-no-parmetis','test-mfem','build-catch2','build-palace-windows','test-palace-ports','build-sparams')) {
     & "$PSScriptRoot/$script.ps1"
 }
 $root=Split-Path -Parent $PSScriptRoot

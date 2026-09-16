@@ -1,7 +1,7 @@
 [CmdletBinding()]
-param([Parameter(Mandatory=$true)][string]$Executable)
+param([Parameter(Mandatory=$true)][string]$Executable, [string]$OutputDirectory)
 . "$PSScriptRoot/gate2-common.ps1"
-$audit = "$root/.work/gate2/runtime-audit"
+$audit = if ($OutputDirectory) { $OutputDirectory } else { "$root/.work/gate2/runtime-audit" }
 New-Item -ItemType Directory -Force $audit | Out-Null
 $redist = Join-Path $env:VCToolsRedistDir 'x64/Microsoft.VC143.CRT'
 $search = @((Split-Path -Parent $Executable), "$root/.work/staging/mpi-probe", "$root/.work/deps/intel/Library/bin", $redist)
