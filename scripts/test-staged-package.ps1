@@ -12,7 +12,7 @@ foreach ($item in $manifest.files) {
     $path=Join-Path $package $item.path
     if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $item.sha256) { throw "Payload hash mismatch: $($item.path)" }
 }
-$vendor=@('msmpi.dll','libifcoremd.dll','libmmd.dll','svml_dispmd.dll','msvcp140.dll','vcruntime140.dll','vcruntime140_1.dll')
+$vendor=@($manifest.files | Where-Object { $_.path -notmatch '[/\\]' -and $_.path -match '\.dll$' } | ForEach-Object { $_.path.ToLowerInvariant() })
 $records=@()
 foreach ($case in @('electrostatic','magnetostatic','driven','eigenmode')) {
     $work=Join-Path $OutputRoot $case

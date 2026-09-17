@@ -1,0 +1,1821 @@
+{
+  "scope": "Current working native linkage, not original frozen ZIP; no clean-host or redistribution pass",
+  "palace_sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+  "metis_sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+  "palace_map_sha256": "7686aabb9587496bd633d6eed4d3c16f79dec1c5d3ead49428937b550ffaf9ef",
+  "metis_map_sha256": "ce5f0c908956b6c2b8bba21a2202e40d7ef89f1eff796d94e9cb65a62d774d36",
+  "lgpl_source_files": {
+    "gk_mksort.h": "e95421cd9d0d690f90db762f0f8b0068aec56b15b0e7689be5ad2e57169a86c7",
+    "getopt.c": "af18b238a4a1cb3994bacca7710b8902f3a47033a1a5c17b6f0ac0e931dc1695",
+    "gkregex.c": "ae4cf8a70cb89b710980b54867b66f0b9d28f54fa1f7b9926d418511d2876c18",
+    "gkregex.h": "aa73762ba0c53df4afcd24177760ff13dd6dd4ebdae9efe9f54ebc4a5c4f1a71"
+  },
+  "lgpl_map_entries": [
+    "0001:0000c1c0       libmetis__ikvsortd         000000018000d1c0 f   gklib.c.obj",
+    "0001:0000c420       libmetis__ikvsorti         000000018000d420 f   gklib.c.obj",
+    "0001:0000d630       libmetis__rkvsortd         000000018000e630 f   gklib.c.obj",
+    "0002:000002a8       ??_C@_00CNPNBAHC@@         000000018002d2a8     getopt.c.obj",
+    "0002:000002b0       __re_error_msgid           000000018002d2b0     gkregex.c.obj",
+    "0002:00000430       __re_error_msgid_idx       000000018002d430     gkregex.c.obj",
+    "0002:000004c0       __xmm@ffffffffffffffffffffffffffffffff 000000018002d4c0     gkregex.c.obj",
+    "0003:00000008       gk_optind                  0000000180037008     getopt.c.obj",
+    "0003:0000000c       gk_opterr                  000000018003700c     getopt.c.obj",
+    "0003:00000010       gk_optopt                  0000000180037010     getopt.c.obj",
+    "0002:00008220       $unwind$libmetis__ikvsortd 0000000180035220     gklib.c.obj",
+    "0002:00008220       $unwind$libmetis__ikvsorti 0000000180035220     gklib.c.obj",
+    "0002:00008238       $chain$0$libmetis__ikvsorti 0000000180035238     gklib.c.obj",
+    "0002:0000824c       $chain$1$libmetis__ikvsorti 000000018003524c     gklib.c.obj",
+    "0002:0000825c       $chain$0$libmetis__ikvsortd 000000018003525c     gklib.c.obj",
+    "0002:00008270       $chain$1$libmetis__ikvsortd 0000000180035270     gklib.c.obj",
+    "0002:00008280       $unwind$libmetis__rkvsortd 0000000180035280     gklib.c.obj",
+    "0002:00008298       $chain$0$libmetis__rkvsortd 0000000180035298     gklib.c.obj",
+    "0002:000082ac       $chain$1$libmetis__rkvsortd 00000001800352ac     gklib.c.obj",
+    "0003:000089e0       nextchar                   000000018003f9e0     getopt.c.obj",
+    "0003:000089e8       posixly_correct            000000018003f9e8     getopt.c.obj",
+    "0003:000089f0       ordering                   000000018003f9f0     getopt.c.obj",
+    "0003:000089f4       first_nonopt               000000018003f9f4     getopt.c.obj",
+    "0003:000089f8       last_nonopt                000000018003f9f8     getopt.c.obj"
+  ],
+  "sort_macro_functions": [
+    "libmetis__ikvsorti",
+    "libmetis__ikvsortd",
+    "libmetis__rkvsortd"
+  ],
+  "macros": [
+    "GK_MKQSORT",
+    "_GKQSORT_SWAP",
+    "_GKQSORT_MAX_THRESH",
+    "_GKQSORT_STACK_SIZE",
+    "_GKQSORT_PUSH",
+    "_GKQSORT_POP",
+    "_GKQSORT_STACK_NOT_EMPTY"
+  ],
+  "regex_getopt": "Shared link retains the listed LGPL data entries; no functions from these objects appear as live map functions. They are covered, not excluded from license review.",
+  "replacement_test": {
+    "executable_unchanged": true,
+    "replacement_dll_sha256": "b28cf86a322e605bed342a014d6b34a640da45914ef74eb3a85d6752fb5b6475",
+    "change": "Diagnostic only at METIS_SetDefaultOptions, separate copied source; never included in candidate.",
+    "comparison": {
+      "passed": true,
+      "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+      "checks": [
+        {
+          "name": "electrostatic[1,1]",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[1,2]",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[2,1]",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic[2,2]",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/trace",
+          "left": 4.062458343218e-12,
+          "right": 4.062458343218e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 6.062458343218e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/frobenius",
+          "left": 3.1210331267775957e-12,
+          "right": 3.1210331267775957e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 5.121033126777596e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-0",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-1",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-2",
+          "left": 2.959652569045e-12,
+          "right": 2.959652569045e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 6.959652569045e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/quadratic-3",
+          "left": 5.165264117391e-12,
+          "right": 5.165264117391e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 9.165264117391e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-1-1",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-1-2",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-2-1",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/windows/reciprocity-2-2",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-1-1",
+          "left": 1.367537377371e-12,
+          "right": 1.367537377371e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 2.367537377371e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-1-2",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-2-1",
+          "left": -5.514028870865e-13,
+          "right": -5.514028870865e-13,
+          "absolute_error": 0.0,
+          "allowed_error": 1.5514028870865e-18,
+          "passed": true
+        },
+        {
+          "name": "electrostatic/linux/reciprocity-2-2",
+          "left": 2.694920965847e-12,
+          "right": 2.694920965847e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 3.694920965847e-18,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[1,1]",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 1.9994506369055216e-23,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[1,2]",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 4.0300013261384763e-22,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[2,1]",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 4.0300013261384763e-22,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic[2,2]",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 9.998545654234722e-23,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/trace",
+          "left": 6.7224638415889e-10,
+          "right": 6.722463841589701e-10,
+          "absolute_error": 8.002972426450543e-23,
+          "allowed_error": 2.0006722463841588e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/frobenius",
+          "left": 6.376702997352575e-10,
+          "right": 6.376702997353586e-10,
+          "absolute_error": 1.0112282988460763e-22,
+          "allowed_error": 2.0006376702997353e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-0",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 1.9994506369055216e-23,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-1",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 9.998545654234722e-23,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-2",
+          "left": 6.76095810077902e-10,
+          "right": 6.76095810078788e-10,
+          "absolute_error": 8.860138336208618e-22,
+          "allowed_error": 4.000676095810079e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/quadratic-3",
+          "left": 6.68396958239878e-10,
+          "right": 6.683969582391521e-10,
+          "absolute_error": 7.259543850918509e-22,
+          "allowed_error": 4.00066839695824e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-1-1",
+          "left": 3.557502487729e-11,
+          "right": 3.557502487729e-11,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-1-2",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959506e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000019247129595e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-2-1",
+          "left": 1.924712959506e-12,
+          "right": 1.924712959506e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000019247129595e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/windows/reciprocity-2-2",
+          "left": 6.366713592816e-10,
+          "right": 6.366713592816e-10,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-1-1",
+          "left": 3.557502487727e-11,
+          "right": 3.557502487727e-11,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0000355750248773e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-1-2",
+          "left": 1.924712959909e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-2-1",
+          "left": 1.924712959909e-12,
+          "right": 1.924712959909e-12,
+          "absolute_error": 0.0,
+          "allowed_error": 1.00000192471296e-12,
+          "passed": true
+        },
+        {
+          "name": "magnetostatic/linux/reciprocity-2-2",
+          "left": 6.366713592817e-10,
+          "right": 6.366713592817e-10,
+          "absolute_error": 0.0,
+          "allowed_error": 1.0006366713592816e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/4.0",
+          "left": 4.0,
+          "right": 4.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/4.0",
+          "left": 4.0,
+          "right": 4.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@4.0GHz",
+          "left": {
+            "real": -0.10072106697764589,
+            "imag": 0.03536794950230857
+          },
+          "right": {
+            "real": -0.10072106697764589,
+            "imag": 0.03536794950230857
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.0675029360668417e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@4.0GHz",
+          "left": {
+            "real": 0.07876577273343809,
+            "imag": 0.7007468403321762
+          },
+          "right": {
+            "real": 0.07876577273343809,
+            "imag": 0.7007468403321762
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.051596848869226e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@4.0GHz",
+          "left": {
+            "real": 0.07876575074036424,
+            "imag": 0.7007468666094179
+          },
+          "right": {
+            "real": 0.07876575074036424,
+            "imag": 0.7007468666094179
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.051597085431147e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@4.0GHz",
+          "left": {
+            "real": -0.10072108763893728,
+            "imag": 0.0353679746965889
+          },
+          "right": {
+            "real": -0.10072108763893728,
+            "imag": 0.0353679746965889
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.067503214482703e-07,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/5.0",
+          "left": 5.0,
+          "right": 5.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/5.0",
+          "left": 5.0,
+          "right": 5.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@5.0GHz",
+          "left": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "right": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 1.9902996362934077e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@5.0GHz",
+          "left": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "right": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.055486743321476e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@5.0GHz",
+          "left": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "right": {
+            "real": 0.6803330506928236,
+            "imag": 0.18693815016429052
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.055486743321476e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@5.0GHz",
+          "left": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "right": {
+            "real": -0.09875070266998584,
+            "imag": 0.007431851627461856
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 1.9902996362934077e-07,
+          "passed": true
+        },
+        {
+          "name": "frequency/windows/6.0",
+          "left": 6.0,
+          "right": 6.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "frequency/linux/6.0",
+          "left": 6.0,
+          "right": 6.0,
+          "absolute_error": 0.0,
+          "allowed_error": 1e-12,
+          "passed": true
+        },
+        {
+          "name": "S(1, 1)@6.0GHz",
+          "left": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "right": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.1154345391726832e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 1)@6.0GHz",
+          "left": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "right": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.069267279250798e-07,
+          "passed": true
+        },
+        {
+          "name": "S(1, 2)@6.0GHz",
+          "left": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "right": {
+            "real": 0.4312893212857917,
+            "imag": -0.5601204513314086
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 8.069267279250798e-07,
+          "passed": true
+        },
+        {
+          "name": "S(2, 2)@6.0GHz",
+          "left": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "right": {
+            "real": -0.10986351794128163,
+            "imag": 0.019285993294602434
+          },
+          "absolute_error": 0.0,
+          "allowed_error": 2.1154345391726832e-07,
+          "passed": true
+        },
+        {
+          "name": "eigenfrequency-1",
+          "left": {
+            "real": 2.97563087455,
+            "imag": 2.979565338853e-16
+          },
+          "right": {
+            "real": 2.97563087455,
+            "imag": -1.646189518527e-15
+          },
+          "absolute_error": 1.9441460524123e-15,
+          "allowed_error": 3.07563087455e-06,
+          "passed": true
+        },
+        {
+          "name": "eigen-1/Error (Bkwd.)",
+          "left": 8.943416413162e-15,
+          "right": 1.696745386766e-15,
+          "absolute_error": 7.246671026396e-15,
+          "allowed_error": 1.0000000008943416e-10,
+          "passed": true
+        },
+        {
+          "name": "eigen-1/Error (Abs.)",
+          "left": 5.927656090115e-13,
+          "right": 1.1248757665e-13,
+          "absolute_error": 4.802780323614999e-13,
+          "allowed_error": 1.0000000059276562e-09,
+          "passed": true
+        },
+        {
+          "name": "eigenfrequency-2",
+          "left": {
+            "real": 3.033127909157,
+            "imag": -4.53096275311e-16
+          },
+          "right": {
+            "real": 3.033127909157,
+            "imag": 3.64366366241e-16
+          },
+          "absolute_error": 8.17462641552e-16,
+          "allowed_error": 3.1331279091569997e-06,
+          "passed": true
+        },
+        {
+          "name": "eigen-2/Error (Bkwd.)",
+          "left": 8.960926818191e-15,
+          "right": 1.199939819417e-14,
+          "absolute_error": 3.038471375978999e-15,
+          "allowed_error": 1.0000000011999399e-10,
+          "passed": true
+        },
+        {
+          "name": "eigen-2/Error (Abs.)",
+          "left": 5.98369868909e-13,
+          "right": 8.014637770079e-13,
+          "absolute_error": 2.0309390809890006e-13,
+          "allowed_error": 1.0000000080146378e-09,
+          "passed": true
+        }
+      ],
+      "outputs": [
+        {
+          "platform": "windows",
+          "case": "electrostatic",
+          "vtu_files": 5,
+          "fields": [
+            "E",
+            "Indicator",
+            "Q_s",
+            "Rank",
+            "U_e",
+            "V",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "electrostatic",
+          "vtu_files": 5,
+          "fields": [
+            "E",
+            "Indicator",
+            "Q_s",
+            "Rank",
+            "U_e",
+            "V",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "magnetostatic",
+          "vtu_files": 5,
+          "fields": [
+            "A",
+            "B",
+            "Indicator",
+            "J_s",
+            "Rank",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "magnetostatic",
+          "vtu_files": 5,
+          "fields": [
+            "A",
+            "B",
+            "Indicator",
+            "J_s",
+            "Rank",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "driven",
+          "vtu_files": 13,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "driven",
+          "vtu_files": 13,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "windows",
+          "case": "eigenmode",
+          "vtu_files": 5,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        },
+        {
+          "platform": "linux",
+          "case": "eigenmode",
+          "vtu_files": 5,
+          "fields": [
+            "B_imag",
+            "B_real",
+            "E_imag",
+            "E_real",
+            "Indicator",
+            "J_s_imag",
+            "J_s_real",
+            "Q_s_imag",
+            "Q_s_real",
+            "Rank",
+            "S",
+            "U_e",
+            "U_m",
+            "attribute",
+            "connectivity",
+            "coordinates",
+            "offsets",
+            "types"
+          ]
+        }
+      ],
+      "max_fraction_of_allowance": 0.0004802780295145769
+    }
+  },
+  "comparison": {
+    "passed": true,
+    "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+    "checks": [
+      {
+        "name": "electrostatic[1,1]",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[1,2]",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[2,1]",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[2,2]",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/trace",
+        "left": 4.062458343218e-12,
+        "right": 4.062458343218e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 6.062458343218e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/frobenius",
+        "left": 3.1210331267775957e-12,
+        "right": 3.1210331267775957e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 5.121033126777596e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-0",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-1",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-2",
+        "left": 2.959652569045e-12,
+        "right": 2.959652569045e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 6.959652569045e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-3",
+        "left": 5.165264117391e-12,
+        "right": 5.165264117391e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 9.165264117391e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-1-1",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-1-2",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-2-1",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-2-2",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-1-1",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-1-2",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-2-1",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-2-2",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[1,1]",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 1.9994506369055216e-23,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[1,2]",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 4.0300013261384763e-22,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[2,1]",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 4.0300013261384763e-22,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[2,2]",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 9.998545654234722e-23,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/trace",
+        "left": 6.7224638415889e-10,
+        "right": 6.722463841589701e-10,
+        "absolute_error": 8.002972426450543e-23,
+        "allowed_error": 2.0006722463841588e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/frobenius",
+        "left": 6.376702997352575e-10,
+        "right": 6.376702997353586e-10,
+        "absolute_error": 1.0112282988460763e-22,
+        "allowed_error": 2.0006376702997353e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-0",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 1.9994506369055216e-23,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-1",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 9.998545654234722e-23,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-2",
+        "left": 6.76095810077902e-10,
+        "right": 6.76095810078788e-10,
+        "absolute_error": 8.860138336208618e-22,
+        "allowed_error": 4.000676095810079e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-3",
+        "left": 6.68396958239878e-10,
+        "right": 6.683969582391521e-10,
+        "absolute_error": 7.259543850918509e-22,
+        "allowed_error": 4.00066839695824e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-1-1",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487729e-11,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-1-2",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959506e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000019247129595e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-2-1",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959506e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000019247129595e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-2-2",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592816e-10,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-1-1",
+        "left": 3.557502487727e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-1-2",
+        "left": 1.924712959909e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-2-1",
+        "left": 1.924712959909e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-2-2",
+        "left": 6.366713592817e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/4.0",
+        "left": 4.0,
+        "right": 4.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/4.0",
+        "left": 4.0,
+        "right": 4.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@4.0GHz",
+        "left": {
+          "real": -0.10072106697764589,
+          "imag": 0.03536794950230857
+        },
+        "right": {
+          "real": -0.10072106697764589,
+          "imag": 0.03536794950230857
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.0675029360668417e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@4.0GHz",
+        "left": {
+          "real": 0.07876577273343809,
+          "imag": 0.7007468403321762
+        },
+        "right": {
+          "real": 0.07876577273343809,
+          "imag": 0.7007468403321762
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.051596848869226e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@4.0GHz",
+        "left": {
+          "real": 0.07876575074036424,
+          "imag": 0.7007468666094179
+        },
+        "right": {
+          "real": 0.07876575074036424,
+          "imag": 0.7007468666094179
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.051597085431147e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@4.0GHz",
+        "left": {
+          "real": -0.1007210876388213,
+          "imag": 0.03536797469654818
+        },
+        "right": {
+          "real": -0.10072108763893728,
+          "imag": 0.0353679746965889
+        },
+        "absolute_error": 1.22918927704764e-13,
+        "allowed_error": 2.067503214482703e-07,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/5.0",
+        "left": 5.0,
+        "right": 5.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/5.0",
+        "left": 5.0,
+        "right": 5.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@5.0GHz",
+        "left": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "right": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 1.9902996362934077e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@5.0GHz",
+        "left": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "right": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.055486743321476e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@5.0GHz",
+        "left": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "right": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.055486743321476e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@5.0GHz",
+        "left": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "right": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 1.9902996362934077e-07,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/6.0",
+        "left": 6.0,
+        "right": 6.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/6.0",
+        "left": 6.0,
+        "right": 6.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@6.0GHz",
+        "left": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "right": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.1154345391726832e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@6.0GHz",
+        "left": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "right": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.069267279250798e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@6.0GHz",
+        "left": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "right": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.069267279250798e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@6.0GHz",
+        "left": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "right": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.1154345391726832e-07,
+        "passed": true
+      },
+      {
+        "name": "eigenfrequency-1",
+        "left": {
+          "real": 2.97563087455,
+          "imag": 2.979565338853e-16
+        },
+        "right": {
+          "real": 2.97563087455,
+          "imag": -1.646189518527e-15
+        },
+        "absolute_error": 1.9441460524123e-15,
+        "allowed_error": 3.07563087455e-06,
+        "passed": true
+      },
+      {
+        "name": "eigen-1/Error (Bkwd.)",
+        "left": 8.943416413162e-15,
+        "right": 1.696745386766e-15,
+        "absolute_error": 7.246671026396e-15,
+        "allowed_error": 1.0000000008943416e-10,
+        "passed": true
+      },
+      {
+        "name": "eigen-1/Error (Abs.)",
+        "left": 5.927656090115e-13,
+        "right": 1.1248757665e-13,
+        "absolute_error": 4.802780323614999e-13,
+        "allowed_error": 1.0000000059276562e-09,
+        "passed": true
+      },
+      {
+        "name": "eigenfrequency-2",
+        "left": {
+          "real": 3.033127909157,
+          "imag": -4.53096275311e-16
+        },
+        "right": {
+          "real": 3.033127909157,
+          "imag": 3.64366366241e-16
+        },
+        "absolute_error": 8.17462641552e-16,
+        "allowed_error": 3.1331279091569997e-06,
+        "passed": true
+      },
+      {
+        "name": "eigen-2/Error (Bkwd.)",
+        "left": 8.960926818191e-15,
+        "right": 1.199939819417e-14,
+        "absolute_error": 3.038471375978999e-15,
+        "allowed_error": 1.0000000011999399e-10,
+        "passed": true
+      },
+      {
+        "name": "eigen-2/Error (Abs.)",
+        "left": 5.98369868909e-13,
+        "right": 8.014637770079e-13,
+        "absolute_error": 2.0309390809890006e-13,
+        "allowed_error": 1.0000000080146378e-09,
+        "passed": true
+      }
+    ],
+    "outputs": [
+      {
+        "platform": "windows",
+        "case": "electrostatic",
+        "vtu_files": 5,
+        "fields": [
+          "E",
+          "Indicator",
+          "Q_s",
+          "Rank",
+          "U_e",
+          "V",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "electrostatic",
+        "vtu_files": 5,
+        "fields": [
+          "E",
+          "Indicator",
+          "Q_s",
+          "Rank",
+          "U_e",
+          "V",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "magnetostatic",
+        "vtu_files": 5,
+        "fields": [
+          "A",
+          "B",
+          "Indicator",
+          "J_s",
+          "Rank",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "magnetostatic",
+        "vtu_files": 5,
+        "fields": [
+          "A",
+          "B",
+          "Indicator",
+          "J_s",
+          "Rank",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "driven",
+        "vtu_files": 13,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "driven",
+        "vtu_files": 13,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "eigenmode",
+        "vtu_files": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "eigenmode",
+        "vtu_files": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      }
+    ],
+    "max_fraction_of_allowance": 0.0004802780295145769
+  },
+  "runtime": {
+    "scope": "Recursive PE import closure on developer host; delay/dynamic-load and clean-host validation still required",
+    "executable": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+    "files": [
+      {
+        "name": "palace.exe",
+        "source": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+        "sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+        "size": 36086784,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-filesystem-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll",
+          "libifcoremd.dll",
+          "libircmd.dll",
+          "libmmd.dll",
+          "metis.dll",
+          "msmpi.dll",
+          "msvcp140.dll",
+          "svml_dispmd.dll",
+          "vcruntime140.dll",
+          "vcruntime140_1.dll"
+        ]
+      },
+      {
+        "name": "libifcoremd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libifcoremd.dll",
+        "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+        "size": 1298288,
+        "imports": [
+          "imagehlp.dll",
+          "kernel32.dll",
+          "libmmd.dll"
+        ]
+      },
+      {
+        "name": "libircmd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libircmd.dll",
+        "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+        "size": 485744,
+        "imports": [
+          "imagehlp.dll",
+          "kernel32.dll"
+        ]
+      },
+      {
+        "name": "libmmd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libmmd.dll",
+        "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+        "size": 4185968,
+        "imports": [
+          "kernel32.dll"
+        ]
+      },
+      {
+        "name": "metis.dll",
+        "source": "E:/projects/palace-windows/.work/build/palace-native/metis.dll",
+        "sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+        "size": 226816,
+        "imports": [
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll",
+          "vcruntime140.dll"
+        ]
+      },
+      {
+        "name": "msmpi.dll",
+        "source": "E:/projects/palace-windows/.work/build/palace-native/msmpi.dll",
+        "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+        "size": 1631000,
+        "imports": [
+          "advapi32.dll",
+          "authz.dll",
+          "kernel32.dll",
+          "mswsock.dll",
+          "ntdll.dll",
+          "ntdsapi.dll",
+          "rpcrt4.dll",
+          "ws2_32.dll"
+        ]
+      },
+      {
+        "name": "msvcp140.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140.dll",
+        "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+        "size": 557728,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-environment-l1-1-0.dll",
+          "api-ms-win-crt-filesystem-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-locale-l1-1-0.dll",
+          "api-ms-win-crt-math-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "api-ms-win-crt-time-l1-1-0.dll",
+          "api-ms-win-crt-utility-l1-1-0.dll",
+          "kernel32.dll",
+          "vcruntime140.dll",
+          "vcruntime140_1.dll"
+        ]
+      },
+      {
+        "name": "svml_dispmd.dll",
+        "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/svml_dispmd.dll",
+        "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+        "size": 18828656,
+        "imports": [
+          "kernel32.dll"
+        ]
+      },
+      {
+        "name": "vcruntime140.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140.dll",
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+        "size": 124544,
+        "imports": [
+          "api-ms-win-crt-convert-l1-1-0.dll",
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-stdio-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "kernel32.dll"
+        ]
+      },
+      {
+        "name": "vcruntime140_1.dll",
+        "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140_1.dll",
+        "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+        "size": 49792,
+        "imports": [
+          "api-ms-win-crt-heap-l1-1-0.dll",
+          "api-ms-win-crt-runtime-l1-1-0.dll",
+          "api-ms-win-crt-string-l1-1-0.dll",
+          "kernel32.dll",
+          "vcruntime140.dll"
+        ]
+      }
+    ],
+    "operating_system_imports": {
+      "api-ms-win-crt-locale-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-convert-l1-1-0.dll": "Windows API set",
+      "rpcrt4.dll": "Windows system DLL",
+      "api-ms-win-crt-stdio-l1-1-0.dll": "Windows API set",
+      "ws2_32.dll": "Windows system DLL",
+      "api-ms-win-crt-heap-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-utility-l1-1-0.dll": "Windows API set",
+      "advapi32.dll": "Windows system DLL",
+      "imagehlp.dll": "Windows system DLL",
+      "api-ms-win-crt-runtime-l1-1-0.dll": "Windows API set",
+      "kernel32.dll": "Windows system DLL",
+      "authz.dll": "Windows system DLL",
+      "api-ms-win-crt-string-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-math-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-filesystem-l1-1-0.dll": "Windows API set",
+      "api-ms-win-crt-time-l1-1-0.dll": "Windows API set",
+      "ntdsapi.dll": "Windows system DLL",
+      "mswsock.dll": "Windows system DLL",
+      "api-ms-win-crt-environment-l1-1-0.dll": "Windows API set",
+      "ntdll.dll": "Windows system DLL"
+    },
+    "redistribution_review": "pending"
+  },
+  "app_local": {
+    "status": "DEVELOPER_HOST_STAGED_RUN_ONLY_NOT_CLEAN_HOST",
+    "clean_host_attested": false,
+    "offline_attested": false,
+    "standard_user_checked": false,
+    "os_version": "10.0.26200.0",
+    "manifest_sha256": "9849ac5e08be83a526660e38c01d4f39e12a667640d7b6c42f3ab18add2af70e",
+    "runs": [
+      {
+        "case": "electrostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 4.0815516,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\svml_dispmd.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libircmd.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libifcoremd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140_1.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\metis.dll"
+        }
+      },
+      {
+        "case": "magnetostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 16.9881796,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\metis.dll"
+        }
+      },
+      {
+        "case": "driven",
+        "exit_code": 0,
+        "elapsed_seconds": 0.5061119,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\metis.dll"
+        }
+      },
+      {
+        "case": "eigenmode",
+        "exit_code": 0,
+        "elapsed_seconds": 0.1387919,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\redistribution\\app-local\\metis.dll"
+        }
+      }
+    ],
+    "remaining": "CSV/VTK verification, interruption, re-run, read-only install path, uninstall and independent review; redistribution review"
+  },
+  "no_parmetis": "Zero forbidden ParMETIS artifacts/symbols in both final maps and recursive PE import closure; disabled-feature diagnostics are not vendor implementation.",
+  "original_zip_preserved": {
+    "path": ".work/package/palace-windows-1.0.0-internal-validation.zip",
+    "sha256": "9305a0883ffc29c35fbb7459b8b1409573cea59ee147b2cf34972397d7a6fb9c",
+    "size": 121760427
+  },
+  "connection_regression": {
+    "metis_connection": "pass",
+    "mumps_PORD": "pass",
+    "mumps_METIS": "pass",
+    "PARPACK": "pass",
+    "mixed_MSVC_ifx": "pass",
+    "parallel_MFEM_one_rank": "pass",
+    "logs": [
+      ".work/redistribution/metis-shared-fortran-exports.log",
+      ".work/redistribution/connection-regression.log"
+    ]
+  }
+}

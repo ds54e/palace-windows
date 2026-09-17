@@ -99,6 +99,18 @@
         {
           "path": "docs/evidence/VC-owner-entitlement-2026-09-17.json",
           "sha256": "990e2d89d71ce9b8e6173b22fa3013e67d03713c893ce58df523a56e510099d2"
+        },
+        {
+          "path": "docs/evidence/G4-intel-package-2026-09-17.json",
+          "sha256": "0fbdcec801c2a6d359b1ef929ad434a0a2c62431e4d1fde12b4a26567d167b0d"
+        },
+        {
+          "path": "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+          "sha256": "d86fe8ef3428f83ce5806a4b652db5c6a9ef78b98002d997d299e2d8ce958625"
+        },
+        {
+          "path": "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+          "sha256": "de2714c60495098c941cff88491970fc45b5ae017ccb6bb1c32cd8fbd5b16632"
         }
       ]
     },
@@ -116,9 +128,8 @@
     }
   },
   "blockers": [
-    "Independent clean standard-user offline Windows host evidence is unavailable; Gate 0 and Gate 5 remain open.",
-    "Embedded Intel libircmt code is present in Palace but absent from the accompanying fredist list; exact redistribution scope needs authoritative clarification.",
-    "Pinned METIS contains linked LGPL-2.1-or-later GKlib sort macros. Complete relinking/material and downstream-term compliance for the static combination is not yet established alongside proprietary support code."
+    "LGPL-2.1 section 6 combined-work modification/debugging condition versus Intel Developer Tools EULA 2.1.D(2) and oneMKL no-reverse-engineering/modification terms remains unresolved. Tested shared METIS replacement closes the technical mechanism, not that license interaction. Exact matrix and review draft are prepared for qualified compatibility determination or applicable permission.",
+    "Independent standard-user offline clean Windows host evidence is unavailable; Gate 0 and Gate 5 remain open."
   ],
-  "next_action": "VS Community eligibility is owner-confirmed. Resolve the Intel embedded-support licensing scope, then close the LGPL-compatible relinking/terms route without changing validated solvers gratuitously. Independently execute docs/packaging/CLEAN_HOST_TEST.md against the exact internal ZIP. Candidate ZIP, hashes and developer-host evidence are ready; no redistribution or READY_FOR_RELEASE_REVIEW claim. Fresh-cache reproduction and final review remain unexecuted."
+  "next_action": "Resolve the precise LGPL/Intel terms interaction against docs/packaging/REDISTRIBUTION_MATRIX.json and RUNTIME_TERMS.txt. Do not regenerate the original ZIP or mark matrix clear from linkage tests alone. After documented closure, finalize a new exact stage/manifest and freeze a distinct ZIP, then execute ASCII/whitespace/Japanese-path clean-host tests. G6 fresh-cache reproduction and G7 final review remain open."
 }

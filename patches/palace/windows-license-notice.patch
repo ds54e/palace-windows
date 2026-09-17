@@ -8,7 +8,7 @@
  #include <memory>
  #include <optional>
  #include <string>
-@@ -155,6 +156,22 @@
+@@ -155,6 +156,25 @@
  int main(int argc, char *argv[])
  #endif
  {
@@ -22,6 +22,9 @@
 +                 "Mumps Technologies, University of Bordeaux.\n"
 +                 "See licenses/mumps/ and sources/MUMPS_5.7.3.tar.gz for notices and source.\n"
 +                 "MUMPS is provided without warranty, subject to its license liability limits.\n"
++                 "METIS/GKlib includes GNU LGPL-2.1-or-later code.\n"
++                 "Copyright (C) Free Software Foundation, Inc.; see licenses/metis/.\n"
++                 "You may modify and replace metis.dll; see METIS_REPLACEMENT.txt.\n"
 +                 "Eigen covered source and other corresponding source are in sources/.\n"
 +                 "Proprietary runtime terms apply only to their respective components.\n"
 +                 "See RUNTIME_TERMS.txt and licenses/ for the complete component agreements.\n";
@@ -31,7 +34,7 @@
    // Initialize MPI.
  #if defined(MFEM_USE_STRUMPACK) && \
      (defined(STRUMPACK_USE_PTSCOTCH) || defined(STRUMPACK_USE_SLATE_SCALAPACK))
-@@ -176,6 +193,9 @@
+@@ -176,6 +196,9 @@
                 "Options:\n"
                 "  -h, --help           Show this help message and exit\n"
                 "  --version            Show version information and exit\n"

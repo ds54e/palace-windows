@@ -6,7 +6,8 @@ switch ($Component) {
   'metis' {
     & cmake.exe -S "$root/.work/sources/metis" -B $build @common `
         "-DGKLIB_PATH=$root/.work/sources/metis/GKlib" -DMETIS_USE_LONGINDEX=OFF `
-        -DMETIS_USE_DOUBLEPRECISION=OFF -DSHARED=OFF -DASSERT=ON -DASSERT2=ON
+        -DMETIS_USE_DOUBLEPRECISION=OFF -DSHARED=ON -DASSERT=ON -DASSERT2=ON '-DCMAKE_C_FLAGS=/D_WINDLL' `
+        '-DCMAKE_SHARED_LINKER_FLAGS=/MAP /VERBOSE:LIB /EXPORT:METIS_SETDEFAULTOPTIONS /EXPORT:METIS_NODEND'
   }
   'mumps' {
     & cmake.exe -S "$root/.work/sources/mumps" -B $build @common `

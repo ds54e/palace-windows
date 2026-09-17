@@ -1,0 +1,499 @@
+{
+  "scope": "Exact Microsoft license/provenance review; combined-work closure remains open",
+  "sources": {
+    "vs2022-community.json": {
+      "url": "https://visualstudio.microsoft.com/wp-content/uploads/2021/11/Visual-Studio-2022-Community-License-EN.docx",
+      "sha256": "41a207b10c8ab91d0d2f10a854715f73dca54509581692d2fe179aa3ffcb8540"
+    },
+    "vs2022-redist-source.json": {
+      "url": "https://learn.microsoft.com/en-us/visualstudio/releases/2022/redistribution",
+      "sha256": "5cc1ac57b6388535f709982c6e4acf19544521e6775f9c3ca10cd90a4fa45a03"
+    },
+    "vs-licensing-guidance-source.json": {
+      "url": "https://www.microsoft.com/licensing/guidance/Visual-Studio",
+      "sha256": "72c7cb0d2c869be8d59ff0fce4b1af10176a3cf5c38a06977765ca40ce81b885"
+    },
+    "vc-runtime-source.json": {
+      "url": "https://visualstudio.microsoft.com/wp-content/uploads/2021/09/Visual-C-Runtime-2015-2022-License-1.docx",
+      "sha256": "f1e3d56ceb2ad68aae0711b910375009e651ac5530fa0760f0dea6e81e54fae1"
+    },
+    "stl-license-source.json": {
+      "url": "https://raw.githubusercontent.com/microsoft/STL/vs-2022-17.14/LICENSE.txt",
+      "sha256": "1fc6b6db121d4555d8f661937d7f6013693cd8fd67495d5e5d98c1d18fb83eda"
+    }
+  },
+  "mpi_installer_provenance": "docs/evidence/G0-payload-2026-09-17.json",
+  "mpi_members": [
+    {
+      "path": ".work/extracted/sdk/MicrosoftMPI_SDK_EULA.rtf",
+      "sha256": "37f4ad3dbb7ee13b234dda747b6d2cb1465f56cd3dd6b504db02318601b0db4c"
+    },
+    {
+      "path": ".work/extracted/sdk/MPI_SDK_TPN.txt",
+      "sha256": "2911bde4a5d2b4b03350e4bb636fd37dbcf2bc5ff5ed570ba692ae461b7ae7b8"
+    },
+    {
+      "path": ".work/extracted/sdk/msmpi64.lib",
+      "sha256": "b68e974d63eaadcbc77bb07f388f06be4b7066e2fc5d1b8743afa56e6d16ad1b"
+    },
+    {
+      "path": ".work/extracted/sdk/msmpifec64.lib",
+      "sha256": "3666e9ceb221e6a83628868b5bb6e072ffdf32c953e04a42700f207df499123e"
+    },
+    {
+      "path": ".work/extracted/runtime-x64/MicrosoftMPI_Redistributable_EULA.rtf",
+      "sha256": "125d29a463c724ddb5eed6a14370f5ce74dfd063cfca3eddad2d50082eb62106"
+    },
+    {
+      "path": ".work/extracted/runtime-x64/MPI_Redistributables_TPN.txt",
+      "sha256": "e202e6c77b4ecb7be69e39d647be54bb5d076d90522e533d11dbaaacd618d7f8"
+    }
+  ],
+  "vc_static_inputs": [
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/msvcrt.lib",
+      "sha256": "5a6a7804027f78bb1eeacf7daf2b975f74ada690802b296af75ef654e4a188bd",
+      "size": 8031888
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/msvcprt.lib",
+      "sha256": "8649ae9b12443d7469865af0789d033b12c543076e521dc90039a71c50097a09",
+      "size": 4050616
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/vcruntime.lib",
+      "sha256": "1acbd98b43a4be8373e25c65dcae4412f36f6111d6b64e47e4a2a97a1d16b27b",
+      "size": 285940
+    }
+  ],
+  "vc_entitlement": "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+  "sdk_binding": "msmpifec64:mpifbind.obj contributes code; SDK EULA 2(a)(i) covers binary and header distribution in applications; not inferred from runtime EULA.",
+  "vc_right": "Community distributable-code clause plus official VC/redist directory scope; licensing guidance explains linked C++ library output. No raw proprietary .lib redistribution selected.",
+  "fulfillment": "tools/finalize_stage_notices.py now includes both MPI EULAs and TPNs, Community/REDIST/guidance evidence and STL terms. RUNTIME_TERMS.txt conveys downstream protections but remains a draft until LGPL/Intel scope interaction is resolved.",
+  "exact_versions_and_header_spdx": {
+    "binaries": [
+      {
+        "name": "palace.exe",
+        "sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+        "file_version": null,
+        "product_version": null
+      },
+      {
+        "name": "libifcoremd.dll",
+        "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+        "file_version": "2025.2.0",
+        "product_version": "2025.2.0"
+      },
+      {
+        "name": "libircmd.dll",
+        "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+        "file_version": "1.0.0.0",
+        "product_version": "2025.1"
+      },
+      {
+        "name": "libmmd.dll",
+        "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+        "file_version": "2025.2.0",
+        "product_version": "2025.2.0"
+      },
+      {
+        "name": "metis.dll",
+        "sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+        "file_version": null,
+        "product_version": null
+      },
+      {
+        "name": "msmpi.dll",
+        "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+        "file_version": "10.1.12498.18",
+        "product_version": "10.1.12498.18"
+      },
+      {
+        "name": "msvcp140.dll",
+        "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+        "file_version": "14.44.35211.0",
+        "product_version": "14.44.35211.0"
+      },
+      {
+        "name": "svml_dispmd.dll",
+        "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+        "file_version": null,
+        "product_version": null
+      },
+      {
+        "name": "vcruntime140.dll",
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+        "file_version": "14.44.35211.0",
+        "product_version": "14.44.35211.0"
+      },
+      {
+        "name": "vcruntime140_1.dll",
+        "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+        "file_version": "14.44.35211.0",
+        "product_version": "14.44.35211.0"
+      }
+    ],
+    "headers": [
+      {
+        "name": "vector",
+        "sha256": "351604d91a2ceac79f9bd9448c0553cccc22711e22955b5938eaf41de98334a6",
+        "license_header": [
+          {
+            "value": "// vector standard header",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 1
+          },
+          {
+            "value": "",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 2
+          },
+          {
+            "value": "// Copyright (c) Microsoft Corporation.",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 3
+          },
+          {
+            "value": "// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 4
+          },
+          {
+            "value": "",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 5
+          },
+          {
+            "value": "#ifndef _VECTOR_",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\vector",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "vector",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 6
+          }
+        ]
+      },
+      {
+        "name": "yvals_core.h",
+        "sha256": "5070449e37a1735adf49204a12c7a7d5efa145d6aa607720aef5adbd2c57ef83",
+        "license_header": [
+          {
+            "value": "// yvals_core.h internal header (core)",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 1
+          },
+          {
+            "value": "",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 2
+          },
+          {
+            "value": "// Copyright (c) Microsoft Corporation.",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 3
+          },
+          {
+            "value": "// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 4
+          },
+          {
+            "value": "",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 5
+          },
+          {
+            "value": "#ifndef _YVALS_CORE_H_",
+            "PSPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include\\yvals_core.h",
+            "PSParentPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\include",
+            "PSChildName": "yvals_core.h",
+            "PSDrive": {
+              "CurrentLocation": "",
+              "Name": "C",
+              "Provider": "Microsoft.PowerShell.Core\\FileSystem",
+              "Root": "C:\\",
+              "Description": "",
+              "MaximumSize": null,
+              "Credential": "System.Management.Automation.PSCredential",
+              "DisplayRoot": null
+            },
+            "PSProvider": {
+              "ImplementingType": "Microsoft.PowerShell.Commands.FileSystemProvider",
+              "HelpFile": "System.Management.Automation.dll-Help.xml",
+              "Name": "FileSystem",
+              "PSSnapIn": "Microsoft.PowerShell.Core",
+              "ModuleName": "Microsoft.PowerShell.Core",
+              "Module": null,
+              "Description": "",
+              "Capabilities": 52,
+              "Home": "C:\\Users\\admin",
+              "Drives": "C D E F"
+            },
+            "ReadCount": 6
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,35 +1,81 @@
-Component-specific runtime terms — review draft
+REVIEW DRAFT — LGPL/INTEL TERMS INTERACTION UNRESOLVED; NOT REDISTRIBUTION CLEARANCE
 
-This text does not replace the original component agreements. Copies of the
-applicable agreements and third-party notices are in licenses/. Open-source
-rights for Palace, MUMPS, Eigen, LGPL-covered GKlib and other open-source components are not
-restricted by the proprietary runtime conditions below.
+PALACE WINDOWS — COMPONENT-SPECIFIC DISTRIBUTION AND USE TERMS
 
-Microsoft MPI: supplied unmodified solely with this Windows application.
-Use is subject to licenses/msmpi/MicrosoftMPI_Redistributable_EULA.rtf,
-including its use restrictions, warranty disclaimer and liability limits.
-No Microsoft support or warranty for this distribution is promised.
+Read these terms and the original agreements in licenses/ before using or
+redistributing the included proprietary components. By using those components,
+you agree to their applicable terms. If you do not agree, do not use or distribute
+those components. These terms do not replace, revoke or restrict the separate
+open-source licenses. Palace and the Windows overlay retain Apache-2.0.
 
-Intel compiler runtime: the Intel proprietary runtime portions are provided
-in executable form solely as incorporated in this product. Reverse
-engineering, decompilation and disassembly are prohibited except where
-applicable law or applicable third-party terms permit them. Intel and its
-suppliers' limitations of liability in Section 7 of the accompanying Intel
-Developer Tools EULA apply to these portions. Preserve all Intel and
-third-party notices. Third-party software is governed by its own terms.
+Microsoft MPI runtime and SDK binding code
+The unmodified Microsoft MPI runtime is supplied solely with this Windows
+application. The executable also incorporates the SDK's Fortran binding code.
+The applicable MicrosoftMPI_Redistributable_EULA.rtf and MicrosoftMPI_SDK_EULA.rtf,
+and both third-party notice files, are in licenses/msmpi/. Their installation/use,
+scope, export, warranty, liability and mandatory regional-law provisions govern
+the respective Microsoft portions. These portions may be used only on Windows.
+Do not remove notices, evade technical limitations, use them unlawfully, or
+reverse engineer them except as permitted by applicable law or the agreements'
+open-source exceptions. Do not distribute them as a stand-alone hosted offering.
+Any permitted onward distribution must remain part of an application with
+significant primary functionality, preserve the terms/notices and require
+recipients and distributors to agree to equally protective terms. The distributor
+must fulfill section 2(b), including its indemnity obligation. Do not imply
+Microsoft endorsement or subject Microsoft proprietary source to a copyleft
+source-disclosure/modification requirement. Microsoft supplies no support or
+warranty for this application; its original disclaimers and liability limits apply.
 
-Intel oneMKL: the accompanying Intel Simplified Software License and all
-applicable third-party notices govern these embedded library portions.
-Its disclaimer and liability limitations apply. No endorsement is implied.
+Microsoft Visual C++ runtime and startup code
+These unmodified release components accompany the application under the
+publisher's eligible Visual Studio Community 2022 distributable-code rights.
+The Community license and the exact REDIST-list evidence are supplied in
+licenses/microsoft-evidence/. The VC Runtime end-user agreement supplied there
+sets out applicable runtime-use protections, including scope, export, warranty,
+liability and regional provisions; it is not the publisher's redistribution grant.
+No Visual Studio license is required merely to run this application. Preserve
+Microsoft notices; do not imply endorsement or distribute debug/preview components.
+No stand-alone redistribution right is granted by this notice. Distributors of
+this application must retain equally protective terms for Microsoft code.
+Microsoft's STL header code has separate Apache-2.0 WITH LLVM-exception terms in
+licenses/microsoft-stl/; the proprietary runtime conditions do not override them.
 
-VC runtime: the owner confirms Visual Studio Community eligibility.
-Applicable Community distributable-code and downstream terms review remains
-part of package finalization. The Runtime use-only agreement is not a
-redistribution grant. This candidate is not approved for redistribution
-until the complete review is closed.
+Intel compiler runtime
+The four Intel runtime DLLs are supplied unmodified in executable form solely as
+part of this product. The original August 2024 Intel Developer Tools EULA,
+2025.3 fredist.txt and third-party-program notices are in licenses/intel-compiler/.
+Reverse engineering, decompilation or disassembly of Intel's proprietary
+Redistributables is prohibited. Mandatory law and separately licensed third-party
+software retain their rights. Intel's Section 7 liability limitations are conveyed
+to, and binding upon, recipients of these Redistributables, subject to mandatory
+law. Preserve all notices. Intel and its suppliers do not certify or guarantee
+this product. The publisher, not Intel, is responsible for customer support and
+updates and for its EULA distribution/indemnity obligations. Onward distributors
+must have applicable rights and fulfill the same product-only distribution terms.
+No compiler, SDK, libircmt.lib, or standalone Intel static library is supplied.
 
-Publisher obligations such as indemnity, license eligibility and compliance
-with distribution conditions cannot be fulfilled merely by copying this
-notice. They remain explicitly recorded in REDISTRIBUTION_REVIEW.md.
+Intel oneMKL
+The application incorporates unmodified object code from the LP64 sequential,
+ScaLAPACK and MS-MPI BLACS libraries. The October 2022 Intel Simplified Software
+License and third-party notices are in licenses/mkl/ and licenses/mkl-cluster/.
+Preserve the copyright and terms. No Intel/supplier endorsement is implied.
+Reverse engineering, decompilation, disassembly, or modification of the proprietary
+oneMKL software or its operation is prohibited by that license. Separately
+licensed third-party software is governed solely by its respective terms. The
+original disclaimers and liability limits apply; no Intel support is promised.
 
-This draft has not resolved the LGPL static-combination modification, debugging and relinking obligations. It is not a representation that the current proprietary/open-source terms have been reconciled for redistribution.
+Open-source modification and library replacement
+METIS/GKlib includes LGPL-2.1-or-later code. Complete covered source, original
+notices and license text accompany the package. You may modify and replace the
+app-local metis.dll with an interface-compatible version and modify Palace for
+your own use. Reverse engineering for debugging such LGPL-library modifications
+is permitted. See METIS_REPLACEMENT.txt. This permission concerns the covered
+library and the work using it; it does not assert ownership of or relicense Intel
+or Microsoft proprietary implementations. No execution-time signature or hash
+check prevents replacement. The integrity test identifies the published payload
+and can be skipped when intentionally testing your own modified library.
+MUMPS CeCILL-C and Eigen MPL covered source are likewise supplied in sources/.
+All other open-source license, notice and source rights remain in force.
+
+No component is relicensed merely because it is in the same ZIP or executable.
+Mandatory consumer rights and other rights that cannot lawfully be excluded remain.

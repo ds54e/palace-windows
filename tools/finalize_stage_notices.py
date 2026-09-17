@@ -15,8 +15,18 @@ def add_notices(stage):
         shutil.copy2(ROOT/'.work/sources/metis/GKlib'/name,target/name)
     for name in ['LGPL-2.1.txt','lgpl-source.json']:
         shutil.copy2(ROOT/'.work/licensing'/name,target/name)
-    for name in ['README.txt','RUNTIME_TERMS.txt','REDISTRIBUTION_REVIEW.md','CLEAN_HOST_TEST.md','Test-CleanHost.ps1']:
+    for name in ['README.txt','RUNTIME_TERMS.txt','REDISTRIBUTION_REVIEW.md','REDISTRIBUTION_MATRIX.json','REDISTRIBUTION_MATRIX.md','METIS_REPLACEMENT.txt','CLEAN_HOST_TEST.md','Test-CleanHost.ps1']:
         shutil.copy2(ROOT/'docs/packaging'/name,stage/name)
+
+    for name in ['MicrosoftMPI_SDK_EULA.rtf', 'MPI_SDK_TPN.txt']:
+        shutil.copy2(ROOT/'.work/extracted/sdk'/name, stage/'licenses/msmpi'/name)
+    stl=stage/'licenses/microsoft-stl'; stl.mkdir(parents=True,exist_ok=True)
+    for name in ['stl-license.txt', 'stl-license-source.json']:
+        shutil.copy2(ROOT/'.work/licensing'/name,stl/name)
+    evidence=stage/'licenses/microsoft-evidence'; evidence.mkdir(parents=True,exist_ok=True)
+    for name in ['vs2022-community.docx','vs2022-community.json','vs2022-redist.html',
+                 'vs2022-redist-source.json','vs-licensing-guidance.html','vs-licensing-guidance-source.json']:
+        shutil.copy2(ROOT/'.work/licensing'/name,evidence/name)
 
 def refresh_overlay_source(stage):
     for folder in ['deps','patches','cmake','scripts','src','tests','tools']:
@@ -26,15 +36,4 @@ def refresh_overlay_source(stage):
                 archive.add(ROOT/name,arcname=name,recursive=False)
 
 if __name__=='__main__':
-    stage=ROOT/'.work/package/palace-windows-1.0.0'
-    manifest=json.loads((stage/'build-manifest.json').read_text())
-    # Notice-only refresh: executable/runtime hashes must remain unchanged.
-    for item in manifest['files']:
-        if Path(item['path']).suffix.lower() in {'.exe','.dll'}:
-            assert hashlib.sha256((stage/item['path']).read_bytes()).hexdigest()==item['sha256']
-    add_notices(stage)
-    refresh_overlay_source(stage)
-    manifest['packaging_recipe_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    manifest['files']=[dict(path=p.relative_to(stage).as_posix(),size=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(stage.rglob('*')) if p.is_file() and p.name!='build-manifest.json']
-    manifest['notice_review']='VS Community eligibility owner-confirmed; applicable VC terms, Intel embedded support grant and LGPL static-combination obligations remain under review; no redistribution approval'
-    (stage/'build-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+    raise SystemExit('Frozen candidates must not be refreshed in place. Prepare a new staging directory only after redistribution closure.')

@@ -1,0 +1,938 @@
+{
+  "status": "BLOCKED_TERMS_INTERACTION_NOT_FINAL_REDISTRIBUTION_CLEARANCE",
+  "scope": "Single current exact redistribution matrix for the working replacement closure. Original ZIP is immutable and not this closure.",
+  "binary_closure": [
+    {
+      "name": "palace.exe",
+      "source": "E:/projects/palace-windows/.work/build/palace-native/palace.exe",
+      "sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+      "size": 36086784,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "libifcoremd.dll",
+        "libircmd.dll",
+        "libmmd.dll",
+        "metis.dll",
+        "msmpi.dll",
+        "msvcp140.dll",
+        "svml_dispmd.dll",
+        "vcruntime140.dll",
+        "vcruntime140_1.dll"
+      ]
+    },
+    {
+      "name": "libifcoremd.dll",
+      "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libifcoremd.dll",
+      "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+      "size": 1298288,
+      "imports": [
+        "imagehlp.dll",
+        "kernel32.dll",
+        "libmmd.dll"
+      ]
+    },
+    {
+      "name": "libircmd.dll",
+      "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libircmd.dll",
+      "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+      "size": 485744,
+      "imports": [
+        "imagehlp.dll",
+        "kernel32.dll"
+      ]
+    },
+    {
+      "name": "libmmd.dll",
+      "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/libmmd.dll",
+      "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+      "size": 4185968,
+      "imports": [
+        "kernel32.dll"
+      ]
+    },
+    {
+      "name": "metis.dll",
+      "source": "E:/projects/palace-windows/.work/build/palace-native/metis.dll",
+      "sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+      "size": 226816,
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll"
+      ]
+    },
+    {
+      "name": "msmpi.dll",
+      "source": "E:/projects/palace-windows/.work/build/palace-native/msmpi.dll",
+      "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+      "size": 1631000,
+      "imports": [
+        "advapi32.dll",
+        "authz.dll",
+        "kernel32.dll",
+        "mswsock.dll",
+        "ntdll.dll",
+        "ntdsapi.dll",
+        "rpcrt4.dll",
+        "ws2_32.dll"
+      ]
+    },
+    {
+      "name": "msvcp140.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140.dll",
+      "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+      "size": 557728,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll",
+        "vcruntime140_1.dll"
+      ]
+    },
+    {
+      "name": "svml_dispmd.dll",
+      "source": "E:/projects/palace-windows/.work/deps/intel/Library/bin/svml_dispmd.dll",
+      "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+      "size": 18828656,
+      "imports": [
+        "kernel32.dll"
+      ]
+    },
+    {
+      "name": "vcruntime140.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "size": 124544,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "kernel32.dll"
+      ]
+    },
+    {
+      "name": "vcruntime140_1.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140_1.dll",
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+      "size": 49792,
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "component": "palace",
+      "exact_version_or_commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/palace.lib",
+          "sha256": "a8aa5e3a4975332dd6586ca0c34a9838b7f58dcce2a46153a1ca477405c4853a",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Apache-2.0",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE; Windows modification notices",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "mfem",
+      "exact_version_or_commit": "d9d6526cc1749980a2ba1da16e2c1ca1e07d82ec",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/mfem.lib",
+          "sha256": "c0ad4cea00f67d6c007dc389e351cb33748921522f13843fd531fe74e6198548",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "BSD-3-Clause",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE and NOTICE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "hypre",
+      "exact_version_or_commit": "fca98afcd78a26b784dc24b0c3edb0e6140598af",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/HYPRE.lib",
+          "sha256": "ca821ca7c9b8e6b84cf07146e7dfa3380272f5d4feabefaab3a44a1831e04d92",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Apache-2.0 AND MIT",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE-APACHE, LICENSE-MIT and NOTICE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "mumps",
+      "exact_version_or_commit": "MUMPS 5.7.3 archive 84a47f7c4231b9efdf4d4f631a2cae2bdd9adeaabc088261d15af040143ed112; wrapper 1cfd19699702f9a64ff5d45827d6025ff5c3873a",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/dmumps.lib",
+          "sha256": "bb80b6a65c4a5b88c9d0790d64fd2e2d35fd000a0a685606d28043bbc88aa050",
+          "role": "input static archive; only map-selected objects incorporated"
+        },
+        {
+          "path": ".work/install/no-parmetis/lib/mumps_common.lib",
+          "sha256": "e65550fb3b677e4a57d3a2a8ab2c8dd440e02e7cef18a82aa280faeec42ef12d",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "CECILL-C with exceptions in LICENSE",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE; CeCILL-C English/French; --licenses attribution",
+      "source_or_relink_obligation": "CeCILL-C 5.3 covered-source access and 6.4 interface attribution; complete archive, wrapper and build patches required.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "arpack-ng",
+      "exact_version_or_commit": "804fa3149a0f773064198a8e883bd021832157ca",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/arpack.lib",
+          "sha256": "21b122075eea9fe68f7863013df0f014f7d3d231bbf2846e77e07c3ab2aa9a43",
+          "role": "input static archive; only map-selected objects incorporated"
+        },
+        {
+          "path": ".work/install/no-parmetis/lib/parpack.lib",
+          "sha256": "970b07cae4e35185ec04864797b4f58bef336268e7302c6fbb22e5b9b4c42d71",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "BSD-3-Clause",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "COPYING",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "libCEED",
+      "exact_version_or_commit": "39f259f89332e936122f7e02d6088a1dae3fb628",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/ceed.lib",
+          "sha256": "e3f9b56d0d4ef9ea185234d507d1220dfd812cce57c9107d56151fb630a8eeab",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "BSD-2-Clause",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE and NOTICE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "json-schema-validator",
+      "exact_version_or_commit": "c780404a84dd9ba978ba26bc58d17cb43fa7bc80",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/nlohmann_json_schema_validator.lib",
+          "sha256": "32535adecaaf230cf285186af1d1b8dfaf74121c9642925b9c24077a301094d8",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "MIT",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "fmt",
+      "exact_version_or_commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/fmt.lib",
+          "sha256": "486f64f1b185fd29fb981f3d74578768f16c3609f915aa0d0c895338eefa1a87",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "MIT",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "scn",
+      "exact_version_or_commit": "e937be1a52588621b406d58ce8614f96bb5de747",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/scn.lib",
+          "sha256": "e66e4875f36543708b243f71ee18c4fbc044c90731db9942ffa7451da68bb2aa",
+          "role": "input static archive; only map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Apache-2.0",
+      "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
+      "required_notices": "LICENSE",
+      "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "deps/gate1-lock.json",
+        "deps/gate2-lock.json",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "PORD",
+      "exact_version_or_commit": "MUMPS 5.7.3 PORD/README SPACE provenance",
+      "artifacts": [
+        {
+          "path": ".work/install/no-parmetis/lib/pord.lib",
+          "sha256": "eefd457014340ad4cbe1b45c06a92f27aa660271e3881fd41f8d7d6cdbbfd534",
+          "role": "static archive"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Public domain per bundled PORD/README",
+      "redistribution_right": "Bundled README expressly identifies public-domain SPACE origin.",
+      "required_notices": "PORD/README and source notices",
+      "source_or_relink_obligation": "Included inside complete MUMPS source archive.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": []
+    },
+    {
+      "component": "eigen",
+      "exact_version_or_commit": "549bf8c75b6aae071cde2f28aa48f16ee3ae60b0",
+      "artifacts": [
+        {
+          "path": ".work/package/palace-windows-1.0.0/sources/eigen-corresponding-source.tar.gz",
+          "sha256": "217cf275c13ec9ec21f082d0bb0e91d053897f15747cf933113fbc216ec45e95",
+          "role": "complete header-source snapshot used by the build"
+        }
+      ],
+      "linkage_mode": "header implementation incorporated into palace.exe",
+      "license": "MPL-2.0 with per-file permissive exceptions",
+      "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
+      "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
+      "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": []
+    },
+    {
+      "component": "json",
+      "exact_version_or_commit": "55f93686c01528224f448c19128836e7df245f72",
+      "artifacts": [
+        {
+          "path": ".work/package/palace-windows-1.0.0/sources/json-corresponding-source.tar.gz",
+          "sha256": "6beb9f207539a1b668d30f7fa32f4fa954875ff0ffdddd6dbf0f07409b700e97",
+          "role": "complete header-source snapshot used by the build"
+        }
+      ],
+      "linkage_mode": "header implementation incorporated into palace.exe",
+      "license": "MIT",
+      "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
+      "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
+      "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": []
+    },
+    {
+      "component": "fast_float",
+      "exact_version_or_commit": "00c8c7b0d5c722d2212568d915a39ea73b08b973",
+      "artifacts": [
+        {
+          "path": ".work/package/palace-windows-1.0.0/sources/fast_float-corresponding-source.tar.gz",
+          "sha256": "d52d8d0d332f5b2f9557986208879fc4d769a82471019b7f27c185dfe03becb1",
+          "role": "complete header-source snapshot used by the build"
+        }
+      ],
+      "linkage_mode": "header implementation incorporated into palace.exe",
+      "license": "MIT OR Apache-2.0 OR BSL-1.0",
+      "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
+      "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
+      "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": []
+    },
+    {
+      "component": "METIS / GKlib",
+      "exact_version_or_commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d",
+      "artifacts": [
+        {
+          "path": "metis.dll",
+          "sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+          "role": "replaceable app-local DLL"
+        },
+        {
+          "path": ".work/install/no-parmetis/lib/metis.lib",
+          "sha256": "fffee324138b7f946cc0ffff2134b38ec41427702c2dc7e878e8e92aee98e195",
+          "role": "import library; not shipped"
+        }
+      ],
+      "linkage_mode": "shared; no METIS implementation objects in palace.exe",
+      "license": "Apache-2.0 AND LGPL-2.1-or-later AND per-file BSD-style notices",
+      "redistribution_right": "LGPL 4 and 6(b) shared-library route; actual replacement verified. Section 6 opening modification/debugging condition remains unresolved against Intel terms.",
+      "required_notices": "Top-level license, complete source notices, LGPL text, --licenses GNU copyright notice",
+      "source_or_relink_obligation": "Complete corresponding METIS/GKlib source and build instructions; allow modification and debugging; no static relink kit needed under tested 6(b) mechanism.",
+      "status": "BLOCKED_TERMS_INTERACTION",
+      "evidence": [
+        "docs/packaging/METIS_REPLACEMENT.txt",
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "libifcoremd.dll",
+      "exact_version_or_commit": "intel-fortran-rt-2025.3.0-intel_640.conda",
+      "artifacts": [
+        {
+          "path": "libifcoremd.dll",
+          "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL; import records in palace.exe, not static implementation",
+      "license": "Intel Developer Tools EULA August 2024",
+      "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
+      "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
+      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
+      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "libircmd.dll",
+      "exact_version_or_commit": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+      "artifacts": [
+        {
+          "path": "libircmd.dll",
+          "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL; import records in palace.exe, not static implementation",
+      "license": "Intel Developer Tools EULA August 2024",
+      "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
+      "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
+      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
+      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "libmmd.dll",
+      "exact_version_or_commit": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+      "artifacts": [
+        {
+          "path": "libmmd.dll",
+          "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL; import records in palace.exe, not static implementation",
+      "license": "Intel Developer Tools EULA August 2024",
+      "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
+      "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
+      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
+      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Microsoft MPI runtime",
+      "exact_version_or_commit": "10.1.12498.18",
+      "artifacts": [
+        {
+          "path": "msmpi.dll",
+          "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL",
+      "license": "Microsoft MPI Redistributable EULA",
+      "redistribution_right": "Accompanying EULA 2(a)(i) binary distribution with application; 2(a)(ii) onward application distribution.",
+      "required_notices": "Unmodified runtime EULA and MPI_Redistributables_TPN.txt; equally protective downstream terms",
+      "source_or_relink_obligation": "No proprietary source obligation; Windows only; primary functionality; preserve notices; distributor indemnity under 2(b).",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/G0-payload-2026-09-17.json",
+        "docs/packaging/RUNTIME_TERMS.txt"
+      ]
+    },
+    {
+      "component": "Microsoft VC runtime msvcp140.dll",
+      "exact_version_or_commit": "VC143 x64; file 14.44.35211.0; product 14.44.35211.0",
+      "artifacts": [
+        {
+          "path": "msvcp140.dll",
+          "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL",
+      "license": "Visual Studio Community 2022 distributable-code terms / runtime-use terms",
+      "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
+      "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
+      "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/packaging/RUNTIME_TERMS.txt"
+      ]
+    },
+    {
+      "component": "svml_dispmd.dll",
+      "exact_version_or_commit": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+      "artifacts": [
+        {
+          "path": "svml_dispmd.dll",
+          "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL; import records in palace.exe, not static implementation",
+      "license": "Intel Developer Tools EULA August 2024",
+      "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
+      "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
+      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
+      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Microsoft VC runtime vcruntime140.dll",
+      "exact_version_or_commit": "VC143 x64; file 14.44.35211.0; product 14.44.35211.0",
+      "artifacts": [
+        {
+          "path": "vcruntime140.dll",
+          "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL",
+      "license": "Visual Studio Community 2022 distributable-code terms / runtime-use terms",
+      "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
+      "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
+      "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/packaging/RUNTIME_TERMS.txt"
+      ]
+    },
+    {
+      "component": "Microsoft VC runtime vcruntime140_1.dll",
+      "exact_version_or_commit": "VC143 x64; file 14.44.35211.0; product 14.44.35211.0",
+      "artifacts": [
+        {
+          "path": "vcruntime140_1.dll",
+          "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+          "role": "unmodified app-local DLL"
+        }
+      ],
+      "linkage_mode": "shared DLL",
+      "license": "Visual Studio Community 2022 distributable-code terms / runtime-use terms",
+      "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
+      "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
+      "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/packaging/RUNTIME_TERMS.txt"
+      ]
+    },
+    {
+      "component": "oneMKL LP64 sequential",
+      "exact_version_or_commit": "intelmkl.static.win-x64.2025.3.0.453.nupkg",
+      "artifacts": [
+        {
+          "path": ".work/deps/mkl/build/native/win-x64/mkl_intel_lp64.lib",
+          "sha256": "ae565f53241927a7761b5d42c94a304b570413b161ba894f492c65ef44135599",
+          "role": "static archive; map-selected objects incorporated"
+        },
+        {
+          "path": ".work/deps/mkl/build/native/win-x64/mkl_core.lib",
+          "sha256": "59b8b265ecf49d78b40fee8043d96c847f46dab8eb6d60199eb84d0857bf2a2a",
+          "role": "static archive; map-selected objects incorporated"
+        },
+        {
+          "path": ".work/deps/mkl/build/native/win-x64/mkl_sequential.lib",
+          "sha256": "05e40c940fa6f61e781e9dba75dd0813d1e8ad5f1f8b57cf9313952bc6399512",
+          "role": "static archive; map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Intel Simplified Software License October 2022 plus third-party terms",
+      "redistribution_right": "Use and Redistribution paragraph permits unmodified binary redistribution with conditions.",
+      "required_notices": "license.txt plus all accompanying third-party-program files for both packages",
+      "source_or_relink_obligation": "No proprietary source grant. Explicit prohibition on reverse engineering/modification requires resolution against LGPL section 6 opening condition.",
+      "status": "BLOCKED_TERMS_INTERACTION",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "oneMKL cluster",
+      "exact_version_or_commit": "intelmkl.static.cluster.win-x64.2025.3.0.453.nupkg",
+      "artifacts": [
+        {
+          "path": ".work/deps/mkl-cluster/build/native/win-x64/mkl_blacs_msmpi_lp64.lib",
+          "sha256": "361ce8917849d54073d97bbdbe82ca1408af8d4207a759b7e97b6d6013b1bdcb",
+          "role": "static archive; map-selected objects incorporated"
+        },
+        {
+          "path": ".work/deps/mkl-cluster/build/native/win-x64/mkl_scalapack_lp64.lib",
+          "sha256": "7c405cdbf19e398145f4582597174c828af0815d46469ee027c7cc1e7c8dc34c",
+          "role": "static archive; map-selected objects incorporated"
+        }
+      ],
+      "linkage_mode": "static into palace.exe",
+      "license": "Intel Simplified Software License October 2022 plus third-party terms",
+      "redistribution_right": "Use and Redistribution paragraph permits unmodified binary redistribution with conditions.",
+      "required_notices": "license.txt plus all accompanying third-party-program files for both packages",
+      "source_or_relink_obligation": "No proprietary source grant. Explicit prohibition on reverse engineering/modification requires resolution against LGPL section 6 opening condition.",
+      "status": "BLOCKED_TERMS_INTERACTION",
+      "evidence": [
+        "docs/evidence/G4-intel-package-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Microsoft MPI SDK Fortran binding",
+      "exact_version_or_commit": "10.1 SDK locked official package",
+      "artifacts": [
+        {
+          "path": ".work/extracted/sdk/msmpifec64.lib",
+          "sha256": "3666e9ceb221e6a83628868b5bb6e072ffdf32c953e04a42700f207df499123e",
+          "role": "mpifbind.obj incorporated; not just DLL import"
+        }
+      ],
+      "linkage_mode": "static binding into palace.exe",
+      "license": "Microsoft MPI SDK EULA",
+      "redistribution_right": "SDK EULA 2(a)(i) expressly permits binary and header distribution in developed applications.",
+      "required_notices": "MicrosoftMPI_SDK_EULA.rtf and MPI_SDK_TPN.txt plus protected downstream terms",
+      "source_or_relink_obligation": "No proprietary source obligation; SDK 2(b) distribution/indemnity conditions apply.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/packaging/RUNTIME_TERMS.txt",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Microsoft VC startup/support",
+      "exact_version_or_commit": "MSVC 14.44.35207; compiler 19.44.35219",
+      "artifacts": [
+        {
+          "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/msvcrt.lib",
+          "sha256": "5a6a7804027f78bb1eeacf7daf2b975f74ada690802b296af75ef654e4a188bd",
+          "role": "static startup/support objects and DLL import records; see map"
+        },
+        {
+          "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/msvcprt.lib",
+          "sha256": "8649ae9b12443d7469865af0789d033b12c543076e521dc90039a71c50097a09",
+          "role": "static startup/support objects and DLL import records; see map"
+        },
+        {
+          "path": "C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\/lib/x64/vcruntime.lib",
+          "sha256": "1acbd98b43a4be8373e25c65dcae4412f36f6111d6b64e47e4a2a97a1d16b27b",
+          "role": "static startup/support objects and DLL import records; see map"
+        }
+      ],
+      "linkage_mode": "static portions into palace.exe and palace-sparams.exe",
+      "license": "Visual Studio Community 2022 / applicable C++ component licenses",
+      "redistribution_right": "Community rights plus Microsoft licensing guidance on linked C++ object-library forms; raw .lib distribution is not selected.",
+      "required_notices": "Community terms, exact licensing guidance, compiler/runtime notices",
+      "source_or_relink_obligation": "Distribute linked application output only; no raw proprietary .lib files; preserve source-license exceptions.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/evidence/VC-owner-entitlement-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Microsoft STL header implementation",
+      "exact_version_or_commit": "MSVC 14.44.35207; installed vector header SPDX; upstream vs-2022-17.14 license",
+      "artifacts": [
+        {
+          "path": ".work/licensing/stl-license.txt",
+          "sha256": "1fc6b6db121d4555d8f661937d7f6013693cd8fd67495d5e5d98c1d18fb83eda",
+          "role": "license text tied to installed header SPDX"
+        },
+        {
+          "path": "MSVC-14.44.35207/include/vector",
+          "sha256": "351604d91a2ceac79f9bd9448c0553cccc22711e22955b5938eaf41de98334a6",
+          "role": "installed header identity/SPDX sample; final executable binds incorporated code"
+        },
+        {
+          "path": "MSVC-14.44.35207/include/yvals_core.h",
+          "sha256": "5070449e37a1735adf49204a12c7a7d5efa145d6aa607720aef5adbd2c57ef83",
+          "role": "installed header identity/SPDX sample; final executable binds incorporated code"
+        }
+      ],
+      "linkage_mode": "header code in both executables",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "redistribution_right": "Apache grant plus LLVM object-embedding exception.",
+      "required_notices": "Copyright Microsoft Corporation and full license/exception retained voluntarily",
+      "source_or_relink_obligation": "No covered-source/relink requirement.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": [
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json"
+      ]
+    },
+    {
+      "component": "Windows overlay / palace-sparams",
+      "exact_version_or_commit": "Repository working tree; freeze recipe commit before any future package",
+      "artifacts": [
+        {
+          "path": ".work/build/sparams/palace-sparams.exe",
+          "sha256": "7ae3ba0edd25877d636f18d40b7a94392741747f17dcc16aeafcd1438fbc0317",
+          "role": "native utility"
+        }
+      ],
+      "linkage_mode": "executable and source changes",
+      "license": "Apache-2.0",
+      "redistribution_right": "Repository LICENSE",
+      "required_notices": "LICENSE and change notices",
+      "source_or_relink_obligation": "Ship exact source/build scripts and pin recipe commit.",
+      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "evidence": []
+    }
+  ],
+  "license_evidence": [
+    {
+      "path": ".work/extracted/sdk/MicrosoftMPI_SDK_EULA.rtf",
+      "sha256": "37f4ad3dbb7ee13b234dda747b6d2cb1465f56cd3dd6b504db02318601b0db4c",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/extracted/sdk/MPI_SDK_TPN.txt",
+      "sha256": "2911bde4a5d2b4b03350e4bb636fd37dbcf2bc5ff5ed570ba692ae461b7ae7b8",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/extracted/runtime-x64/MicrosoftMPI_Redistributable_EULA.rtf",
+      "sha256": "125d29a463c724ddb5eed6a14370f5ce74dfd063cfca3eddad2d50082eb62106",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/extracted/runtime-x64/MPI_Redistributables_TPN.txt",
+      "sha256": "e202e6c77b4ecb7be69e39d647be54bb5d076d90522e533d11dbaaacd618d7f8",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/LGPL-2.1.txt",
+      "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/stl-license-source.json",
+      "sha256": "3aa8235e272d3ad1d8b9621f0835084531453845e56b187bb5ac538b76f0a3a9",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/stl-license.txt",
+      "sha256": "1fc6b6db121d4555d8f661937d7f6013693cd8fd67495d5e5d98c1d18fb83eda",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/vc-runtime.docx",
+      "sha256": "f1e3d56ceb2ad68aae0711b910375009e651ac5530fa0760f0dea6e81e54fae1",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/vs-licensing-guidance.html",
+      "sha256": "72c7cb0d2c869be8d59ff0fce4b1af10176a3cf5c38a06977765ca40ce81b885",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/vs2022-build-tools.docx",
+      "sha256": "2f66b86a00e8d9833789897ce23d05a4a2dbea370cf39c8c1098dbc17d0e7bdc",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/vs2022-community.docx",
+      "sha256": "41a207b10c8ab91d0d2f10a854715f73dca54509581692d2fe179aa3ffcb8540",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/licensing/vs2022-redist.html",
+      "sha256": "5cc1ac57b6388535f709982c6e4acf19544521e6775f9c3ca10cd90a4fa45a03",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-benchmarks.txt",
+      "sha256": "1f1224af12a7d3e51150ce6f762e32472076a31f6e44db41d3b651a7fa20f2f5",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-IntelMPI.txt",
+      "sha256": "82fa46762c37662a52ab9df58781813c1dc6c268ae2b6f9cf2d83183e706aa09",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-level-zero.txt",
+      "sha256": "cfe7d2ba4b4cd53271c7f91937e906256c0f14ea62ba33ffb556664b8d39aa59",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-oneMath.txt",
+      "sha256": "2ba4e9858c253331691370f4e8e3899ca6a5baa20907f189f5970635870b860d",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-oneTBB.txt",
+      "sha256": "d507da4fffae647ebc1bbb7e12cc5cca8087d36b0d78cc75caa96cae37688cb1",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-openmp.txt",
+      "sha256": "8fdfbbdfed13bca3641da35182e7ee1bb92a99f302ce8b0deb981ac1f18adee2",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs-safestring.txt",
+      "sha256": "415000d1887939ffc6826e0ed3f099cebcab6aaeda2da0acb017110a456b3d42",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl/share/doc/mkl/licensing/third-party-programs.txt",
+      "sha256": "6fb57367c2107b8b3347e0e9db10d368c7b9ea898a08132b2f841b24b86f076f",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-benchmarks.txt",
+      "sha256": "1f1224af12a7d3e51150ce6f762e32472076a31f6e44db41d3b651a7fa20f2f5",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-IntelMPI.txt",
+      "sha256": "82fa46762c37662a52ab9df58781813c1dc6c268ae2b6f9cf2d83183e706aa09",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-level-zero.txt",
+      "sha256": "cfe7d2ba4b4cd53271c7f91937e906256c0f14ea62ba33ffb556664b8d39aa59",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-oneMath.txt",
+      "sha256": "2ba4e9858c253331691370f4e8e3899ca6a5baa20907f189f5970635870b860d",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-oneTBB.txt",
+      "sha256": "d507da4fffae647ebc1bbb7e12cc5cca8087d36b0d78cc75caa96cae37688cb1",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-openmp.txt",
+      "sha256": "8fdfbbdfed13bca3641da35182e7ee1bb92a99f302ce8b0deb981ac1f18adee2",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs-safestring.txt",
+      "sha256": "415000d1887939ffc6826e0ed3f099cebcab6aaeda2da0acb017110a456b3d42",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    },
+    {
+      "path": ".work/deps/mkl-cluster/share/doc/mkl/licensing/third-party-programs.txt",
+      "sha256": "6fb57367c2107b8b3347e0e9db10d368c7b9ea898a08132b2f841b24b86f076f",
+      "role": "license/notice evidence; not an inferred grant from download availability"
+    }
+  ],
+  "excluded": {
+    "libircmt": "Not named in exact fredist; prior candidate includes nine objects, current map zero. Not cleared or shipped.",
+    "ParMETIS": "Excluded; restrictive license evidence retained.",
+    "Catch2": "Test-only, absent from final link map; not shipped as binary.",
+    "Linux reference dependencies": "Not in Windows payload."
+  }
+}

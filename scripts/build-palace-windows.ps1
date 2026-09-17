@@ -12,6 +12,11 @@ $build = "$root/.work/build/palace-native"
     "-DCMAKE_MODULE_PATH=$root/cmake" "-DSCALAPACK_LIBRARIES=$scalapack" `
     "-DSCALAPACK_LIBRARY=$cluster/mkl_scalapack_lp64.lib" `
     "-DBLAS_LIBRARIES=$blas" "-DLAPACK_LIBRARIES=$blas" -DBLA_SIZEOF_INTEGER=4 `
-    '-DCMAKE_EXE_LINKER_FLAGS=/MAP /VERBOSE:LIB'
+    "-DCMAKE_EXE_LINKER_FLAGS=/MAP /VERBOSE:LIB /NODEFAULTLIB:libircmt.lib `"$root/.work/deps/intel/Library/lib/libircmd.lib`" `"$root/.work/deps/intel/Library/lib/libircdisp.lib`""
 if ($LASTEXITCODE -ne 0) { throw 'Native Palace configure failed' }
-if (-not $ConfigureOnly) { Complete-Build $build }
+if (-not $ConfigureOnly) {
+    Complete-Build $build
+    Copy-Item "$prefix/lib/metis.dll" "$build/metis.dll" -Force
+    $map=Get-Content -LiteralPath "$build/palace.map" -Raw
+    if ($map -match '(?i)libircmt:|metis:[^\s]+\.obj') { throw 'Unapproved static Intel/METIS implementation in Palace map' }
+}

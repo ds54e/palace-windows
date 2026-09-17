@@ -1,0 +1,40 @@
+METIS/GKlib source and replacement rights
+
+The Windows package uses the unmodified METIS algorithms from PETSc commit
+08c3082720ff9114b8e3cbaa4484a26739cd7d2d in an app-local metis.dll. Its
+GKlib/gk_mksort.h contains GNU C Library sorting code by Douglas C. Schmidt,
+Copyright (C) 1991, 1992, 1996, 1997, 1999 Free Software Foundation, Inc.,
+under LGPL-2.1-or-later. GKlib getopt and regex sources also contain LGPL
+notices. METIS's top-level Apache-2.0 license does not replace those terms.
+Keep the per-file copyright/license notices and licenses/metis/GKlib/LGPL-2.1.txt.
+
+Complete corresponding METIS/GKlib source is supplied in sources/metis-corresponding-source.tar.gz.
+No sorting implementation has been replaced. The documented build settings
+select upstream SHARED and its existing _WINDLL API declarations. Two existing
+Fortran wrapper symbols are exported for MUMPS. No ParMETIS is included.
+
+LGPL 2.1 sections 4 and 6(b) apply to the covered library distribution and its
+combination with Palace. You may modify the library, use a compatible replacement,
+and modify Palace for your own use. Reverse engineering to debug your modifications
+to the LGPL-covered library is permitted. These permissions are not conditioned
+on publisher approval, a signature, a download service, or matching the shipped
+DLL hash. The verification kit identifies the publisher's payload; it does not
+restrict execution of a modified DLL. The separate proprietary components retain
+their own licenses; this notice does not purport to relicense their implementation.
+
+To rebuild on Windows x64, extract the METIS source to a writable directory.
+Using MSVC, CMake and Ninja on a development machine (not required by an end user):
+
+cmake -S metis -B metis-build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=cl -DCMAKE_C_FLAGS=/D_WINDLL -DCMAKE_C_FLAGS_RELEASE=/O2 -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreadedDLL -DGKLIB_PATH=<absolute-path-to-metis>/GKlib -DSHARED=ON -DMETIS_USE_LONGINDEX=OFF -DMETIS_USE_DOUBLEPRECISION=OFF -DASSERT=ON -DASSERT2=ON "-DCMAKE_SHARED_LINKER_FLAGS=/EXPORT:METIS_SETDEFAULTOPTIONS /EXPORT:METIS_NODEND"
+cmake --build metis-build --parallel 2
+
+Close Palace, save a copy of the original metis.dll, and replace only that DLL
+beside palace.exe with metis-build/libmetis/metis.dll. Keep the same public ABI:
+x64, 32-bit idx_t and real_t, C calling convention, release DLL CRT, and exported
+C/Fortran symbols. Run palace.exe directly against a copied example configuration.
+No relink of palace.exe or redistribution of proprietary static libraries is
+required. An incompatible DLL can fail to load or produce incorrect results;
+restore the saved DLL to recover. No administrator privileges are required.
+
+Covered code is provided WITHOUT WARRANTY; see the LGPL and original notices.
+The package's RUNTIME_TERMS.txt must be read together with these rights.

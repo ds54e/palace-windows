@@ -12,3 +12,13 @@ This is an external evidence requirement, not a developer-host simulation. Use a
 8. Return report.json, run logs, CSVs, output inventories, package hash, clean/offline preparation record and the manual interruption/re-run/uninstall observations. Gate 0/Gate 5 remain open until this evidence is independently reviewed.
 
 The package remains an internal validation candidate while the redistribution review is open. Do not publish it or infer redistribution rights from successful execution.
+
+## Required path and failure matrix for the next frozen candidate
+
+Do not reuse the historical ZIP as evidence for the new linkage. Package only after the exact redistribution matrix is cleared; record a new ZIP name/hash and preserve both old and new artifacts. At present that precondition is not met, so no replacement kit is declared ready.
+
+Execute the four examples separately under each of three installation **and working/output** paths: ASCII (`PalaceASCII`), whitespace (`Palace test`), and Japanese (`Palace 日本語`). Each run must use a fresh evidence directory. Preserve all 12 run logs, complete CSVs and VTU/PVTU/PVD files. Check every XML reference exists and array/grid dimensions are consistent. Compare complete capacitance/inductance matrices, every complex S entry at 4/5/6 GHz, and both eigenfrequencies/residuals against the frozen acceptance criteria; analysis may be performed after transferring evidence to the developer host, without installing Python or tools on the clean host.
+
+For each path, repeat a successful execution in another fresh output directory. Also run against a missing configuration and a configuration requesting unsupported ParMETIS ordering. Require nonzero exit with a clear diagnostic, then rerun a valid example to demonstrate recovery. Keep outputs from failed attempts distinct. Record Ctrl+C behavior and process cleanup separately; do not terminate unrelated processes.
+
+Before and after testing, retain a bounded inventory of installed development/runtime products, MPI services, package-owned running processes, and relevant system-installation changes. The image must have no Palace development tools, Visual Studio, Intel compiler/runtime, installed MS-MPI, Python or WSL. Verify all nine selected DLLs load from the extracted application's directory, including `metis.dll` and `libircmd.dll`. The OS UCRT/API sets remain Windows system components, not shipped vendor dependencies. Record offline preparation and any network observations; disconnected success alone is not a claim that no connection was attempted. No installer, service creation, policy change, firewall change or administrator step belongs in the test.

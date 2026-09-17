@@ -21,6 +21,10 @@ def copy(source,target):
     else: shutil.copy2(source,target)
 
 def main():
+    matrix=json.loads((ROOT/'docs/packaging/REDISTRIBUTION_MATRIX.json').read_text())
+    if matrix['status'] != 'CLEARED_FOR_PACKAGING' or any(
+        row['status'] != 'CLEARED_FOR_PACKAGING' for row in matrix['components']):
+        raise RuntimeError('Redistribution matrix is unresolved; do not create or change a candidate payload')
     comparison=json.loads((ROOT/'.work/gate3/comparison.json').read_text())
     if not comparison['passed']: raise RuntimeError('Gate 3 numerical comparison has not passed')
     candidate=json.loads((ROOT/'.work/gate4/candidate-validation.json').read_text())

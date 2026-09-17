@@ -7,18 +7,56 @@ import json
 import subprocess
 import tarfile
 import zipfile
+import re
+import shutil
+import tempfile
 from prepare_gate1 import ROOT, WORK, download, run
 
 
 def apply(tree, patches):
+    """Verify/apply ordered overlapping patches without modifying a partial tree."""
     if not patches:
         return
-    args = [str(p) for p in patches]
-    if subprocess.run(['git', '-C', str(tree), 'apply', '--reverse', '--check', *args],
-                      stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0:
-        return
-    run('git', '-C', tree, 'apply', '--check', *patches)
-    run('git', '-C', tree, 'apply', *patches)
+    patches = [Path(p).resolve() for p in patches]
+    touched = set()
+    for patch in patches:
+        for name in re.findall(r"^(?:--- a/|\+\+\+ b/)([^\t\n]+)", patch.read_text(), re.M):
+            path = Path(name)
+            if path.is_absolute() or '..' in path.parts:
+                raise RuntimeError('Unsafe patch path: ' + name)
+            touched.add(path)
+    with tempfile.TemporaryDirectory(prefix='patch-check-', dir=WORK) as temporary:
+        trial = Path(temporary)
+        run('git', '-C', trial, 'init', '-q')
+        def reset_trial():
+            for name in touched:
+                target = trial / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                if (tree / name).is_file():
+                    shutil.copy2(tree / name, target)
+                elif target.exists():
+                    target.unlink()
+        reset_trial()
+        already_applied = True
+        for patch in reversed(patches):
+            result = subprocess.run(['git', '-C', str(trial), 'apply', '--reverse', str(patch)],
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            if result.returncode:
+                already_applied = False
+                break
+        if already_applied:
+            return
+        reset_trial()
+        for patch in patches:
+            run('git', '-C', trial, 'apply', patch)
+        # Copy only after the entire ordered patch set succeeds in isolation.
+        for name in touched:
+            target = tree / name
+            if (trial / name).is_file():
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(trial / name, target)
+            elif target.exists():
+                target.unlink()
 
 
 def main():
