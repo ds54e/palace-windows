@@ -13,9 +13,12 @@ palace-sparams.exe and every supplied DLL together. Do not install DLLs in
 Windows directories. Copy an examples subfolder to your desired writable
 working location; use a command prompt in that copied folder:
 
-  set OMP_NUM_THREADS=1
-  set MKL_NUM_THREADS=1
-  "C:\path to Palace\palace.exe" config.json > run.log 2>&1
+  "C:\path to Palace\Run-Palace.cmd" config.json > run.log 2>&1
+
+Run-Palace.cmd sets process-local MSMPI_DISABLE_SOCK=1 and MSMPI_DISABLE_ND=1
+for the one-rank baseline, and defaults OMP_NUM_THREADS/MKL_NUM_THREADS to 1
+if unset. MPI remains enabled. Direct palace.exe invocation without these
+transport settings may open an MPI TCP listener. No system settings change.
 
 The example mesh path and output folder are relative to that working
 folder. ParaView can open the generated .pvd/.pvtu files; ParaView itself is

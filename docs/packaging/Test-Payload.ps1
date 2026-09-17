@@ -23,16 +23,26 @@ foreach ($case in @('electrostatic','magnetostatic','driven','eigenmode')) {
     $start.UseShellExecute=$false; $start.RedirectStandardOutput=$true; $start.RedirectStandardError=$true
     $start.EnvironmentVariables['PATH']="$env:WINDIR\System32;$env:WINDIR"
     $start.EnvironmentVariables['OMP_NUM_THREADS']='1'; $start.EnvironmentVariables['MKL_NUM_THREADS']='1'
+    $start.EnvironmentVariables['MSMPI_DISABLE_SOCK']='1'; $start.EnvironmentVariables['MSMPI_DISABLE_ND']='1'
     $process=New-Object Diagnostics.Process; $process.StartInfo=$start
     [void]$process.Start()
     $stdout=$process.StandardOutput.ReadToEndAsync(); $stderr=$process.StandardError.ReadToEndAsync()
-    $loaded=@{}; $timer=[Diagnostics.Stopwatch]::StartNew()
+    $loaded=@{}; $allLoaded=@{}; $network=@{}; $lastNetwork=-1000; $timer=[Diagnostics.Stopwatch]::StartNew()
     while (!$process.HasExited) {
         $process.Refresh() # Process.Modules caches its collection; resample each poll.
         try { foreach ($module in $process.Modules) {
             $name=$module.ModuleName.ToLowerInvariant()
+            $allLoaded[$name]=$module.FileName
             if ($vendor -contains $name) { $loaded[$name]=$module.FileName }
         } } catch { if (!$process.HasExited) { throw } }
+        if($timer.ElapsedMilliseconds-$lastNetwork -ge 500){
+            $lastNetwork=$timer.ElapsedMilliseconds
+            foreach($line in (& "$env:WINDIR/System32/netstat.exe" -ano -p tcp)){
+                $columns=$line.Trim() -split '\s+'
+                if($columns.Count -ge 5 -and $columns[-1] -eq $process.Id.ToString()){$network[$line.Trim()]=$true}
+            }
+            if($LASTEXITCODE -ne 0){throw 'Network observation command failed'}
+        }
         if ($timer.Elapsed.TotalMinutes -gt 10) { $process.Kill(); throw "Case timeout: $case" }
         Start-Sleep -Milliseconds 50
     }
@@ -43,7 +53,13 @@ foreach ($case in @('electrostatic','magnetostatic','driven','eigenmode')) {
         if (!$loaded.ContainsKey($name)) { throw "Module observation missing: $case/$name" }
         if ([IO.Path]::GetFullPath($loaded[$name]) -ine [IO.Path]::GetFullPath((Join-Path $package $name))) { throw "Non-app-local module: $($loaded[$name])" }
     }
-    $records += [ordered]@{case=$case;exit_code=$process.ExitCode;elapsed_seconds=$timer.Elapsed.TotalSeconds;vendor_modules=$loaded}
+    $unexpected=@($allLoaded.Values | Where-Object {
+        !$_.StartsWith($package+'\',[StringComparison]::OrdinalIgnoreCase) -and
+        !$_.StartsWith($env:WINDIR+'\',[StringComparison]::OrdinalIgnoreCase)
+    })
+    if($unexpected.Count){throw "Non-system module outside package: $($unexpected -join ', ')"}
+    if($network.Count){throw "Unexpected TCP endpoint in socket-disabled one-rank run: $case"}
+    $records += [ordered]@{all_modules=$allLoaded;tcp_observations=@($network.Keys);unexpected_non_system_modules=$unexpected;case=$case;exit_code=$process.ExitCode;elapsed_seconds=$timer.Elapsed.TotalSeconds;vendor_modules=$loaded}
 }
 [ordered]@{
     status='TECHNICAL_PAYLOAD_RUN_NO_ENVIRONMENT_ATTESTATION'
@@ -53,4 +69,4 @@ foreach ($case in @('electrostatic','magnetostatic','driven','eigenmode')) {
     runs=$records
     remaining='CSV/VTK verification, interruption, re-run, read-only install path, uninstall and independent review; redistribution review'
 } | ConvertTo-Json -Depth 8 | Set-Content -Encoding UTF8 "$OutputRoot/report.json"
-Write-Output "Developer-host staged runs complete; no clean-host or Gate 0 pass. Evidence: $OutputRoot"
+Write-Output "Technical payload runs complete; environment attestation and Gate 0 remain separate. Evidence: $OutputRoot"

@@ -96,7 +96,7 @@ def main():
         copy(ROOT/'docs/evidence'/name,'docs/evidence/'+name)
     review=STAGE/'REDISTRIBUTION_REVIEW.md'
     review.write_text(review.read_text().replace('../evidence/','docs/evidence/'))
-    for folder in ['deps','patches','cmake','scripts','src','tests','tools']:
+    for folder in ['deps','patches','cmake','scripts','src','tests','tools','windows']:
         with tarfile.open(STAGE/'sources'/f'windows-overlay-{folder}.tar.gz','w:gz') as archive:
             names=subprocess.check_output(['git','ls-files','-z',folder],cwd=ROOT).decode().split('\0')
             for name in sorted(filter(None,names)): archive.add(ROOT/name,arcname=name,recursive=False)

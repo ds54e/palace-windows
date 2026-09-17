@@ -57,3 +57,15 @@ Use pinned METIS's existing `SHARED=ON` route and `_WINDLL` exports, adding expo
 ## D013 — Separate final legal review from release engineering (2026-09-17)
 
 By explicit owner direction, the LGPL/Intel combined-work question remains one final `LEGAL_REVIEW_PENDING` item, not an engineering gate preventing internal package construction, clean-host validation or fresh-cache reproduction. Preserve the tested shared-METIS design and Intel/compiler/solver choices. Do not conclude legal compatibility or incompatibility. Already reviewed component grants stay closed; package fulfillment is checked mechanically. Keep the historical ZIP immutable and use a new candidate name/hash. Clean-host access/evidence is a separate factual requirement and cannot be replaced by a developer-host run.
+
+## D014 — One-rank launcher transport policy
+
+Default MS-MPI singleton runs opened a TCP listener on 0.0.0.0 on the developer
+host. The Microsoft-MPI documented process-local MSMPI_DISABLE_SOCK=1 and
+MSMPI_DISABLE_ND=1 settings eliminated observed TCP endpoints while retaining
+MPI and passing all four cases and all 60 frozen numerical comparisons.
+Run-Palace.cmd uses this policy and defaults unset thread counts to one. This
+is a tested one-rank deployment setting, not a compiler/solver change or a
+legal workaround. Direct executable use without those settings may listen.
+No Windows network/security policy is modified. Sampling and developer-host
+success do not establish independent clean-host/offline success.

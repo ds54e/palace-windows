@@ -216,3 +216,47 @@ Independent standard-user offline Windows access/evidence is still absent. The f
 Owner direction supersedes the prior packaging hold. Started `tools/reproduce_windows_v1.py --destination .work/reproduction/r1`: fresh repository/source trees, freshly extracted compiler/numerical packages and SDK, empty build/install directories; reused only SHA256-verified download archives. Sources fetched at pins from upstream; no old generated libraries/objects/cache copied. Initial native build found the missing x64 SDK installation alias `mpifptr.h`, previously restored by the Gate 1 script. Bootstrap now copies exact `mpifptr64.h` bytes to that alias. Preserved first failed build/install trees and restarted with empty build/install directories. Logs `.work/redistribution/fresh-reproduction.log` and `fresh-build-sdk-layout.log`. No compiler, numerical implementation or ABI change.
 
 Fresh policy/host-tool query recorded `.work/redistribution/release-host-inventory.txt`: all execution-policy scopes Undefined outside the authorized Bypass process. No discovered Get-VM/VBoxManage/vmrun command supplied a configured independent clean host. Asked for independent host/tester access while continuing autonomous engineering; no clean-host evidence fabricated.
+
+## 2026-09-17 — Fresh-cache recipe repairs and developer deployment checks
+
+The owner confirms no independently prepared clean Windows environment is
+available. Gate 5 and the clean-host portion of Gate 0 remain blocked. No
+new request for that same access is needed.
+
+Fresh build r1 (initial recipe 83b6474) reached MFEM with empty caches and
+exposed its finder early-return behavior when INCLUDE_DIRS was already set.
+The persistent build-mfem.ps1 now supplies complete HYPRE_LIBRARIES and
+MUMPS_LIBRARIES matching the previously validated cache, including explicit
+MS-MPI/ifx dependencies. Preserved the failed MFEM directory and configured a
+new empty one. Native resume command: r1/tools/native-dev.cmd powershell.exe
+-NoProfile -ExecutionPolicy Bypass -File
+.work/redistribution/resume-fresh-build.ps1. Build/connection log:
+.work/redistribution/fresh-build-explicit-mfem.log. Fresh Palace, exporter,
+four ABI/ordering connections, one-rank MFEM and 80 assertions in 11 Palace
+port tests passed. The separate fresh no-ParMETIS audit passed 15 libraries.
+Fresh isolated four-case numerical validation is recorded separately.
+
+The preview shared-METIS payload passed 24 solver executions across ASCII,
+whitespace and Japanese paths, six negative-input/unsupported-ParMETIS tests,
+repeat/recovery, CSV/VTU structure and Touchstone export. All six run sets
+passed the unchanged 60-check Linux comparison (360 total). Instrumented
+repeat observed every non-system runtime app-locally, but the default MS-MPI
+singleton opened a TCP listener on 0.0.0.0. Logs and results:
+.work/redistribution/path-suite-observed-review2.log and
+.work/gate5-comparisons/observed/summary.json. These are developer-only tests.
+
+Microsoft's pinned options source documents process-local MSMPI_DISABLE_SOCK
+and MSMPI_DISABLE_ND. A separate four-case test with both set to 1 observed
+no TCP endpoints and passed all 60 fixed comparisons. Provenance and logs:
+.work/redistribution/msmpi-options-source.json, network-transport-check.log,
+.work/network-transport-check/comparison.json. Adopted only this one-rank
+launcher policy; MPI remains enabled, and no toolchain, solver, Windows
+security or persistent environment setting changed. The final kit samples
+all modules/TCP endpoints and rejects any observed endpoint under this policy.
+Sampling does not prove absence of transient network attempts; independent
+offline/network evidence is still required.
+
+Source/notice assembly now uses deterministic corresponding-source archive
+metadata and includes the Windows resource/build overlay directory. The new
+review2 candidate is distinct from the preserved historical ZIP. Its pre-ZIP
+finalizer verifies unchanged binary identities and refuses a frozen ZIP.

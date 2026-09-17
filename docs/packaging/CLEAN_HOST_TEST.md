@@ -28,3 +28,11 @@ Before and after testing, retain a bounded inventory of installed development/ru
 `Test-CleanHost.ps1 -OutputRoot <new-user-writable-folder> -AttestIndependentCleanHost -AttestOffline` invokes the three-path suite. It rejects administrator-group membership and a bounded inventory of excluded products/services, verifies every payload hash, runs all four examples twice per path, observes every app-local DLL, checks missing-input and unsupported-ParMETIS failures followed by recovery, validates finite CSV/VTU arrays and XML references using only Windows PowerShell/.NET, and exports Touchstone. It copies the package to new ASCII, whitespace and Japanese paths; it never alters the frozen package. Keep enough space for three copies and 24 solver output sets.
 
 The package also contains Test-Paths.ps1 with an explicit DeveloperHost switch for engineering diagnostics. Those reports are always labeled DEVELOPER_HOST_ONLY and cannot pass Gate 5. An independent clean environment is not currently available; its absence is an execution blocker, not a package defect or a legal decision. Manual image preparation, network-attempt observations, Ctrl+C, uninstall/cleanup and returned-data numerical review remain required even if the automated suite passes.
+
+The automated one-rank runs set MSMPI_DISABLE_SOCK=1 and MSMPI_DISABLE_ND=1,
+the same process-local transport policy as Run-Palace.cmd. They record all
+loaded module paths and sampled process-owned TCP endpoints with Windows
+netstat; any observed TCP endpoint or non-system module outside the package
+fails this subset. Sampling is not a packet capture or proof that no transient
+network attempt occurred. Independent offline and network observations remain
+required. No firewall or security policy is changed.

@@ -40,6 +40,7 @@ foreach($variant in $variants){
         $info.UseShellExecute=$false;$info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true
         $info.EnvironmentVariables['PATH']="$env:WINDIR\System32;$env:WINDIR"
         $info.EnvironmentVariables['OMP_NUM_THREADS']='1';$info.EnvironmentVariables['MKL_NUM_THREADS']='1'
+    $info.EnvironmentVariables['MSMPI_DISABLE_SOCK']='1'; $info.EnvironmentVariables['MSMPI_DISABLE_ND']='1'
         $process=[Diagnostics.Process]::Start($info);$out=$process.StandardOutput.ReadToEndAsync();$err=$process.StandardError.ReadToEndAsync()
         if(!$process.WaitForExit(60000)){$process.Kill();throw "Negative test timeout: $file"}
         $text=$out.Result+$err.Result;[IO.File]::WriteAllText("$work/$file.log",$text)
@@ -53,7 +54,8 @@ foreach($variant in $variants){
     & "$kit/Test-OutputFiles.ps1" -CaseRoot $second
     & "$copy/palace-sparams.exe" "$second/driven/output/port-S.csv" "$base/ports.s2p" 50 1 2
     if($LASTEXITCODE -ne 0){throw 'Touchstone export failed'}
-    $records += [ordered]@{path_class=$variant;first_run=$first;repeat_and_recovery=$second;failures=$negative;touchstone='pass'}
+    & "$kit/Test-Launcher.ps1" -PackageDirectory $copy -OutputRoot "$base/launcher"
+    $records += [ordered]@{launcher="$base/launcher/launcher-report.json";path_class=$variant;first_run=$first;repeat_and_recovery=$second;failures=$negative;touchstone='pass'}
 }
 [ordered]@{
     scope=$(if($DeveloperHost){'DEVELOPER_HOST_ONLY'}else{'INDEPENDENT_STANDARD_USER_OFFLINE_AUTOMATED_SUBSET'})
