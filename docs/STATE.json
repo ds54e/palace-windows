@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "RELEASE_ENGINEERING_IN_PROGRESS_LEGAL_REVIEW_PENDING",
-  "current_gate": "G4_package",
+  "project_status": "BLOCKED_EXTERNAL_CLEAN_HOST_AND_LEGAL_REVIEW",
+  "current_gate": "G5_clean_host",
   "model_policy": {
     "parent_default": {
       "model": "gpt-6-astra",
@@ -94,7 +94,7 @@
       ]
     },
     "G4_package": {
-      "status": "in_progress",
+      "status": "pass",
       "evidence": [
         {
           "path": "docs/evidence/G4-internal-candidate-2026-09-17.json",
@@ -115,25 +115,44 @@
         {
           "path": "docs/evidence/G4-microsoft-terms-2026-09-17.json",
           "sha256": "de2714c60495098c941cff88491970fc45b5ae017ccb6bb1c32cd8fbd5b16632"
+        },
+        {
+          "path": "docs/evidence/G4-frozen-review2-2026-09-17.json",
+          "sha256": "26072c93595a0ed2e4e709d05502b718f21029899e791a9c6880f8064333a2e3"
         }
       ]
     },
     "G5_clean_host": {
       "status": "blocked",
-      "evidence": []
+      "evidence": [
+        {
+          "path": "docs/evidence/G5-prepared-kit-2026-09-17.json",
+          "sha256": "5767b396555507b58db3829de320fc869290f1e3cf20a448b9aa77f8ef44e07d"
+        }
+      ]
     },
     "G6_reproduce": {
-      "status": "in_progress",
-      "evidence": []
+      "status": "pass",
+      "evidence": [
+        {
+          "path": "docs/evidence/G6-fresh-reproduction-2026-09-17.json",
+          "sha256": "75dcce5f02c121c7587dbe2e30686d07a728d30a47d898883cf7ba5d1d22d468"
+        }
+      ]
     },
     "G7_review": {
-      "status": "not_run",
-      "evidence": []
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "docs/packaging/REDISTRIBUTION_MATRIX.json",
+          "sha256": "d13ed12f695841bad9def8349265d39487688772f17d545182327fcb2cd6da08"
+        }
+      ]
     }
   },
   "blockers": [
     "LEGAL_REVIEW_PENDING: Whether LGPL-2.1 section 6 modification/reverse-engineering condition is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel proprietary components retain their separate restrictions. This does not block internal engineering or reopen component grants.",
     "Gate 5 external execution blocker: owner confirms no independent clean Windows environment is currently available. No standard-user/offline clean-host pass may be claimed."
   ],
-  "next_action": "Freeze the distinct internal review candidate, execute developer-host path/repeat/failure/output checks, complete fresh-cache reproduction and record hashes/manifests. Prepare clean-host kit for independent execution when a host becomes available. Keep one narrow final legal review pending; no public release/tag."
+  "next_action": "Await independently prepared standard-user offline Windows host for the frozen review2 kit and qualified determination of the one LGPL/Intel combined-work legal question. G0/G5/G7 remain open; no remaining build/package engineering action is claimed blocked by that legal question. Preserve frozen ZIP bytes; no public release/tag."
 }

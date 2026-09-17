@@ -1,0 +1,68 @@
+{
+  "status": "pass",
+  "scope": "Exact internal packaging engineering only; not approval for redistribution, clean-host validation or release",
+  "archive": {
+    "status": "INTERNAL_VALIDATION_ONLY_NOT_APPROVED_FOR_REDISTRIBUTION",
+    "archive": "palace-windows-1.0.0-review2-internal.zip",
+    "sha256": "6dad1f3d892ccf20f627140760b9cae94202a12463715aa2a003e1931a5cd2e2",
+    "bytes": 150838953,
+    "diagnostics": {
+      "path": "palace-windows-1.0.0-review2-diagnostics.zip",
+      "sha256": "42202287c591bba4877f31c7e9ad0d7b897dcf3fd979877ae7b2348a6e19e9dd",
+      "bytes": 2118014
+    },
+    "signature": "unsigned",
+    "clean_host": "not executed",
+    "redistribution": "LEGAL_REVIEW_PENDING: LGPL/Intel combined-work determination only"
+  },
+  "staging": ".work/package/palace-windows-1.0.0-review2",
+  "manifest_sha256": "49d9ea0b2ba5bbee4cd3f105e64d4857ed7281f48c8dd237c164100cc4ea6133",
+  "zip_member_hash_verification": "Every member matches the frozen staging manifest, with no extra members; ZIP CRC validation passed",
+  "verification": {
+    "scope": "Exact payload inventory/hashes only; no redistribution or clean-host pass",
+    "files": 191,
+    "bytes": 200018936,
+    "binaries": [
+      "libifcoremd.dll",
+      "libircmd.dll",
+      "libmmd.dll",
+      "metis.dll",
+      "msmpi.dll",
+      "msvcp140.dll",
+      "palace-sparams.exe",
+      "palace.exe",
+      "svml_dispmd.dll",
+      "vcruntime140.dll",
+      "vcruntime140_1.dll"
+    ],
+    "status": "pass"
+  },
+  "redistribution_matrix_sha256": "d13ed12f695841bad9def8349265d39487688772f17d545182327fcb2cd6da08",
+  "component_rows": 28,
+  "component_status": "COMPONENT_REVIEW_COMPLETE for all 28 rows",
+  "package_fulfillment": "MECHANICALLY_COMPLETE",
+  "legal_review": {
+    "id": "LGPL_INTEL_COMBINED_WORK",
+    "status": "LEGAL_REVIEW_PENDING",
+    "question": "Whether LGPL-2.1 section 6's modification/reverse-engineering condition for the combined work is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel's separate proprietary components retain their own reverse-engineering restrictions.",
+    "engineering_authorization": "Owner explicitly authorizes internal candidate packaging, validation and reproduction while this one final legal determination remains open."
+  },
+  "candidate_executable_sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+  "metis_dll_sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+  "recipe_commit": "7ef70de84eeb66826067c637e00a03b629841287",
+  "developer_kit_evidence": "docs/evidence/G5-prepared-kit-2026-09-17.json",
+  "fresh_reproduction_evidence": "docs/evidence/G6-fresh-reproduction-2026-09-17.json",
+  "solver_reported_memory_table_totals": {
+    "driven": "Total                            27.1M       27.1M       27.1M",
+    "eigenmode": "Total                            14.8M       14.8M       14.8M",
+    "electrostatic": "Total                           128.5M      128.5M      128.5M",
+    "magnetostatic": "Total                           564.8M      564.8M      564.8M"
+  },
+  "memory_scope": "Literal fresh-run Palace memory table rows, not independently measured process RSS",
+  "original_archive_preserved": {
+    "path": ".work/package/palace-windows-1.0.0-internal-validation.zip",
+    "sha256": "9305a0883ffc29c35fbb7459b8b1409573cea59ee147b2cf34972397d7a6fb9c"
+  },
+  "clean_host_status": "BLOCKED: owner confirms no clean environment available",
+  "publication": "No public release or tag created"
+}

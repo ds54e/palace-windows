@@ -1714,5 +1714,29 @@
       "path": ".work/redistribution/fresh-numerics.log",
       "sha256": "fdaed4271273c3a1218961d1d3d02e975f180ad67d76e861eac2516f0f5c18dc"
     }
+  ],
+  "executed_recipe_files": {
+    "scripts/build-windows-v1.ps1": "fdf3fd04e448a81425fed5fcbcbce5100d02a16ff8ca08f931822e70fcd3ea02",
+    "scripts/build-no-parmetis-deps.ps1": "b619843c41baedb76a33ddcbe5ad5efc6a9b7f956b501ce0afe3192c61099a3f",
+    "scripts/build-mfem.ps1": "84fd69272558e3a61ff5b059da3f52503f55738a6d93f783c4d48b6578ce9079",
+    "scripts/build-libceed.ps1": "d6343506e707509989af0e1a660b56f213d2bba57dadb5d1ffe909468d09eca3",
+    "scripts/build-core-libs.ps1": "fdb0f880ca2653c4be12c6c6b8dfb03fd6dc60b4e7036b38caa5555a93f11b29",
+    "scripts/build-arpack-windows.ps1": "9c5fb8454cc7b71b39c6e3be06ebb8ab0ff6f0799562ab44293d35acdda1265f",
+    "scripts/test-no-parmetis.ps1": "1f09c2e39262b7e12c9223f5f425eca62b3a94f0b8fda928d3a1b38db18be8c6",
+    "scripts/test-mfem.ps1": "6c44fd3668858226da050f45ab822676d65b3c29f63785967897755f35f0a405",
+    "scripts/build-catch2.ps1": "0b3223e9feb129f2cc73af241b53884653ee18da824e80ec241ba9d7f533a31d",
+    "scripts/build-palace-windows.ps1": "19a6eaf865fc6d58970387ba1a3db656ea1b19350c97e34afc4fd0939999e605",
+    "scripts/test-palace-ports.ps1": "84be517d59980f9b1ef4fed92de2c06551f3ab73b897a7bf4ae68facade621bb",
+    "scripts/build-sparams.ps1": "9a360c93c96eb12e000b3b3c62fb40ce65c3ecd831bb93fcc80791154c080a96",
+    "scripts/audit-runtime.ps1": "693a4dee5e8299e7c13a7cf500a2a6bc4a49ec4dbf58cc3ffd5c6c1cdb430b9b",
+    "scripts/audit-no-parmetis.ps1": "d39c867365d48afef4c2c2a7f0ea44c66c359b6318532e2bb8872e0c5d9f005e",
+    "scripts/gate2-common.ps1": "df0207b823ceb6f026e3cd774d880d12f19b3dbb49064d8a36d0338f8a0f2a66"
+  },
+  "commands": [
+    "python3 tools/reproduce_windows_v1.py --destination .work/reproduction/r1",
+    "Fresh restart after SDK alias fix: tools/native-dev.cmd powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-windows-v1.ps1",
+    "Fresh MFEM directory after discovery fix; remaining sequential scripts listed in executed_recipe_files, via .work/redistribution/resume-fresh-build.ps1",
+    "scripts/audit-no-parmetis.ps1 -Executable <fresh>/palace.exe -LinkMap <fresh>/palace.map",
+    "docs/packaging/Test-Payload.ps1 on isolated fresh closure; Test-OutputFiles.ps1; tools.compare_gate3 BASE=.work/reproduction/numerics"
   ]
 }
