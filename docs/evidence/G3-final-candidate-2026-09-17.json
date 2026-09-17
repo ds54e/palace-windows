@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "scope": "Frozen final shared-METIS developer-host candidate numerical equivalence; not clean-host or legal clearance",
+  "palace_commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+  "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+  "inputs_sha256": "4f2a4a0853e2d9546cd515e20eb51c9ffe6b0674b1e87d62513d56765e55415f",
+  "evidence": "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+  "evidence_sha256": "d86fe8ef3428f83ce5806a4b652db5c6a9ef78b98002d997d299e2d8ce958625",
+  "windows_executable_sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+  "metis_dll_sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+  "linux_executable_sha256": "7882b0d57d0a5913c2df6a59dd2ed05d5db3eb47e873c49b74b96335d79e3245",
+  "comparison_sha256": "be8cbeb02a6e2c549c556345d90f2e3fb9e3dbdd6b1d3e9b0cd1f2a5e615e67a",
+  "checks": 60,
+  "passed_checks": 60,
+  "tolerances_changed": false,
+  "thread_count": 1,
+  "mpi_rank_count": 1,
+  "source_semantics": "Same pinned numerical algorithms and no-ParMETIS solver/ordering configuration. Windows METIS linkage is replaceable shared; Linux reference remains the same validated source implementation."
+}

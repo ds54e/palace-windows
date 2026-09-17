@@ -1,6 +1,6 @@
 {
-  "status": "BLOCKED_TERMS_INTERACTION_NOT_FINAL_REDISTRIBUTION_CLEARANCE",
-  "scope": "Single current exact redistribution matrix for the working replacement closure. Original ZIP is immutable and not this closure.",
+  "status": "LEGAL_REVIEW_PENDING",
+  "scope": "Single exact component matrix for the shared-METIS review candidate. Component grants are reviewed; package fulfillment is mechanically checked. One combined-work legal determination remains pending; no public redistribution decision.",
   "binary_closure": [
     {
       "name": "palace.exe",
@@ -169,11 +169,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE; Windows modification notices",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -191,11 +192,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE and NOTICE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -213,11 +215,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE-APACHE, LICENSE-MIT and NOTICE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -240,11 +243,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE; CeCILL-C English/French; --licenses attribution",
       "source_or_relink_obligation": "CeCILL-C 5.3 covered-source access and 6.4 interface attribution; complete archive, wrapper and build patches required.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -267,11 +271,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "COPYING",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -289,11 +294,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE and NOTICE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -311,11 +317,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -333,11 +340,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -355,11 +363,12 @@
       "redistribution_right": "Pinned source license permits redistribution subject to its stated conditions.",
       "required_notices": "LICENSE",
       "source_or_relink_obligation": "Retain license/notices; identify modifications. Complete source included voluntarily.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "deps/gate1-lock.json",
         "deps/gate2-lock.json",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -377,8 +386,10 @@
       "redistribution_right": "Bundled README expressly identifies public-domain SPACE origin.",
       "required_notices": "PORD/README and source notices",
       "source_or_relink_obligation": "Included inside complete MUMPS source archive.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
-      "evidence": []
+      "status": "COMPONENT_REVIEW_COMPLETE",
+      "evidence": [
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
+      ]
     },
     {
       "component": "eigen",
@@ -395,8 +406,10 @@
       "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
       "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
       "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
-      "evidence": []
+      "status": "COMPONENT_REVIEW_COMPLETE",
+      "evidence": [
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
+      ]
     },
     {
       "component": "json",
@@ -413,8 +426,10 @@
       "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
       "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
       "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
-      "evidence": []
+      "status": "COMPONENT_REVIEW_COMPLETE",
+      "evidence": [
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
+      ]
     },
     {
       "component": "fast_float",
@@ -431,8 +446,10 @@
       "redistribution_right": "Pinned per-file licenses; no top-level relicensing of exceptions.",
       "required_notices": "All LICENSE/COPYING/NOTICE files in pinned snapshot",
       "source_or_relink_obligation": "Eigen: MPL 3.2 covered-source access via accompanying snapshot; others retain notices. Source-only files retain their own licenses.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
-      "evidence": []
+      "status": "COMPONENT_REVIEW_COMPLETE",
+      "evidence": [
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
+      ]
     },
     {
       "component": "METIS / GKlib",
@@ -451,13 +468,14 @@
       ],
       "linkage_mode": "shared; no METIS implementation objects in palace.exe",
       "license": "Apache-2.0 AND LGPL-2.1-or-later AND per-file BSD-style notices",
-      "redistribution_right": "LGPL 4 and 6(b) shared-library route; actual replacement verified. Section 6 opening modification/debugging condition remains unresolved against Intel terms.",
+      "redistribution_right": "LGPL 4 and 6(b) shared-library mechanism implemented and actual replacement verified. The single combined-work determination is tracked in legal_review.",
       "required_notices": "Top-level license, complete source notices, LGPL text, --licenses GNU copyright notice",
       "source_or_relink_obligation": "Complete corresponding METIS/GKlib source and build instructions; allow modification and debugging; no static relink kit needed under tested 6(b) mechanism.",
-      "status": "BLOCKED_TERMS_INTERACTION",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/packaging/METIS_REPLACEMENT.txt",
-        "docs/evidence/G4-redistribution-linkage-2026-09-17.json"
+        "docs/evidence/G4-redistribution-linkage-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -474,10 +492,11 @@
       "license": "Intel Developer Tools EULA August 2024",
       "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
       "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
-      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
-      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "source_or_relink_obligation": "No proprietary source/relink obligation. Retain original reverse-engineering and liability terms; combined-work determination is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -494,10 +513,11 @@
       "license": "Intel Developer Tools EULA August 2024",
       "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
       "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
-      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
-      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "source_or_relink_obligation": "No proprietary source/relink obligation. Retain original reverse-engineering and liability terms; combined-work determination is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -514,10 +534,11 @@
       "license": "Intel Developer Tools EULA August 2024",
       "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
       "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
-      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
-      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "source_or_relink_obligation": "No proprietary source/relink obligation. Retain original reverse-engineering and liability terms; combined-work determination is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -535,10 +556,11 @@
       "redistribution_right": "Accompanying EULA 2(a)(i) binary distribution with application; 2(a)(ii) onward application distribution.",
       "required_notices": "Unmodified runtime EULA and MPI_Redistributables_TPN.txt; equally protective downstream terms",
       "source_or_relink_obligation": "No proprietary source obligation; Windows only; primary functionality; preserve notices; distributor indemnity under 2(b).",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/G0-payload-2026-09-17.json",
-        "docs/packaging/RUNTIME_TERMS.txt"
+        "docs/packaging/RUNTIME_TERMS.txt",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -556,12 +578,13 @@
       "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
       "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
       "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/VC-owner-entitlement-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
-        "docs/packaging/RUNTIME_TERMS.txt"
+        "docs/packaging/RUNTIME_TERMS.txt",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -578,10 +601,11 @@
       "license": "Intel Developer Tools EULA August 2024",
       "redistribution_right": "Exact 2025.3 fredist names this member; accompanying EULA 1.I and 2.1.D supply conditional product-only binary distribution grant.",
       "required_notices": "EULA, exact fredist, all compiler third-party-program notices; EULA section 7 downstream terms",
-      "source_or_relink_obligation": "No source/relink obligation for Intel proprietary DLL. 2.1.D(2) reverse-engineering restriction must be reconciled with LGPL 6.",
-      "status": "FILE_COVERAGE_VERIFIED_TERMS_INTERACTION_OPEN",
+      "source_or_relink_obligation": "No proprietary source/relink obligation. Retain original reverse-engineering and liability terms; combined-work determination is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -599,12 +623,13 @@
       "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
       "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
       "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/VC-owner-entitlement-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
-        "docs/packaging/RUNTIME_TERMS.txt"
+        "docs/packaging/RUNTIME_TERMS.txt",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -622,12 +647,13 @@
       "redistribution_right": "Owner-confirmed eligible Community license; Community Distributable List grant plus official 2022 VC/redist file scope.",
       "required_notices": "Community license, runtime use agreement, exact REDIST evidence; equally protective downstream terms",
       "source_or_relink_obligation": "No source/relink requirement; unmodified release files; no standalone toolkit or debug-runtime distribution.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/VC-owner-entitlement-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
-        "docs/packaging/RUNTIME_TERMS.txt"
+        "docs/packaging/RUNTIME_TERMS.txt",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -654,10 +680,11 @@
       "license": "Intel Simplified Software License October 2022 plus third-party terms",
       "redistribution_right": "Use and Redistribution paragraph permits unmodified binary redistribution with conditions.",
       "required_notices": "license.txt plus all accompanying third-party-program files for both packages",
-      "source_or_relink_obligation": "No proprietary source grant. Explicit prohibition on reverse engineering/modification requires resolution against LGPL section 6 opening condition.",
-      "status": "BLOCKED_TERMS_INTERACTION",
+      "source_or_relink_obligation": "No proprietary source grant; retain unmodified binary portions and original terms. Combined-work question is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -679,10 +706,11 @@
       "license": "Intel Simplified Software License October 2022 plus third-party terms",
       "redistribution_right": "Use and Redistribution paragraph permits unmodified binary redistribution with conditions.",
       "required_notices": "license.txt plus all accompanying third-party-program files for both packages",
-      "source_or_relink_obligation": "No proprietary source grant. Explicit prohibition on reverse engineering/modification requires resolution against LGPL section 6 opening condition.",
-      "status": "BLOCKED_TERMS_INTERACTION",
+      "source_or_relink_obligation": "No proprietary source grant; retain unmodified binary portions and original terms. Combined-work question is tracked once in legal_review.",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
-        "docs/evidence/G4-intel-package-2026-09-17.json"
+        "docs/evidence/G4-intel-package-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -700,10 +728,11 @@
       "redistribution_right": "SDK EULA 2(a)(i) expressly permits binary and header distribution in developed applications.",
       "required_notices": "MicrosoftMPI_SDK_EULA.rtf and MPI_SDK_TPN.txt plus protected downstream terms",
       "source_or_relink_obligation": "No proprietary source obligation; SDK 2(b) distribution/indemnity conditions apply.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/packaging/RUNTIME_TERMS.txt",
-        "docs/evidence/G4-microsoft-terms-2026-09-17.json"
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -731,10 +760,11 @@
       "redistribution_right": "Community rights plus Microsoft licensing guidance on linked C++ object-library forms; raw .lib distribution is not selected.",
       "required_notices": "Community terms, exact licensing guidance, compiler/runtime notices",
       "source_or_relink_obligation": "Distribute linked application output only; no raw proprietary .lib files; preserve source-license exceptions.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
-        "docs/evidence/VC-owner-entitlement-2026-09-17.json"
+        "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
@@ -762,15 +792,16 @@
       "redistribution_right": "Apache grant plus LLVM object-embedding exception.",
       "required_notices": "Copyright Microsoft Corporation and full license/exception retained voluntarily",
       "source_or_relink_obligation": "No covered-source/relink requirement.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
+      "status": "COMPONENT_REVIEW_COMPLETE",
       "evidence": [
         "docs/evidence/G4-microsoft-terms-2026-09-17.json",
-        "docs/evidence/G4-microsoft-terms-2026-09-17.json"
+        "docs/evidence/G4-microsoft-terms-2026-09-17.json",
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
       ]
     },
     {
       "component": "Windows overlay / palace-sparams",
-      "exact_version_or_commit": "Repository working tree; freeze recipe commit before any future package",
+      "exact_version_or_commit": "Compiled Palace overlay: 83b6474; utility source src/sparams/main.cpp SHA256 34302597a55ab4a34f25c994e92badb5098068dcf86d369149898216f59a6bed; package recipe commit bound by build-manifest.json",
       "artifacts": [
         {
           "path": ".work/build/sparams/palace-sparams.exe",
@@ -783,8 +814,10 @@
       "redistribution_right": "Repository LICENSE",
       "required_notices": "LICENSE and change notices",
       "source_or_relink_obligation": "Ship exact source/build scripts and pin recipe commit.",
-      "status": "GRANT_REVIEWED_PACKAGE_FULFILLMENT_PENDING",
-      "evidence": []
+      "status": "COMPONENT_REVIEW_COMPLETE",
+      "evidence": [
+        "Combination-level legal determination is recorded once in legal_review; no component grant is reopened."
+      ]
     }
   ],
   "license_evidence": [
@@ -934,5 +967,11 @@
     "ParMETIS": "Excluded; restrictive license evidence retained.",
     "Catch2": "Test-only, absent from final link map; not shipped as binary.",
     "Linux reference dependencies": "Not in Windows payload."
+  },
+  "legal_review": {
+    "id": "LGPL_INTEL_COMBINED_WORK",
+    "status": "LEGAL_REVIEW_PENDING",
+    "question": "Whether LGPL-2.1 section 6's modification/reverse-engineering condition for the combined work is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel's separate proprietary components retain their own reverse-engineering restrictions.",
+    "engineering_authorization": "Owner explicitly authorizes internal candidate packaging, validation and reproduction while this one final legal determination remains open."
   }
 }

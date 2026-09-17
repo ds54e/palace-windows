@@ -15,7 +15,7 @@ def add_notices(stage):
         shutil.copy2(ROOT/'.work/sources/metis/GKlib'/name,target/name)
     for name in ['LGPL-2.1.txt','lgpl-source.json']:
         shutil.copy2(ROOT/'.work/licensing'/name,target/name)
-    for name in ['README.txt','RUNTIME_TERMS.txt','REDISTRIBUTION_REVIEW.md','REDISTRIBUTION_MATRIX.json','REDISTRIBUTION_MATRIX.md','METIS_REPLACEMENT.txt','CLEAN_HOST_TEST.md','Test-CleanHost.ps1']:
+    for name in ['README.txt','RUNTIME_TERMS.txt','REDISTRIBUTION_REVIEW.md','REDISTRIBUTION_MATRIX.json','REDISTRIBUTION_MATRIX.md','METIS_REPLACEMENT.txt','CLEAN_HOST_TEST.md','Test-CleanHost.ps1','Test-Paths.ps1','Test-Payload.ps1','Test-OutputFiles.ps1']:
         shutil.copy2(ROOT/'docs/packaging'/name,stage/name)
 
     for name in ['MicrosoftMPI_SDK_EULA.rtf', 'MPI_SDK_TPN.txt']:

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "BLOCKED_EXTERNAL_REVIEW",
+  "project_status": "RELEASE_ENGINEERING_IN_PROGRESS_LEGAL_REVIEW_PENDING",
   "current_gate": "G4_package",
   "model_policy": {
     "parent_default": {
@@ -86,11 +86,15 @@
         {
           "path": "docs/evidence/G3-numerics-2026-09-17.json",
           "sha256": "dc344278821a63a508dad1b577a0ea1b545431846009d85ac28604cc00a901be"
+        },
+        {
+          "path": "docs/evidence/G3-final-candidate-2026-09-17.json",
+          "sha256": "417143ad5b6ed0eac21d84c2b850163eec636ebeac74695930dbc848efbd594f"
         }
       ]
     },
     "G4_package": {
-      "status": "blocked",
+      "status": "in_progress",
       "evidence": [
         {
           "path": "docs/evidence/G4-internal-candidate-2026-09-17.json",
@@ -119,7 +123,7 @@
       "evidence": []
     },
     "G6_reproduce": {
-      "status": "not_run",
+      "status": "in_progress",
       "evidence": []
     },
     "G7_review": {
@@ -128,8 +132,8 @@
     }
   },
   "blockers": [
-    "LGPL-2.1 section 6 combined-work modification/debugging condition versus Intel Developer Tools EULA 2.1.D(2) and oneMKL no-reverse-engineering/modification terms remains unresolved. Tested shared METIS replacement closes the technical mechanism, not that license interaction. Exact matrix and review draft are prepared for qualified compatibility determination or applicable permission.",
-    "Independent standard-user offline clean Windows host evidence is unavailable; Gate 0 and Gate 5 remain open."
+    "LEGAL_REVIEW_PENDING: Whether LGPL-2.1 section 6 modification/reverse-engineering condition is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel proprietary components retain their separate restrictions. This does not block internal engineering or reopen component grants.",
+    "Gate 5 external execution blocker: owner confirms no independent clean Windows environment is currently available. No standard-user/offline clean-host pass may be claimed."
   ],
-  "next_action": "Resolve the precise LGPL/Intel terms interaction against docs/packaging/REDISTRIBUTION_MATRIX.json and RUNTIME_TERMS.txt. Do not regenerate the original ZIP or mark matrix clear from linkage tests alone. After documented closure, finalize a new exact stage/manifest and freeze a distinct ZIP, then execute ASCII/whitespace/Japanese-path clean-host tests. G6 fresh-cache reproduction and G7 final review remain open."
+  "next_action": "Freeze the distinct internal review candidate, execute developer-host path/repeat/failure/output checks, complete fresh-cache reproduction and record hashes/manifests. Prepare clean-host kit for independent execution when a host becomes available. Keep one narrow final legal review pending; no public release/tag."
 }

@@ -1,7 +1,8 @@
 Palace Windows x64 V1.0 — internal validation candidate
 
 This package is not yet approved for redistribution or release. Read
-REDISTRIBUTION_REVIEW.md for unresolved publisher/license facts.
+REDISTRIBUTION_MATRIX.json for the single pending LGPL/Intel combined-work
+legal determination. Component grants have been reviewed.
 Target: Windows 11 x64. No administrator rights, Python, WSL, SDK, MPI
 installation or Intel runtime installation should be needed. Independent
 clean-machine validation is still required before that claim is accepted.
@@ -38,7 +39,8 @@ Run palace.exe --licenses for attribution and the license/source locations.
 Palace and this overlay retain their Apache-2.0 terms. Other components have
 separate licenses in licenses/. METIS includes GKlib sorting code governed
 by LGPL-2.1-or-later; see licenses/metis/ and its corresponding source.
-The static-combination relinking/terms review remains open. The vendor runtime terms apply only to the
+metis.dll is replaceable; see METIS_REPLACEMENT.txt. The combined-work
+LGPL/Intel terms determination remains open. The vendor runtime terms apply only to the
 respective proprietary components, not to unrelated open-source code.
 
 This software uses MUMPS 5.7.3:
