@@ -95,6 +95,10 @@
         {
           "path": "docs/evidence/G4-internal-candidate-2026-09-17.json",
           "sha256": "fdc23952f416248d496e9945ac65f3f25cf4daac11a51750e51b91478e2a117d"
+        },
+        {
+          "path": "docs/evidence/VC-owner-entitlement-2026-09-17.json",
+          "sha256": "990e2d89d71ce9b8e6173b22fa3013e67d03713c893ce58df523a56e510099d2"
         }
       ]
     },
@@ -113,9 +117,8 @@
   },
   "blockers": [
     "Independent clean standard-user offline Windows host evidence is unavailable; Gate 0 and Gate 5 remain open.",
-    "Owner Visual Studio license/eligibility confirmation has not been received; VC runtime redistribution entitlement remains unestablished.",
     "Embedded Intel libircmt code is present in Palace but absent from the accompanying fredist list; exact redistribution scope needs authoritative clarification.",
     "Pinned METIS contains linked LGPL-2.1-or-later GKlib sort macros. Complete relinking/material and downstream-term compliance for the static combination is not yet established alongside proprietary support code."
   ],
-  "next_action": "Resolve external VS entitlement and Intel embedded-support licensing facts, then close the LGPL-compatible relinking/terms route without changing validated solvers gratuitously. Independently execute docs/packaging/CLEAN_HOST_TEST.md against the exact internal ZIP. Candidate ZIP, hashes and developer-host evidence are ready; no redistribution or READY_FOR_RELEASE_REVIEW claim. Fresh-cache reproduction and final review remain unexecuted."
+  "next_action": "VS Community eligibility is owner-confirmed. Resolve the Intel embedded-support licensing scope, then close the LGPL-compatible relinking/terms route without changing validated solvers gratuitously. Independently execute docs/packaging/CLEAN_HOST_TEST.md against the exact internal ZIP. Candidate ZIP, hashes and developer-host evidence are ready; no redistribution or READY_FOR_RELEASE_REVIEW claim. Fresh-cache reproduction and final review remain unexecuted."
 }

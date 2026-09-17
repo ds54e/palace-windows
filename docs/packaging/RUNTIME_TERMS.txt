@@ -22,10 +22,11 @@ Intel oneMKL: the accompanying Intel Simplified Software License and all
 applicable third-party notices govern these embedded library portions.
 Its disclaimer and liability limitations apply. No endorsement is implied.
 
-VC runtime: redistribution grant and applicable downstream terms remain
-pending publisher Visual Studio entitlement confirmation. The Runtime
-use-only agreement is not a redistribution grant. This candidate is not
-approved for redistribution until this and the complete review are closed.
+VC runtime: the owner confirms Visual Studio Community eligibility.
+Applicable Community distributable-code and downstream terms review remains
+part of package finalization. The Runtime use-only agreement is not a
+redistribution grant. This candidate is not approved for redistribution
+until the complete review is closed.
 
 Publisher obligations such as indemnity, license eligibility and compliance
 with distribution conditions cannot be fulfilled merely by copying this

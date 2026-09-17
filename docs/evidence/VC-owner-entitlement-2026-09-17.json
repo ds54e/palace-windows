@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "fact": "Owner confirms Visual Studio Community with eligibility confirmed",
+  "source": "Owner response in this conversation: Community, with eligibility confirmed",
+  "scope": "Closes the missing owner license/eligibility fact only; applicable redistribution conditions and remaining component reviews still apply",
+  "existing_candidate": "Existing ZIP and its historical manifest/evidence are preserved unchanged; notice updates apply to the next package refresh"
+}

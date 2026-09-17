@@ -36,5 +36,5 @@ if __name__=='__main__':
     refresh_overlay_source(stage)
     manifest['packaging_recipe_commit']=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     manifest['files']=[dict(path=p.relative_to(stage).as_posix(),size=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(stage.rglob('*')) if p.is_file() and p.name!='build-manifest.json']
-    manifest['notice_review']='VC entitlement, Intel embedded support grant and LGPL static-combination obligations unresolved; no redistribution approval'
+    manifest['notice_review']='VS Community eligibility owner-confirmed; applicable VC terms, Intel embedded support grant and LGPL static-combination obligations remain under review; no redistribution approval'
     (stage/'build-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
