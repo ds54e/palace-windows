@@ -260,3 +260,21 @@ Source/notice assembly now uses deterministic corresponding-source archive
 metadata and includes the Windows resource/build overlay directory. The new
 review2 candidate is distinct from the preserved historical ZIP. Its pre-ZIP
 finalizer verifies unchanged binary identities and refuses a frozen ZIP.
+
+Fresh isolated numerical validation passed all 60 unchanged Linux comparisons,
+with valid CSV/VTU output and all nine app-local vendor DLLs. Exact rebuilt
+PE/runtime hashes, source heads/diffs, recipes, maps and logs are recorded in
+docs/evidence/G6-fresh-reproduction-2026-09-17.json. Palace and METIS PE bytes
+differ from the candidate; vendor runtime DLLs match exactly. This is source
+and recipe reproduction with tested numerical equivalence, not a claim of
+bit-identical PE output.
+
+A final-kit test was launched before staging finalization had finished; its
+inventory check correctly failed on CLEAN_HOST_TEST.md before solver work.
+Preserved path-suite-final-kit-review2.log; the final suite uses a new output
+root only after finalizer and inventory verification complete. A separate
+launcher test exposed cmd.exe argument parsing with a slash-mixed executable
+path in ProcessStartInfo. Using Join-Path with native backslashes fixed it:
+launcher-quoting-check2.log and launcher-report.json show successful driven
+execution with Japanese/space configuration name and nonzero missing-input
+failure. No Palace solver change.

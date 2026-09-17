@@ -973,5 +973,479 @@
     "status": "LEGAL_REVIEW_PENDING",
     "question": "Whether LGPL-2.1 section 6's modification/reverse-engineering condition for the combined work is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel's separate proprietary components retain their own reverse-engineering restrictions.",
     "engineering_authorization": "Owner explicitly authorizes internal candidate packaging, validation and reproduction while this one final legal determination remains open."
+  },
+  "package_fulfillment": {
+    "status": "MECHANICALLY_COMPLETE",
+    "scope": "Exact internal payload; one legal determination remains pending",
+    "payload_files": [
+      {
+        "path": "libifcoremd.dll",
+        "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3"
+      },
+      {
+        "path": "libircmd.dll",
+        "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9"
+      },
+      {
+        "path": "libmmd.dll",
+        "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e"
+      },
+      {
+        "path": "licenses/arpack-ng/COPYING",
+        "sha256": "0926566f9f406178d1214f8cc796e166b1213dd7c05e0c5b461a8b8ac9e50bbe"
+      },
+      {
+        "path": "licenses/eigen/COPYING.APACHE",
+        "sha256": "03379001a7b12a2ec997a25554247d985270b353c10d5bafee9ac8d6519820b7"
+      },
+      {
+        "path": "licenses/eigen/COPYING.BSD",
+        "sha256": "51928dce36213c5333ba3172e847d735d4c6e9b7ff2722a326c49067155b82eb"
+      },
+      {
+        "path": "licenses/eigen/COPYING.MINPACK",
+        "sha256": "c87b7f8ee88f6195e91743820c00354833583aef091b72e2d4a49c8e28e798a0"
+      },
+      {
+        "path": "licenses/eigen/COPYING.MPL2",
+        "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172"
+      },
+      {
+        "path": "licenses/eigen/COPYING.README",
+        "sha256": "db640ff2bd90c6abd6a4d3fbb351e0ee4d555417cf840492054d1cbb2ea85644"
+      },
+      {
+        "path": "licenses/eigen/LICENSE",
+        "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+      },
+      {
+        "path": "licenses/fast_float/LICENSE-APACHE",
+        "sha256": "097a889aa954d04e088b790b10a4014d6189561d0a6013935a73ce3d4ddaaf06"
+      },
+      {
+        "path": "licenses/fast_float/LICENSE-BOOST",
+        "sha256": "8d8291caf1cee26d23acf3eb67c9f9a2d58f1c681b16a4fbe8cbfb9e3c0b5a9b"
+      },
+      {
+        "path": "licenses/fast_float/LICENSE-MIT",
+        "sha256": "e562f3f974ced7e69dd1db77b820b36bcf8f30377f1aa105723fba449c53c4e6"
+      },
+      {
+        "path": "licenses/fmt/LICENSE",
+        "sha256": "07580f2a3b35709ce703d523f447b242f6dfec7582a8c0df102c7fa2849375f8"
+      },
+      {
+        "path": "licenses/hypre/LICENSE-APACHE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "licenses/hypre/LICENSE-MIT",
+        "sha256": "50bc1f161db5dc27db68a3d2ca103468287a0a4a5a18fb8600b3e0d0c07e463c"
+      },
+      {
+        "path": "licenses/hypre/NOTICE",
+        "sha256": "155e42410acf71c1cac224bc17d90d1f9014f2828c78f221fa44dc4e3ea656a8"
+      },
+      {
+        "path": "licenses/intel-compiler/Intel Developer Tools EULA.rtf",
+        "sha256": "4e96f3006c9d51b38561f9802da896480dc48e7703a76c206292bf6d6d11a781"
+      },
+      {
+        "path": "licenses/intel-compiler/LICENSE.rtf",
+        "sha256": "4e96f3006c9d51b38561f9802da896480dc48e7703a76c206292bf6d6d11a781"
+      },
+      {
+        "path": "licenses/intel-compiler/fredist.txt",
+        "sha256": "93f11995a945f987d9e23aabb61122bfb6ddf3fe413c7f157a78362db29dff4c"
+      },
+      {
+        "path": "licenses/intel-compiler/third-party-programs.txt",
+        "sha256": "a81491a0243fa1d072aa636c890a6dd082ca403aca4681672cf6f69d3d516f79"
+      },
+      {
+        "path": "licenses/json/LICENSE.MIT",
+        "sha256": "46a65cffd1ea955132d95a8dd921640714a8d6b537d2e4e482d31145ae95b603"
+      },
+      {
+        "path": "licenses/json/LICENSES/Apache-2.0.txt",
+        "sha256": "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
+      },
+      {
+        "path": "licenses/json/LICENSES/BSD-3-Clause.txt",
+        "sha256": "5a93d5831e1297ab10fe643e1a631e83be392896da14ee2951285a79012df69d"
+      },
+      {
+        "path": "licenses/json/LICENSES/GPL-3.0-only.txt",
+        "sha256": "b6a8bf63ae2c95b0aa256ee774680d7bd18f21f457da75466f7610b3b16acc4e"
+      },
+      {
+        "path": "licenses/json/LICENSES/MIT.txt",
+        "sha256": "b85dcd3e453d05982552c52b5fc9e0bdd6d23c6f8e844b984a88af32570b0cc0"
+      },
+      {
+        "path": "licenses/json-schema-validator/LICENSE",
+        "sha256": "4294d027a5205eea79a5241b2c1423d556efaa3139df8cea5ac313fb5ffb07bf"
+      },
+      {
+        "path": "licenses/libCEED/LICENSE",
+        "sha256": "ba336abaa09a05d4c21a0e5356c11eb8c8c90bd43b1098a76cb56db0007ffa8b"
+      },
+      {
+        "path": "licenses/libCEED/NOTICE",
+        "sha256": "6b4b6793b69dc3160a4bdf0e8090ebdd509b6e4386221bc03de9b07859605b34"
+      },
+      {
+        "path": "licenses/metis/GKlib/LGPL-2.1.txt",
+        "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+      },
+      {
+        "path": "licenses/metis/GKlib/getopt.c",
+        "sha256": "af18b238a4a1cb3994bacca7710b8902f3a47033a1a5c17b6f0ac0e931dc1695"
+      },
+      {
+        "path": "licenses/metis/GKlib/gk_mksort.h",
+        "sha256": "e95421cd9d0d690f90db762f0f8b0068aec56b15b0e7689be5ad2e57169a86c7"
+      },
+      {
+        "path": "licenses/metis/GKlib/gkregex.c",
+        "sha256": "ae4cf8a70cb89b710980b54867b66f0b9d28f54fa1f7b9926d418511d2876c18"
+      },
+      {
+        "path": "licenses/metis/GKlib/gkregex.h",
+        "sha256": "aa73762ba0c53df4afcd24177760ff13dd6dd4ebdae9efe9f54ebc4a5c4f1a71"
+      },
+      {
+        "path": "licenses/metis/GKlib/lgpl-source.json",
+        "sha256": "753dfc43d42adcfa1879925ab0d84921ad839b393daf2b9c82aa420f80c30def"
+      },
+      {
+        "path": "licenses/metis/GKlib/ms_inttypes.h",
+        "sha256": "812ccff7a735c058b57cd9229043a565a77bd52e52f7d6818dc88c0bd08becec"
+      },
+      {
+        "path": "licenses/metis/GKlib/ms_stdint.h",
+        "sha256": "481d967eaf5d9ea05dfe888a36fca7c7cbeb3a06da6e17ef712d688ae1f67de2"
+      },
+      {
+        "path": "licenses/metis/GKlib/random.c",
+        "sha256": "cf1f1c9cd32057c325a75452ad206f1e0c14edcebd941cb6153bc57ba4994c3b"
+      },
+      {
+        "path": "licenses/metis/LICENSE.txt",
+        "sha256": "64ab947d7b289ad76e935adff51b31e4ac160df7dfad24480dbaa452e39bbe79"
+      },
+      {
+        "path": "licenses/mfem/LICENSE",
+        "sha256": "c5b0ef6359625b80a9cc50182b8c2717ae9a995f77914fd02f9316cb86ee900c"
+      },
+      {
+        "path": "licenses/mfem/NOTICE",
+        "sha256": "987432175c22319ae6dd234076fdf9d846199a57503251a136e66ae31818a9d2"
+      },
+      {
+        "path": "licenses/microsoft-evidence/lgpl-source.json",
+        "sha256": "753dfc43d42adcfa1879925ab0d84921ad839b393daf2b9c82aa420f80c30def"
+      },
+      {
+        "path": "licenses/microsoft-evidence/stl-license-source.json",
+        "sha256": "3aa8235e272d3ad1d8b9621f0835084531453845e56b187bb5ac538b76f0a3a9"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vc-runtime-source.json",
+        "sha256": "8d0e70672361d8f97b5c36234c9288034783a7f1fe4daab3f95ee6aea427afb6"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vc-runtime.docx",
+        "sha256": "f1e3d56ceb2ad68aae0711b910375009e651ac5530fa0760f0dea6e81e54fae1"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs-licensing-guidance-source.json",
+        "sha256": "d50e34aa3c875f38f7ba3f22ae2e8352a1258baa2826bc64eb25c486864a9fa9"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs-licensing-guidance.html",
+        "sha256": "72c7cb0d2c869be8d59ff0fce4b1af10176a3cf5c38a06977765ca40ce81b885"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-build-tools.docx",
+        "sha256": "2f66b86a00e8d9833789897ce23d05a4a2dbea370cf39c8c1098dbc17d0e7bdc"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-community.docx",
+        "sha256": "41a207b10c8ab91d0d2f10a854715f73dca54509581692d2fe179aa3ffcb8540"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-community.json",
+        "sha256": "3709c48d22867798db9498de68bbdef49950c0db3282bfef1e02e4c5ef3164e0"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-redist-source.json",
+        "sha256": "c6fd0f4a144ed1c1ebb08d8879380e32d1609376a2aeafeba5855a8b7cf821c9"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-redist.html",
+        "sha256": "5cc1ac57b6388535f709982c6e4acf19544521e6775f9c3ca10cd90a4fa45a03"
+      },
+      {
+        "path": "licenses/microsoft-evidence/vs2022-source.json",
+        "sha256": "0c413c87c38f8e8ef964518d49e2abd5c54b8e3b1cae4714d5a871f8009edb91"
+      },
+      {
+        "path": "licenses/microsoft-stl/stl-license-source.json",
+        "sha256": "3aa8235e272d3ad1d8b9621f0835084531453845e56b187bb5ac538b76f0a3a9"
+      },
+      {
+        "path": "licenses/microsoft-stl/stl-license.txt",
+        "sha256": "1fc6b6db121d4555d8f661937d7f6013693cd8fd67495d5e5d98c1d18fb83eda"
+      },
+      {
+        "path": "licenses/mkl/license.txt",
+        "sha256": "c182e56595e59c88a2561ca442f7cb088cab5575a3f1c9fdebc09688d0748bd2"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-IntelMPI.txt",
+        "sha256": "82fa46762c37662a52ab9df58781813c1dc6c268ae2b6f9cf2d83183e706aa09"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-benchmarks.txt",
+        "sha256": "1f1224af12a7d3e51150ce6f762e32472076a31f6e44db41d3b651a7fa20f2f5"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-level-zero.txt",
+        "sha256": "cfe7d2ba4b4cd53271c7f91937e906256c0f14ea62ba33ffb556664b8d39aa59"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-oneMath.txt",
+        "sha256": "2ba4e9858c253331691370f4e8e3899ca6a5baa20907f189f5970635870b860d"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-oneTBB.txt",
+        "sha256": "d507da4fffae647ebc1bbb7e12cc5cca8087d36b0d78cc75caa96cae37688cb1"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-openmp.txt",
+        "sha256": "8fdfbbdfed13bca3641da35182e7ee1bb92a99f302ce8b0deb981ac1f18adee2"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs-safestring.txt",
+        "sha256": "415000d1887939ffc6826e0ed3f099cebcab6aaeda2da0acb017110a456b3d42"
+      },
+      {
+        "path": "licenses/mkl/third-party-programs.txt",
+        "sha256": "6fb57367c2107b8b3347e0e9db10d368c7b9ea898a08132b2f841b24b86f076f"
+      },
+      {
+        "path": "licenses/mkl-cluster/license.txt",
+        "sha256": "c182e56595e59c88a2561ca442f7cb088cab5575a3f1c9fdebc09688d0748bd2"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-IntelMPI.txt",
+        "sha256": "82fa46762c37662a52ab9df58781813c1dc6c268ae2b6f9cf2d83183e706aa09"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-benchmarks.txt",
+        "sha256": "1f1224af12a7d3e51150ce6f762e32472076a31f6e44db41d3b651a7fa20f2f5"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-level-zero.txt",
+        "sha256": "cfe7d2ba4b4cd53271c7f91937e906256c0f14ea62ba33ffb556664b8d39aa59"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-oneMath.txt",
+        "sha256": "2ba4e9858c253331691370f4e8e3899ca6a5baa20907f189f5970635870b860d"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-oneTBB.txt",
+        "sha256": "d507da4fffae647ebc1bbb7e12cc5cca8087d36b0d78cc75caa96cae37688cb1"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-openmp.txt",
+        "sha256": "8fdfbbdfed13bca3641da35182e7ee1bb92a99f302ce8b0deb981ac1f18adee2"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs-safestring.txt",
+        "sha256": "415000d1887939ffc6826e0ed3f099cebcab6aaeda2da0acb017110a456b3d42"
+      },
+      {
+        "path": "licenses/mkl-cluster/third-party-programs.txt",
+        "sha256": "6fb57367c2107b8b3347e0e9db10d368c7b9ea898a08132b2f841b24b86f076f"
+      },
+      {
+        "path": "licenses/msmpi/MPI_Redistributables_TPN.txt",
+        "sha256": "e202e6c77b4ecb7be69e39d647be54bb5d076d90522e533d11dbaaacd618d7f8"
+      },
+      {
+        "path": "licenses/msmpi/MPI_SDK_TPN.txt",
+        "sha256": "2911bde4a5d2b4b03350e4bb636fd37dbcf2bc5ff5ed570ba692ae461b7ae7b8"
+      },
+      {
+        "path": "licenses/msmpi/MicrosoftMPI_Redistributable_EULA.rtf",
+        "sha256": "125d29a463c724ddb5eed6a14370f5ce74dfd063cfca3eddad2d50082eb62106"
+      },
+      {
+        "path": "licenses/msmpi/MicrosoftMPI_SDK_EULA.rtf",
+        "sha256": "37f4ad3dbb7ee13b234dda747b6d2cb1465f56cd3dd6b504db02318601b0db4c"
+      },
+      {
+        "path": "licenses/mumps/LICENSE",
+        "sha256": "babbd21eb8ea8e82da717f07f20af6ff443adea003393e8729f7de3854a2ae4f"
+      },
+      {
+        "path": "licenses/mumps/PORD/README",
+        "sha256": "42ee4bd932cba9c607fe85d06119c369180e15b2380d47ed6aa39f17191d2b52"
+      },
+      {
+        "path": "licenses/mumps/doc/CeCILL-C_V1-en.txt",
+        "sha256": "b48f5dc16f144cd79ddaadce3cc8ef183778a0b4f75ab4362e134b347ca20f3d"
+      },
+      {
+        "path": "licenses/mumps/doc/CeCILL-C_V1-fr.txt",
+        "sha256": "a5d3b248c5cfb93fc27b350da3faac63a68598a7e302beb21616a6576f2807a6"
+      },
+      {
+        "path": "licenses/palace/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+      },
+      {
+        "path": "licenses/palace/NOTICE",
+        "sha256": "d4290ed64c2edd0fce1d84e3f9dfb2881240fe534def76b8cd29ed6af683e287"
+      },
+      {
+        "path": "licenses/palace/THIRD-PARTY-LICENSES",
+        "sha256": "5cf2277dde3c5d1cc581e1526c339afccfd53302c738e69ca6847e9198bf6153"
+      },
+      {
+        "path": "licenses/palace/THIRD-PARTY-NOTICES",
+        "sha256": "a2e0f82754f0a14853504433621a182e96b7f628363659ed29bbc32e08b95904"
+      },
+      {
+        "path": "licenses/scn/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "licenses/windows-overlay/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "metis.dll",
+        "sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22"
+      },
+      {
+        "path": "msmpi.dll",
+        "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d"
+      },
+      {
+        "path": "msvcp140.dll",
+        "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9"
+      },
+      {
+        "path": "palace-sparams.exe",
+        "sha256": "7ae3ba0edd25877d636f18d40b7a94392741747f17dcc16aeafcd1438fbc0317"
+      },
+      {
+        "path": "palace.exe",
+        "sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9"
+      },
+      {
+        "path": "sources/MUMPS_5.7.3.tar.gz",
+        "sha256": "84a47f7c4231b9efdf4d4f631a2cae2bdd9adeaabc088261d15af040143ed112"
+      },
+      {
+        "path": "sources/arpack-ng-corresponding-source.tar.gz",
+        "sha256": "196c79510ad0197cc74d857f139c6f639b0990584d446d5de6533657aad38b8e"
+      },
+      {
+        "path": "sources/eigen-corresponding-source.tar.gz",
+        "sha256": "1da20885866d8926ecfd582d57a40caf8e978108c427b365f797d53dc4026280"
+      },
+      {
+        "path": "sources/fast_float-corresponding-source.tar.gz",
+        "sha256": "78acc8965d99b778fae40fa5dd43644341d1dc37632532d1758c1be713932554"
+      },
+      {
+        "path": "sources/fmt-corresponding-source.tar.gz",
+        "sha256": "5345978b00217a91d9514393c1bda939640f14983b2012a913dc3445aa40cf82"
+      },
+      {
+        "path": "sources/hypre-corresponding-source.tar.gz",
+        "sha256": "16c307bb36e6e80e1265a258728b5dfb4e437fec14037e987d79a04f87f846f9"
+      },
+      {
+        "path": "sources/json-corresponding-source.tar.gz",
+        "sha256": "02babfaec1c4311a45c345e390311cfbeae187b853844f1c3fd923e101b66508"
+      },
+      {
+        "path": "sources/json-schema-validator-corresponding-source.tar.gz",
+        "sha256": "80bc328108429254570db06449e2a519f979a645bb0c7dad31bc94f2da252fb3"
+      },
+      {
+        "path": "sources/libCEED-corresponding-source.tar.gz",
+        "sha256": "a4ed3fef2039101bd8e392e85bc37dd87834aae394015baf7d1bacd044ce2eda"
+      },
+      {
+        "path": "sources/metis-corresponding-source.tar.gz",
+        "sha256": "ec9932849b92b6d27c656ca689c993c14ae0b6aaebc385b061b04db8ad4af60d"
+      },
+      {
+        "path": "sources/mfem-corresponding-source.tar.gz",
+        "sha256": "516e11fa4e8cacfce51efd6c05e071ce022401f44afdedcf5377786771c11f56"
+      },
+      {
+        "path": "sources/mumps-corresponding-source.tar.gz",
+        "sha256": "ff34e9ec96361dc1f744a66183b0489b49a3e227ce92093b53a21f06994cd438"
+      },
+      {
+        "path": "sources/palace-corresponding-source.tar.gz",
+        "sha256": "2815b6f0df4b181ab266341d6b9e117e75d7e053c8b07c2c5c472acb5e989cee"
+      },
+      {
+        "path": "sources/scn-corresponding-source.tar.gz",
+        "sha256": "21bea829f3a8c3a06febe54d0619e82b884f1b5e3c99a3935e0d7b6e5af02194"
+      },
+      {
+        "path": "sources/windows-overlay-cmake.tar.gz",
+        "sha256": "53e185fc83a5525e90ace0bc19263041a8902408b6b819a233831f9167d158e7"
+      },
+      {
+        "path": "sources/windows-overlay-deps.tar.gz",
+        "sha256": "030fea15add027357190255d3dffeaf5646f6ec52ba174d6f9f9cb359eb62ebf"
+      },
+      {
+        "path": "sources/windows-overlay-patches.tar.gz",
+        "sha256": "95669998a9a79dcf3d7e4bb46c55c4882ff721372426a6e2d7c464feae83b807"
+      },
+      {
+        "path": "sources/windows-overlay-scripts.tar.gz",
+        "sha256": "cdcb691f1230b476c9a433cb289d0a0662f3aa47387dce66d75e0703c820c5bf"
+      },
+      {
+        "path": "sources/windows-overlay-src.tar.gz",
+        "sha256": "d710561bb9cb5fc330aac78cfbb24de1b9396b7167727b66b77235be7b6b57e7"
+      },
+      {
+        "path": "sources/windows-overlay-tests.tar.gz",
+        "sha256": "d827b9aa62d0d94eefe6e8f66e553e815c37a6623a7d70532c33f86c8bcda94c"
+      },
+      {
+        "path": "sources/windows-overlay-tools.tar.gz",
+        "sha256": "a1b787e488c32cdcc1aa090f5c7fb1511724ddf1af62c647f7a7ce7f43bd133e"
+      },
+      {
+        "path": "sources/windows-overlay-windows.tar.gz",
+        "sha256": "e3b1bff4d936f5711ae276e29fff19351893a180dcb4fee06b07faa8988bee93"
+      },
+      {
+        "path": "svml_dispmd.dll",
+        "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c"
+      },
+      {
+        "path": "vcruntime140.dll",
+        "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066"
+      },
+      {
+        "path": "vcruntime140_1.dll",
+        "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f"
+      }
+    ]
   }
 }

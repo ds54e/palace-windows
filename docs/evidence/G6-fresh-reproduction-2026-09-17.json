@@ -1,0 +1,1718 @@
+{
+  "status": "pass",
+  "scope": "Fresh extracted sources/tools and empty native build/install directories on developer host; no clean-host claim; byte-identical rebuild not claimed",
+  "inputs": {
+    "scope": "Fresh extracted tools, source trees, build and install directories; only hash-verified immutable downloads reused",
+    "recipe_commit": "83b6474674dec567145f227eef1842f759127785",
+    "source": "pinned upstream network fetches",
+    "reused_archives": [
+      {
+        "filename": "ifx_win-64-2025.3.0-intel_640.conda",
+        "sha256": "32eb8f123450978abcec9224c0546938d37f23e2326fcecf6e62e4326a1897c4"
+      },
+      {
+        "filename": "ifx_impl_win-64-2025.3.0-intel_640.conda",
+        "sha256": "4bae922864fc5b61ec94ca6257dab3cbaabc3b9309d71023d26e4434f9a0f5b2"
+      },
+      {
+        "filename": "compiler_shared-2025.3.0-intel_640.conda",
+        "sha256": "9f209f81a76224e0888d54709fa96d70524cf4300523a45871f1553b12edcf87"
+      },
+      {
+        "filename": "intel-cmplr-lib-rt-2025.3.0-intel_640.conda",
+        "sha256": "a9bb85c9133794650f803896de99ec025f118e0a67b8ba91494dacefa7dbf776"
+      },
+      {
+        "filename": "intel-cmplr-lic-rt-2025.3.0-intel_640.conda",
+        "sha256": "f9ca42c62b2f3c370f0c090072af0c17af9a9e34616e3a6b20bb8cc26bc3b672"
+      },
+      {
+        "filename": "intel-fortran-rt-2025.3.0-intel_640.conda",
+        "sha256": "083513c78e6228fded25e77ce26adf12ed555839e34bbb10f9a6cf05dff97edd"
+      },
+      {
+        "filename": "intel-opencl-rt-2025.3.0-intel_640.conda",
+        "sha256": "0df005bc53ab25fad3000a055b92ffd2575c9c32c88fc3b85bb41370414d569a"
+      },
+      {
+        "filename": "intel-openmp-2025.3.0-intel_640.conda",
+        "sha256": "b74e10df279652e407baaea05179f32cd9de244bd5de63bcb97a6c1875e549ab"
+      },
+      {
+        "filename": "intel-cmplr-lib-ur-2025.3.0-intel_640.conda",
+        "sha256": "ab6a95f2f20cfb2830e09b94662a4f769240c31edc2814e7b6df9bf06a3a3e70"
+      },
+      {
+        "filename": "tbb-2022.3.0-vc14_intel_380.conda",
+        "sha256": "75e5d754626e29d2460489eb0e52a1b86fd2cc864511d05f44f4dc1e1d957d81"
+      },
+      {
+        "filename": "tcm-1.4.1-intel_444.conda",
+        "sha256": "57253e107eafb3c2aee37d22956f0681f3ac69e705620b12ed8fd64c7841263a"
+      },
+      {
+        "filename": "umf-1.0.3-intel_18.conda",
+        "sha256": "daf602adc7967b7cf67490391a4871549b0d9db055cbf82f1b0030573fffd184"
+      },
+      {
+        "filename": "intelmkl.static.win-x64.2025.3.0.453.nupkg",
+        "sha256": "ff6593606da54c46ccf9e9599e0789a72ded333e34467a30a6d0def6e9c9200f"
+      },
+      {
+        "filename": "intelmkl.static.cluster.win-x64.2025.3.0.453.nupkg",
+        "sha256": "6fe911ef2277f28608b692607fa1cf4666ba01a7ae997fc16216f0abc0e45935"
+      },
+      {
+        "filename": "MUMPS_5.7.3.tar.gz",
+        "sha256": "84a47f7c4231b9efdf4d4f631a2cae2bdd9adeaabc088261d15af040143ed112"
+      },
+      {
+        "filename": "dpcpp_impl_win-64-2025.3.0-intel_640.conda",
+        "sha256": "1d3d8dda7a4ad9e61b6ef2bac5b0bde50fe96d9845a44a0842b30dfd1db1b34c"
+      },
+      {
+        "filename": "mfem_pr3847.diff",
+        "sha256": "e9be1a0d4b2642ed1b72f31c36065cf0aacbe342b6594d5d943782c73a6177f4"
+      },
+      {
+        "filename": "mfem_gmsh_parser_performance.diff",
+        "sha256": "6ced66f487780af66fb8184d329b9aad4b694e711b65830391e8c6d0c898713e"
+      },
+      {
+        "filename": "mfem_pr5246.diff",
+        "sha256": "d5227c18768369b8fa3a20f4457dd378a360346850329ab1970d18ed5a73b0d6"
+      },
+      {
+        "filename": "mfem_pr5353.diff",
+        "sha256": "c35f584090f97c84c12fc80e6d5c068512911d192132e18f5aa4254f507c5e4f"
+      },
+      {
+        "filename": "mfem_pr4983.diff",
+        "sha256": "530532da3ae8815d004bb6ce19f6f08a1248c3d585503551c90d0eeae7fb3f87"
+      },
+      {
+        "filename": "mfem_pr5415.diff",
+        "sha256": "482655b6b740b880713d67bcca843571244b7d383c95e0cef3d3102b3327ff2f"
+      },
+      {
+        "filename": "msmpisetup.exe",
+        "sha256": "c305ce3f05d142d519f8dd800d83a4b894fc31bcad30512cefb557feaccbe8b4"
+      },
+      {
+        "filename": "msmpisdk.msi",
+        "sha256": "f9174c54feda794586ebd83eea065be4ad38b36f32af6e7dd9158d8fd1c08433"
+      }
+    ],
+    "host_prerequisites": [
+      "installed MSVC 19.44.35219 / Windows SDK",
+      "installed 7-Zip"
+    ],
+    "build": "completed_after_documented_recipe_repairs",
+    "final_recipe_commit": "15b61c202e9efbd44b86dbdf778538b3043d670d",
+    "repairs": [
+      "Exact SDK mpifptr64.h alias mpifptr.h",
+      "Fresh MFEM explicit complete HYPRE/MUMPS library lists"
+    ]
+  },
+  "recipe_files": {
+    "scripts/audit-no-parmetis.ps1": "d39c867365d48afef4c2c2a7f0ea44c66c359b6318532e2bb8872e0c5d9f005e",
+    "scripts/audit-runtime.ps1": "693a4dee5e8299e7c13a7cf500a2a6bc4a49ec4dbf58cc3ffd5c6c1cdb430b9b",
+    "scripts/build-arpack-windows.ps1": "9c5fb8454cc7b71b39c6e3be06ebb8ab0ff6f0799562ab44293d35acdda1265f",
+    "scripts/build-catch2.ps1": "0b3223e9feb129f2cc73af241b53884653ee18da824e80ec241ba9d7f533a31d",
+    "scripts/build-core-libs.ps1": "fdb0f880ca2653c4be12c6c6b8dfb03fd6dc60b4e7036b38caa5555a93f11b29",
+    "scripts/build-gate0.ps1": "4c602f40f7d107c36aa04575c2878e4dddc346f1ad526779978954befebbccc4",
+    "scripts/build-gate1-solvers.ps1": "28cbe32d1ae1bd1ba0f7e4996bf1cd09d3b53847c93bbe706c147e0cd0e8ca7f",
+    "scripts/build-gate1.ps1": "1d5efc763b4e985fce9f8fd84150b33c92191621d2a9765187c289d02b0c4d70",
+    "scripts/build-libceed.ps1": "d6343506e707509989af0e1a660b56f213d2bba57dadb5d1ffe909468d09eca3",
+    "scripts/build-linux-reference.sh": "8b42fd5495175ad5edc7837fae21e225d425d4b2d865988fb9f152c870746d7d",
+    "scripts/build-metis.ps1": "ef920843605fb037b341103f7d31c4249f0c3a54d37d53cadfd8608951336347",
+    "scripts/build-mfem.ps1": "84fd69272558e3a61ff5b059da3f52503f55738a6d93f783c4d48b6578ce9079",
+    "scripts/build-no-parmetis-deps.ps1": "b619843c41baedb76a33ddcbe5ad5efc6a9b7f956b501ce0afe3192c61099a3f",
+    "scripts/build-palace-windows.ps1": "19a6eaf865fc6d58970387ba1a3db656ea1b19350c97e34afc4fd0939999e605",
+    "scripts/build-sparams.ps1": "9a360c93c96eb12e000b3b3c62fb40ce65c3ecd831bb93fcc80791154c080a96",
+    "scripts/build-windows-v1.ps1": "fdf3fd04e448a81425fed5fcbcbce5100d02a16ff8ca08f931822e70fcd3ea02",
+    "scripts/configure-gate2.ps1": "3589150e6140b9811b11ed0eea0307b82bc209240621c34353065d4dd533a31e",
+    "scripts/doctor.ps1": "2b12daf2a5251be4fe69a85b74930d6aa27e61d267f6d0a3ff300ac041b4526d",
+    "scripts/gate2-common.ps1": "df0207b823ceb6f026e3cd774d880d12f19b3dbb49064d8a36d0338f8a0f2a66",
+    "scripts/linux-reference-env.sh": "e95dd4a8ae4056e58dfad55344b674190c3999f0b22b8a4f716e4bc14c8a7304",
+    "scripts/rebuild-crt-deps.ps1": "69aa3027d93e7d92824d88fb3c31b10cb0704bac933c1408edaaf3ef8701c141",
+    "scripts/run-gate0.ps1": "acdc1a66478f955aae7b05e21b0d847f8fab6fd881b73a69786e088cdfe71db1",
+    "scripts/run-gate3-linux.sh": "02cf8a401b4e2bf4849b6ee098884507b84b36e0f97ee593e9dca4a51720fb5d",
+    "scripts/run-gate3-windows.ps1": "6d39d4a2b0188647d5137db53b9605e35b9bd82913ccedd2ac7fe12b357fcb03",
+    "scripts/run-palace-smoke.ps1": "be6ea80a2190f98c73708ea3cf43b2287c31b6a37c36e363b823372753f0b38a",
+    "scripts/test-arpack.ps1": "54168de2e87c84c14c97a81028f89e2215ae8beccf4355e459dc38cb4d6f7b7f",
+    "scripts/test-linux-connections.sh": "91a5ea4f525c0292b7c77430655db8a2fdb9d7925014f2db5a238d7b53265b59",
+    "scripts/test-linux-mumps.sh": "524fd846efbb8a9ab9f7d1401f9294aa52ef44ca80105975abe89c8b43723d9b",
+    "scripts/test-mfem.ps1": "6c44fd3668858226da050f45ab822676d65b3c29f63785967897755f35f0a405",
+    "scripts/test-no-parmetis.ps1": "1f09c2e39262b7e12c9223f5f425eca62b3a94f0b8fda928d3a1b38db18be8c6",
+    "scripts/test-package-developer.ps1": "8aad0388fa8c918eae28e73ff39471596b1376ea40b7fa943f6d1ebf0c9e478a",
+    "scripts/test-package-unicode.ps1": "0ffb00555884cc5cff197ece674dcfd2abee6ebda35fc51554dffb4de5951149",
+    "scripts/test-packaging-candidate.ps1": "5ecde97503d6a30f338695e87f11bbbf0780a757429098edf11b0d7aa0dd22f9",
+    "scripts/test-palace-applocal.ps1": "2fecd77ab04f1c47c322d3c79f78a6d9ac4dd260feb0d8f47f3f93ca97296d07",
+    "scripts/test-palace-ports.ps1": "84be517d59980f9b1ef4fed92de2c06551f3ab73b897a7bf4ae68facade621bb",
+    "scripts/test-palace-smokes.ps1": "3055d8d857d078c17cfd306ec4ee0f92810349291650a918f9e6a5251ba608c5",
+    "scripts/test-staged-package.ps1": "56a1bedf2137473b635a0fe39813bfb013bc54a28045d58941e98dc9f5cf659e",
+    "cmake/FindSCALAPACK.cmake": "09edb3e43a36a20e6d1e644bab13af1e406ab213ce9ed64ad461482200824907",
+    "cmake/WindowsIfxRuntime.cmake": "d8ddfca3c9753d4cdc0e2de9e04caf5fd7dc5af41ed5599b1034efef1500d7b7",
+    "cmake/libceed/allocation_test.c": "30af433ac8e8a09ec44cb4fe384469d026bbeaa3875bd51596c8739dc9f3b4f6",
+    "cmake/libceed/CMakeLists.txt": "ab16e4aa68ce1d7af853040b4a41605e0f6f5e20d0d985b89fa7b8bb4ae98870",
+    "cmake/libceed/pw_windows_alloc.h": "4bd464a21a4845c7f9131ed9d5860c57a3d162bf89913e78d4da10b7a2dc7675",
+    "cmake/libceed/windows_alloc.c": "c32b00f9ffa6cd2c7a749b67801a2190f9b43467a23940fc5bd0e27103f2cd1c",
+    "patches/arpack-ng/msvc-test-constant-bounds.patch": "05bee6a20f2b995f188ffb5f612c59e04a2d050a7921468c8efdfde1a26c5a1a",
+    "patches/arpack-ng/README.md": "4be88c7432ce837003281c3ba0f7a6ecca4454ee13c29573daf14040ad87ab58",
+    "patches/libceed/README.md": "2d2e4ea760da78cc3de05570c7dd111d9073cdb8a2a6e87b2fd06b6fa4f0a5bd",
+    "patches/libceed/windows-allocation.patch": "3725b465bffe01eb2bcb9afdf96038a08b03304e4a73a487e61d54263aaaeca9",
+    "patches/libceed/windows-cpu-registration.patch": "8e69d0ca5209409d2135744ff810d07eaab040c50154cdea9320ba7f9fe7a38e",
+    "patches/mfem/no-parmetis-ordering.patch": "c7d74c4e0294972342a7232ed26050e5c0c950e9c9fef50201a3c9c3233c0269",
+    "patches/mfem/README.md": "49e154fea90868270e0ea420eb79be2ec3a02cae511476d682a17ca7cb253334",
+    "patches/mfem/windows-build.patch": "2691afe3eefbb41ac6b09588fc751b195715554980472c67a484338e754c07c0",
+    "patches/mumps/pinned-source-archive.patch": "495ca146b0a5f5f68849afe39cc5f8b49d8e3cf27fae59570d86c4630e10ba0b",
+    "patches/palace/linux-reference-no-parmetis.patch": "44c297f854bebe911b8a7112ee25d07ab4a062aa69c712d694cb4d911681a6e6",
+    "patches/palace/README.md": "34958a304b883a02e68a677c3359db8ae17b3c5a75e95f89dd919789525751f8",
+    "patches/palace/windows-cxx-port.patch": "640082490672602340c962403d61ae6fb62bc705052cf693bb36c89fc9307560",
+    "patches/palace/windows-license-notice.patch": "e2d242fd8a6e7a80dab89d3014eeebb110422d9cdd142693400c95ddbb74aa24",
+    "patches/palace/windows-memory-reporting.patch": "f816004dcb57a901b4c4a013445b6a6217203f79038b29115904e1e1c5014b2d",
+    "patches/palace/windows-no-parmetis.patch": "4aa0fca99d52968fb3008894c61ebca3845abbd273512c17aa43c708d38918a3",
+    "deps/gate1-lock.json": "daee454cd3416c737f286e273cca6b09945e95c6afad96ee7144544c691d919c",
+    "deps/gate2-lock.json": "5f3e6f4dfd078cffa256fa81b998c4e72d6d60d73644be20a07d3bef95514fbd",
+    "deps/linux-reference-lock.json": "611f0872ebf4dca6c7329fadab728a847632d598006774f80314af1cc609691c",
+    "deps/upstream.json": "04f4f6c635353c14d3fdecaee757d943c937d075ef46924997162716957e1571",
+    "tools/audit_intel_redistribution.py": "a13dd17b3ba0ba19779ea62c66d8353eaa6e32174e94f679d4e721ada57853de",
+    "tools/audit_linux_reference.py": "666204936dfb6a4ad86974e69b156f10408a49589beed8560a557c2236fe4633",
+    "tools/check_readiness.py": "9a368bfea71e4394b4fc1ab64939093efaa7d3a302f098115d77af41549a2e17",
+    "tools/check_windows_smoke.py": "f8d14005280cef6f16de3809342fc27cf5469f454d82e259907e0ad2de3a44dd",
+    "tools/compare_gate3.py": "1f5a254a62978bc857b088b3caba3b4171f0e6e03c45984e3ea59453d2640469",
+    "tools/finalize_review_payload.py": "c16965bfbcd8f8a8036cad46cfb4e21dda5975631d85e86fee9285751e9bc2b6",
+    "tools/finalize_stage_notices.py": "3a3da2b1e869b371f58086a42757f952b97f94f0d9772cbd7a32fc205e825167",
+    "tools/native-dev.cmd": "36d6e8d83c4b830d528f3c1d0a1a4fcd7ff5c93cb4a49d9d6a4f534c6c802b3e",
+    "tools/package_windows_v1.py": "62d6d8b47c8c5677ea1c8bd27142fa11049426dd6420df13e8175afdb3109ea1",
+    "tools/prepare_gate1.py": "469a5d8763adfab2323e23c493322a48ab73f1684d83402c5e72ef0ddc60183d",
+    "tools/prepare_gate2.py": "83667ee2b5b56d5ee868e427d6f82464ae718665e91e59be1dcd3c508eda9131",
+    "tools/prepare_gate3_cases.py": "d9590526be37c4c394966556f8cb0807a158e4483e1a83175b3fdafe33bd9cb3",
+    "tools/prepare_linux_reference.py": "3bf6c9aa5b29ec41c6497f77a4eed69dd0145fadf3c7b29639761213403b0dd1",
+    "tools/prepare_windows_smoke.py": "52608c7f82369f775db2f24eef946dcea52d6dcec4b61b95988b5c5585baa6aa",
+    "tools/render_redistribution_matrix.py": "c7833aac51b30e0c095085bd7eea61655be089adeb0b99962c92ccaec77e94ab",
+    "tools/reproduce_windows_v1.py": "509b5ca26be789ffc0ddda684605f118af7eba342012310bf7f61e5f8a4da3ec",
+    "tools/stage_windows_v1.py": "3004b65095281911080666ef6efe348ea8f64dbc54362ed6d65cdda8bafa85d1",
+    "tools/verify_stage.py": "438d46fd66955f0c47ecff68ca78ff52dd00d51bf664a1da00262291593db54b",
+    "tools/windows.sh": "ab664347a9dda27a4eebc04db6606c431075e2ec7f997cc21a282428813b3451",
+    "windows/palace.manifest": "bacd9bc04180d849d93adf003ccc4dafa7b63e5e09bf091b67143f3b8afee730"
+  },
+  "source_identities": [
+    {
+      "name": "arpack-ng",
+      "commit": "804fa3149a0f773064198a8e883bd021832157ca",
+      "applied_worktree_diff_sha256": "0fc4f960876313c5478eeb7230282f7806cc9368d15bdd3a337ef5decf7d1987"
+    },
+    {
+      "name": "catch2",
+      "commit": "2b60af89e23d28eefc081bc930831ee9d45ea58b",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "eigen",
+      "commit": "549bf8c75b6aae071cde2f28aa48f16ee3ae60b0",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fast_float",
+      "commit": "00c8c7b0d5c722d2212568d915a39ea73b08b973",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fmt",
+      "commit": "407c905e45ad75fc29bf0f9bb7c5c2fd3475976f",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "hypre",
+      "commit": "fca98afcd78a26b784dc24b0c3edb0e6140598af",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "json",
+      "commit": "55f93686c01528224f448c19128836e7df245f72",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "json-schema-validator",
+      "commit": "c780404a84dd9ba978ba26bc58d17cb43fa7bc80",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "libCEED",
+      "commit": "39f259f89332e936122f7e02d6088a1dae3fb628",
+      "applied_worktree_diff_sha256": "c926a29351816da24fa425a53bd5ab324a67a0b49d32f386c1e1975ce92edd88"
+    },
+    {
+      "name": "metis",
+      "commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "mfem",
+      "commit": "d9d6526cc1749980a2ba1da16e2c1ca1e07d82ec",
+      "applied_worktree_diff_sha256": "10580a448e4aa0bd21077bcfea4c1e755ab0c76a559556439e702ce022557f0e"
+    },
+    {
+      "name": "mumps",
+      "commit": "1cfd19699702f9a64ff5d45827d6025ff5c3873a",
+      "applied_worktree_diff_sha256": "fc0fad2544f3aa9a1e5f68f9efbc083d948de3c503f0d51747cb0e97e20882a9"
+    },
+    {
+      "name": "palace",
+      "commit": "b92aef83ecfe6d360c4b3d83e2122986297f6778",
+      "applied_worktree_diff_sha256": "3c6751cd7ae0c92ff9def17757340903bbd08a25148660f91851f854515f671c"
+    },
+    {
+      "name": "scn",
+      "commit": "e937be1a52588621b406d58ce8614f96bb5de747",
+      "applied_worktree_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "palace.exe",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/build/palace-native/palace.exe",
+      "sha256": "748dbbd533af43c22685521b49de88661181c2642b62fdfcf5bdc3b2fe6171e5",
+      "size": 36103168,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "libifcoremd.dll",
+        "libircmd.dll",
+        "libmmd.dll",
+        "metis.dll",
+        "msmpi.dll",
+        "msvcp140.dll",
+        "svml_dispmd.dll",
+        "vcruntime140.dll",
+        "vcruntime140_1.dll"
+      ],
+      "candidate_sha256": "cedc9d755b6d064bd4662bd79f327566cda53d67825c7767e0ac805ba017a6a9",
+      "candidate_bytes_equal": false,
+      "pe_timestamp": 1789607395
+    },
+    {
+      "name": "libifcoremd.dll",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/deps/intel/Library/bin/libifcoremd.dll",
+      "sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+      "size": 1298288,
+      "imports": [
+        "imagehlp.dll",
+        "kernel32.dll",
+        "libmmd.dll"
+      ],
+      "candidate_sha256": "d064b8475d882f7388ea87f4b7c27030e5c56d9d6bd74bf2ad643999e63a55b3",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1760126451
+    },
+    {
+      "name": "libircmd.dll",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/deps/intel/Library/bin/libircmd.dll",
+      "sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+      "size": 485744,
+      "imports": [
+        "imagehlp.dll",
+        "kernel32.dll"
+      ],
+      "candidate_sha256": "bdb0bac7abcf532e54b90a88c7d8395bb424be723d377fb8599503676f894be9",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1760124135
+    },
+    {
+      "name": "libmmd.dll",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/deps/intel/Library/bin/libmmd.dll",
+      "sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+      "size": 4185968,
+      "imports": [
+        "kernel32.dll"
+      ],
+      "candidate_sha256": "435cfb05bb6a431d9dc0755416743f17b362c02aa04a122a5833a094e8dc7a1e",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1760124876
+    },
+    {
+      "name": "metis.dll",
+      "source": "E:/projects/palace-windows/.work/redistribution/../reproduction/r1/.work/build/palace-native/metis.dll",
+      "sha256": "5b5a3dcb69682d1bbebf563e7210d224cff154496fc6690475f7918833615473",
+      "size": 228352,
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll"
+      ],
+      "candidate_sha256": "17097fc2cff72d0d0869d25d389782026db3aca5cdd8f67dc16e401758079c22",
+      "candidate_bytes_equal": false,
+      "pe_timestamp": 1789606583
+    },
+    {
+      "name": "msmpi.dll",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/staging/mpi-probe/msmpi.dll",
+      "sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+      "size": 1631000,
+      "imports": [
+        "advapi32.dll",
+        "authz.dll",
+        "kernel32.dll",
+        "mswsock.dll",
+        "ntdll.dll",
+        "ntdsapi.dll",
+        "rpcrt4.dll",
+        "ws2_32.dll"
+      ],
+      "candidate_sha256": "f04f6a9a25bb2862898049e0254526a31c89197a546dcbf7139a60995fc6f79d",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1572899501
+    },
+    {
+      "name": "msvcp140.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/msvcp140.dll",
+      "sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+      "size": 557728,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-environment-l1-1-0.dll",
+        "api-ms-win-crt-filesystem-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-locale-l1-1-0.dll",
+        "api-ms-win-crt-math-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "api-ms-win-crt-time-l1-1-0.dll",
+        "api-ms-win-crt-utility-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll",
+        "vcruntime140_1.dll"
+      ],
+      "candidate_sha256": "0f885b509a685d2bbfa652fed26b5fb31d88fbdab0a978c641d1c7b8aa460aa9",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1564323704
+    },
+    {
+      "name": "svml_dispmd.dll",
+      "source": "E:/projects/palace-windows/.work/reproduction/r1/.work/deps/intel/Library/bin/svml_dispmd.dll",
+      "sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+      "size": 18828656,
+      "imports": [
+        "kernel32.dll"
+      ],
+      "candidate_sha256": "7d64d400128f0ddb68d96f8bb9a49a045ef278d8496f05961259b45adffe523c",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 1760125873
+    },
+    {
+      "name": "vcruntime140.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140.dll",
+      "sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "size": 124544,
+      "imports": [
+        "api-ms-win-crt-convert-l1-1-0.dll",
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-stdio-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "kernel32.dll"
+      ],
+      "candidate_sha256": "d5e4d9a3e835fa679450145d6a7d94e36573a509317111904d9b3712c30d9066",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 254123393
+    },
+    {
+      "name": "vcruntime140_1.dll",
+      "source": "C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/VC/Redist/MSVC/14.44.35112/x64/Microsoft.VC143.CRT/vcruntime140_1.dll",
+      "sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+      "size": 49792,
+      "imports": [
+        "api-ms-win-crt-heap-l1-1-0.dll",
+        "api-ms-win-crt-runtime-l1-1-0.dll",
+        "api-ms-win-crt-string-l1-1-0.dll",
+        "kernel32.dll",
+        "vcruntime140.dll"
+      ],
+      "candidate_sha256": "1f2d41c4aa5db0bc33ebf7b66d72943a817d7ce6cbe880502a9403823633093f",
+      "candidate_bytes_equal": true,
+      "pe_timestamp": 240324076
+    }
+  ],
+  "exporter": {
+    "path": ".work/reproduction/r1/.work/build/sparams/palace-sparams.exe",
+    "sha256": "e635a571755d31a3301e6b2da70c4ff3c08e8ecb80d3f4838315967d090dcd78"
+  },
+  "comparison": {
+    "passed": true,
+    "acceptance_sha256": "89e34a3fbb2b0b4a8b4d0f6ed9f995259aea83328a309ab2f489e16b4dd3e194",
+    "checks": [
+      {
+        "name": "electrostatic[1,1]",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[1,2]",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[2,1]",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic[2,2]",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/trace",
+        "left": 4.062458343218e-12,
+        "right": 4.062458343218e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 6.062458343218e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/frobenius",
+        "left": 3.1210331267775957e-12,
+        "right": 3.1210331267775957e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 5.121033126777596e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-0",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-1",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-2",
+        "left": 2.959652569045e-12,
+        "right": 2.959652569045e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 6.959652569045e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/quadratic-3",
+        "left": 5.165264117391e-12,
+        "right": 5.165264117391e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 9.165264117391e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-1-1",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-1-2",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-2-1",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/windows/reciprocity-2-2",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-1-1",
+        "left": 1.367537377371e-12,
+        "right": 1.367537377371e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 2.367537377371e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-1-2",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-2-1",
+        "left": -5.514028870865e-13,
+        "right": -5.514028870865e-13,
+        "absolute_error": 0.0,
+        "allowed_error": 1.5514028870865e-18,
+        "passed": true
+      },
+      {
+        "name": "electrostatic/linux/reciprocity-2-2",
+        "left": 2.694920965847e-12,
+        "right": 2.694920965847e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 3.694920965847e-18,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[1,1]",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 1.9994506369055216e-23,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[1,2]",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 4.0300013261384763e-22,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[2,1]",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 4.0300013261384763e-22,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic[2,2]",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 9.998545654234722e-23,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/trace",
+        "left": 6.7224638415889e-10,
+        "right": 6.722463841589701e-10,
+        "absolute_error": 8.002972426450543e-23,
+        "allowed_error": 2.0006722463841588e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/frobenius",
+        "left": 6.376702997352575e-10,
+        "right": 6.376702997353586e-10,
+        "absolute_error": 1.0112282988460763e-22,
+        "allowed_error": 2.0006376702997353e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-0",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 1.9994506369055216e-23,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-1",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 9.998545654234722e-23,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-2",
+        "left": 6.76095810077902e-10,
+        "right": 6.76095810078788e-10,
+        "absolute_error": 8.860138336208618e-22,
+        "allowed_error": 4.000676095810079e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/quadratic-3",
+        "left": 6.68396958239878e-10,
+        "right": 6.683969582391521e-10,
+        "absolute_error": 7.259543850918509e-22,
+        "allowed_error": 4.00066839695824e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-1-1",
+        "left": 3.557502487729e-11,
+        "right": 3.557502487729e-11,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-1-2",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959506e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000019247129595e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-2-1",
+        "left": 1.924712959506e-12,
+        "right": 1.924712959506e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000019247129595e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/windows/reciprocity-2-2",
+        "left": 6.366713592816e-10,
+        "right": 6.366713592816e-10,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-1-1",
+        "left": 3.557502487727e-11,
+        "right": 3.557502487727e-11,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0000355750248773e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-1-2",
+        "left": 1.924712959909e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-2-1",
+        "left": 1.924712959909e-12,
+        "right": 1.924712959909e-12,
+        "absolute_error": 0.0,
+        "allowed_error": 1.00000192471296e-12,
+        "passed": true
+      },
+      {
+        "name": "magnetostatic/linux/reciprocity-2-2",
+        "left": 6.366713592817e-10,
+        "right": 6.366713592817e-10,
+        "absolute_error": 0.0,
+        "allowed_error": 1.0006366713592816e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/4.0",
+        "left": 4.0,
+        "right": 4.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/4.0",
+        "left": 4.0,
+        "right": 4.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@4.0GHz",
+        "left": {
+          "real": -0.10072106697764589,
+          "imag": 0.03536794950230857
+        },
+        "right": {
+          "real": -0.10072106697764589,
+          "imag": 0.03536794950230857
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.0675029360668417e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@4.0GHz",
+        "left": {
+          "real": 0.07876577273343809,
+          "imag": 0.7007468403321762
+        },
+        "right": {
+          "real": 0.07876577273343809,
+          "imag": 0.7007468403321762
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.051596848869226e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@4.0GHz",
+        "left": {
+          "real": 0.07876575074025086,
+          "imag": 0.7007468666095124
+        },
+        "right": {
+          "real": 0.07876575074036424,
+          "imag": 0.7007468666094179
+        },
+        "absolute_error": 1.4758671021838e-13,
+        "allowed_error": 8.051597085431959e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@4.0GHz",
+        "left": {
+          "real": -0.10072108763893728,
+          "imag": 0.0353679746965889
+        },
+        "right": {
+          "real": -0.10072108763893728,
+          "imag": 0.0353679746965889
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.067503214482703e-07,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/5.0",
+        "left": 5.0,
+        "right": 5.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/5.0",
+        "left": 5.0,
+        "right": 5.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@5.0GHz",
+        "left": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "right": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 1.9902996362934077e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@5.0GHz",
+        "left": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "right": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.055486743321476e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@5.0GHz",
+        "left": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "right": {
+          "real": 0.6803330506928236,
+          "imag": 0.18693815016429052
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.055486743321476e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@5.0GHz",
+        "left": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "right": {
+          "real": -0.09875070266998584,
+          "imag": 0.007431851627461856
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 1.9902996362934077e-07,
+        "passed": true
+      },
+      {
+        "name": "frequency/windows/6.0",
+        "left": 6.0,
+        "right": 6.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "frequency/linux/6.0",
+        "left": 6.0,
+        "right": 6.0,
+        "absolute_error": 0.0,
+        "allowed_error": 1e-12,
+        "passed": true
+      },
+      {
+        "name": "S(1, 1)@6.0GHz",
+        "left": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "right": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.1154345391726832e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 1)@6.0GHz",
+        "left": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "right": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.069267279250798e-07,
+        "passed": true
+      },
+      {
+        "name": "S(1, 2)@6.0GHz",
+        "left": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "right": {
+          "real": 0.4312893212857917,
+          "imag": -0.5601204513314086
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 8.069267279250798e-07,
+        "passed": true
+      },
+      {
+        "name": "S(2, 2)@6.0GHz",
+        "left": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "right": {
+          "real": -0.10986351794128163,
+          "imag": 0.019285993294602434
+        },
+        "absolute_error": 0.0,
+        "allowed_error": 2.1154345391726832e-07,
+        "passed": true
+      },
+      {
+        "name": "eigenfrequency-1",
+        "left": {
+          "real": 2.97563087455,
+          "imag": 2.979565338853e-16
+        },
+        "right": {
+          "real": 2.97563087455,
+          "imag": -1.646189518527e-15
+        },
+        "absolute_error": 1.9441460524123e-15,
+        "allowed_error": 3.07563087455e-06,
+        "passed": true
+      },
+      {
+        "name": "eigen-1/Error (Bkwd.)",
+        "left": 8.943416413162e-15,
+        "right": 1.696745386766e-15,
+        "absolute_error": 7.246671026396e-15,
+        "allowed_error": 1.0000000008943416e-10,
+        "passed": true
+      },
+      {
+        "name": "eigen-1/Error (Abs.)",
+        "left": 5.927656090115e-13,
+        "right": 1.1248757665e-13,
+        "absolute_error": 4.802780323614999e-13,
+        "allowed_error": 1.0000000059276562e-09,
+        "passed": true
+      },
+      {
+        "name": "eigenfrequency-2",
+        "left": {
+          "real": 3.033127909157,
+          "imag": -4.53096275311e-16
+        },
+        "right": {
+          "real": 3.033127909157,
+          "imag": 3.64366366241e-16
+        },
+        "absolute_error": 8.17462641552e-16,
+        "allowed_error": 3.1331279091569997e-06,
+        "passed": true
+      },
+      {
+        "name": "eigen-2/Error (Bkwd.)",
+        "left": 8.960926818191e-15,
+        "right": 1.199939819417e-14,
+        "absolute_error": 3.038471375978999e-15,
+        "allowed_error": 1.0000000011999399e-10,
+        "passed": true
+      },
+      {
+        "name": "eigen-2/Error (Abs.)",
+        "left": 5.98369868909e-13,
+        "right": 8.014637770079e-13,
+        "absolute_error": 2.0309390809890006e-13,
+        "allowed_error": 1.0000000080146378e-09,
+        "passed": true
+      }
+    ],
+    "outputs": [
+      {
+        "platform": "windows",
+        "case": "electrostatic",
+        "vtu_files": 5,
+        "fields": [
+          "E",
+          "Indicator",
+          "Q_s",
+          "Rank",
+          "U_e",
+          "V",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "electrostatic",
+        "vtu_files": 5,
+        "fields": [
+          "E",
+          "Indicator",
+          "Q_s",
+          "Rank",
+          "U_e",
+          "V",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "magnetostatic",
+        "vtu_files": 5,
+        "fields": [
+          "A",
+          "B",
+          "Indicator",
+          "J_s",
+          "Rank",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "magnetostatic",
+        "vtu_files": 5,
+        "fields": [
+          "A",
+          "B",
+          "Indicator",
+          "J_s",
+          "Rank",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "driven",
+        "vtu_files": 13,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "driven",
+        "vtu_files": 13,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "windows",
+        "case": "eigenmode",
+        "vtu_files": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      },
+      {
+        "platform": "linux",
+        "case": "eigenmode",
+        "vtu_files": 5,
+        "fields": [
+          "B_imag",
+          "B_real",
+          "E_imag",
+          "E_real",
+          "Indicator",
+          "J_s_imag",
+          "J_s_real",
+          "Q_s_imag",
+          "Q_s_real",
+          "Rank",
+          "S",
+          "U_e",
+          "U_m",
+          "attribute",
+          "connectivity",
+          "coordinates",
+          "offsets",
+          "types"
+        ]
+      }
+    ],
+    "max_fraction_of_allowance": 0.0004802780295145769
+  },
+  "runtime_observations": {
+    "status": "TECHNICAL_PAYLOAD_RUN_NO_ENVIRONMENT_ATTESTATION",
+    "clean_host_attested": false,
+    "offline_attested": false,
+    "standard_user_checked": false,
+    "os_version": "10.0.26200.0",
+    "manifest_sha256": "4dc2e65f339a7835ab32d77d88418ee6af923321d4c01d4156ae6840f89539df",
+    "runs": [
+      {
+        "all_modules": {
+          "rasadhlp.dll": "C:\\Windows\\System32\\rasadhlp.dll",
+          "ws2_32.dll": "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "ucrtbase.dll": "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "msvcp_win.dll": "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "apphelp.dll": "C:\\WINDOWS\\SYSTEM32\\apphelp.dll",
+          "dnsapi.dll": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+          "palace.exe": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\palace.exe",
+          "kernelbase.dll": "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "cryptbase.dll": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+          "wshbth.dll": "C:\\WINDOWS\\system32\\wshbth.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "winrnr.dll": "C:\\WINDOWS\\System32\\winrnr.dll",
+          "imagehlp.dll": "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "iphlpapi.dll": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+          "ntdsapi.dll": "C:\\WINDOWS\\SYSTEM32\\NTDSAPI.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "sechost.dll": "C:\\WINDOWS\\System32\\sechost.dll",
+          "mswsock.dll": "C:\\WINDOWS\\SYSTEM32\\MSWSOCK.dll",
+          "authz.dll": "C:\\WINDOWS\\SYSTEM32\\AUTHZ.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "kernel32.dll": "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "napinsp.dll": "C:\\WINDOWS\\system32\\napinsp.dll",
+          "nlansp_c.dll": "C:\\WINDOWS\\system32\\nlansp_c.dll",
+          "rpcrt4.dll": "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "dsparse.dll": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.DLL",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "ntdll.dll": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "fwpuclnt.dll": "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+          "nsi.dll": "C:\\WINDOWS\\System32\\NSI.dll",
+          "bcryptprimitives.dll": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "advapi32.dll": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "msvcrt.dll": "C:\\WINDOWS\\System32\\msvcrt.dll"
+        },
+        "tcp_observations": [],
+        "unexpected_non_system_modules": [],
+        "case": "electrostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 4.1627297,
+        "vendor_modules": {
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll"
+        }
+      },
+      {
+        "all_modules": {
+          "rasadhlp.dll": "C:\\Windows\\System32\\rasadhlp.dll",
+          "ws2_32.dll": "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "ucrtbase.dll": "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "msvcp_win.dll": "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "dnsapi.dll": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+          "palace.exe": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\palace.exe",
+          "kernelbase.dll": "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "cryptbase.dll": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+          "wshbth.dll": "C:\\WINDOWS\\system32\\wshbth.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "winrnr.dll": "C:\\WINDOWS\\System32\\winrnr.dll",
+          "imagehlp.dll": "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "iphlpapi.dll": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+          "ntdsapi.dll": "C:\\WINDOWS\\SYSTEM32\\NTDSAPI.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "sechost.dll": "C:\\WINDOWS\\System32\\sechost.dll",
+          "mswsock.dll": "C:\\WINDOWS\\SYSTEM32\\MSWSOCK.dll",
+          "authz.dll": "C:\\WINDOWS\\SYSTEM32\\AUTHZ.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "kernel32.dll": "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "napinsp.dll": "C:\\WINDOWS\\system32\\napinsp.dll",
+          "nlansp_c.dll": "C:\\WINDOWS\\system32\\nlansp_c.dll",
+          "rpcrt4.dll": "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "dsparse.dll": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.DLL",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "ntdll.dll": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "fwpuclnt.dll": "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+          "nsi.dll": "C:\\WINDOWS\\System32\\NSI.dll",
+          "bcryptprimitives.dll": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "advapi32.dll": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "msvcrt.dll": "C:\\WINDOWS\\System32\\msvcrt.dll"
+        },
+        "tcp_observations": [],
+        "unexpected_non_system_modules": [],
+        "case": "magnetostatic",
+        "exit_code": 0,
+        "elapsed_seconds": 17.4636779,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll"
+        }
+      },
+      {
+        "all_modules": {
+          "rasadhlp.dll": "C:\\Windows\\System32\\rasadhlp.dll",
+          "ws2_32.dll": "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "ucrtbase.dll": "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "msvcp_win.dll": "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "dnsapi.dll": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+          "palace.exe": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\palace.exe",
+          "kernelbase.dll": "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "cryptbase.dll": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+          "wshbth.dll": "C:\\WINDOWS\\system32\\wshbth.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "winrnr.dll": "C:\\WINDOWS\\System32\\winrnr.dll",
+          "imagehlp.dll": "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "iphlpapi.dll": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+          "ntdsapi.dll": "C:\\WINDOWS\\SYSTEM32\\NTDSAPI.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "sechost.dll": "C:\\WINDOWS\\System32\\sechost.dll",
+          "mswsock.dll": "C:\\WINDOWS\\SYSTEM32\\MSWSOCK.dll",
+          "authz.dll": "C:\\WINDOWS\\SYSTEM32\\AUTHZ.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "kernel32.dll": "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "napinsp.dll": "C:\\WINDOWS\\system32\\napinsp.dll",
+          "nlansp_c.dll": "C:\\WINDOWS\\system32\\nlansp_c.dll",
+          "rpcrt4.dll": "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "dsparse.dll": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.DLL",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "ntdll.dll": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "fwpuclnt.dll": "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+          "nsi.dll": "C:\\WINDOWS\\System32\\NSI.dll",
+          "bcryptprimitives.dll": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "advapi32.dll": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "msvcrt.dll": "C:\\WINDOWS\\System32\\msvcrt.dll"
+        },
+        "tcp_observations": [],
+        "unexpected_non_system_modules": [],
+        "case": "driven",
+        "exit_code": 0,
+        "elapsed_seconds": 0.45633769999999996,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll"
+        }
+      },
+      {
+        "all_modules": {
+          "rasadhlp.dll": "C:\\Windows\\System32\\rasadhlp.dll",
+          "ws2_32.dll": "C:\\WINDOWS\\System32\\WS2_32.dll",
+          "ucrtbase.dll": "C:\\WINDOWS\\System32\\ucrtbase.dll",
+          "msvcp_win.dll": "C:\\WINDOWS\\System32\\msvcp_win.dll",
+          "dnsapi.dll": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+          "palace.exe": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\palace.exe",
+          "kernelbase.dll": "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+          "cryptbase.dll": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+          "wshbth.dll": "C:\\WINDOWS\\system32\\wshbth.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "winrnr.dll": "C:\\WINDOWS\\System32\\winrnr.dll",
+          "imagehlp.dll": "C:\\WINDOWS\\System32\\imagehlp.dll",
+          "iphlpapi.dll": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+          "ntdsapi.dll": "C:\\WINDOWS\\SYSTEM32\\NTDSAPI.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "sechost.dll": "C:\\WINDOWS\\System32\\sechost.dll",
+          "mswsock.dll": "C:\\WINDOWS\\SYSTEM32\\MSWSOCK.dll",
+          "authz.dll": "C:\\WINDOWS\\SYSTEM32\\AUTHZ.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "kernel32.dll": "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "napinsp.dll": "C:\\WINDOWS\\system32\\napinsp.dll",
+          "nlansp_c.dll": "C:\\WINDOWS\\system32\\nlansp_c.dll",
+          "rpcrt4.dll": "C:\\WINDOWS\\System32\\RPCRT4.dll",
+          "dsparse.dll": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.DLL",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "ntdll.dll": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+          "fwpuclnt.dll": "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+          "nsi.dll": "C:\\WINDOWS\\System32\\NSI.dll",
+          "bcryptprimitives.dll": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+          "advapi32.dll": "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+          "msvcrt.dll": "C:\\WINDOWS\\System32\\msvcrt.dll"
+        },
+        "tcp_observations": [],
+        "unexpected_non_system_modules": [],
+        "case": "eigenmode",
+        "exit_code": 0,
+        "elapsed_seconds": 0.1403215,
+        "vendor_modules": {
+          "vcruntime140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140.dll",
+          "libircmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libircmd.dll",
+          "svml_dispmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\svml_dispmd.dll",
+          "vcruntime140_1.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\VCRUNTIME140_1.dll",
+          "libifcoremd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libifcoremd.dll",
+          "libmmd.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\libmmd.dll",
+          "msvcp140.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\MSVCP140.dll",
+          "msmpi.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\msmpi.dll",
+          "metis.dll": "E:\\projects\\palace-windows\\.work\\reproduction\\validation-package\\metis.dll"
+        }
+      }
+    ],
+    "remaining": "CSV/VTK verification, interruption, re-run, read-only install path, uninstall and independent review; redistribution review"
+  },
+  "output_structure": [
+    {
+      "case": "electrostatic",
+      "csv_count": 7,
+      "vtu_count": 5,
+      "structure_and_finite_values": "pass"
+    },
+    {
+      "case": "magnetostatic",
+      "csv_count": 7,
+      "vtu_count": 5,
+      "structure_and_finite_values": "pass"
+    },
+    {
+      "case": "driven",
+      "csv_count": 5,
+      "vtu_count": 13,
+      "structure_and_finite_values": "pass"
+    },
+    {
+      "case": "eigenmode",
+      "csv_count": 3,
+      "vtu_count": 5,
+      "structure_and_finite_values": "pass"
+    }
+  ],
+  "no_parmetis_audit": {
+    "link_map": "E:\\projects\\palace-windows\\.work\\reproduction\\r1\\.work\\build\\palace-native\\palace.map",
+    "link_map_sha256": "e940a18ba42307179ed81316d262178855edbb2d98575f48ddbaf1f948bf4cb9",
+    "scope": "Built prefix static-symbol/export audit; full dependency provenance and final runtime closure remain separate",
+    "libraries": [
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/arpack.lib",
+        "sha256": "21b122075eea9fe68f7863013df0f014f7d3d231bbf2846e77e07c3ab2aa9a43",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/Catch2.lib",
+        "sha256": "d768af7740da111f92ca65d70ad2fcf1a57cc24a8d6c6e0ae012dd5514a0179f",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/Catch2Main.lib",
+        "sha256": "725296db3174b474b9558e4b315c8765cedcb8b4566331270a2fc7340280df15",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:libircmt.lib",
+          "/DEFAULTLIB:libmmd.lib",
+          "/DEFAULTLIB:msvcrt.lib",
+          "/DEFAULTLIB:oldnames.lib",
+          "/DEFAULTLIB:svml_dispmd.lib",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/ceed.lib",
+        "sha256": "6efb0b0d35b53c02bbff0fe10498c8225902dc46be2fe53b9ad634c2d4e4dc31",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/dmumps.lib",
+        "sha256": "7bf24e5b0e0091967ed4ac3234274f9f799d61a1babc9a05424b5adbf6ae6fce",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/fmt.lib",
+        "sha256": "7fc79a3f6fb8577b9305e07a4ebae074a7502e76e3160b2625de2b8211948913",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/HYPRE.lib",
+        "sha256": "c72625d4a41c16f39def3189975d4eabddfe407bd29b898fac5b31c525b0aaa2",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [],
+        "path": ".work/install/no-parmetis/lib/metis.lib",
+        "sha256": "fffee324138b7f946cc0ffff2134b38ec41427702c2dc7e878e8e92aee98e195",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib",
+          "/DEFAULTLIB:ws2_32.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/mfem.lib",
+        "sha256": "32d9882615793d532ebd15c40891e502dea8b83632bb144e03e554aa6a0347ff",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/mumps_common.lib",
+        "sha256": "193f477ca6ca2497fa60462fe8a97614d73a9d60d853045f01b97c9684352f5e",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/nlohmann_json_schema_validator.lib",
+        "sha256": "299f7067acfb2a4b24be1cf05865aa1620bd15e9dc18f1f192f4713643a2949e",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES",
+          "/DEFAULTLIB:uuid.lib"
+        ],
+        "path": ".work/install/no-parmetis/lib/palace.lib",
+        "sha256": "769dfa125a49c5ebbafb5d66819c5db87384e0f950781e0f62601999a14842db",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:ifconsol.lib",
+          "/DEFAULTLIB:ifmodintr.lib",
+          "/DEFAULTLIB:libifcoremd.lib",
+          "/DEFAULTLIB:libifportmd.lib",
+          "/DEFAULTLIB:libircmt",
+          "/DEFAULTLIB:libmmd",
+          "/DEFAULTLIB:msvcrt",
+          "/DEFAULTLIB:oldnames",
+          "/DEFAULTLIB:svml_dispmd"
+        ],
+        "path": ".work/install/no-parmetis/lib/parpack.lib",
+        "sha256": "970b07cae4e35185ec04864797b4f58bef336268e7302c6fbb22e5b9b4c42d71",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/pord.lib",
+        "sha256": "3e2949c79c5a7473cd115c118caed114f13d098c03285f5ee3a31691ecc8cfa1",
+        "parmetis_symbols": 0
+      },
+      {
+        "runtime_directives": [
+          "/DEFAULTLIB:msvcprt",
+          "/DEFAULTLIB:MSVCRT",
+          "/DEFAULTLIB:OLDNAMES"
+        ],
+        "path": ".work/install/no-parmetis/lib/scn.lib",
+        "sha256": "e1a932878c54d5fd6bab3d959eb57912bb8c15f8c22033df23d05e0ff66139cd",
+        "parmetis_symbols": 0
+      }
+    ],
+    "exported_parmetis_dependencies": 0,
+    "executable": "E:\\projects\\palace-windows\\.work\\reproduction\\r1\\.work\\build\\palace-native\\palace.exe",
+    "imports": [
+      "",
+      "Dump of file E:\\projects\\palace-windows\\.work\\reproduction\\r1\\.work\\build\\palace-native\\palace.exe",
+      "",
+      "File Type: EXECUTABLE IMAGE",
+      "",
+      "  Image has the following dependencies:",
+      "",
+      "    msmpi.dll",
+      "    metis.dll",
+      "    KERNEL32.dll",
+      "    MSVCP140.dll",
+      "    libifcoremd.dll",
+      "    libmmd.dll",
+      "    svml_dispmd.dll",
+      "    VCRUNTIME140.dll",
+      "    VCRUNTIME140_1.dll",
+      "    api-ms-win-crt-runtime-l1-1-0.dll",
+      "    api-ms-win-crt-math-l1-1-0.dll",
+      "    api-ms-win-crt-heap-l1-1-0.dll",
+      "    api-ms-win-crt-stdio-l1-1-0.dll",
+      "    api-ms-win-crt-filesystem-l1-1-0.dll",
+      "    api-ms-win-crt-locale-l1-1-0.dll",
+      "    api-ms-win-crt-string-l1-1-0.dll",
+      "    api-ms-win-crt-convert-l1-1-0.dll",
+      "    api-ms-win-crt-utility-l1-1-0.dll",
+      "    api-ms-win-crt-time-l1-1-0.dll",
+      "    api-ms-win-crt-environment-l1-1-0.dll",
+      "    libircmd.dll",
+      "",
+      "  Summary",
+      "",
+      "      266000 .data",
+      "       4F000 .pdata",
+      "      3B6000 .rdata",
+      "        7000 .reloc",
+      "        1000 .rsrc",
+      "     1E2C000 .text"
+    ]
+  },
+  "maps": [
+    {
+      "path": ".work/reproduction/r1/.work/build/palace-native/palace.map",
+      "sha256": "e940a18ba42307179ed81316d262178855edbb2d98575f48ddbaf1f948bf4cb9"
+    },
+    {
+      "path": ".work/reproduction/r1/.work/build/no-parmetis-metis/libmetis/metis.map",
+      "sha256": "301e4a0d42691cdeb156f47de41c63c161b8104fdbc8206c3c0d44952f1a5703"
+    }
+  ],
+  "binary_difference_note": "Rebuilt PE hashes are recorded separately. Build locations and COFF timestamps differ; no bit-reproducibility claim. Vendor DLL hashes match the exact candidate. Numerical equivalence is independently checked. METIS libmetis/parmetis.c.obj contains METIS-owned helper implementations, not the separately licensed ParMETIS implementation. Palace retains unsupported enum/diagnostic strings.",
+  "logs": [
+    {
+      "path": ".work/redistribution/fresh-reproduction.log",
+      "sha256": "7e2dd5d0fc9976e2a7bd59f7ca51c51fa338b71ea0175e3e25d422060ab03958"
+    },
+    {
+      "path": ".work/redistribution/fresh-build-explicit-mfem.log",
+      "sha256": "18d7921db7d2030210c23b4851b6ea5c2dcf02137bdcfef011d0daf504d4e3b1"
+    },
+    {
+      "path": ".work/redistribution/fresh-no-parmetis-audit.log",
+      "sha256": "9e33ffa66ca26f8488ef75682df399d89c774d1f5ab093275a4b51ee83f1b795"
+    },
+    {
+      "path": ".work/redistribution/fresh-numerics.log",
+      "sha256": "fdaed4271273c3a1218961d1d3d02e975f180ad67d76e861eac2516f0f5c18dc"
+    }
+  ]
+}

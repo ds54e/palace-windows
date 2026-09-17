@@ -11,7 +11,7 @@ Move-Item -LiteralPath "$work/config.json" -Destination "$work/$name"
 $records=@()
 foreach($inputName in @($name,'missing configuration.json')){
     $info=New-Object Diagnostics.ProcessStartInfo
-    $info.FileName="$env:WINDIR/System32/cmd.exe"
+    $info.FileName=Join-Path $env:WINDIR 'System32\cmd.exe'
     $info.Arguments='/d /s /c ""'+$package+'\Run-Palace.cmd" "'+$inputName+'""'
     $info.WorkingDirectory=$work;$info.UseShellExecute=$false
     $info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true
