@@ -28,11 +28,11 @@ Pin actual source commits, toolchain versions, dependency recipes, patches, inte
 
 ## Model and resource policy
 
-Parent default: **Astra/low**. This default is explicitly authorized by the owner for the V1 effort. Do not autonomously increase Astra reasoning effort, switch to Astra medium/high/xhigh/max, change the user subscription, or modify global Codex/authentication configuration.
+Parent default: **Sol/medium**. This default is explicitly authorized by the owner for the remaining V1 work. Do not autonomously change the running parent's model, change the user subscription, or modify global Codex/authentication configuration.
 
-If Astra/low proves disproportionately expensive, encounters quota pressure, or is otherwise poor value for a sustained phase, the owner-authorized fallback parent is **Sol/medium**. Parent switching remains user-controlled through `/model`, launch options, or an explicit project-config edit; do not self-restart under another model. Terra is not part of the default V1 path.
+For a clearly isolated difficult blocker where Sol/medium has produced bounded evidence but remains insufficient, the owner-authorized fallback is **Astra/low**. Parent switching remains user-controlled through `/model`, launch options, or an explicit project-config edit; do not self-restart under another model. Do not raise Astra above low without explicit owner authorization. Terra is not part of the default V1 path.
 
-Optional delegation must follow `docs/CODEX_OPERATIONS.md`; verify local CLI support and actual child model before relying on it. Luna/medium may be used for bounded read-only extraction or factual surveys. Do not create recursive subagents, nested `codex exec` orchestration, or a model router. No premium speed tier or higher Astra effort without explicit owner authorization.
+Optional delegation must follow `docs/CODEX_OPERATIONS.md`; verify local CLI support and actual child model before relying on it. Luna/medium may be used for bounded read-only extraction or factual surveys. Do not create recursive subagents, nested `codex exec` orchestration, or a model router. No premium speed tier without explicit owner authorization.
 
 One writer and one heavyweight build at a time. Read-only children return bounded evidence; the parent applies patches and validates. Model-budget counts persist across sessions in `docs/STATE.json`. AGENTS instructions are policy, not a hard billing or OS security boundary.
 

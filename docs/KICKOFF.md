@@ -1,6 +1,6 @@
 # Codex kickoff
 
-Use this as the initial task after cloning the repository onto the Windows filesystem and launching Codex from WSL with **Astra/low**.
+Use this as the initial task after cloning the repository onto the Windows filesystem and launching Codex from WSL with **Sol/medium**.
 
 ---
 
@@ -14,7 +14,7 @@ Before building Palace, execute the Gate 0 MPI deployment investigation. The pro
 
 When Gate 0 succeeds, continue through ABI tests, core dependencies, native Palace, C/L/S/eigen validation, package assembly, clean-host validation, and reproducible release-ready artifacts. Implement the missing build/packaging pieces as real scripts; no success-returning placeholders. Use one writer and one heavy build. The optional Luna child template requires local support and actual-model verification before activation.
 
-Use Astra/low as the normal parent. Do not raise Astra effort autonomously. If Astra becomes quota-constrained or clearly poor value for a sustained phase, checkpoint the repository and recommend the owner-authorized Sol/medium fallback described in docs/CODEX_OPERATIONS.md; do not self-restart or silently switch models.
+Use Sol/medium as the normal parent. For a clearly isolated difficult blocker that remains unresolved after bounded evidence-producing experiments, checkpoint the repository and recommend the owner-authorized Astra/low fallback described in docs/CODEX_OPERATIONS.md; do not self-restart or silently switch models. Do not raise Astra above low without explicit owner authorization.
 
 Commit coherent checkpoints. Update STATE.json, DEVLOG.md, and DECISIONS.md with evidence. Continue ordinary in-scope engineering without repeated confirmation. For a genuine host privilege, licensing, quota, or unavailable-tool blocker, report the exact next owner action and continue independent work where possible.
 

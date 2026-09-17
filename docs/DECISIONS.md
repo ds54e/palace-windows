@@ -16,9 +16,9 @@ MS-MPI application-local singleton is a candidate, not a proven solution. Test r
 
 Palace v0.18.0, commit b92aef83ecfe6d360c4b3d83e2122986297f6778, was resolved from the official release/tag API on 2026-09-16. Dependency/toolchain pins still require local investigation. Do not promise compatibility from a version label.
 
-## D005 — Astra-low parent with a simple cost fallback
+## D005 — Sol-medium parent for release completion
 
-Astra/low is the default parent for V1 because the project is long-horizon, multi-step Windows portability work where avoiding repeated failed attempts matters more than minimizing per-token price. Sol/medium is the owner-authorized cost/quota fallback parent. Luna/medium may be used only for bounded read-only extraction or factual surveys. Terra is not part of the default V1 path. Higher Astra effort requires explicit owner authorization. Model routing must remain simple and must not become a project deliverable.
+The owner selected Sol/medium as the default parent for the remaining V1 work after the core Windows port, numerical validation, packaging and reproduction work substantially completed. Astra/low is retained only as an owner-controlled fallback for a clearly isolated hard blocker where Sol/medium remains insufficient after bounded evidence-producing experiments. Luna/medium may be used only for bounded read-only extraction or factual surveys. Terra is not part of the default V1 path. Astra above low requires explicit owner authorization. Model routing must remain simple and must not become a project deliverable.
 
 ## D006 — Evidence before labels
 

@@ -1,0 +1,4 @@
+# Optional owner-applied fallback parent configuration.
+# Use only for a clearly isolated hard blocker when switching away from Sol/medium is an explicit user decision.
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
