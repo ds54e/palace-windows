@@ -332,3 +332,39 @@ status, evidence links and the two external next actions. No public release
 or tag was created. Next discriminating evidence requires an independently
 prepared clean host and qualified review of the exact LGPL/Intel question;
 repeating developer-host runs cannot supply either.
+
+## 2026-09-18 — Read-only Hyper-V host discovery
+
+The owner selected a fresh Windows 11 Enterprise Evaluation x64 VM for the
+independent clean-host test and authorized discovery only. Ran the repository-
+local read-only inventory with a process-scoped execution-policy bypass. All
+policy scopes remain Undefined except that process. No feature, VM, switch,
+service, registry, security, policy or installation state was changed.
+
+The host is Windows 11 Home/Core 25H2 x64 build 26200.9457. A Microsoft
+hypervisor is present and VBS base virtualization support is running, but no
+Microsoft-Hyper-V optional-feature records, Hyper-V PowerShell module,
+Get-VM/Get-VMSwitch commands, VMMS service or root/virtualization/v2 provider
+exist. The current non-elevated token is not a member of Hyper-V
+Administrators. Therefore it cannot manage Hyper-V or enumerate/create an
+external switch; no suitable usable Hyper-V external switch exists on this
+host. Running vmcompute/HNS reflects the virtualization substrate, not the
+full Hyper-V VM role.
+
+The i7-12700 has 12 cores/20 logical processors. Intel documents VT-x with
+EPT/SLAT; Windows detecting an active hypervisor confirms firmware-enabled
+virtualization is in use. The false Win32_Processor virtualization booleans
+are recorded but not interpreted as lack of hardware capability because
+systeminfo suppresses requirement details under an active hypervisor. At
+discovery the host had 31.742 GiB total/18.083 GiB free RAM and the E: volume
+had 482.084 GiB free of 1863.0 GiB.
+
+Microsoft documents Hyper-V VM hosting for Windows 11 Pro or Enterprise and
+explicitly excludes Home. Stopped before VM-plan implementation as directed.
+The single owner action is to provide access to a Windows 11 Pro or Enterprise
+host with Hyper-V platform and management tools already enabled and permission
+for the current account to manage it. Afterward, repeat read-only discovery
+and inspect the external switch before creating anything. Evidence:
+`docs/evidence/G5-hyperv-host-discovery-2026-09-18.json`; sanitized raw record
+hash f814a5cdce3abe82a1c7c7237334bfdadf5d6a34f21c1a89a00b6a1ac5bf13e0.
+Gates 0 and 5 remain blocked, and the frozen review2 ZIP is unchanged.

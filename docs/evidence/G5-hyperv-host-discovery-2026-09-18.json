@@ -1,0 +1,80 @@
+{
+  "status": "blocked_privileged_host_change_required",
+  "scope": "Read-only, non-elevated discovery of the existing Windows host. No Windows feature, VM, switch, service, policy, registry, security, execution-policy or installation state was changed.",
+  "collected_utc": "2026-09-17T23:26:17.5199679Z",
+  "command": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File E:\\projects\\palace-windows\\.work\\hyperv-host-discovery.ps1 -OutputPath E:\\projects\\palace-windows\\.work\\hyperv-host-discovery-2026-09-18.json",
+  "execution_policy": {
+    "MachinePolicy": "Undefined",
+    "UserPolicy": "Undefined",
+    "Process": "Bypass",
+    "CurrentUser": "Undefined",
+    "LocalMachine": "Undefined",
+    "persistence": "None; Bypass applied only to the authorized discovery PowerShell process"
+  },
+  "host": {
+    "caption": "Microsoft Windows 11 Home",
+    "edition_id": "Core",
+    "display_version": "25H2",
+    "version": "10.0.26200",
+    "build": "26200.9457",
+    "architecture": "64-bit"
+  },
+  "hyper_v": {
+    "hypervisor_present": true,
+    "systeminfo_observation": "A hypervisor has been detected; requirement values are suppressed. Virtualization-based security is running with base virtualization support.",
+    "platform_feature_inventory": "Win32_OptionalFeature returned no Microsoft-Hyper-V feature records on this Windows Home edition.",
+    "management_module_present": false,
+    "get_vm_command_present": false,
+    "get_vm_access": "unavailable: Get-VM is not installed",
+    "hyper_v_administrators_token_membership": false,
+    "current_process_elevated": false,
+    "virtualization_wmi_provider": "unavailable: root/virtualization/v2 is an invalid namespace",
+    "vmms_service_present": false,
+    "vmcompute_service": "running",
+    "hns_service": "running",
+    "interpretation": "The active Microsoft hypervisor/VBS substrate is not the supported Hyper-V VM role. Hyper-V VM management is not usable by the current account without changing the host."
+  },
+  "processor": {
+    "model": "12th Gen Intel(R) Core(TM) i7-12700",
+    "cores": 12,
+    "logical_processors": 20,
+    "hardware_capability": "Intel documents VT-x and VT-x with Extended Page Tables (EPT), which supplies SLAT, as supported.",
+    "firmware_runtime_evidence": "Windows reports an active hypervisor and running VBS base virtualization support. Win32_Processor returned false for firmware/monitor/SLAT booleans while the hypervisor was active; those suppressed values are not treated as a hardware failure.",
+    "intel_source": "https://www.intel.com/content/www/us/en/products/sku/134591/intel-core-i712700-processor-25m-cache-up-to-4-90-ghz/specifications.html"
+  },
+  "capacity": {
+    "ram_total_bytes": 34082324480,
+    "ram_total_gib": 31.742,
+    "ram_free_bytes_at_discovery": 19416621056,
+    "ram_free_gib_at_discovery": 18.083,
+    "repository_volume": "E:",
+    "repository_volume_size_bytes": 2000381014016,
+    "repository_volume_size_gib": 1863.0,
+    "repository_volume_free_bytes_at_discovery": 517633527808,
+    "repository_volume_free_gib_at_discovery": 482.084
+  },
+  "external_switch": {
+    "suitable_existing_external_switch": false,
+    "evidence": "Get-VMSwitch is not installed and the Hyper-V virtualization WMI namespace is absent. No usable Hyper-V external-switch inventory or management plane exists on this host. No network state was changed."
+  },
+  "support_basis": {
+    "microsoft_installation_source": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/install-hyper-v",
+    "microsoft_requirements_source": "https://learn.microsoft.com/en-us/windows-server/virtualization/hyper-v/host-hardware-requirements",
+    "finding": "Microsoft supports the Hyper-V role on Windows 11 Pro or Enterprise and explicitly excludes Windows 11 Home."
+  },
+  "raw_record": {
+    "path": ".work/hyperv-host-discovery-2026-09-18.json",
+    "sha256": "f814a5cdce3abe82a1c7c7237334bfdadf5d6a34f21c1a89a00b6a1ac5bf13e0",
+    "commit_policy": "Raw record remains ignored because it contains the local account name; this sanitized evidence omits it."
+  },
+  "decision": {
+    "hyper_v_usable_without_system_change": false,
+    "vm_created": false,
+    "network_changed": false,
+    "features_changed": false,
+    "installation_performed": false,
+    "minimal_owner_action": "Provide access to a Windows 11 Pro or Enterprise host on which the Hyper-V platform and management tools are already enabled and the current account can manage Hyper-V. The current Windows 11 Home host cannot be made suitable by merely enabling the Hyper-V optional feature.",
+    "next_check_after_owner_action": "Repeat this read-only discovery, then inventory an existing external switch before any VM creation or network change."
+  },
+  "gate_effect": "Gate 5 and the clean-host portion of Gate 0 remain blocked. The frozen review2 ZIP has not been changed or executed in an independent guest."
+}

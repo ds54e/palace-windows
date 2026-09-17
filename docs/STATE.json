@@ -128,6 +128,10 @@
         {
           "path": "docs/evidence/G5-prepared-kit-2026-09-17.json",
           "sha256": "5767b396555507b58db3829de320fc869290f1e3cf20a448b9aa77f8ef44e07d"
+        },
+        {
+          "path": "docs/evidence/G5-hyperv-host-discovery-2026-09-18.json",
+          "sha256": "1f633d1cbb4e0138edf80c4f934bb69e0cf50c3be128f225e2666c955fc6c199"
         }
       ]
     },
@@ -152,7 +156,7 @@
   },
   "blockers": [
     "LEGAL_REVIEW_PENDING: Whether LGPL-2.1 section 6 modification/reverse-engineering condition is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel proprietary components retain their separate restrictions. This does not block internal engineering or reopen component grants.",
-    "Gate 5 external execution blocker: owner confirms no independent clean Windows environment is currently available. No standard-user/offline clean-host pass may be claimed."
+    "Gate 5 host blocker: read-only discovery found Windows 11 Home 25H2 with no supported Hyper-V VM role, management tools, VMMS/provider, user management access or usable external-switch management plane. Owner must provide a Windows 11 Pro/Enterprise host with Hyper-V already enabled and accessible. No standard-user/offline clean-host pass may be claimed."
   ],
-  "next_action": "Await independently prepared standard-user offline Windows host for the frozen review2 kit and qualified determination of the one LGPL/Intel combined-work legal question. G0/G5/G7 remain open; no remaining build/package engineering action is claimed blocked by that legal question. Preserve frozen ZIP bytes; no public release/tag."
+  "next_action": "Owner action: provide access to a Windows 11 Pro or Enterprise host with Hyper-V platform and management tools already enabled and permission for the current account to manage it. Then repeat read-only discovery and inventory an existing external switch before VM creation. Preserve the frozen review2 ZIP bytes; G0/G5/G7 and the single LGPL/Intel legal question remain open; no public release/tag."
 }

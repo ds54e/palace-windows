@@ -42,8 +42,11 @@ Two external actions remain:
 
 1. Supply an independently prepared Windows 11 x64 standard-user environment
    with no development tools, installed MPI/Intel runtime, Visual Studio,
-   Python, WSL or network dependency. The owner confirms none is currently
-   available. Transfer the frozen ZIP and follow CLEAN_HOST_TEST.md and
+   Python, WSL or network dependency. Read-only discovery on 2026-09-18 found
+   that the current Windows 11 Home host has no supported Hyper-V VM role or
+   management plane. Provide a Windows 11 Pro or Enterprise host with Hyper-V
+   already enabled and accessible to the current account. Then transfer the
+   frozen ZIP and follow CLEAN_HOST_TEST.md and
    Test-CleanHost.ps1. Independent extraction, offline execution, interruption,
    cleanup/uninstall and system/network observations must actually execute.
    Gates 0 and 5 remain open.
