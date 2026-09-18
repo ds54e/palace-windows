@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "status": "RESOLVED_BY_COMPONENT_REPLACEMENT",
+  "tested_repository_base": "7379f00954776463d16d50531ed182dc3688a5ff",
+  "scope": "Distinct developer-host METIS-remediated candidate; independent clean-host testing remains deferred and unexecuted",
+  "source": {
+    "metis_commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d",
+    "networkx_metis_reference_commit": "26a51ddad5932d843655e5b7ba1225bcfe3b8882",
+    "patch": "patches/metis/permissive-sort-exclusion.patch",
+    "patch_sha256": "fc191091c5ff80ebaa88d42bf7b371ddd34b4bfc0dc18e87a15d7dbe4480ce1d",
+    "gklib_sort_sha256": "7844ce9401b1e983e303996d2cdcbe3cd3909003306339e1a80e771830451660",
+    "libmetis_sort_sha256": "60366afea7e5400177fc12361c90d625cb6033df5afe59d697127204b91aa2d2"
+  },
+  "windows_artifacts": {
+    "palace_exe_sha256": "0364deb1a32b0b3f94d13c4aff94a431f5f2fad91856afd389501cce23ff4568",
+    "palace_map_sha256": "c9b9dc9dfc68a8cb22813c3786370b1d87260c3f6122b28e03d285b9d5da90c9",
+    "metis_dll_sha256": "1a6af7bace9954e31f432133e16d4d112489e7ba897329f16ceed4550732ef8a",
+    "metis_import_library_sha256": "fffee324138b7f946cc0ffff2134b38ec41427702c2dc7e878e8e92aee98e195",
+    "metis_map_sha256": "2211bce9320e7ae48efbd98d79fb7455416f456de27dc18e68aa94f16a998a56"
+  },
+  "linux_artifacts": {
+    "palace_executable_sha256": "75f8e0fd39580961ca73ae4b1e8bd2c0eb92c6c7bebe28d14871b9d5b642ce24",
+    "metis_archive_sha256": "8d65ef08fa942d40dbadf92e6dca567ba1400f29dafd345b05f70f748c19f9eb"
+  },
+  "tests": {
+    "focused_metis": "2/2 passed: connection plus ten-entry-point sorting contract including empty, singleton, signed extrema, duplicates, direction, payload and lexicographic cases",
+    "connections": "4/4 passed: MUMPS PORD, MUMPS METIS ordering, PARPACK and mixed ifx/MSVC runtime",
+    "palace_cases": "4/4 passed on final Windows candidate: electrostatic, magnetostatic, driven and eigenmode",
+    "outputs": "CSV/VTU structural and finite-value checks passed",
+    "numerical": "60/60 fixed Windows/Linux comparisons passed; maximum fraction of allowance 0.000480278",
+    "comparison_sha256": "a1840a01dad06c5ce388bdb6bfdee1549babbf21a60919d1d954814df65eea6f"
+  },
+  "linked_code_audit": {
+    "windows_source_rules": 60,
+    "windows_linked_objects": 60,
+    "excluded_compile_rules": 0,
+    "excluded_map_members": 0,
+    "parmetis_vendor_symbols": 0,
+    "selected_final_sort_symbols": [
+      "libmetis__ikvsortd -> gklib_sort.cc.obj",
+      "libmetis__ikvsorti -> gklib_sort.cc.obj",
+      "libmetis__rkvsortd -> gklib_sort.cc.obj"
+    ],
+    "inlined_standard_sort_map_entries": 18,
+    "runtime_closure_files": 10,
+    "runtime_closure_sha256": "4740bf0ddf6a25c084f96cdd166f4e6818a002476a427201a13314fa927ab460",
+    "note": "libmetis/parmetis.c is a METIS-owned translation unit; the audit separately rejects ParMETIS_ and libparmetis__ vendor symbols."
+  },
+  "package": {
+    "stage": ".work/package/palace-windows-1.0.0-metis-remediation-review1",
+    "stage_files": 194,
+    "stage_bytes": 199921056,
+    "manifest_sha256": "93c14286a576c1cf85aa6be7bfb6f680a4eaa2f27e637519c14c4eb6ff3e3477",
+    "redistribution_matrix_sha256": "c5d61e54da3e2d3899a887f7217ff5edf307508c2b1972835bad9510331d1d6b",
+    "zip": ".work/package/palace-windows-1.0.0-metis-remediation-review1-internal.zip",
+    "zip_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "exact_inventory_source_zip_verification": "pass",
+    "exact_staged_four_case_run": "pass",
+    "exact_staged_csv_vtu_check": "pass",
+    "public_release": false
+  },
+  "historical_review2": {
+    "zip_sha256": "6dad1f3d892ccf20f627140760b9cae94202a12463715aa2a003e1931a5cd2e2",
+    "unchanged": true,
+    "legal_status": "LEGAL_REVIEW_PENDING remains historical; no compatibility opinion"
+  },
+  "clean_host": {
+    "decision": "deferred_by_owner",
+    "executed": false,
+    "passed": false
+  }
+}

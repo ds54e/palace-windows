@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "integrated_and_validated_package_pending",
+  "status": "integrated_validated_and_packaged",
   "inspected_on": "2026-09-18",
   "target": {
     "repository": "https://bitbucket.org/petsc/pkg-metis.git",
@@ -50,9 +50,9 @@
     "windows_build": true,
     "linux_build": true,
     "numerical_comparison": true,
-    "new_package_created": false,
-    "legal_blocker_resolved": false,
-    "resolution_scope": "Implementation and linked-code validation complete; exact package fulfillment remains before RESOLVED_BY_COMPONENT_REPLACEMENT may be recorded"
+    "new_package_created": true,
+    "legal_blocker_resolved": true,
+    "resolution_scope": "RESOLVED_BY_COMPONENT_REPLACEMENT for the new artifact hashes only; no conclusion about historical review2"
   },
   "clean_host": {
     "decision": "deferred_by_owner",

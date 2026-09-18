@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "BLOCKED_EXTERNAL_CLEAN_HOST_AND_LEGAL_REVIEW",
+  "project_status": "BLOCKED_EXTERNAL_CLEAN_HOST",
   "current_gate": "G5_clean_host",
   "model_policy": {
     "parent_default": {
@@ -119,6 +119,10 @@
         {
           "path": "docs/evidence/G4-frozen-review2-2026-09-17.json",
           "sha256": "26072c93595a0ed2e4e709d05502b718f21029899e791a9c6880f8064333a2e3"
+        },
+        {
+          "path": "docs/evidence/LEGAL-metis-remediation-2026-09-18.json",
+          "sha256": "66b0b1ed2350485b25f3cba11e96382d1486b18e151826875e43f9d752a72859"
         }
       ]
     },
@@ -145,18 +149,21 @@
       ]
     },
     "G7_review": {
-      "status": "blocked",
+      "status": "pass",
       "evidence": [
         {
-          "path": "docs/packaging/REDISTRIBUTION_MATRIX.json",
-          "sha256": "d13ed12f695841bad9def8349265d39487688772f17d545182327fcb2cd6da08"
+          "path": "docs/packaging/REDISTRIBUTION_MATRIX_METIS_REMEDIATED.json",
+          "sha256": "c5d61e54da3e2d3899a887f7217ff5edf307508c2b1972835bad9510331d1d6b"
+        },
+        {
+          "path": "docs/evidence/LEGAL-metis-remediation-2026-09-18.json",
+          "sha256": "66b0b1ed2350485b25f3cba11e96382d1486b18e151826875e43f9d752a72859"
         }
       ]
     }
   },
   "blockers": [
-    "LEGAL_REVIEW_PENDING: Whether LGPL-2.1 section 6 modification/reverse-engineering condition is satisfied by the tested replaceable shared-METIS architecture and component-specific downstream terms while Intel proprietary components retain their separate restrictions. This does not block internal engineering or reopen component grants.",
     "Gate 5 host blocker: read-only discovery found Windows 11 Home 25H2 with no supported Hyper-V VM role, management tools, VMMS/provider, user management access or usable external-switch management plane. Owner must provide a Windows 11 Pro/Enterprise host with Hyper-V already enabled and accessible. No standard-user/offline clean-host pass may be claimed."
   ],
-  "next_action": "Owner action: provide access to a Windows 11 Pro or Enterprise host with Hyper-V platform and management tools already enabled and permission for the current account to manage it. Then repeat read-only discovery and inventory an existing external switch before VM creation. Preserve the frozen review2 ZIP bytes; G0/G5/G7 and the single LGPL/Intel legal question remain open; no public release/tag."
+  "next_action": "Owner action: provide access to a Windows 11 Pro or Enterprise host with Hyper-V platform and management tools already enabled and permission for the current account to manage it. Then repeat read-only discovery and inventory an existing external switch before VM creation. The scoped legal remediation and distinct exact candidate are complete; G0/G5 remain open solely for the deferred independent standard-user offline test. Preserve both frozen ZIPs; no public release/tag."
 }

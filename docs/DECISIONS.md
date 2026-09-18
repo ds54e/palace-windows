@@ -58,6 +58,10 @@ Use pinned METIS's existing `SHARED=ON` route and `_WINDLL` exports, adding expo
 
 By explicit owner direction, the LGPL/Intel combined-work question remains one final `LEGAL_REVIEW_PENDING` item, not an engineering gate preventing internal package construction, clean-host validation or fresh-cache reproduction. Preserve the tested shared-METIS design and Intel/compiler/solver choices. Do not conclude legal compatibility or incompatibility. Already reviewed component grants stay closed; package fulfillment is checked mechanically. Keep the historical ZIP immutable and use a new candidate name/hash. Clean-host access/evidence is a separate factual requirement and cannot be replaced by a developer-host run.
 
+## D014 — Remove identified LGPL implementation from the new METIS runtime (2026-09-18)
+
+Owner prioritized the scoped remedy specified by `docs/LEGAL_RESOLUTION.md`, which supersedes D012's instruction to retain the old GKlib sorting implementation while awaiting legal review. Keep PETSc METIS commit `08c3082720ff9114b8e3cbaa4484a26739cd7d2d`; backport only the pinned, attributed Apache-2.0 NetworkX-METIS standard-library sorting and source exclusions from commit `26a51ddad5932d843655e5b7ba1225bcfe3b8882`. Preserve the shared ABI, Intel/MSVC toolchain, numerical libraries, solvers and fixed acceptance criteria. For the distinct new hashes, record the former combined-work question as `RESOLVED_BY_COMPONENT_REPLACEMENT` only after linked-code audit, numerical validation and exact package fulfillment pass. Preserve review2 and its historical pending record unchanged. Source-only excluded LGPL files retain their own license/notices. Clean-host testing remains deferred and unexecuted.
+
 ## D014 — One-rank launcher transport policy
 
 Default MS-MPI singleton runs opened a TCP listener on 0.0.0.0 on the developer
