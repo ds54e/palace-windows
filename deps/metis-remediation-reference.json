@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "status": "integrated_validated_and_packaged",
+  "inspected_on": "2026-09-18",
+  "target": {
+    "repository": "https://bitbucket.org/petsc/pkg-metis.git",
+    "commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d"
+  },
+  "reference": {
+    "repository": "https://github.com/networkx/networkx-metis.git",
+    "commit": "26a51ddad5932d843655e5b7ba1225bcfe3b8882",
+    "scope": "Only sorting/exclusion prior art; not a replacement of the whole METIS tree",
+    "license_notices": "Apache-2.0; confirm individual file provenance before incorporation",
+    "files": [
+      {
+        "path": "NOTICE",
+        "git_blob_sha1": "00971e5de82bbab0428df952523dd72d9ab96df7",
+        "sha256": "e00106accaf7e4dbd86e65489abd36106a62687daffda73c6d62551dc3b0c4c8",
+        "inspection": "published removal scope"
+      },
+      {
+        "path": "LICENSE.txt",
+        "git_blob_sha1": "bb8e1bd5f8370e5c51cdbc53f1e605bef7b073ca",
+        "sha256": "6f2682b274d6fbf941ef89f13e09822f6aba21cbf3a560f19a0b6f23329249f4",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/LICENSE.txt",
+        "git_blob_sha1": "f952fe29791716a3559b34cdffdaa6af35e2622d",
+        "sha256": "64ab947d7b289ad76e935adff51b31e4ac160df7dfad24480dbaa452e39bbe79",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/libmetis/gklib_sort.cc",
+        "git_blob_sha1": "fc136ba9e065117e2a348d32a011a1576ac144f0",
+        "sha256": "60366afea7e5400177fc12361c90d625cb6033df5afe59d697127204b91aa2d2",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/GKlib/sort.cc",
+        "git_blob_sha1": "2de030d65ee6303f45da81d78056425e3613faed",
+        "sha256": "7844ce9401b1e983e303996d2cdcbe3cd3909003306339e1a80e771830451660",
+        "inspection": "complete"
+      }
+    ]
+  },
+  "validation": {
+    "source_and_license_inspection": true,
+    "target_patch_created": true,
+    "windows_build": true,
+    "linux_build": true,
+    "numerical_comparison": true,
+    "new_package_created": true,
+    "legal_blocker_resolved": true,
+    "resolution_scope": "RESOLVED_BY_COMPONENT_REPLACEMENT for the new artifact hashes only; no conclusion about historical review2"
+  },
+  "clean_host": {
+    "decision": "deferred_by_owner",
+    "executed": false,
+    "passed": false
+  },
+  "frozen_review2_zip_sha256": "6dad1f3d892ccf20f627140760b9cae94202a12463715aa2a003e1931a5cd2e2",
+  "write_policy": {
+    "review_branch_only": true,
+    "merge_main": false,
+    "publish": false
+  }
+}

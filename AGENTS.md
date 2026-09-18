@@ -1,5 +1,24 @@
 # Agent instructions
 
+## Active status override — 2026-09-18
+
+The owner accepts the scoped METIS/GKlib remediation for the distinct new
+candidate as `RESOLVED_BY_COMPONENT_REPLACEMENT` at the exact recorded hashes.
+Do not reinterpret the frozen review2 candidate as cleared. Preserve both frozen
+ZIPs and all historical evidence; do not rebuild or regenerate either artifact
+for documentation-only work.
+
+The current project status is `READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED`.
+Independent clean-Windows testing is deferred by owner decision, remains
+unexecuted, and Gate 0/Gate 5 remain unpassed. Clean-host portability is still
+unverified, but this does not block personal use on the validated developer
+host. Do not initiate, prepare, or repeatedly request a VM, ISO, Hyper-V, VMware,
+or alternate clean host unless the owner explicitly resumes that work.
+
+Continue on the review branch and do not merge main, publish packages, or create
+tags/releases. The all-gates `READY_FOR_RELEASE_REVIEW` contract remains
+unchanged; owner-use status must not be treated as release readiness.
+
 ## Mission and priority
 
 Bring this repository to a **release-ready native Windows x64 V1.0**, not merely a build guide. Ease of use and administrator-free end-user deployment are hard requirements. Reliability, limited dependency uncertainty, and shortest path to release outrank package size, performance, and Linux feature parity.

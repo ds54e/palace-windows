@@ -22,9 +22,9 @@
 +                 "Mumps Technologies, University of Bordeaux.\n"
 +                 "See licenses/mumps/ and sources/MUMPS_5.7.3.tar.gz for notices and source.\n"
 +                 "MUMPS is provided without warranty, subject to its license liability limits.\n"
-+                 "METIS/GKlib includes GNU LGPL-2.1-or-later code.\n"
-+                 "Copyright (C) Free Software Foundation, Inc.; see licenses/metis/.\n"
-+                 "You may modify and replace metis.dll; see METIS_REPLACEMENT.txt.\n"
++                 "METIS uses attributed Apache-2.0 NetworkX-METIS sorting prior art.\n"
++                 "Copyright NetworkX Developers and Regents of the University of Minnesota.\n"
++                 "Excluded LGPL source remains identified in the source bundle; see licenses/metis/.\n"
 +                 "Eigen covered source and other corresponding source are in sources/.\n"
 +                 "Proprietary runtime terms apply only to their respective components.\n"
 +                 "See RUNTIME_TERMS.txt and licenses/ for the complete component agreements.\n";

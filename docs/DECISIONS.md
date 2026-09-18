@@ -58,7 +58,11 @@ Use pinned METIS's existing `SHARED=ON` route and `_WINDLL` exports, adding expo
 
 By explicit owner direction, the LGPL/Intel combined-work question remains one final `LEGAL_REVIEW_PENDING` item, not an engineering gate preventing internal package construction, clean-host validation or fresh-cache reproduction. Preserve the tested shared-METIS design and Intel/compiler/solver choices. Do not conclude legal compatibility or incompatibility. Already reviewed component grants stay closed; package fulfillment is checked mechanically. Keep the historical ZIP immutable and use a new candidate name/hash. Clean-host access/evidence is a separate factual requirement and cannot be replaced by a developer-host run.
 
-## D014 — One-rank launcher transport policy
+## D014 — Remove identified LGPL implementation from the new METIS runtime (2026-09-18)
+
+Owner prioritized the scoped remedy specified by `docs/LEGAL_RESOLUTION.md`, which supersedes D012's instruction to retain the old GKlib sorting implementation while awaiting legal review. Keep PETSc METIS commit `08c3082720ff9114b8e3cbaa4484a26739cd7d2d`; backport only the pinned, attributed Apache-2.0 NetworkX-METIS standard-library sorting and source exclusions from commit `26a51ddad5932d843655e5b7ba1225bcfe3b8882`. Preserve the shared ABI, Intel/MSVC toolchain, numerical libraries, solvers and fixed acceptance criteria. For the distinct new hashes, record the former combined-work question as `RESOLVED_BY_COMPONENT_REPLACEMENT` only after linked-code audit, numerical validation and exact package fulfillment pass. Preserve review2 and its historical pending record unchanged. Source-only excluded LGPL files retain their own license/notices. Clean-host testing remains deferred and unexecuted.
+
+## D015 — One-rank launcher transport policy
 
 Default MS-MPI singleton runs opened a TCP listener on 0.0.0.0 on the developer
 host. The Microsoft-MPI documented process-local MSMPI_DISABLE_SOCK=1 and
@@ -69,3 +73,14 @@ is a tested one-rank deployment setting, not a compiler/solver change or a
 legal workaround. Direct executable use without those settings may listen.
 No Windows network/security policy is modified. Sampling and developer-host
 success do not establish independent clean-host/offline success.
+
+## D016 — Owner use while independent clean-host testing is deferred (2026-09-18)
+
+The owner accepts the exact METIS-remediated candidate for personal use on the
+current validated host as `READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED`. Independent
+standard-user offline clean-Windows testing remains unexecuted, Gate 0 and Gate
+5 remain unpassed, and clean-host portability remains unverified. This deferral
+does not block owner use and is not an instruction to seek another host or
+prepare VM, ISO, Hyper-V or VMware resources. The existing all-gates readiness
+checker remains authoritative for `READY_FOR_RELEASE_REVIEW` and must continue
+to reject this state. Resume clean-host work only on explicit owner direction.
