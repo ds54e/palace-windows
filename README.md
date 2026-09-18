@@ -1,41 +1,89 @@
 # Palace Windows
 
-Unofficial, convenience-first native Windows x64 distribution project for [Palace](https://github.com/awslabs/palace).
+Unofficial native Windows x64 distribution work for [Palace](https://github.com/awslabs/palace), focused on simple administrator-free use.
 
-**Status: development preparation only. No Palace executable or verified admin-free MPI package is available in this repository yet.** The first intended public distribution release is **1.0.0**; it is not Palace upstream's version number.
+## Download
 
-## Product contract
+The first Windows distribution is **v1.0.0**. Download the ZIP from [GitHub Releases](https://github.com/ds54e/palace-windows/releases).
 
-Download a ZIP, extract into a writable folder, and run `palace.exe model.json`. An optional per-user installer must provide the same experience without elevation. No WSL, Python, compiler, system MPI installer, or development SDK is required on the end-user machine. This is a target, not a current capability claim.
+Expected SHA-256 for the v1.0.0 Windows ZIP:
 
-Required scope: electrostatic C extraction, magnetostatic L extraction, driven lumped-port S-parameters, basic eigenmodes, and ParaView-compatible fields including the surface-current output needed for GND-return inspection. CPU / one MPI rank is the baseline. Single-thread validation comes first; threads are optional after measurement.
+```text
+09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2
+```
 
-Do not delay 1.0.0 for GPU, transient analysis, multi-node MPI, a GUI, mesh generation, or Linux feature parity. Do not compromise numerical correctness for a smaller installer.
+The public asset may be named `palace-windows-1.0.0-win64.zip`; it is a byte-identical copy of the frozen validated candidate.
 
-## Start development
+## What is included
 
-Read [AGENTS.md](AGENTS.md), [V1 plan](docs/V1_PLAN.md), [current state](docs/STATE.json), and [Codex kickoff](docs/KICKOFF.md).
+The portable package is designed so a normal Windows user can extract it into a writable directory and run Palace without installing WSL, Python, Visual Studio, Intel oneAPI, system-wide MPI, or a development SDK.
 
-Expected workspace: `E:\projects\palace-windows`, also visible as `/mnt/e/projects/palace-windows` in WSL. The actual location is configurable. WSL orchestrates; native Windows tools build and execute Windows binaries.
+Validated V1 functionality:
+
+- electrostatic capacitance extraction;
+- magnetostatic inductance/mutual-inductance extraction;
+- driven lumped-port S-parameter analysis;
+- basic eigenmode analysis;
+- ParaView-compatible field output;
+- packaged examples and a Windows launcher;
+- app-local runtime deployment;
+- no ParMETIS dependency.
+
+CPU / one MPI rank is the V1 baseline.
+
+## Quick start
+
+Extract the release ZIP to a writable directory. The packaged launcher is:
+
+```text
+Run-Palace.cmd
+```
+
+For example, from a model directory containing `config.json`:
+
+```cmd
+C:\path\to\Palace\Run-Palace.cmd config.json
+```
+
+The package also contains example inputs for electrostatic, magnetostatic, driven and eigenmode analyses.
+
+## Validation status
+
+The exact packaged candidate passed:
+
+- all four packaged solver examples;
+- focused METIS and ABI/solver connection tests;
+- CSV/VTU output validation;
+- 60/60 fixed Windows/Linux numerical comparisons;
+- a separate owner-host smoke test after packaging.
+
+The METIS runtime was remediated so the identified LGPL sorting/getopt/regex implementation is not incorporated into the selected Windows runtime. Exact provenance and redistribution evidence are recorded under `docs/evidence/` and `docs/packaging/`.
+
+### Known limitation: clean-machine validation is deferred
+
+An independent clean standard-user offline Windows machine has **not** been tested yet. Gate 0 and Gate 5 therefore remain unpassed. The release is intentionally being published with that limitation disclosed rather than represented as independently clean-machine verified.
+
+The binaries are also **unsigned**, so Windows or browser reputation warnings may appear.
+
+## Scope
+
+V1 targets Windows 11 x64 and prioritizes a portable, low-friction workstation build. It does not promise GPU support, multi-node MPI, transient analysis, a GUI, mesh/CAD generation, ParMETIS ordering, or Linux feature parity.
+
+## Development
+
+The Windows port keeps upstream Palace pinned and carries narrow Windows/dependency patches plus reproducibility and redistribution evidence.
+
+Start with:
+
+- [V1 plan](docs/V1_PLAN.md)
+- [current state](docs/STATE.json)
+- [release handoff](docs/RELEASE_REVIEW.md)
+- [release notes](docs/RELEASE_NOTES_v1.0.0.md)
 
 ```bash
 bash tools/windows.sh doctor
 ```
 
-The doctor only inventories the environment and writes a local report. It installs nothing. Scripts may be blocked by host policy; do not weaken that policy automatically.
+The repository's own code and build infrastructure are Apache-2.0 licensed. Third-party components retain their respective licenses. Binary packages include the applicable third-party licenses, notices and corresponding-source material required by the recorded redistribution plan.
 
-[Gate 0](docs/GATE0.md) tests whether a legally redistributable, application-local MPI runtime can execute without a system installation. Passing a developer-machine test does not prove clean-machine deployment.
-
-## Repository map
-
-| Path | Purpose |
-| --- | --- |
-| `docs/` | Scope, decisions, gates, evidence rules, handoff |
-| `.codex/config.toml` | Minimal Terra/medium project defaults |
-| `config/codex/` | Optional multi-agent templates; not active until verified locally |
-| `tests/runtime/` | MPI singleton probe, not an MPI implementation |
-| `scripts/` | Native Windows inventory, probe build and execution |
-| `tools/` | WSL bridge and release-readiness checks |
-| `deps/upstream.json` | Pinned upstream reference, not a complete dependency lock |
-
-Original build infrastructure and probe code are Apache-2.0 licensed. Third-party components retain their own licenses and require separate redistribution review. No third-party binaries are bundled here. See [redistribution checklist](docs/REDISTRIBUTION.md).
+This project is community-maintained and is not an official AWS Palace distribution.

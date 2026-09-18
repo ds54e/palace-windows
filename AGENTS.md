@@ -1,23 +1,23 @@
 # Agent instructions
 
-## Active status override — 2026-09-18
+## Active public-release authorization — 2026-09-18
 
-The owner accepts the scoped METIS/GKlib remediation for the distinct new
-candidate as `RESOLVED_BY_COMPONENT_REPLACEMENT` at the exact recorded hashes.
-Do not reinterpret the frozen review2 candidate as cleared. Preserve both frozen
-ZIPs and all historical evidence; do not rebuild or regenerate either artifact
-for documentation-only work.
+The owner explicitly authorizes publication of **v1.0.0** from the exact frozen
+METIS-remediated candidate with SHA-256
+`09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`,
+despite deferred independent clean-Windows validation.
 
-The current project status is `READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED`.
-Independent clean-Windows testing is deferred by owner decision, remains
-unexecuted, and Gate 0/Gate 5 remain unpassed. Clean-host portability is still
-unverified, but this does not block personal use on the validated developer
-host. Do not initiate, prepare, or repeatedly request a VM, ISO, Hyper-V, VMware,
-or alternate clean host unless the owner explicitly resumes that work.
+Gate 0 and Gate 5 remain unpassed. Clean-host portability must be disclosed as
+unverified; never rewrite the evidence to imply otherwise. This authorization
+changes the release policy, not the test results.
 
-Continue on the review branch and do not merge main, publish packages, or create
-tags/releases. The all-gates `READY_FOR_RELEASE_REVIEW` contract remains
-unchanged; owner-use status must not be treated as release readiness.
+After the final repository audit, the owner authorizes creation of the v1.0.0
+tag/release, upload of a byte-identical public asset, publication of SHA256SUMS,
+and changing this repository to public visibility. The binaries remain unsigned.
+Use `docs/PUBLIC_RELEASE_CHECKLIST.md` and
+`docs/RELEASE_NOTES_v1.0.0.md`. Do not rebuild/recompress the frozen ZIP,
+substitute historical review2, force-push, move an already-created v1.0.0 tag,
+or claim clean-host validation.
 
 ## Mission and priority
 

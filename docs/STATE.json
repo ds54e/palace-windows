@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED",
+  "project_status": "READY_FOR_PUBLIC_RELEASE_CLEAN_TEST_DEFERRED",
   "current_gate": "G5_clean_host",
   "model_policy": {
     "parent_default": {
@@ -184,8 +184,21 @@
     "portability": "unverified",
     "resume_policy": "Do not initiate or request VM, ISO, Hyper-V, VMware, or clean-host preparation unless the owner explicitly resumes this work."
   },
-  "blockers": [
-    "Release readiness only: independent standard-user offline clean-Windows portability remains unverified by owner deferral; Gate 0 and Gate 5 are not passed."
-  ],
-  "next_action": "Owner may extract and use the exact frozen METIS-remediated ZIP on the current validated host. Preserve separate installation and results directories and both frozen ZIPs. Do not resume clean-host or virtualization preparation unless explicitly requested; no public release/tag."
+  "blockers": [],
+  "next_action": "Perform the final public-release publication workflow for v1.0.0 using the exact frozen METIS-remediated ZIP, preserve its SHA256, publish the repository/release, then record the resulting tag/release URL. Do not claim clean-host validation.",
+  "public_release": {
+    "status": "authorized_by_owner_pending_publication",
+    "version": "1.0.0",
+    "exact_frozen_artifact_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "suggested_asset_name": "palace-windows-1.0.0-win64.zip",
+    "signature": "unsigned",
+    "clean_host_validation": "deferred_unverified",
+    "strict_all_gates_ready": false,
+    "authorization_scope": "Owner explicitly authorizes public v1.0.0 release of the exact METIS-remediated candidate despite deferred Gate 0/Gate 5 clean-host validation, provided the limitation is disclosed."
+  },
+  "known_release_limitations": [
+    "Independent clean standard-user offline Windows validation has not been performed; Gate 0 and Gate 5 remain unpassed.",
+    "The Windows binaries are unsigned.",
+    "ParMETIS is not included; the Windows V1 baseline is CPU, one MPI rank."
+  ]
 }
