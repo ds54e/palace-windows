@@ -44,6 +44,10 @@ Initial candidate: MSVC + compatible Intel Fortran + one BLAS implementation + M
 
 CPU, one rank and one thread are the validation baseline. Measure a threaded configuration only after reproducible baseline success; freeze one shipping policy. One rank does not intrinsically limit x64 process memory to 4 GB, and multiple ranks on the same PC do not add physical RAM.
 
+## Owner-authorized v1.0.0 release exception — 2026-09-18
+
+The owner explicitly authorizes public v1.0.0 publication of the exact frozen METIS-remediated artifact while the independent clean standard-user offline Windows test remains deferred. This does **not** mark G0 or G5 as passed and does not satisfy the strict all-gates `READY_FOR_RELEASE_REVIEW` contract below. Public release notes and README must disclose that clean-machine portability is unverified and that the binaries are unsigned. Any payload-byte change requires a new artifact identity and validation; this exception applies only to the recorded v1.0.0 SHA-256.
+
 ## Done means
 
 All gates have passed with source-bound evidence, the package has been exercised without developer-machine dependencies, and outstanding claims are accurately disclosed. Record `READY_FOR_RELEASE_REVIEW`, not a public release. Public visibility, final tag/release publication, paid signing, and external announcements remain owner-controlled actions.

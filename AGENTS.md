@@ -37,7 +37,7 @@ Read `docs/STATE.json`, `docs/V1_PLAN.md`, and `docs/CODEX_OPERATIONS.md` first.
 
 Proceed autonomously with repository-local source edits, patches, non-elevated builds, tests, downloads from recorded upstreams, and ordinary commits/pushes to this repository. Prefer the existing working tree; preserve unrelated user changes. Use WSL for orchestration and native Windows executables for the Windows artifact. Do not treat a Linux executable as Windows success.
 
-Do not install system-wide tools, elevate, change services/HKLM/firewall/Defender/execution policy, or alter global Codex/authentication settings without explicit user authorization. Do not read authentication files or dump the complete environment. Do not change repository visibility, create a public release/tag, spend money, request signing credentials, or force-push. Prepare release artifacts and stop at `READY_FOR_RELEASE_REVIEW`; publication needs owner action. A required privileged developer-tool installation is an external blocker, not permission to bypass policy.
+Do not install system-wide tools, elevate, change services/HKLM/firewall/Defender/execution policy, or alter global Codex/authentication settings without explicit user authorization. Do not read authentication files or dump the complete environment. Except for the explicitly authorized v1.0.0 publication described above, do not change repository visibility, create a public release/tag, spend money, request signing credentials, or force-push. The v1.0.0 publication authorization is limited to the exact frozen artifact and disclosed clean-test limitation. A required privileged developer-tool installation is an external blocker, not permission to bypass policy.
 
 ## Work sequence
 
