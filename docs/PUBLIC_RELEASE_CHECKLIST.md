@@ -45,6 +45,14 @@ gh release create v1.0.0 $asset $sumFile --repo $repo --target $releaseCommit --
 
 gh release view v1.0.0 --repo $repo
 
+$verifyDir = 'E:\\projects\\palace-windows\\.work\\release-download-verify-v1.0.0'
+if (Test-Path -LiteralPath $verifyDir) { throw "Verification directory already exists: $verifyDir" }
+New-Item -ItemType Directory -Path $verifyDir | Out-Null
+gh release download v1.0.0 --repo $repo --pattern 'palace-windows-1.0.0-win64.zip' --dir $verifyDir
+$downloaded = Join-Path $verifyDir 'palace-windows-1.0.0-win64.zip'
+$downloadedHash = (Get-FileHash -LiteralPath $downloaded -Algorithm SHA256).Hash.ToLowerInvariant()
+if ($downloadedHash -ne $expected) { throw "Uploaded release asset hash mismatch: $downloadedHash" }
+
 gh repo edit $repo --visibility public --accept-visibility-change-consequences
 
 gh repo view $repo --json nameWithOwner,visibility,url
