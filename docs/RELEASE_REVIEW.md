@@ -1,6 +1,7 @@
 # Internal release-engineering handoff
 
-Status: **BLOCKED_EXTERNAL_CLEAN_HOST**. Not READY_FOR_RELEASE_REVIEW.
+Status: **READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED**. This is not
+`READY_FOR_RELEASE_REVIEW`.
 
 The distinct unsigned METIS-remediated candidate is
 `.work/package/palace-windows-1.0.0-metis-remediation-review1-internal.zip`
@@ -44,15 +45,58 @@ combination. Evidence is in
 [the remediation record](evidence/LEGAL-metis-remediation-2026-09-18.json) and
 [the exact matrix](packaging/REDISTRIBUTION_MATRIX_METIS_REMEDIATED.json).
 
-One external action remains: supply an independently prepared Windows 11 x64
-standard-user environment with no development tools, installed MPI/Intel
-runtime, Visual Studio, Python, WSL or network dependency. Read-only discovery
-found the current Windows 11 Home host has no supported Hyper-V VM role or
-management plane. Provide a Windows 11 Pro or Enterprise host with Hyper-V
-already enabled and accessible, then execute the prescribed ASCII, whitespace,
-Japanese/Unicode, four-solver, repeated-run, failure-path, app-local runtime and
-offline checks against the frozen new ZIP. Gates 0 and 5 remain open; no clean-
-host result is inferred from developer-host tests.
+The owner has deferred independent clean-Windows testing. Gate 0 and Gate 5
+remain unpassed, and portability to an independently prepared standard-user
+offline host remains unverified. The deferral does not block personal use on
+the currently validated developer host. Do not start or request VM, ISO,
+Hyper-V, VMware or alternate-host preparation unless the owner explicitly
+resumes that work. The all-gates readiness check remains unchanged and must
+continue to reject `READY_FOR_RELEASE_REVIEW`.
+
+The exact Windows path to the frozen owner-use ZIP is:
+
+`E:\projects\palace-windows\.work\package\palace-windows-1.0.0-metis-remediation-review1-internal.zip`
+
+SHA256: `09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`
+
+The following PowerShell commands verify the ZIP, refuse to overwrite existing
+installation or result directories, extract under the current user's local
+application-data directory, copy each example into a separate Documents result
+tree, and run it through the packaged launcher:
+
+```powershell
+$zip = 'E:\projects\palace-windows\.work\package\palace-windows-1.0.0-metis-remediation-review1-internal.zip'
+$expected = '09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2'
+$actual = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+if ($actual -ne $expected) { throw "ZIP hash mismatch: $actual" }
+
+$install = Join-Path $env:LOCALAPPDATA 'Palace\1.0.0-metis-remediation-owner'
+$results = Join-Path ([Environment]::GetFolderPath('MyDocuments')) 'Palace owner results\metis-remediation-review1'
+if (Test-Path -LiteralPath $install) { throw "Installation path already exists: $install" }
+if (Test-Path -LiteralPath $results) { throw "Results path already exists: $results" }
+
+Expand-Archive -LiteralPath $zip -DestinationPath $install
+New-Item -ItemType Directory -Path $results | Out-Null
+$launcher = Join-Path $install 'Run-Palace.cmd'
+
+foreach ($case in 'electrostatic','magnetostatic','driven','eigenmode') {
+    $work = Join-Path $results $case
+    Copy-Item -LiteralPath (Join-Path $install "examples\$case") -Destination $work -Recurse
+    Push-Location $work
+    try {
+        & $launcher config.json *> run.log
+        if ($LASTEXITCODE -ne 0) { throw "$case failed with exit code $LASTEXITCODE" }
+    }
+    finally {
+        Pop-Location
+    }
+}
+```
+
+Inputs and generated outputs remain under the separate `$results` tree. Removing
+`$install` later does not delete those results. Choose new directory names for a
+second installation or run; do not remove an existing directory unless its
+contents have been reviewed and intentionally preserved elsewhere.
 
 Do not change either frozen ZIP in place, publish a release or create a tag. A
 changed payload needs a new candidate identity and validation binding. No public

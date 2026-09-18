@@ -427,3 +427,21 @@ payload then passed all four solver runs and CSV/VTU checks again. The matrix
 contains 28 complete component rows and 120 exact package-fulfillment entries.
 The review2 ZIP was rehashed before and after packaging and remains unchanged.
 No public release or tag was created.
+
+## 2026-09-18 — Owner-use status and clean-test deferral follow-up
+
+The owner accepted the scoped METIS remediation for the exact new candidate as
+`RESOLVED_BY_COMPONENT_REPLACEMENT` without changing review2's historical
+status. Independent clean-Windows testing is now explicitly deferred rather
+than an active host-acquisition task. Gate 0 and Gate 5 remain unpassed and
+clean-host portability remains unverified. Recorded the distinct status
+`READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED`; the all-gates release-readiness check
+is unchanged and continues to reject `READY_FOR_RELEASE_REVIEW`.
+
+Removed the stale Pro/Enterprise Hyper-V acquisition instruction from current
+state and handoff guidance. Codex must not resume or repeatedly request VM, ISO,
+Hyper-V, VMware or alternate clean-host preparation without a new explicit
+owner instruction. Added hash-verifying, no-overwrite PowerShell commands for
+extracting the frozen candidate into a user-writable location and running copied
+examples through `Run-Palace.cmd`. This follow-up changes repository documents
+only; neither frozen ZIP nor numerical/build evidence was regenerated.

@@ -1,10 +1,23 @@
 # Agent instructions
 
-## Active task override — 2026-09-18
+## Active status override — 2026-09-18
 
-The owner has deferred independent clean-Windows testing and requested legal-blocker remediation first. Read `docs/LEGAL_RESOLUTION.md` and `docs/KICKOFF_LEGAL.md` before acting on historical VM-related next actions. Do not continue VM/ISO/hypervisor work or mark a deferred test as passed.
+The owner accepts the scoped METIS/GKlib remediation for the distinct new
+candidate as `RESOLVED_BY_COMPONENT_REPLACEMENT` at the exact recorded hashes.
+Do not reinterpret the frozen review2 candidate as cleared. Preserve both frozen
+ZIPs and all historical evidence; do not rebuild or regenerate either artifact
+for documentation-only work.
 
-For this task, use a review branch and do not merge main, publish packages, or create tags/releases. Preserve the frozen review2 ZIP and historical evidence. Implement and test only the scoped, attributed METIS/GKlib source remedy described in the new plan. This is an exception to earlier instructions preserving the LGPL sorting implementation while awaiting an opinion; it is not permission to replace the numerical/compiler stack or relax validation. The documented remedy is not yet implemented, and the legal blocker is not yet resolved. Existing STATE gate results describe the old artifact and must not be transferred to a changed candidate without evidence.
+The current project status is `READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED`.
+Independent clean-Windows testing is deferred by owner decision, remains
+unexecuted, and Gate 0/Gate 5 remain unpassed. Clean-host portability is still
+unverified, but this does not block personal use on the validated developer
+host. Do not initiate, prepare, or repeatedly request a VM, ISO, Hyper-V, VMware,
+or alternate clean host unless the owner explicitly resumes that work.
+
+Continue on the review branch and do not merge main, publish packages, or create
+tags/releases. The all-gates `READY_FOR_RELEASE_REVIEW` contract remains
+unchanged; owner-use status must not be treated as release readiness.
 
 ## Mission and priority
 
