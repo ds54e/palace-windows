@@ -1,0 +1,22 @@
+PALACE WINDOWS — COMPONENT-SPECIFIC DISTRIBUTION AND USE TERMS
+
+This file accompanies the distinct METIS-remediated review candidate. The
+Microsoft MPI, Microsoft Visual C++ runtime, Intel compiler runtime and Intel
+oneMKL terms and evidence are unchanged from RUNTIME_TERMS.txt and remain
+applicable to their respective components. Preserve those original agreements,
+notices, downstream conditions, disclaimers and liability limits.
+
+The selected METIS runtime uses the pinned METIS Apache-2.0 code with attributed
+Apache-2.0 NetworkX-METIS sorting prior art. See METIS_REMEDIATION.txt and
+licenses/metis-remediation/. The corresponding-source archive also retains
+excluded upstream files under LGPL-2.1-or-later; their notices and license are
+preserved as source-only material. No term here relicenses those files.
+
+MUMPS CeCILL-C and Eigen MPL covered source remain supplied in sources/. All
+other open-source grants, notices and source rights remain component-specific.
+No component is relicensed merely because it is in the same package.
+
+The historical review2 artifact is unchanged. Its unresolved legal-review
+record does not describe the new hashes and has not been converted into a legal
+opinion. Independent standard-user offline clean-Windows validation remains
+deferred and unexecuted.

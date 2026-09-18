@@ -1,0 +1,33 @@
+METIS/GKlib runtime remediation and source notices
+
+This distinct candidate keeps PETSc's pinned METIS commit
+08c3082720ff9114b8e3cbaa4484a26739cd7d2d and its public API. It backports only
+the standard-library sorting and source-exclusion approach published by
+NetworkX-METIS commit 26a51ddad5932d843655e5b7ba1225bcfe3b8882.
+
+The selected Windows DLL compiles GKlib/sort.cc and libmetis/gklib_sort.cc from
+that pinned reference. The files are byte-identical to the recorded reference
+blobs before the target-specific build. Copyright NetworkX Developers and the
+Regents of the University of Minnesota. See licenses/metis-remediation/NOTICE,
+LICENSE.txt and src-LICENSE.txt. The Apache-2.0 text and notices govern that
+prior art; METIS's own license and other per-file notices remain applicable.
+
+The DLL source list excludes GKlib/sort.c, getopt.c and gkregex.c. The old
+GK_MKQSORT instantiations are removed from libmetis/gklib.c, and the regex-only
+replacement routine is removed from GKlib/string.c. A final link-map audit
+attributes all selected METIS sorting symbols to gklib_sort.cc.obj and records
+the inlined C++ standard-library implementation. No ParMETIS vendor symbol or
+artifact is linked.
+
+The corresponding-source archive intentionally retains excluded upstream
+LGPL-covered files, their notices and LGPL-2.1 text. They are source-only and
+are not represented as permissively licensed. Their presence in the source
+archive does not describe the selected runtime implementation.
+
+Build settings preserve x64, 32-bit idx_t/real_t, C linkage, existing Fortran
+exports, release DLL CRT and assertions. The patch, exact reference hashes,
+focused sort test and audit scripts are included in the Windows overlay source.
+
+This remediation records removal of the exact component combination that raised
+the review2 question. It is not a legal opinion about the historical review2
+binary, a certification of all possible builds, or a clean-host test result.
