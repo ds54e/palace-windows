@@ -1,9 +1,10 @@
 # Agent instructions
 
-## Active public-release authorization — 2026-09-18
+## Active public-release status — 2026-09-18
 
-The owner explicitly authorizes publication of **v1.0.0** from the exact frozen
-METIS-remediated candidate with SHA-256
+The owner-authorized **v1.0.0** publication is complete. The public release tag
+points to `ccdb3e58eb8ccb6718fc2087238c8858b37f552a`, and the published Windows
+asset has SHA-256
 `09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`,
 despite deferred independent clean-Windows validation.
 
@@ -11,15 +12,12 @@ Gate 0 and Gate 5 remain unpassed. Clean-host portability must be disclosed as
 unverified; never rewrite the evidence to imply otherwise. This authorization
 changes the release policy, not the test results.
 
-After the final current-tree and complete reachable-history secret audit, the owner authorizes creation of the v1.0.0
-tag/release, upload of a byte-identical public asset, publication of SHA256SUMS,
-and changing this repository to public visibility. The binaries remain unsigned.
-Use `docs/PUBLIC_RELEASE_CHECKLIST.md` and
-`docs/RELEASE_NOTES_v1.0.0.md`. Do not rebuild/recompress the frozen ZIP,
-substitute historical review2, force-push, move an already-created v1.0.0 tag,
-or claim clean-host validation.
-
-Before changing repository visibility, audit the complete reachable Git history for credentials, tokens, private keys, authentication files and other plausibly secret material. If a plausible secret is found, stop before publication; do not rewrite history or force-push without a separate owner decision.
+The complete reachable-history audit found no plausible secrets before the
+repository became public. Publication metadata is recorded in
+`docs/evidence/PUBLIC-v1.0.0-2026-09-18.json`. The binaries remain unsigned.
+Do not rebuild/recompress or replace the published ZIP, publish historical
+review2, force-push, move the v1.0.0 tag, create another release/tag without new
+owner authorization, or claim clean-host validation.
 
 ## Mission and priority
 

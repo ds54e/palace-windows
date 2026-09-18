@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "distribution_version": "1.0.0",
-  "project_status": "READY_FOR_PUBLIC_RELEASE_CLEAN_TEST_DEFERRED",
+  "project_status": "PUBLIC_RELEASED_CLEAN_TEST_DEFERRED",
   "current_gate": "G5_clean_host",
   "model_policy": {
     "parent_default": {
@@ -185,16 +185,29 @@
     "resume_policy": "Do not initiate or request VM, ISO, Hyper-V, VMware, or clean-host preparation unless the owner explicitly resumes this work."
   },
   "blockers": [],
-  "next_action": "Perform the final public-release publication workflow for v1.0.0 using the exact frozen METIS-remediated ZIP, preserve its SHA256, publish the repository/release, then record the resulting tag/release URL. Do not claim clean-host validation.",
+  "next_action": "v1.0.0 is public. Preserve the tag and published assets unchanged. Clean-host validation remains deferred_unverified; Gate 0 and Gate 5 remain unpassed. Do not claim clean-host validation or move the release tag.",
   "public_release": {
-    "status": "authorized_by_owner_pending_publication",
+    "status": "published",
     "version": "1.0.0",
+    "tag": "v1.0.0",
+    "tag_commit": "ccdb3e58eb8ccb6718fc2087238c8858b37f552a",
+    "release_url": "https://github.com/ds54e/palace-windows/releases/tag/v1.0.0",
+    "repository_url": "https://github.com/ds54e/palace-windows",
+    "repository_visibility": "public",
     "exact_frozen_artifact_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
-    "suggested_asset_name": "palace-windows-1.0.0-win64.zip",
+    "public_asset_name": "palace-windows-1.0.0-win64.zip",
+    "public_asset_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "download_verified_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "checksums_asset": "SHA256SUMS.txt",
+    "checksums_sha256": "0aa9781804af9330690769186f1e8eecf314558b969350fca37c8ff175ccdbed",
     "signature": "unsigned",
     "clean_host_validation": "deferred_unverified",
     "strict_all_gates_ready": false,
-    "authorization_scope": "Owner explicitly authorizes public v1.0.0 release of the exact METIS-remediated candidate despite deferred Gate 0/Gate 5 clean-host validation, provided the limitation is disclosed."
+    "evidence": {
+      "path": "docs/evidence/PUBLIC-v1.0.0-2026-09-18.json",
+      "sha256": "aac12a94017f52a0894b662f2c6f4cb916174834ce881eb6ac680d7c93b46195"
+    },
+    "authorization_scope": "Owner explicitly authorized public v1.0.0 release of the exact METIS-remediated candidate despite deferred Gate 0/Gate 5 clean-host validation; the limitation is disclosed in the release notes."
   },
   "known_release_limitations": [
     "Independent clean standard-user offline Windows validation has not been performed; Gate 0 and Gate 5 remain unpassed.",

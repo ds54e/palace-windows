@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "status": "PUBLIC_RELEASED_CLEAN_TEST_DEFERRED",
+  "history_audit": {
+    "result": "pass_no_plausible_secrets_found",
+    "scope": "All Git objects reachable from all refs plus complete historical path names before visibility change",
+    "reachable_objects": 622,
+    "reachable_blobs": 370,
+    "scanned_blob_bytes": 3279461,
+    "historical_paths": 195,
+    "suspicious_filename_candidates": 0,
+    "content_candidates": 0,
+    "rules": [
+      "private-key PEM blocks",
+      "GitHub classic and fine-grained token formats",
+      "AWS access-key identifiers",
+      "Slack token formats",
+      "assigned API key, access token, auth token, client secret and password material",
+      "basic-auth URLs",
+      ".env and private-key filenames",
+      "PEM/key/PFX/P12/PKCS12/JKS/keystore containers",
+      "credential, secret and authentication-dump filenames"
+    ],
+    "raw_report_sha256": "4347a71c8ead7532ff695f05757a7d9d94c933a33905ca2ba993248bf887524c",
+    "scanner_installation": "none"
+  },
+  "release": {
+    "version": "1.0.0",
+    "tag": "v1.0.0",
+    "tag_commit": "ccdb3e58eb8ccb6718fc2087238c8858b37f552a",
+    "release_url": "https://github.com/ds54e/palace-windows/releases/tag/v1.0.0",
+    "draft": false,
+    "prerelease": false,
+    "repository_url": "https://github.com/ds54e/palace-windows",
+    "repository_visibility": "public"
+  },
+  "assets": [
+    {
+      "name": "palace-windows-1.0.0-win64.zip",
+      "size": 150698765,
+      "source_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+      "copied_asset_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+      "github_reported_digest": "sha256:09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+      "redownloaded_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+      "url": "https://github.com/ds54e/palace-windows/releases/download/v1.0.0/palace-windows-1.0.0-win64.zip"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "size": 97,
+      "sha256": "0aa9781804af9330690769186f1e8eecf314558b969350fca37c8ff175ccdbed",
+      "contents": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2  palace-windows-1.0.0-win64.zip",
+      "url": "https://github.com/ds54e/palace-windows/releases/download/v1.0.0/SHA256SUMS.txt"
+    }
+  ],
+  "post_publication_verification": {
+    "repository_http_status": 200,
+    "release_http_status": 200,
+    "tag_object_type": "commit",
+    "tag_target_verified": true,
+    "asset_names_verified": true,
+    "visibility_verified": true
+  },
+  "limitations": {
+    "clean_host_validation": "deferred_unverified",
+    "gate_0_passed": false,
+    "gate_5_passed": false,
+    "binaries_signed": false,
+    "historical_review2_published": false
+  }
+}

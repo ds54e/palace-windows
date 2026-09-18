@@ -463,3 +463,33 @@ manifest SHA256 `93c14286a576c1cf85aa6be7bfb6f680a4eaa2f27e637519c14c4eb6ff3e347
 and procedure commit `6eb7e3553dbd94ad7d2c50dfc251650b07104347`. This is owner/developer-host
 evidence only. Gate 0 and Gate 5 remain unpassed; clean-host portability remains
 deferred and unverified. Neither frozen ZIP was modified.
+
+## 2026-09-18 — Public v1.0.0 publication
+
+Pulled synchronized `main` and verified release-preparation commit
+`ccdb3e58eb8ccb6718fc2087238c8858b37f552a`. Before any visibility change,
+enumerated all objects reachable from all refs with `git rev-list --objects
+--all`, classified them with `git cat-file`, scanned every reachable blob, and
+separately enumerated all historical paths with `git log --all --name-only`.
+The audit covered 622 objects, 370 blobs, 3,279,461 blob bytes and 195 historical
+paths. It found zero suspicious filename candidates and zero content candidates
+for private-key blocks, GitHub/AWS/Slack tokens, assigned credential material,
+basic-auth URLs, environment files, private-key containers or authentication
+dumps. No scanner was installed, history was not rewritten and no force-push
+was used.
+
+Verified no conflicting local/remote `v1.0.0` tag or GitHub release. Copied the
+frozen internal ZIP without recompression to `palace-windows-1.0.0-win64.zip`;
+`cmp` and SHA256 both confirmed byte identity. Created `SHA256SUMS.txt` with the
+single expected entry. While the repository was private, created release/tag
+`v1.0.0` at the exact preparation commit and uploaded only those two assets.
+Downloaded the ZIP into a fresh directory and verified SHA256
+`09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`.
+
+After those checks passed, changed `ds54e/palace-windows` visibility to public.
+Verified public repository and release URLs returned HTTP 200, the tag still
+targets the preparation commit, and GitHub reports the expected two asset names,
+sizes and digests. Full publication metadata is in
+`docs/evidence/PUBLIC-v1.0.0-2026-09-18.json`. Gate 0 and Gate 5 remain unpassed;
+clean-host validation is `deferred_unverified`. Historical review2 was not
+published. The v1.0.0 tag remains on the pre-metadata preparation commit.
