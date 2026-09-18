@@ -166,6 +166,11 @@
     "status": "READY_FOR_OWNER_USE_CLEAN_TEST_DEFERRED",
     "scope": "Personal use of the exact METIS-remediated candidate on the currently validated developer host",
     "artifact_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "smoke_test": {
+      "status": "pass",
+      "path": "docs/evidence/OWNER-HOST-smoke-2026-09-18.json",
+      "sha256": "3b25b7b3bf5be26bc7eb9db2b4068c5d39ef0e82d1a333ad2b1d7e93486dbe53"
+    },
     "release_readiness": false
   },
   "deferred_validation": {

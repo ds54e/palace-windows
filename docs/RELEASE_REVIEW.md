@@ -53,6 +53,14 @@ Hyper-V, VMware or alternate-host preparation unless the owner explicitly
 resumes that work. The all-gates readiness check remains unchanged and must
 continue to reject `READY_FOR_RELEASE_REVIEW`.
 
+`OWNER-HOST_SMOKE_TEST: PASS` is recorded for the exact frozen package. The
+documented owner-use procedure completed without exceptions, all four packaged
+examples returned exit code 0, and the expected scalar, field and ParaView
+outputs were manually inspected. This result is bound in
+[the owner-host evidence](evidence/OWNER-HOST-smoke-2026-09-18.json). It is not
+an independent clean-host or portability result and does not change Gate 0 or
+Gate 5.
+
 The exact Windows path to the frozen owner-use ZIP is:
 
 `E:\projects\palace-windows\.work\package\palace-windows-1.0.0-metis-remediation-review1-internal.zip`

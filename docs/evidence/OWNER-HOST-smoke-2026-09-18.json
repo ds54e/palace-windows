@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "status": "OWNER-HOST_SMOKE_TEST: PASS",
+  "scope": "Exact frozen METIS-remediated package executed for personal use on the current owner/developer host",
+  "source_binding": {
+    "owner_attestation": "The owner reported that the exact documented PowerShell procedure completed without exceptions and all four packaged examples returned exit code 0; the owner manually inspected the listed outputs.",
+    "procedure_source_commit": "6eb7e3553dbd94ad7d2c50dfc251650b07104347",
+    "procedure_path": "docs/RELEASE_REVIEW.md",
+    "package_path": "E:/projects/palace-windows/.work/package/palace-windows-1.0.0-metis-remediation-review1-internal.zip",
+    "package_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "staged_manifest_sha256": "93c14286a576c1cf85aa6be7bfb6f680a4eaa2f27e637519c14c4eb6ff3e3477"
+  },
+  "execution": {
+    "launcher": "Run-Palace.cmd",
+    "procedure_completed_without_exception": true,
+    "cases": [
+      {
+        "case": "electrostatic",
+        "exit_code": 0,
+        "expected_outputs_observed": [
+          "terminal-C.csv",
+          "terminal-Cinv.csv",
+          "terminal-Cm.csv",
+          "terminal-V.csv",
+          "E/V field data",
+          "ParaView PVD/PVTU/VTU outputs"
+        ],
+        "observed_inventory": {
+          "files": 33,
+          "csv": 7,
+          "pvd": 2,
+          "pvtu": 5,
+          "vtu": 5,
+          "gridfunction_files": 8,
+          "run_log_sha256": "2d635969e099341f7ee45bf391aed57a186073fb8060ac2f4814db89fa22de99"
+        }
+      },
+      {
+        "case": "magnetostatic",
+        "exit_code": 0,
+        "expected_outputs_observed": [
+          "terminal-M.csv",
+          "terminal-Minv.csv",
+          "terminal-Mm.csv",
+          "terminal-I.csv",
+          "A/B field data",
+          "ParaView PVD/PVTU/VTU outputs"
+        ],
+        "observed_inventory": {
+          "files": 33,
+          "csv": 7,
+          "pvd": 2,
+          "pvtu": 5,
+          "vtu": 5,
+          "gridfunction_files": 8,
+          "run_log_sha256": "3c227e5de5e743b5d7ddffbfaa2e81d61e7e0784ab45169faba7d64fc0d196b4"
+        }
+      },
+      {
+        "case": "driven",
+        "exit_code": 0,
+        "expected_outputs_observed": [
+          "port-S.csv",
+          "port-V.csv",
+          "port-I.csv",
+          "complex E/B field data",
+          "excitation ParaView PVD/PVTU/VTU outputs"
+        ],
+        "observed_inventory": {
+          "files": 64,
+          "csv": 5,
+          "pvd": 4,
+          "pvtu": 13,
+          "vtu": 13,
+          "gridfunction_files": 23,
+          "run_log_sha256": "7a628df19ee941c582a5442356e0690c9844f4545021ef9b0c825e6c8f3b84cc"
+        }
+      },
+      {
+        "case": "eigenmode",
+        "exit_code": 0,
+        "expected_outputs_observed": [
+          "eig.csv",
+          "mode E/B field data",
+          "ParaView PVD/PVTU/VTU outputs"
+        ],
+        "observed_inventory": {
+          "files": 37,
+          "csv": 3,
+          "pvd": 2,
+          "pvtu": 5,
+          "vtu": 5,
+          "gridfunction_files": 16,
+          "run_log_sha256": "87502786245e8d67eff8ae3a12c56c860fe3a3af958fdfceed328fb035fb2ff5"
+        }
+      }
+    ]
+  },
+  "limitations": {
+    "independent_clean_host": false,
+    "offline_clean_host": false,
+    "clean_host_portability_verified": false,
+    "gate_0_passed": false,
+    "gate_5_passed": false,
+    "release_readiness_effect": "none"
+  },
+  "artifact_integrity": {
+    "review2_zip_sha256": "6dad1f3d892ccf20f627140760b9cae94202a12463715aa2a003e1931a5cd2e2",
+    "metis_remediated_zip_sha256": "09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2",
+    "frozen_artifacts_modified": false
+  }
+}

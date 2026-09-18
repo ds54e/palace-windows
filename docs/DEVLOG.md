@@ -445,3 +445,21 @@ owner instruction. Added hash-verifying, no-overwrite PowerShell commands for
 extracting the frozen candidate into a user-writable location and running copied
 examples through `Run-Palace.cmd`. This follow-up changes repository documents
 only; neither frozen ZIP nor numerical/build evidence was regenerated.
+
+## 2026-09-18 — Exact-package owner-host smoke execution
+
+The owner executed the documented no-overwrite PowerShell procedure against the
+frozen METIS-remediated ZIP and reported completion without exceptions. All four
+packaged launcher runs returned exit code 0. The owner manually inspected the
+reported electrostatic C/Cinv/Cm/V, magnetostatic M/Minv/Mm/I, driven S/V/I,
+eigenmode eig, field and ParaView outputs. A read-only inventory of the result
+tree corroborated the expected CSV, gridfunction and PVD/PVTU/VTU families and
+recorded each run-log hash.
+
+Recorded `OWNER-HOST_SMOKE_TEST: PASS` in
+`docs/evidence/OWNER-HOST-smoke-2026-09-18.json`, bound to ZIP SHA256
+`09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`, staged
+manifest SHA256 `93c14286a576c1cf85aa6be7bfb6f680a4eaa2f27e637519c14c4eb6ff3e3477`
+and procedure commit `6eb7e3553dbd94ad7d2c50dfc251650b07104347`. This is owner/developer-host
+evidence only. Gate 0 and Gate 5 remain unpassed; clean-host portability remains
+deferred and unverified. Neither frozen ZIP was modified.
