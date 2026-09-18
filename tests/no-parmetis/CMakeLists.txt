@@ -7,14 +7,15 @@ get_filename_component(PW_WINDOWS_OVERLAY_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../..
 include("${PW_WINDOWS_OVERLAY_DIR}/cmake/WindowsIfxRuntime.cmake")
 set(PW_WORK "${PW_WINDOWS_OVERLAY_DIR}/.work")
 set(PW_PREFIX "${PW_WORK}/install/no-parmetis")
+set(PW_METIS_PREFIX "${PW_PREFIX}" CACHE PATH "METIS prefix; may differ for replacement validation")
 set(PW_SDK "${PW_WORK}/extracted/sdk")
 set(PW_MKL "${PW_WORK}/deps/mkl/build/native/win-x64")
 set(PW_CLUSTER "${PW_WORK}/deps/mkl-cluster/build/native/win-x64")
 add_executable(mumps-ordering ../abi/mumps_solve.cpp)
-target_include_directories(mumps-ordering PRIVATE "${PW_PREFIX}/include" "${PW_SDK}")
+target_include_directories(mumps-ordering PRIVATE "${PW_PREFIX}/include" "${PW_METIS_PREFIX}/include" "${PW_SDK}")
 target_link_libraries(mumps-ordering PRIVATE
   "${PW_PREFIX}/lib/dmumps.lib" "${PW_PREFIX}/lib/mumps_common.lib" "${PW_PREFIX}/lib/pord.lib"
-  "${PW_PREFIX}/lib/metis.lib"
+  "${PW_METIS_PREFIX}/lib/metis.lib"
   "${PW_CLUSTER}/mkl_scalapack_lp64.lib" "${PW_CLUSTER}/mkl_blacs_msmpi_lp64.lib"
   "${PW_MKL}/mkl_intel_lp64.lib" "${PW_MKL}/mkl_sequential.lib" "${PW_MKL}/mkl_core.lib"
   "${PW_SDK}/msmpifec64.lib" "${PW_SDK}/msmpi64.lib" ${PW_IFX_RUNTIME_LIBRARIES})

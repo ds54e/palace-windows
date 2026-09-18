@@ -1,0 +1,760 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 56e567b..e2b94d9 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,5 @@
+ cmake_minimum_required(VERSION 3.5)
+-project(METIS C)
++project(METIS C CXX)
+ 
+ set(GKLIB_PATH "GKlib" CACHE PATH "path to GKlib")
+ set(SHARED FALSE CACHE BOOL "build a shared library")
+diff --git a/GKlib/GKlib.h b/GKlib/GKlib.h
+index 492c90f..e456c44 100644
+--- a/GKlib/GKlib.h
++++ b/GKlib/GKlib.h
+@@ -44,12 +44,6 @@
+ 
+ #if defined(__WITHPCRE__)
+   #include <pcreposix.h>
+-#else
+-  #if defined(USE_GKREGEX)
+-    #include "gkregex.h"
+-  #else
+-    #include <regex.h>
+-  #endif /* defined(USE_GKREGEX) */
+ #endif /* defined(__WITHPCRE__) */
+ 
+ 
+@@ -66,9 +60,7 @@
+ #include <gk_externs.h>
+ #include <gk_defs.h>
+ #include <gk_macros.h>
+-#include <gk_getopt.h>
+ 
+-#include <gk_mksort.h>
+ #include <gk_mkblas.h>
+ #include <gk_mkmemory.h>
+ #include <gk_mkpqueue.h>
+@@ -80,5 +72,3 @@
+ 
+ 
+ #endif  /* GKlib.h */
+-
+-
+diff --git a/GKlib/GKlibSystem.cmake b/GKlib/GKlibSystem.cmake
+index 9d8256c..35eb63f 100644
+--- a/GKlib/GKlibSystem.cmake
++++ b/GKlib/GKlibSystem.cmake
+@@ -118,5 +118,9 @@ configure_file(${GKLIB_PATH}/gklib_tls.h.in include/gklib_tls.h)
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${GKlib_COPTIONS} ${GKlib_COPTS}")
+ 
+ # Find GKlib sources.
+-file(GLOB GKlib_sources ${GKLIB_PATH}/*.c)
++file(GLOB GKlib_sources ${GKLIB_PATH}/*.c ${GKLIB_PATH}/*.cc)
++# The library build does not use the command-line parser or bundled GNU
++# regular-expression implementation. Sorting is supplied by the attributed
++# standard-library implementation in sort.cc.
++list(FILTER GKlib_sources EXCLUDE REGEX "/(getopt|gkregex|sort)\\.c$")
+ file(GLOB GKlib_includes ${GKLIB_PATH}/*.h)
+diff --git a/GKlib/gk_arch.h b/GKlib/gk_arch.h
+index df0907a..b0a8107 100644
+--- a/GKlib/gk_arch.h
++++ b/GKlib/gk_arch.h
+@@ -20,8 +20,13 @@
+ 
+ 
+ #ifdef __MSC__ 
+-  #include "ms_stdint.h"
+-  #include "ms_inttypes.h"
++  #if defined(__cplusplus)
++    #include <stdint.h>
++    #include <inttypes.h>
++  #else
++    #include "ms_stdint.h"
++    #include "ms_inttypes.h"
++  #endif
+   #include "ms_stat.h"
+ #else
+ #ifndef SUNOS
+diff --git a/GKlib/sort.cc b/GKlib/sort.cc
+new file mode 100644
+index 0000000..2de030d
+--- /dev/null
++++ b/GKlib/sort.cc
+@@ -0,0 +1,285 @@
++/*!
++\file  sort.c
++\brief This file contains various sorting rountines using std::sort
++*/
++#include <algorithm>
++#include <functional>
++
++extern "C" {
++#include "GKlib.h"
++}
++
++namespace {
++  struct gk_kv_t_greater {
++    template<typename T>
++    bool operator()(const T &a, const T &b) const {
++      return a.key > b.key;
++    }
++  };
++
++  struct gk_kv_t_less {
++    template<typename T>
++    bool operator()(const T &a, const T &b) const {
++      return a.key < b.key;
++    }
++  };
++
++}
++
++extern "C" {
++
++
++/*************************************************************************/
++/*! Sorts an array of chars in increasing order */
++/*************************************************************************/
++void gk_csorti(size_t n, char *base)
++{
++  std::sort(base, base + n);
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of chars in decreasing order */
++/*************************************************************************/
++void gk_csortd(size_t n, char *base)
++{
++  std::sort(base, base + n, std::greater<char>());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of integers in increasing order */
++/*************************************************************************/
++void gk_isorti(size_t n, int *base)
++{
++  std::sort(base, base + n);
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of integers in decreasing order */
++/*************************************************************************/
++void gk_isortd(size_t n, int *base)
++{
++  std::sort(base, base + n, std::greater<int>());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of floats in increasing order */
++/*************************************************************************/
++void gk_fsorti(size_t n, float *base)
++{
++  std::sort(base, base + n);
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of floats in decreasing order */
++/*************************************************************************/
++void gk_fsortd(size_t n, float *base)
++{
++  std::sort(base, base + n, std::greater<float>());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of doubles in increasing order */
++/*************************************************************************/
++void gk_dsorti(size_t n, double *base)
++{
++  std::sort(base, base + n);
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of doubles in decreasing order */
++/*************************************************************************/
++void gk_dsortd(size_t n, double *base)
++{
++  std::sort(base, base + n, std::greater<double>());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_idx_t in increasing order */
++/*************************************************************************/
++void gk_idxsorti(size_t n, gk_idx_t *base)
++{
++  std::sort(base, base + n);
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_idx_t in decreasing order */
++/*************************************************************************/
++void gk_idxsortd(size_t n, gk_idx_t *base)
++{
++  std::sort(base, base + n, std::greater<gk_idx_t>());
++}
++
++
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_ckv_t in increasing order */
++/*************************************************************************/
++void gk_ckvsorti(size_t n, gk_ckv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_ckv_t in decreasing order */
++/*************************************************************************/
++void gk_ckvsortd(size_t n, gk_ckv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_ikv_t in increasing order */
++/*************************************************************************/
++void gk_ikvsorti(size_t n, gk_ikv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_ikv_t in decreasing order */
++/*************************************************************************/
++void gk_ikvsortd(size_t n, gk_ikv_t *base)
++{
++    std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_i32kv_t in increasing order */
++/*************************************************************************/
++void gk_i32kvsorti(size_t n, gk_i32kv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_i32kv_t in decreasing order */
++/*************************************************************************/
++void gk_i32kvsortd(size_t n, gk_i32kv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_i64kv_t in increasing order */
++/*************************************************************************/
++void gk_i64kvsorti(size_t n, gk_i64kv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_i64kv_t in decreasing order */
++/*************************************************************************/
++void gk_i64kvsortd(size_t n, gk_i64kv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_zkv_t in increasing order */
++/*************************************************************************/
++void gk_zkvsorti(size_t n, gk_zkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_zkv_t in decreasing order */
++/*************************************************************************/
++void gk_zkvsortd(size_t n, gk_zkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_fkv_t in increasing order */
++/*************************************************************************/
++void gk_fkvsorti(size_t n, gk_fkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_fkv_t in decreasing order */
++/*************************************************************************/
++void gk_fkvsortd(size_t n, gk_fkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_dkv_t in increasing order */
++/*************************************************************************/
++void gk_dkvsorti(size_t n, gk_dkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_fkv_t in decreasing order */
++/*************************************************************************/
++void gk_dkvsortd(size_t n, gk_dkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_skv_t in increasing order */
++/*************************************************************************/
++void gk_skvsorti(size_t n, gk_skv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_skv_t in decreasing order */
++/*************************************************************************/
++void gk_skvsortd(size_t n, gk_skv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_idxkv_t in increasing order */
++/*************************************************************************/
++void gk_idxkvsorti(size_t n, gk_idxkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_less());
++}
++
++
++/*************************************************************************/
++/*! Sorts an array of gk_idxkv_t in decreasing order */
++/*************************************************************************/
++void gk_idxkvsortd(size_t n, gk_idxkv_t *base)
++{
++  std::sort(base, base + n, gk_kv_t_greater());
++}
++
++}
+diff --git a/GKlib/string.c b/GKlib/string.c
+index d2e6bbf..8ce6833 100644
+--- a/GKlib/string.c
++++ b/GKlib/string.c
+@@ -61,181 +61,6 @@ char *gk_strchr_replace(char *str, char *fromlist, char *tolist)
+ 
+ 
+ 
+-/************************************************************************/
+-/*! \brief Regex-based search-and-replace function
+- 
+-This function is a C implementation of Perl's <tt> s//</tt> regular-expression
+-based substitution function.
+-
+-\param str 
+-  is the input string on which the operation will be performed.
+-\param pattern
+-  is the regular expression for the pattern to be matched for substitution.
+-\param replacement
+-  is the replacement string, in which the possible captured pattern substrings
+-  are referred to as $1, $2, ..., $9. The entire matched pattern is refered
+-  to as $0.
+-\param options
+-  is a string specified options for the substitution operation. Currently the
+-  <tt>"i"</tt> (case insensitive) and <tt>"g"</tt> (global substitution) are 
+-  supported.
+-\param new_str 
+-  is a reference to a pointer that will store a pointer to the newly created 
+-  string that results from the substitutions. This string is allocated via 
+-  gk_malloc() and needs to be freed using gk_free(). The string is returned 
+-  even if no substitutions were performed.
+-\returns
+-  If successful, it returns 1 + the number of substitutions that were performed.
+-  Thus, if no substitutions were performed, the returned value will be 1.
+-  Otherwise it returns 0. In case of error, a meaningful error message is 
+-  returned in <tt>newstr</tt>, which also needs to be freed afterwards.
+-*/
+-/************************************************************************/
+-int gk_strstr_replace(char *str, char *pattern, char *replacement, char *options,
+-      char **new_str)
+-{
+-  gk_idx_t i; 
+-  int j, rc, flags, global, nmatches;
+-  size_t len, rlen, nlen, offset, noffset;
+-  regex_t re;
+-  regmatch_t matches[10];
+-
+-  
+-  /* Parse the options */
+-  flags = REG_EXTENDED;
+-  if (strchr(options, 'i') != NULL)
+-    flags = flags | REG_ICASE;
+-  global = (strchr(options, 'g') != NULL ? 1 : 0);
+-
+-
+-  /* Compile the regex */
+-  if ((rc = regcomp(&re, pattern, flags)) != 0) { 
+-    len = regerror(rc, &re, NULL, 0);
+-    *new_str = gk_cmalloc(len, "gk_strstr_replace: new_str");
+-    regerror(rc, &re, *new_str, len);
+-    return 0;
+-  }
+-
+-  /* Prepare the output string */
+-  len = strlen(str);
+-  nlen = 2*len;
+-  noffset = 0;
+-  *new_str = gk_cmalloc(nlen+1, "gk_strstr_replace: new_str");
+-
+-
+-  /* Get into the matching-replacing loop */
+-  rlen = strlen(replacement);
+-  offset = 0;
+-  nmatches = 0;
+-  do {
+-    rc = regexec(&re, str+offset, 10, matches, 0);
+-
+-    if (rc == REG_ESPACE) {
+-      gk_free((void **)new_str, LTERM);
+-      *new_str = gk_strdup("regexec ran out of memory.");
+-      regfree(&re);
+-      return 0;
+-    }
+-    else if (rc == REG_NOMATCH) {
+-      if (nlen-noffset < len-offset) {
+-        nlen += (len-offset) - (nlen-noffset);
+-        *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-      }
+-      strcpy(*new_str+noffset, str+offset);
+-      noffset += (len-offset);
+-      break;
+-    }
+-    else { /* A match was found! */
+-      nmatches++;
+-
+-      /* Copy the left unmatched portion of the string */
+-      if (matches[0].rm_so > 0) {
+-        if (nlen-noffset < matches[0].rm_so) {
+-          nlen += matches[0].rm_so - (nlen-noffset);
+-          *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-        }
+-        strncpy(*new_str+noffset, str+offset, matches[0].rm_so);
+-        noffset += matches[0].rm_so;
+-      }
+-
+-      /* Go and append the replacement string */
+-      for (i=0; i<rlen; i++) {
+-        switch (replacement[i]) {
+-          case '\\':
+-            if (i+1 < rlen) {
+-              if (nlen-noffset < 1) {
+-                nlen += nlen + 1;
+-                *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-              }
+-              *new_str[noffset++] = replacement[++i];
+-            }
+-            else {
+-              gk_free((void **)new_str, LTERM);
+-              *new_str = gk_strdup("Error in replacement string. Missing character following '\'.");
+-              regfree(&re);
+-              return 0;
+-            }
+-            break;
+-
+-          case '$':
+-            if (i+1 < rlen) {
+-              j = (int)(replacement[++i] - '0');
+-              if (j < 0 || j > 9) {
+-                gk_free((void **)new_str, LTERM);
+-                *new_str = gk_strdup("Error in captured subexpression specification.");
+-                regfree(&re);
+-                return 0;
+-              }
+-
+-              if (nlen-noffset < matches[j].rm_eo-matches[j].rm_so) {
+-                nlen += nlen + (matches[j].rm_eo-matches[j].rm_so);
+-                *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-              }
+-
+-              strncpy(*new_str+noffset, str+offset+matches[j].rm_so, matches[j].rm_eo);
+-              noffset += matches[j].rm_eo-matches[j].rm_so;
+-            }
+-            else {
+-              gk_free((void **)new_str, LTERM);
+-              *new_str = gk_strdup("Error in replacement string. Missing subexpression number folloing '$'.");
+-              regfree(&re);
+-              return 0;
+-            }
+-            break;
+-
+-          default:
+-            if (nlen-noffset < 1) {
+-              nlen += nlen + 1;
+-              *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-            }
+-            (*new_str)[noffset++] = replacement[i];
+-        }
+-      }
+-
+-      /* Update the offset of str for the next match */
+-      offset += matches[0].rm_eo;
+-
+-      if (!global) {
+-        /* Copy the right portion of the string if no 'g' option */
+-        if (nlen-noffset < len-offset) {
+-          nlen += (len-offset) - (nlen-noffset);
+-          *new_str = (char *)gk_realloc(*new_str, (nlen+1)*sizeof(char), "gk_strstr_replace: new_str");
+-        }
+-        strcpy(*new_str+noffset, str+offset);
+-        noffset += (len-offset);
+-      }
+-    }
+-  } while (global);
+-
+-  (*new_str)[noffset] = '\0';
+-
+-  regfree(&re);
+-  return nmatches + 1;
+-
+-}
+-
+-
+-
+ /************************************************************************/
+ /*! \brief Prunes characters from the end of the string.
+ 
+diff --git a/libmetis/CMakeLists.txt b/libmetis/CMakeLists.txt
+index 5f806f3..06e541d 100644
+--- a/libmetis/CMakeLists.txt
++++ b/libmetis/CMakeLists.txt
+@@ -2,7 +2,7 @@
+ include_directories(.)
+ include_directories ("${PROJECT_BINARY_DIR}/include")
+ # Find sources.
+-file(GLOB metis_sources *.c)
++file(GLOB metis_sources *.c *.cc)
+ # Build libmetis.
+ add_library(metis ${METIS_LIBRARY_TYPE} ${GKlib_sources} ${metis_sources})
+ target_link_libraries(metis ${MATH_LIB})
+diff --git a/libmetis/gklib.c b/libmetis/gklib.c
+index 4e17eac..1884ee6 100644
+--- a/libmetis/gklib.c
++++ b/libmetis/gklib.c
+@@ -43,78 +43,3 @@ GK_MKRANDOM(i, idx_t, idx_t)
+ /*! Utility routines */
+ /*************************************************************************/
+ GK_MKARRAY2CSR(i, idx_t)
+-
+-/*************************************************************************/
+-/*! Sorting routines */
+-/*************************************************************************/
+-void isorti(size_t n, idx_t *base)
+-{
+-#define i_lt(a, b) ((*a) < (*b))
+-  GK_MKQSORT(idx_t, base, n, i_lt);
+-#undef i_lt
+-}
+-
+-void isortd(size_t n, idx_t *base)
+-{
+-#define i_gt(a, b) ((*a) > (*b))
+-  GK_MKQSORT(idx_t, base, n, i_gt);
+-#undef i_gt
+-}
+-
+-void rsorti(size_t n, real_t *base)
+-{
+-#define r_lt(a, b) ((*a) < (*b))
+-  GK_MKQSORT(real_t, base, n, r_lt);
+-#undef r_lt
+-}
+-
+-void rsortd(size_t n, real_t *base)
+-{
+-#define r_gt(a, b) ((*a) > (*b))
+-  GK_MKQSORT(real_t, base, n, r_gt);
+-#undef r_gt
+-}
+-
+-void ikvsorti(size_t n, ikv_t *base)
+-{
+-#define ikey_lt(a, b) ((a)->key < (b)->key)
+-  GK_MKQSORT(ikv_t, base, n, ikey_lt);
+-#undef ikey_lt
+-}
+-
+-/* Sorts based both on key and val */
+-void ikvsortii(size_t n, ikv_t *base)
+-{
+-#define ikeyval_lt(a, b) ((a)->key < (b)->key || ((a)->key == (b)->key && (a)->val < (b)->val))
+-  GK_MKQSORT(ikv_t, base, n, ikeyval_lt);
+-#undef ikeyval_lt
+-}
+-
+-void ikvsortd(size_t n, ikv_t *base)
+-{
+-#define ikey_gt(a, b) ((a)->key > (b)->key)
+-  GK_MKQSORT(ikv_t, base, n, ikey_gt);
+-#undef ikey_gt
+-}
+-
+-void rkvsorti(size_t n, rkv_t *base)
+-{
+-#define rkey_lt(a, b) ((a)->key < (b)->key)
+-  GK_MKQSORT(rkv_t, base, n, rkey_lt);
+-#undef rkey_lt
+-}
+-
+-void rkvsortd(size_t n, rkv_t *base)
+-{
+-#define rkey_gt(a, b) ((a)->key > (b)->key)
+-  GK_MKQSORT(rkv_t, base, n, rkey_gt);
+-#undef rkey_gt
+-}
+-
+-void uvwsorti(size_t n, uvw_t *base)
+-{
+-#define uvwkey_lt(a, b) ((a)->u < (b)->u || ((a)->u == (b)->u && (a)->v < (b)->v))
+-  GK_MKQSORT(uvw_t, base, n, uvwkey_lt);
+-#undef uvwkey_lt
+-}
+-
+diff --git a/libmetis/gklib_sort.cc b/libmetis/gklib_sort.cc
+new file mode 100644
+index 0000000..fc136ba
+--- /dev/null
++++ b/libmetis/gklib_sort.cc
+@@ -0,0 +1,102 @@
++/*!
++\file  gklib_sort.cc
++\brief Various sorting routines
++
++*/
++
++#include <algorithm>
++#include <functional>
++#include <utility>
++
++extern "C" {
++#include "metislib.h"
++}
++
++namespace {
++
++  struct ikvi_t_less {
++    bool operator()(const ikv_t &lhs, const ikv_t &rhs) const {
++        return std::make_pair(lhs.key, lhs.val) < std::make_pair(rhs.key, rhs.val);
++    }
++  };
++
++  struct uvwi_t_less {
++    bool operator()(const uvw_t &lhs, const uvw_t &rhs) const {
++        return std::make_pair(lhs.u, lhs.v) < std::make_pair(rhs.u, rhs.v);
++    }
++  };
++
++  struct kv_t_greater {
++    template<typename T>
++    bool operator()(const T &a, const T &b) const {
++        return a.key > b.key;
++    }
++  };
++
++  struct kv_t_less {
++    template<typename T>
++    bool operator()(const T &a, const T &b) const {
++        return a.key < b.key;
++    }
++  };
++
++}
++
++extern "C" {
++
++/*************************************************************************/
++/*! Sorting routines */
++/*************************************************************************/
++
++void isorti(size_t n, idx_t *base)
++{
++  std::sort(base, base + n);
++}
++
++void isortd(size_t n, idx_t *base)
++{
++  std::sort(base, base + n, std::greater<idx_t>());
++}
++
++void rsorti(size_t n, real_t *base)
++{
++  std::sort(base, base + n);
++}
++
++void rsortd(size_t n, real_t *base)
++{
++  std::sort(base, base + n, std::greater<real_t>());
++}
++
++void ikvsorti(size_t n, ikv_t *base)
++{
++  std::sort(base, base + n, kv_t_less());
++}
++
++/* Sorts based both on key and val */
++void ikvsortii(size_t n, ikv_t *base)
++{
++  std::sort(base, base + n, ikvi_t_less());
++}
++
++void ikvsortd(size_t n, ikv_t *base)
++{
++  std::sort(base, base + n, kv_t_greater());
++}
++
++void rkvsorti(size_t n, rkv_t *base)
++{
++  std::sort(base, base + n, kv_t_less());
++}
++
++void rkvsortd(size_t n, rkv_t *base)
++{
++  std::sort(base, base + n, kv_t_greater());
++}
++
++void uvwsorti(size_t n, uvw_t *base)
++{
++  std::sort(base, base + n, uvwi_t_less());
++}
++
++}

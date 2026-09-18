@@ -116,6 +116,9 @@
       "patches/mfem/no-parmetis-ordering.patch",
       "patches/mfem/windows-build.patch"
     ],
+    "metis": [
+      "patches/metis/permissive-sort-exclusion.patch"
+    ],
     "libCEED": [
       "patches/libceed/windows-allocation.patch",
       "patches/libceed/windows-cpu-registration.patch"
@@ -125,9 +128,10 @@
     "patches/palace/windows-no-parmetis.patch": "4aa0fca99d52968fb3008894c61ebca3845abbd273512c17aa43c708d38918a3",
     "patches/palace/windows-memory-reporting.patch": "f816004dcb57a901b4c4a013445b6a6217203f79038b29115904e1e1c5014b2d",
     "patches/palace/windows-cxx-port.patch": "640082490672602340c962403d61ae6fb62bc705052cf693bb36c89fc9307560",
-    "patches/palace/windows-license-notice.patch": "e2d242fd8a6e7a80dab89d3014eeebb110422d9cdd142693400c95ddbb74aa24",
+    "patches/palace/windows-license-notice.patch": "fa9b5273424a105f6723d2f0c2285445551a48b2df6d956caa93a76109e25cc8",
     "patches/mfem/no-parmetis-ordering.patch": "c7d74c4e0294972342a7232ed26050e5c0c950e9c9fef50201a3c9c3233c0269",
     "patches/mfem/windows-build.patch": "2691afe3eefbb41ac6b09588fc751b195715554980472c67a484338e754c07c0",
+    "patches/metis/permissive-sort-exclusion.patch": "fc191091c5ff80ebaa88d42bf7b371ddd34b4bfc0dc18e87a15d7dbe4480ce1d",
     "patches/libceed/windows-allocation.patch": "3725b465bffe01eb2bcb9afdf96038a08b03304e4a73a487e61d54263aaaeca9",
     "patches/libceed/windows-cpu-registration.patch": "8e69d0ca5209409d2135744ff810d07eaab040c50154cdea9320ba7f9fe7a38e"
   },
