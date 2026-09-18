@@ -9,6 +9,13 @@ This checklist publishes the already frozen candidate. It must not rebuild or re
 - Confirm the exact frozen source ZIP hashes to `09e3a7c4355a03318f30202556f1bcc26aa7f98fd7c3de8cd341342b1c9112d2`.
 - Confirm no release/tag named `v1.0.0` already exists.
 - Do not claim Gate 0 or Gate 5 passed.
+- Audit the complete reachable Git history, not only the current tree, before changing visibility. Search for credential/token/private-key patterns and sensitive file names/extensions. If anything plausibly secret is found, stop before publication and report it; do not rewrite history or force-push without a separate owner decision.
+
+## Required history audit before publication
+
+Use existing Git/shell tools; do not install a new scanner merely for this audit unless separately authorized. At minimum inspect all reachable commits/objects for suspect filenames and common credential markers such as private-key PEM blocks, GitHub tokens, API keys, passwords, .env files, certificate/private-key containers, and authentication dumps. Historical local build paths and sanitized host specifications are acceptable if they contain no credentials or private account identifiers.
+
+Record the commands and outcome. Publication must stop on a plausible secret finding.
 
 ## Local publication sequence
 

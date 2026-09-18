@@ -11,13 +11,15 @@ Gate 0 and Gate 5 remain unpassed. Clean-host portability must be disclosed as
 unverified; never rewrite the evidence to imply otherwise. This authorization
 changes the release policy, not the test results.
 
-After the final repository audit, the owner authorizes creation of the v1.0.0
+After the final current-tree and complete reachable-history secret audit, the owner authorizes creation of the v1.0.0
 tag/release, upload of a byte-identical public asset, publication of SHA256SUMS,
 and changing this repository to public visibility. The binaries remain unsigned.
 Use `docs/PUBLIC_RELEASE_CHECKLIST.md` and
 `docs/RELEASE_NOTES_v1.0.0.md`. Do not rebuild/recompress the frozen ZIP,
 substitute historical review2, force-push, move an already-created v1.0.0 tag,
 or claim clean-host validation.
+
+Before changing repository visibility, audit the complete reachable Git history for credentials, tokens, private keys, authentication files and other plausibly secret material. If a plausible secret is found, stop before publication; do not rewrite history or force-push without a separate owner decision.
 
 ## Mission and priority
 
