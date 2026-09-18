@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "research_reference_not_integrated",
+  "inspected_on": "2026-09-18",
+  "target": {
+    "repository": "https://bitbucket.org/petsc/pkg-metis.git",
+    "commit": "08c3082720ff9114b8e3cbaa4484a26739cd7d2d"
+  },
+  "reference": {
+    "repository": "https://github.com/networkx/networkx-metis.git",
+    "commit": "26a51ddad5932d843655e5b7ba1225bcfe3b8882",
+    "scope": "Only sorting/exclusion prior art; not a replacement of the whole METIS tree",
+    "license_notices": "Apache-2.0; confirm individual file provenance before incorporation",
+    "files": [
+      {
+        "path": "NOTICE",
+        "git_blob_sha1": "00971e5de82bbab0428df952523dd72d9ab96df7",
+        "inspection": "published removal scope"
+      },
+      {
+        "path": "LICENSE.txt",
+        "git_blob_sha1": "bb8e1bd5f8370e5c51cdbc53f1e605bef7b073ca",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/LICENSE.txt",
+        "git_blob_sha1": "f952fe29791716a3559b34cdffdaa6af35e2622d",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/libmetis/gklib_sort.cc",
+        "git_blob_sha1": "fc136ba9e065117e2a348d32a011a1576ac144f0",
+        "inspection": "complete"
+      },
+      {
+        "path": "src/GKlib/sort.cc",
+        "git_blob_sha1": "2de030d65ee6303f45da81d78056425e3613faed",
+        "inspection": "lines 1-100 only; fetch/review the complete file before use"
+      }
+    ]
+  },
+  "validation": {
+    "source_and_license_inspection": true,
+    "target_patch_created": false,
+    "windows_build": false,
+    "linux_build": false,
+    "numerical_comparison": false,
+    "new_package_created": false,
+    "legal_blocker_resolved": false
+  },
+  "clean_host": {
+    "decision": "deferred_by_owner",
+    "executed": false,
+    "passed": false
+  },
+  "frozen_review2_zip_sha256": "6dad1f3d892ccf20f627140760b9cae94202a12463715aa2a003e1931a5cd2e2",
+  "write_policy": {
+    "review_branch_only": true,
+    "merge_main": false,
+    "publish": false
+  }
+}

@@ -1,5 +1,11 @@
 # Agent instructions
 
+## Active task override — 2026-09-18
+
+The owner has deferred independent clean-Windows testing and requested legal-blocker remediation first. Read `docs/LEGAL_RESOLUTION.md` and `docs/KICKOFF_LEGAL.md` before acting on historical VM-related next actions. Do not continue VM/ISO/hypervisor work or mark a deferred test as passed.
+
+For this task, use a review branch and do not merge main, publish packages, or create tags/releases. Preserve the frozen review2 ZIP and historical evidence. Implement and test only the scoped, attributed METIS/GKlib source remedy described in the new plan. This is an exception to earlier instructions preserving the LGPL sorting implementation while awaiting an opinion; it is not permission to replace the numerical/compiler stack or relax validation. The documented remedy is not yet implemented, and the legal blocker is not yet resolved. Existing STATE gate results describe the old artifact and must not be transferred to a changed candidate without evidence.
+
 ## Mission and priority
 
 Bring this repository to a **release-ready native Windows x64 V1.0**, not merely a build guide. Ease of use and administrator-free end-user deployment are hard requirements. Reliability, limited dependency uncertainty, and shortest path to release outrank package size, performance, and Linux feature parity.
